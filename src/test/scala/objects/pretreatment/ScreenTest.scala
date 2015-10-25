@@ -10,42 +10,42 @@ class ScreenTest extends FlatSpec with Matchers {
 
   "Calculations" should "correct" in {
     // Assumed
-    val TSSRemoval = 0.27
-    val BOD5Removal = 0.27
-    val Q = 1090195
+    val tssRemoval = 0.27
+    val bod5Removal = 0.27
+    val q = 1090195
 
     // Input
-    val TSSo = 223
-    val BOD5o = 257.5
+    val tssO = 223
+    val bod5O = 257.5
 
     // Assumptions
-    val BOD5_cBOD5 = 1.1
-    val COD_BOD = 1.6
-    val COD_VSS = 1.42
-    val VSS_TSS = 0.8
+    val bod5_cbod5 = 1.1
+    val cod_bod = 1.6
+    val cod_vss = 1.42
+    val vss_tss = 0.8
 
-    val TSSe = calTSSe(TSSo, TSSRemoval)
-    TSSe equals 162.8
+    val tssE = calTSSe(tssO, tssRemoval)
+    tssE equals 162.8
 
-    val BOD5e = calBOD5e(BOD5o, BOD5Removal)
-    BOD5e equals 189
+    val bod5E = calBOD5e(bod5O, bod5Removal)
+    bod5E equals 189
 
-    val VSSe = calVSSe(TSSe, VSS_TSS)
-    VSSe equals 130
+    val vssE = calVSSe(tssE, vss_tss)
+    vssE equals 130
 
-    val cBOD5e = calcBOD5e(BOD5e, BOD5_cBOD5)
+    val cBOD5e = calcBOD5e(bod5E, bod5_cbod5)
     cBOD5e equals 171
 
-    val bCODe = calbCODe(BOD5e, COD_BOD)
+    val bCODe = calbCODe(bod5E, cod_bod)
     bCODe equals 301
 
-    val bCODpe = calbCODpe(VSSe, COD_VSS, VSS_TSS)
+    val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
     bCODpe equals 148
 
     val bCODs = calbCODs(bCODe, bCODpe)
     bCODs equals 153
 
-    val p = calP(Q, VSSe)
+    val p = calP(q, vssE)
     p equals 1.41
   }
 

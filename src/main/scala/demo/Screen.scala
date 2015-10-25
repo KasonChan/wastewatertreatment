@@ -8,56 +8,56 @@ import objects.pretreatment.Screen._
 object Screen extends App {
 
   // Assumed
-  val TSSRemoval = 0.27
-  val BOD5Removal = 0.27
-  val Q = 1090195
+  val tssRemoval = 0.27
+  val bod5Removal = 0.27
+  val q = 1090195
 
   // Input
-  val TSSo = 223
-  val BOD5o = 257.5
+  val tssO = 223
+  val bod5O = 257.5
 
   // Assumptions
-  val BOD5_cBOD5 = 1.1
-  val COD_BOD = 1.6
-  val COD_VSS = 1.42
-  val VSS_TSS = 0.8
+  val bod5_cbod5 = 1.1
+  val cod_bod = 1.6
+  val cod_vss = 1.42
+  val vss_tss = 0.8
 
   println("Assumed")
-  println(TSSRemoval)
-  println(BOD5Removal)
-  println(Q)
+  println(tssRemoval)
+  println(bod5Removal)
+  println(q)
 
   println()
 
   println("Input")
-  println(TSSo)
-  val TSSe = calTSSe(TSSo, TSSRemoval)
-  println(TSSe)
-  println(BOD5o)
-  val BOD5e = calBOD5e(BOD5o, BOD5Removal)
-  println(BOD5e)
+  println(tssO)
+  val tssE = calTSSe(tssO, tssRemoval)
+  println(tssE)
+  println(bod5O)
+  val bod5E = calBOD5e(bod5O, bod5Removal)
+  println(bod5E)
 
   println()
 
   println("Assumptions")
-  println(BOD5_cBOD5)
-  println(COD_BOD)
-  println(COD_VSS)
-  println(VSS_TSS)
+  println(bod5_cbod5)
+  println(cod_bod)
+  println(cod_vss)
+  println(vss_tss)
 
   println()
 
-  val VSSe = calVSSe(TSSe, VSS_TSS)
-  println(VSSe)
-  val cBOD5e = calcBOD5e(BOD5e, BOD5_cBOD5)
+  val vssE = calVSSe(tssE, vss_tss)
+  println(vssE)
+  val cBOD5e = calcBOD5e(bod5E, bod5_cbod5)
   println(cBOD5e)
-  val bCODe = calbCODe(BOD5e, COD_BOD)
+  val bCODe = calbCODe(bod5E, cod_bod)
   println(bCODe)
-  val bCODpe = calbCODpe(VSSe, COD_VSS, VSS_TSS)
+  val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
   println(bCODpe)
   val bCODs = calbCODs(bCODe, bCODpe)
   println(bCODs)
-  val p = calP(Q, VSSe)
+  val p = calP(q, vssE)
   println(p)
 
 }
