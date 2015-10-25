@@ -19,13 +19,13 @@ object Unit {
 
   val bod5EUnits = List("g^3/m^3")
 
-  val bod5_cbod5Units = List("g BOD5/g cBOD5")
+  val bod5cBOD5Units = List("g BOD5/g cBOD5")
 
-  val cod_bodUnits = List("g COD/g BOD")
+  val codBODUnits = List("g COD/g BOD")
 
-  val cod_vssUnits = List("g COD/g VSS")
+  val codVSSUnits = List("g COD/g VSS")
 
-  val vss_tssUnits = List("g VSS/g TSS")
+  val vssTSSUnits = List("g VSS/g TSS")
 
   val vsseUnits = List("g/m^3")
 

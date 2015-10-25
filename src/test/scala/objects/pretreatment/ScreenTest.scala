@@ -8,7 +8,7 @@ import org.scalatest.{FlatSpec, Matchers}
  */
 class ScreenTest extends FlatSpec with Matchers {
 
-  "Calculations" should "correct" in {
+  "Calculations 1" should "pass" in {
     // Assumed
     val tssRemoval = 0.27
     val bod5Removal = 0.27
@@ -40,6 +40,41 @@ class ScreenTest extends FlatSpec with Matchers {
     bCODe equals 301
 
     val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
+    bCODpe equals 148
+
+    val bCODs = calbCODs(bCODe, bCODpe)
+    bCODs equals 153
+
+    val p = calP(q, vssE)
+    p equals 1.41
+  }
+
+  "Calculations 2" should "pass" in {
+    // Assumed
+    val tssRemoval = 0.27
+    val bod5Removal = 0.27
+    val q = 1090195
+
+    // Input
+    val tssO = 223
+    val bod5O = 257.5
+
+    val tssE = calTSSe(tssO, tssRemoval)
+    tssE equals 162.8
+
+    val bod5E = calBOD5e(bod5O, bod5Removal)
+    bod5E equals 189
+
+    val vssE = calVSSe(tssE)
+    vssE equals 130
+
+    val cBOD5e = calcBOD5e(bod5E)
+    cBOD5e equals 171
+
+    val bCODe = calbCODe(bod5E)
+    bCODe equals 301
+
+    val bCODpe = calbCODpe(vssE)
     bCODpe equals 148
 
     val bCODs = calbCODs(bCODe, bCODpe)

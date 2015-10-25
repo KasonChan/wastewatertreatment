@@ -1,6 +1,8 @@
 package demo
 
+import io.Output
 import objects.pretreatment.Screen._
+import valueunit.Unit._
 
 /**
  * Created by ka-son on 10/24/15.
@@ -16,48 +18,42 @@ object Screen extends App {
   val tssO = 223
   val bod5O = 257.5
 
-  // Assumptions
-  val bod5_cbod5 = 1.1
-  val cod_bod = 1.6
-  val cod_vss = 1.42
-  val vss_tss = 0.8
-
   println("Assumed")
-  println(tssRemoval)
-  println(bod5Removal)
-  println(q)
+  Output(tssRemoval, tssRemovalUnits.head)
+  Output(bod5Removal, bod5RemovalUnits.head)
+  Output(q, qUnits.head)
 
   println()
 
   println("Input")
-  println(tssO)
+  Output(tssO, tssOUnits.head)
   val tssE = calTSSe(tssO, tssRemoval)
-  println(tssE)
-  println(bod5O)
+  Output(tssE, tssEUnits.head)
+  Output(bod5O, bod5OUnits.head)
   val bod5E = calBOD5e(bod5O, bod5Removal)
-  println(bod5E)
+  Output(bod5E, bod5EUnits.head)
 
   println()
 
   println("Assumptions")
-  println(bod5_cbod5)
-  println(cod_bod)
-  println(cod_vss)
-  println(vss_tss)
+  Output(bod5cBOD5Ratio, bod5cBOD5Units.head)
+  Output(codBODRatio, codBODUnits.head)
+  Output(codVSSRatio, codVSSUnits.head)
+  Output(vssTSSRatio, vssTSSUnits.head)
 
   println()
 
-  val vssE = calVSSe(tssE, vss_tss)
-  println(vssE)
-  val cBOD5e = calcBOD5e(bod5E, bod5_cbod5)
-  println(cBOD5e)
-  val bCODe = calbCODe(bod5E, cod_bod)
-  println(bCODe)
-  val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
-  println(bCODpe)
+  val vssE = calVSSe(tssE, vssTSSRatio)
+  Output(vssE, vsseUnits.head)
+  val cBOD5e = calcBOD5e(bod5E, bod5cBOD5Ratio)
+  Output(cBOD5e, cBOD5eUnits.head)
+  val bCODe = calbCODe(bod5E, codBODRatio)
+  Output(bCODe, bCODeUnits.head)
+  val bCODpe = calbCODpe(vssE, codVSSRatio, vssTSSRatio)
+  Output(bCODpe, bCODpeUnits.head)
   val bCODs = calbCODs(bCODe, bCODpe)
-  println(bCODs)
+  Output(bCODs, bCODsUnits.head)
   val p = calP(q, vssE)
-  println(p)
+  Output(p, pUnits.head)
 
 }
