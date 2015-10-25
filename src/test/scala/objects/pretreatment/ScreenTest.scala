@@ -10,8 +10,8 @@ class ScreenTest extends FlatSpec with Matchers {
 
   "Calculations 1" should "pass" in {
     // Assumed
-    val tssRemoval = 0.27
-    val bod5Removal = 0.27
+    val tssRemoval = 27
+    val bod5Removal = 27
     val q = 1090195
 
     // Input
@@ -51,8 +51,8 @@ class ScreenTest extends FlatSpec with Matchers {
 
   "Calculations 2" should "pass" in {
     // Assumed
-    val tssRemoval = 0.27
-    val bod5Removal = 0.27
+    val tssRemoval = 27
+    val bod5Removal = 27
     val q = 1090195
 
     // Input

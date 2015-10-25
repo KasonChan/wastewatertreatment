@@ -11,11 +11,11 @@ object Screen {
   val vssTSSRatio = 0.8
 
   def calTSSe(TSSo: Double, TSSRemoval: Double): Double = {
-    TSSo * (1 - TSSRemoval)
+    TSSo * (100 - TSSRemoval) / 100
   }
 
   def calBOD5e(BOD5o: Double, BOD5Removal: Double): Double = {
-    BOD5o * (1 - BOD5Removal)
+    BOD5o * (100 - BOD5Removal) / 100
   }
 
   def calVSSe(TSSe: Double, VSS_TSS: Double = vssTSSRatio): Double = {

@@ -5,6 +5,8 @@ package io
  */
 object Output {
 
-  def apply(value: Double, unit: String): Unit = println(value + " " + unit)
+  def apply(value: Double, unit: String): Unit = {
+    println("%.2f".format(value) + unit)
+  }
 
 }

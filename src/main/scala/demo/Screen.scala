@@ -10,8 +10,8 @@ import valueunit.Unit._
 object Screen extends App {
 
   // Assumed
-  val tssRemoval = 0.27
-  val bod5Removal = 0.27
+  val tssRemoval = 27
+  val bod5Removal = 27
   val q = 1090195
 
   // Input
