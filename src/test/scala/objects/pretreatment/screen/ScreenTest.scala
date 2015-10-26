@@ -19,10 +19,10 @@ class ScreenTest extends FlatSpec with Matchers {
     val bod5O = 257.5
 
     // Assumptions
-    val bod5_cbod5 = 1.1
-    val cod_bod = 1.6
-    val cod_vss = 1.42
-    val vss_tss = 0.8
+    val bod5cBOD5Ratio = 1.1
+    val codBODRatio = 1.6
+    val codVSSRatio = 1.42
+    val vssTSSRatio = 0.8
 
     val tssE = calTSSe(tssO, tssRemoval)
     tssE shouldBe 162.79
@@ -30,16 +30,16 @@ class ScreenTest extends FlatSpec with Matchers {
     val bod5E = calBOD5e(bod5O, bod5Removal)
     bod5E shouldBe 187.98
 
-    val vssE = calVSSe(tssE, vss_tss)
+    val vssE = calVSSe(tssE, vssTSSRatio)
     vssE shouldBe 130.23
 
-    val cBOD5e = calcBOD5e(bod5E, bod5_cbod5)
+    val cBOD5e = calcBOD5e(bod5E, bod5cBOD5Ratio)
     cBOD5e shouldBe 170.89
 
-    val bCODe = calbCODe(bod5E, cod_bod)
+    val bCODe = calbCODe(bod5E, codBODRatio)
     bCODe shouldBe 300.77
 
-    val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
+    val bCODpe = calbCODpe(vssE, codVSSRatio, vssTSSRatio)
     bCODpe shouldBe 147.94
 
     val bCODs = calbCODs(bCODe, bCODpe)
