@@ -1,4 +1,4 @@
-package valueunit
+package objects.pretreatment.screen
 
 /**
  * Created by kasonchan on 10/25/15.
@@ -19,13 +19,13 @@ object Unit {
 
   val bod5EUnits = List("g^3/m^3")
 
-  val bod5cBOD5Units = List("g BOD5/g cBOD5")
+  val bod5cBOD5Units = List("g-BOD5/g-cBOD5")
 
-  val codBODUnits = List("g COD/g BOD")
+  val codBODUnits = List("g-COD/g-BOD")
 
-  val codVSSUnits = List("g COD/g VSS")
+  val codVSSUnits = List("g-COD/g-VSS")
 
-  val vssTSSUnits = List("g VSS/g TSS")
+  val vssTSSUnits = List("g-VSS/g-TSS")
 
   val vsseUnits = List("g/m^3")
 
@@ -37,6 +37,6 @@ object Unit {
 
   val bCODsUnits = List("g/m^3")
 
-  val pUnits = List("g TSS/d")
+  val pUnits = List("g-TSS/d")
 
 }

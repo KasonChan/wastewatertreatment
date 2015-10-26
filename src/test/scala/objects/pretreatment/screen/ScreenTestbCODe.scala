@@ -1,6 +1,6 @@
 package objects.pretreatment.screen
 
-import objects.pretreatment.Screen.calbCODe
+import Screen.calbCODe
 import org.scalatest.{FlatSpec, Matchers}
 
 /**

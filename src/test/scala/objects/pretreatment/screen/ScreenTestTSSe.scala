@@ -1,6 +1,6 @@
 package objects.pretreatment.screen
 
-import objects.pretreatment.Screen.calTSSe
+import Screen.calTSSe
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
