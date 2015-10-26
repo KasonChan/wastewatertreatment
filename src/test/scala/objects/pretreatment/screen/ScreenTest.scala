@@ -1,4 +1,4 @@
-package objects.pretreatment
+package objects.pretreatment.screen
 
 import objects.pretreatment.Screen._
 import org.scalatest.{FlatSpec, Matchers}
@@ -8,7 +8,7 @@ import org.scalatest.{FlatSpec, Matchers}
  */
 class ScreenTest extends FlatSpec with Matchers {
 
-  "Calculations 1" should "pass" in {
+  "Calculation 1" should "pass" in {
     // Assumed
     val tssRemoval = 27
     val bod5Removal = 27
@@ -25,31 +25,31 @@ class ScreenTest extends FlatSpec with Matchers {
     val vss_tss = 0.8
 
     val tssE = calTSSe(tssO, tssRemoval)
-    tssE equals 162.8
+    tssE shouldBe 162.79
 
     val bod5E = calBOD5e(bod5O, bod5Removal)
-    bod5E equals 189
+    bod5E shouldBe 187.98
 
     val vssE = calVSSe(tssE, vss_tss)
-    vssE equals 130
+    vssE shouldBe 130.23
 
     val cBOD5e = calcBOD5e(bod5E, bod5_cbod5)
-    cBOD5e equals 171
+    cBOD5e shouldBe 170.89
 
     val bCODe = calbCODe(bod5E, cod_bod)
-    bCODe equals 301
+    bCODe shouldBe 300.77
 
     val bCODpe = calbCODpe(vssE, cod_vss, vss_tss)
-    bCODpe equals 148
+    bCODpe shouldBe 147.94
 
     val bCODs = calbCODs(bCODe, bCODpe)
-    bCODs equals 153
+    bCODs shouldBe 152.83
 
     val p = calP(q, vssE)
-    p equals 1.41
+    p shouldBe 1.4197609485E8
   }
 
-  "Calculations 2" should "pass" in {
+  "Calculation 2" should "pass" in {
     // Assumed
     val tssRemoval = 27
     val bod5Removal = 27
@@ -60,28 +60,28 @@ class ScreenTest extends FlatSpec with Matchers {
     val bod5O = 257.5
 
     val tssE = calTSSe(tssO, tssRemoval)
-    tssE equals 162.8
+    tssE shouldBe 162.79
 
     val bod5E = calBOD5e(bod5O, bod5Removal)
-    bod5E equals 189
+    bod5E shouldBe 187.98
 
     val vssE = calVSSe(tssE)
-    vssE equals 130
+    vssE shouldBe 130.23
 
     val cBOD5e = calcBOD5e(bod5E)
-    cBOD5e equals 171
+    cBOD5e shouldBe 170.89
 
     val bCODe = calbCODe(bod5E)
-    bCODe equals 301
+    bCODe shouldBe 300.77
 
     val bCODpe = calbCODpe(vssE)
-    bCODpe equals 148
+    bCODpe shouldBe 147.94
 
     val bCODs = calbCODs(bCODe, bCODpe)
-    bCODs equals 153
+    bCODs shouldBe 152.83
 
     val p = calP(q, vssE)
-    p equals 1.41
+    p shouldBe 1.4197609485E8
   }
 
 }
