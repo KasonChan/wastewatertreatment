@@ -11,13 +11,13 @@ object Unit {
 
   val qUnits = List("m^3/d")
 
-  val tssOUnits = List("g^3/m^3")
+  val tssOUnits = List("g/m^3")
 
-  val tssEUnits = List("g^3/m^3")
+  val tssEUnits = List("g/m^3")
 
-  val bod5OUnits = List("g^3/m^3")
+  val bod5OUnits = List("g/m^3")
 
-  val bod5EUnits = List("g^3/m^3")
+  val bod5EUnits = List("g/m^3")
 
   val bod5cBOD5Units = List("g-BOD5/g-cBOD5")
 

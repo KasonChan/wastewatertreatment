@@ -27,14 +27,14 @@ case class BOD5o(value: Double,
 case class BOD5e(value: Double,
                  unit: String = bod5EUnits.headOption.getOrElse("g^3/m^3")) extends ValueUnit
 
-case class BOD5CBOD5(value: Double,
-                     unit: String = bod5cBOD5Units.headOption.getOrElse("g-BOD5/g-cBOD5")) extends ValueUnit
+case class BOD5CBOD5Ratio(value: Double,
+                          unit: String = bod5cBOD5Units.headOption.getOrElse("g-BOD5/g-cBOD5")) extends ValueUnit
 
 case class CODBODRatio(value: Double,
                        unit: String = codBODUnits.headOption.getOrElse("g-COD/g-BOD")) extends ValueUnit
 
-case class CODVSSRation(value: Double,
-                        unit: String = codVSSUnits.headOption.getOrElse("g-COD/g-VSS")) extends ValueUnit
+case class CODVSSRatio(value: Double,
+                       unit: String = codVSSUnits.headOption.getOrElse("g-COD/g-VSS")) extends ValueUnit
 
 
 case class VSSTSSRatio(value: Double,
