@@ -8,3 +8,9 @@ trait ValueUnit {
 
   def unit: String
 }
+
+object ValueUnit {
+
+  def apply(vu: ValueUnit): String = "%.2f".format(vu.value) + vu.unit
+
+}
