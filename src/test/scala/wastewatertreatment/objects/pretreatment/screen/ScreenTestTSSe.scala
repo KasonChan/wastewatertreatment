@@ -1,4 +1,4 @@
-package objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screen
 
 import Screen.calTSSe
 import org.scalatest.{FlatSpec, Matchers}

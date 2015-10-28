@@ -1,6 +1,6 @@
-package helper
+package wastewatertreatment.helper
 
-import helper.Helper.to2Decimals
+import wastewatertreatment.helper.Helper.to2Decimals
 import org.scalatest.{FlatSpec, Matchers}
 
 /**

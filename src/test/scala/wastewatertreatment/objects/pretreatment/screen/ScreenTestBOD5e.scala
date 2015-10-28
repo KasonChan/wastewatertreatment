@@ -1,6 +1,6 @@
-package objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screen
 
-import objects.pretreatment.screen.Screen.calBOD5e
+import wastewatertreatment.objects.pretreatment.screen.Screen.calBOD5e
 import org.scalatest.{FlatSpec, Matchers}
 
 /**

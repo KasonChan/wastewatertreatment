@@ -1,4 +1,4 @@
-package objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screen
 
 import Screen.calbCODpe
 import org.scalatest.{FlatSpec, Matchers}

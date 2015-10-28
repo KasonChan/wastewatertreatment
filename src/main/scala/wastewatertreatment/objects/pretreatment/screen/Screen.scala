@@ -1,6 +1,6 @@
-package objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screen
 
-import helper.Helper.to2Decimals
+import wastewatertreatment.helper.Helper.to2Decimals
 
 /**
  * Created by ka-son on 10/24/15.

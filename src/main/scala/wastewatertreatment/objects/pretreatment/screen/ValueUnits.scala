@@ -1,7 +1,7 @@
-package objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screen
 
-import objects.pretreatment.screen.Unit._
-import valueunit.ValueUnit
+import wastewatertreatment.objects.pretreatment.screen.Unit._
+import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 10/26/15.

@@ -1,4 +1,4 @@
-package helper
+package wastewatertreatment.helper
 
 /**
  * Created by kasonchan on 10/26/15.
