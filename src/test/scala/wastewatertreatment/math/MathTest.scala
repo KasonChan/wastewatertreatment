@@ -1,12 +1,12 @@
-package wastewatertreatment.helper
+package wastewatertreatment.math
 
-import wastewatertreatment.helper.Helper.to2Decimals
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.math.Math.to2Decimals
 
 /**
  * Created by kasonchan on 10/26/15.
  */
-class HelperTest extends FlatSpec with Matchers {
+class MathTest extends FlatSpec with Matchers {
 
   "to2Decimals(-1.549)" should "= -1.549" in {
     to2Decimals(-1.549) shouldBe -1.55
