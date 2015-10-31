@@ -6,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenTestP extends FlatSpec with Matchers {
+class ScreenSuiteP extends FlatSpec with Matchers {
 
   "calP(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

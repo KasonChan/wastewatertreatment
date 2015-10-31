@@ -6,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 10/25/15.
  */
-class ScreenTestTSSe extends FlatSpec with Matchers {
+class ScreenSuiteTSSe extends FlatSpec with Matchers {
 
   "calTSSe(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

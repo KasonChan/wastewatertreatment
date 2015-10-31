@@ -6,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenTestbCODe extends FlatSpec with Matchers {
+class ScreenSuitebCODe extends FlatSpec with Matchers {
 
   "calbCODe(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

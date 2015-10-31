@@ -6,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenTestcBOD5e extends FlatSpec with Matchers {
+class ScreenSuitecBOD5e extends FlatSpec with Matchers {
 
   "calcBOD5e(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

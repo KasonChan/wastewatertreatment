@@ -6,7 +6,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by ka-son on 10/24/15.
  */
-class ScreenTest extends FlatSpec with Matchers {
+class ScreenSuite extends FlatSpec with Matchers {
 
   "Calculation 1" should "pass" in {
     // Assumed

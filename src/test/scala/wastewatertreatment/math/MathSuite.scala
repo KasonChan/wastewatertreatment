@@ -6,7 +6,7 @@ import wastewatertreatment.math.Math.to2Decimals
 /**
  * Created by kasonchan on 10/26/15.
  */
-class MathTest extends FlatSpec with Matchers {
+class MathSuite extends FlatSpec with Matchers {
 
   "to2Decimals(-1.549)" should "= -1.549" in {
     to2Decimals(-1.549) shouldBe -1.55

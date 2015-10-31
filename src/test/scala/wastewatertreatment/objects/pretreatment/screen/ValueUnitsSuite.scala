@@ -6,7 +6,7 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by kasonchan on 10/27/15.
  */
-class ValueUnitsTest extends FlatSpec with Matchers {
+class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(TSSRemoval(27))" should "27.00%" in {
     ValueUnit(TSSRemoval(27)) shouldBe "27.00%"
