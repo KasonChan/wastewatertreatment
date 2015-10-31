@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.pretreatment.screen
 
-import Screen.calbCODs
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.objects.pretreatment.screen.Screen.calbCODs
 
 /**
  * Created by kasonchan on 10/26/15.
@@ -10,19 +10,19 @@ class ScreenSuitebCODs extends FlatSpec with Matchers {
 
   "calbCODs(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
-    calbCODs(-1, -1)
+      calbCODs(-1, -1)
     }
   }
 
   "calbCODs(-1, 0)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
-    calbCODs(-1, 0)
+      calbCODs(-1, 0)
     }
   }
 
   "calbCODs(0, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
-    calbCODs(0, -1)
+      calbCODs(0, -1)
     }
   }
 

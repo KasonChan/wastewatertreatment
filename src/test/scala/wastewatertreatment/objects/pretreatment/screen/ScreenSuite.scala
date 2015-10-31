@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.pretreatment.screen
 
-import Screen._
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.objects.pretreatment.screen.Screen._
 
 /**
  * Created by ka-son on 10/24/15.
@@ -50,19 +50,14 @@ class ScreenSuite extends FlatSpec with Matchers {
   }
 
   "Calculation 2" should "pass" in {
-    // Assumed
-    val tssRemoval = 27
-    val bod5Removal = 27
-    val q = 1090195
-
     // Input
     val tssO = 223
     val bod5O = 257.5
 
-    val tssE = calTSSe(tssO, tssRemoval)
+    val tssE = calTSSe(tssO)
     tssE shouldBe 162.79
 
-    val bod5E = calBOD5e(bod5O, bod5Removal)
+    val bod5E = calBOD5e(bod5O)
     bod5E shouldBe 187.98
 
     val vssE = calVSSe(tssE)
@@ -80,7 +75,7 @@ class ScreenSuite extends FlatSpec with Matchers {
     val bCODs = calbCODs(bCODe, bCODpe)
     bCODs shouldBe 152.83
 
-    val p = calP(q, vssE)
+    val p = calP(VSSe = vssE)
     p shouldBe 1.4197609485E8
   }
 

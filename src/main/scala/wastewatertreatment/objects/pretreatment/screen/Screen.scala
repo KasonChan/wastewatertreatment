@@ -7,6 +7,10 @@ import wastewatertreatment.math.Math.to2Decimals
  */
 object Screen {
 
+  val tssRemoval = 27
+  val bod5Removal = 27
+  val q = 1090195
+
   val bod5cBOD5Ratio = 1.1
   val codBODRatio = 1.6
   val codVSSRatio = 1.42
@@ -18,13 +22,13 @@ object Screen {
   val minPercent = 0.0
   val maxPercent = 100.0
 
-  def calTSSe(TSSo: Double, TSSRemoval: Double): Double = {
+  def calTSSe(TSSo: Double, TSSRemoval: Double = tssRemoval): Double = {
     require(TSSo >= 0 && TSSRemoval >= 0)
     val r = TSSo * (100 - TSSRemoval) / 100
     to2Decimals(r)
   }
 
-  def calBOD5e(BOD5o: Double, BOD5Removal: Double): Double = {
+  def calBOD5e(BOD5o: Double, BOD5Removal: Double = bod5Removal): Double = {
     require(BOD5o >= 0 && BOD5Removal >= 0)
     val r = BOD5o * (100 - BOD5Removal) / 100
     to2Decimals(r)
@@ -60,7 +64,7 @@ object Screen {
     to2Decimals(r)
   }
 
-  def calP(Q: Double, VSSe: Double): Double = {
+  def calP(Q: Double = q, VSSe: Double): Double = {
     require(Q >= 0 && VSSe >= 0)
     val r = Q * VSSe
     to2Decimals(r)
