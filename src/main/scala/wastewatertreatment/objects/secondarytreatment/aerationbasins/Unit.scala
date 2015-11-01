@@ -7,4 +7,12 @@ import wastewatertreatment.valueunit
  */
 object Unit extends valueunit.Unit {
 
+  val aTUnits = volumeUnits
+
+  val qPeakUnits = flowUnits
+
+  val thetaUnits = dayUnits
+
+  val bodLoadingUnits = generatePRUs(massUnits, "BOD", dayUnits)
+
 }

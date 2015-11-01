@@ -5,7 +5,7 @@ package wastewatertreatment.valueunit
  */
 trait Unit {
 
-  val massUnits = List("g")
+  val massUnits = List("g", "kg")
 
   val volumeUnits = List("m^3")
 
