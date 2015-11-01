@@ -14,14 +14,8 @@ object AerationBasins {
 
   def calTheta(At: Double = aT, QPeak: Double = qPeak): Double = {
     require(At >= 0 && QPeak > 0)
-
-    (At, QPeak) match {
-      case (0.0, 0.0) =>
-        to2Decimals(0.00)
-      case (_, _) =>
-        val r = (BigDecimal(aT) / BigDecimal(qPeak)).toDouble
-        to2Decimals(r)
-    }
+    val r = (BigDecimal(aT) / BigDecimal(qPeak)).toDouble
+    to2Decimals(r)
   }
 
   def calBODLoading(BOD: Double, Q: Double): Double = {
