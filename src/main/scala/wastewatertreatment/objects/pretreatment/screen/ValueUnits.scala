@@ -1,18 +1,19 @@
 package wastewatertreatment.objects.pretreatment.screen
 
+import wastewatertreatment.objects.pretreatment.screen.Screen.{bod5Removal, bod5cBOD5Ratio, codBODRatio, codVSSRatio, q, tssRemoval, vssTSSRatio}
 import wastewatertreatment.objects.pretreatment.screen.Unit._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 10/26/15.
  */
-case class TSSRemoval(value: Double,
+case class TSSRemoval(value: Double = tssRemoval,
                       unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
-case class BOD5Removal(value: Double,
+case class BOD5Removal(value: Double = bod5Removal,
                        unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
-case class Q(value: Double,
+case class Q(value: Double = q,
              unit: String = qUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
 
 case class TSSo(value: Double,
@@ -27,17 +28,17 @@ case class BOD5o(value: Double,
 case class BOD5e(value: Double,
                  unit: String = bod5EUnits.headOption.getOrElse("g^3/m^3")) extends ValueUnit
 
-case class BOD5CBOD5Ratio(value: Double,
+case class BOD5CBOD5Ratio(value: Double = bod5cBOD5Ratio,
                           unit: String = bod5cBOD5Units.headOption.getOrElse("g-BOD5/g-cBOD5")) extends ValueUnit
 
-case class CODBODRatio(value: Double,
+case class CODBODRatio(value: Double = codBODRatio,
                        unit: String = codBODUnits.headOption.getOrElse("g-COD/g-BOD")) extends ValueUnit
 
-case class CODVSSRatio(value: Double,
+case class CODVSSRatio(value: Double = codVSSRatio,
                        unit: String = codVSSUnits.headOption.getOrElse("g-COD/g-VSS")) extends ValueUnit
 
 
-case class VSSTSSRatio(value: Double,
+case class VSSTSSRatio(value: Double = vssTSSRatio,
                        unit: String = vssTSSUnits.headOption.getOrElse("g-VSS/g-TSS")) extends ValueUnit
 
 case class VSSe(value: Double,
