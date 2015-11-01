@@ -7,9 +7,9 @@ import wastewatertreatment.valueunit
  */
 object Unit extends valueunit.Unit {
 
-  val tssRemovalUnits = List("%")
+  val tssRemovalUnits = percentageUnits
 
-  val bod5RemovalUnits = List("%")
+  val bod5RemovalUnits = percentageUnits
 
   val qUnits = flowUnits
 

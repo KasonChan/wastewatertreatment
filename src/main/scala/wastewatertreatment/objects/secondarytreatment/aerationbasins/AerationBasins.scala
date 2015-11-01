@@ -24,4 +24,21 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  val bodRemoval = 97
+  val tssRemoval = 94
+  val tknRemoval = 88
+  val nh3nRemoval = 97
+  val phosphorousRemoval = 98
+  val bCOD5Removal = 100
+
+  val forallAnoxicForallTotalRatio = 0.33
+  val snc = 0.5
+  val xVSS = 3000
+  val seBOD = 1
+  val nbvssVSSRatio = 0.2
+  val kO = 0.5
+  val dO = 2
+  val fnd = 0.1
+  val factorOfSafety = 2
+
 }

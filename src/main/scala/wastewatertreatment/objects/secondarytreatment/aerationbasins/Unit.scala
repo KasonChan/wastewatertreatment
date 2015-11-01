@@ -15,4 +15,34 @@ object Unit extends valueunit.Unit {
 
   val bodLoadingUnits = generatePRUs(massUnits, "BOD", dayUnits)
 
+  val bodRemovalUnits = percentageUnits
+
+  val tssRemovalUnits = percentageUnits
+
+  val tknRemovalUnits = percentageUnits
+
+  val nh3nRemovalUnits = percentageUnits
+
+  val phosphorousRemovalUnits = percentageUnits
+
+  val bCOD5RemovalUnits = percentageUnits
+
+  val forallAnoxicForallTotalUnits = noUnits
+
+  val sncUnits = concentrationUnits
+
+  val xVSSUnits = concentrationUnits
+
+  val seBODUnits = concentrationUnits
+
+  val nbVSSVSSRatio = noUnits
+
+  val kO = concentrationUnits
+
+  val dO = concentrationUnits
+
+  val fnd = noUnits
+
+  val factorOfSafety = noUnits
+
 }

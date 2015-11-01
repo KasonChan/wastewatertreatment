@@ -11,6 +11,10 @@ trait Unit {
 
   val dayUnits = List("d")
 
+  val percentageUnits = List("%")
+
+  val noUnits = List("")
+
   /**
    * Returns a list of units
    * @param num the name of mass in the numerator
