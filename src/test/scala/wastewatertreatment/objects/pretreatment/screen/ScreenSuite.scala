@@ -12,9 +12,9 @@ class ScreenSuite extends FlatSpec with Matchers {
     // Assumed
     val tssRemoval = 27
     val bod5Removal = 27
-    val q = 1090195
 
-    // Input
+    // Inputs
+    val q = 1090195
     val tssO = 223
     val bod5O = 257.5
 
@@ -50,7 +50,8 @@ class ScreenSuite extends FlatSpec with Matchers {
   }
 
   "Calculation 2" should "pass" in {
-    // Input
+    // Inputs
+    val q = 1090195
     val tssO = 223
     val bod5O = 257.5
 
@@ -75,7 +76,7 @@ class ScreenSuite extends FlatSpec with Matchers {
     val bCODs = calbCODs(bCODe, bCODpe)
     bCODs shouldBe 152.83
 
-    val p = calP(VSSe = vssE)
+    val p = calP(q, vssE)
     p shouldBe 1.4197609485E8
   }
 

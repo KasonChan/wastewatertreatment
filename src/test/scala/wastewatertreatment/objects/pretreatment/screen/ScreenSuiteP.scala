@@ -34,8 +34,4 @@ class ScreenSuiteP extends FlatSpec with Matchers {
     calP(1090195, 130.23) shouldBe 1.4197609485E8
   }
 
-  "calP(VSSe = 130.23)" should "= 1.4197609485E8" in {
-    calP(VSSe = 130.23) shouldBe 1.4197609485E8
-  }
-
 }

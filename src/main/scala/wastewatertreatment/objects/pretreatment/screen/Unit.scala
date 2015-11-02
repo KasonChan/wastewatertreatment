@@ -21,13 +21,13 @@ object Unit extends valueunit.Unit {
 
   val bod5EUnits = concentrationUnits
 
-  val bod5cBOD5Units = generateRUs(massUnits, "BOD5", "cBOD5")
+  val bod5cBOD5Units = noUnits
 
-  val codBODUnits = generateRUs(massUnits, "COD", "BOD")
+  val codBODUnits = noUnits
 
-  val codVSSUnits = generateRUs(massUnits, "COD", "VSS")
+  val codVSSUnits = noUnits
 
-  val vssTSSUnits = generateRUs(massUnits, "VSS", "TSS")
+  val vssTSSUnits = noUnits
 
   val vsseUnits = concentrationUnits
 

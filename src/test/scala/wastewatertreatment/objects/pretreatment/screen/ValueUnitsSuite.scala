@@ -44,16 +44,8 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Q(1090195)) shouldBe "1090195.00m^3/d"
   }
 
-  "ValueUnit(Q())" should "1090195.00m^3/d" in {
-    ValueUnit(Q()) shouldBe "1090195.00m^3/d"
-  }
-
   "ValueUnit(Q(1090195, \"xyz/abc\"))" should "1090195.00xyz/abc" in {
     ValueUnit(Q(1090195, "xyz/abc")) shouldBe "1090195.00xyz/abc"
-  }
-
-  "ValueUnit(Q(unit = \"xyz/abc\"))" should "1090195.00xyz/abc" in {
-    ValueUnit(Q(unit = "xyz/abc")) shouldBe "1090195.00xyz/abc"
   }
 
   "ValueUnit(TSSo(223))" should "223.00g/m^3" in {
@@ -88,12 +80,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BOD5e(189, "xyz/abc")) shouldBe "189.00xyz/abc"
   }
 
-  "ValueUnit(BOD5CBOD5Ratio(1.1))" should "1.10g-BOD5/g-cBOD5" in {
-    ValueUnit(BOD5CBOD5Ratio(1.1)) shouldBe "1.10g-BOD5/g-cBOD5"
+  "ValueUnit(BOD5CBOD5Ratio(1.1))" should "1.10" in {
+    ValueUnit(BOD5CBOD5Ratio(1.1)) shouldBe "1.10"
   }
 
-  "ValueUnit(BOD5CBOD5Ratio())" should "1.10g-BOD5/g-cBOD5" in {
-    ValueUnit(BOD5CBOD5Ratio()) shouldBe "1.10g-BOD5/g-cBOD5"
+  "ValueUnit(BOD5CBOD5Ratio())" should "1.10" in {
+    ValueUnit(BOD5CBOD5Ratio()) shouldBe "1.10"
   }
 
   "ValueUnit(BOD5CBOD5Ratio(1.1,\"xyz/abc\"))" should "1.10xyz/abc" in {
@@ -104,12 +96,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BOD5CBOD5Ratio(unit = "xyz/abc")) shouldBe "1.10xyz/abc"
   }
 
-  "ValueUnit(CODBODRatio(1.6))" should "1.60g-COD/g-BOD" in {
-    ValueUnit(CODBODRatio(1.6)) shouldBe "1.60g-COD/g-BOD"
+  "ValueUnit(CODBODRatio(1.6))" should "1.60" in {
+    ValueUnit(CODBODRatio(1.6)) shouldBe "1.60"
   }
 
-  "ValueUnit(CODBODRatio())" should "1.60g-COD/g-BOD" in {
-    ValueUnit(CODBODRatio()) shouldBe "1.60g-COD/g-BOD"
+  "ValueUnit(CODBODRatio())" should "1.60" in {
+    ValueUnit(CODBODRatio()) shouldBe "1.60"
   }
 
   "ValueUnit(CODBODRatio(1.6, \"xyz/abc\"))" should "1.60xyz/abc" in {
@@ -120,12 +112,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(CODBODRatio(unit = "xyz/abc")) shouldBe "1.60xyz/abc"
   }
 
-  "ValueUnit(CODVSSRatio(1.42))" should "1.42g-COD/g-VSS" in {
-    ValueUnit(CODVSSRatio(1.42)) shouldBe "1.42g-COD/g-VSS"
+  "ValueUnit(CODVSSRatio(1.42))" should "1.42" in {
+    ValueUnit(CODVSSRatio(1.42)) shouldBe "1.42"
   }
 
-  "ValueUnit(CODVSSRatio())" should "1.42g-COD/g-VSS" in {
-    ValueUnit(CODVSSRatio()) shouldBe "1.42g-COD/g-VSS"
+  "ValueUnit(CODVSSRatio())" should "1.42" in {
+    ValueUnit(CODVSSRatio()) shouldBe "1.42"
   }
 
   "ValueUnit(CODVSSRatio(1.42,\"xyz/abc\"))" should "1.42xyz/abc" in {
@@ -136,12 +128,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(CODVSSRatio(unit = "xyz/abc")) shouldBe "1.42xyz/abc"
   }
 
-  "ValueUnit(VSSTSSRatio(0.8))" should "0.80g-VSS/g-TSS" in {
-    ValueUnit(VSSTSSRatio(0.8)) shouldBe "0.80g-VSS/g-TSS"
+  "ValueUnit(VSSTSSRatio(0.8))" should "0.80" in {
+    ValueUnit(VSSTSSRatio(0.8)) shouldBe "0.80"
   }
 
-  "ValueUnit(VSSTSSRatio())" should "0.80g-VSS/g-TSS" in {
-    ValueUnit(VSSTSSRatio()) shouldBe "0.80g-VSS/g-TSS"
+  "ValueUnit(VSSTSSRatio())" should "0.80" in {
+    ValueUnit(VSSTSSRatio()) shouldBe "0.80"
   }
 
   "ValueUnit(VSSTSSRatio(0.8,\"xyz/abc\"))" should "0.80xyz/abc" in {

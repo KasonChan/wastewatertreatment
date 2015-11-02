@@ -5,6 +5,10 @@ package wastewatertreatment.math
  */
 object Math {
 
+  /**
+   * Returns the decimal number in two decimal places.
+   * @param d the decimal number.
+   */
   def to2Decimals(d: Double): Double = {
     BigDecimal(d).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
   }
