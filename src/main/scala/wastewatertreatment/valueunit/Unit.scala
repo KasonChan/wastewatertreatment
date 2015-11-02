@@ -32,8 +32,8 @@ trait Unit {
 
   /**
    * Returns a list of units.
-   * @param num the name of mass in the numerator.
-   * @param denom the name of mass in the denominator.
+   * @param num the list of units at the numerator.
+   * @param denom the list of units at the denominator.
    */
   def generateUs(num: List[String], denom: List[String]): List[String] = {
     for {
@@ -45,8 +45,8 @@ trait Unit {
   /**
    * Returns a list of ratio units.
    * @param unit the list of units.
-   * @param num the name of unit in the numerator.
-   * @param denom the name of unit in the denominator.
+   * @param num the name of ratio unit at the numerator.
+   * @param denom the name of ratio unit at the denominator.
    */
   def generateRUs(unit: List[String], num: String, denom: String): List[String] = {
     for (u <- unit)
