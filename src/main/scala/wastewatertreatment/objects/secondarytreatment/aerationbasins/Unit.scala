@@ -7,7 +7,7 @@ import wastewatertreatment.valueunit
  */
 object Unit extends valueunit.Unit {
 
-  val aTUnits = volumeUnits
+  val forallTUnits = volumeUnits
 
   val qPeakUnits = flowUnits
 
@@ -35,14 +35,24 @@ object Unit extends valueunit.Unit {
 
   val seBODUnits = concentrationUnits
 
-  val nbVSSVSSRatio = noUnits
+  val nbVSSVSSRatioUnits = noUnits
 
-  val kO = concentrationUnits
+  val kOUnits = concentrationUnits
 
-  val dO = concentrationUnits
+  val dOUnits = concentrationUnits
 
-  val fnd = noUnits
+  val fndUnits = noUnits
 
-  val factorOfSafety = noUnits
+  val factorOfSafetyUnits = noUnits
+
+  val xRUnits = concentrationUnits
+
+  val xNUnits = concentrationUnits
+
+  val xEUnits = concentrationUnits
+
+  val noXEUnits = concentrationUnits
+
+  val rbCODUnits = concentrationUnits
 
 }

@@ -7,8 +7,8 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by ka-son on 10/31/15.
  */
-case class AT(value: Double = aT,
-              unit: String = aTUnits.headOption.getOrElse("m^3")) extends ValueUnit
+case class ForallT(value: Double = forallT,
+                   unit: String = forallTUnits.headOption.getOrElse("m^3")) extends ValueUnit
 
 case class QPeak(value: Double = qPeak,
                  unit: String = qPeakUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
@@ -42,3 +42,39 @@ case class ForallAnoxicForallTotalRatio(value: Double = forallAnoxicForallTotalR
 
 case class Snc(value: Double = snc,
                unit: String = sncUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class Xvss(value: Double = xVSS,
+                unit: String = xVSSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class SeBOD(value: Double = seBOD,
+                 unit: String = seBODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class NbvssVSSRatio(value: Double = nbvssVSSRatio,
+                         unit: String = nbVSSVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
+
+case class Ko(value: Double = kO,
+              unit: String = kOUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class Do(value: Double = dO,
+              unit: String = dOUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class Fnd(value: Double = fnd,
+               unit: String = fndUnits.headOption.getOrElse("")) extends ValueUnit
+
+case class FactorOfSafety(value: Double = factorOfSafety,
+                          unit: String = factorOfSafetyUnits.headOption.getOrElse("")) extends ValueUnit
+
+case class Xr(value: Double = xR,
+              unit: String = xEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class Xn(value: Double = xN,
+              unit: String = xNUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class Xe(value: Double = xE,
+              unit: String = xEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class NOxe(value: Double = noXE,
+                unit: String = noXEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+case class RbCOD(value: Double = rbCOD,
+                 unit: String = rbCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

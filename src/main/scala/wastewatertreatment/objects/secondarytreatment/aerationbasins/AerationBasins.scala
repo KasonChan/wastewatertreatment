@@ -8,13 +8,13 @@ import wastewatertreatment.math.Math.to2Decimals
 object AerationBasins {
 
   // in m^3 = 4967040 ft^3
-  val aT = 423819
+  val forallT = 423819
   // in m^3/d = 368 MGD
   val qPeak = 1393027
 
-  def calTheta(At: Double = aT, QPeak: Double = qPeak): Double = {
-    require(At >= 0 && QPeak > 0)
-    val r = (BigDecimal(aT) / BigDecimal(qPeak)).toDouble
+  def calTheta(ForallT: Double = forallT, QPeak: Double = qPeak): Double = {
+    require(ForallT >= 0 && QPeak > 0)
+    val r = (BigDecimal(forallT) / BigDecimal(qPeak)).toDouble
     to2Decimals(r)
   }
 
@@ -40,5 +40,11 @@ object AerationBasins {
   val dO = 2
   val fnd = 0.1
   val factorOfSafety = 2
+
+  val xR = 8000
+  val xN = 8000
+  val xE = 10
+  val noXE = 6
+  val rbCOD = 0.3
 
 }
