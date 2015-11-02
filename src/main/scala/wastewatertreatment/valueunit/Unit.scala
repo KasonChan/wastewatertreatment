@@ -44,13 +44,13 @@ trait Unit {
 
   /**
    * Returns a list of ratio units.
-   * @param mass the list of mass units.
-   * @param num the name of mass in the numerator.
-   * @param denom the name of mass in the denominator.
+   * @param unit the list of units.
+   * @param num the name of unit in the numerator.
+   * @param denom the name of unit in the denominator.
    */
-  def generateRUs(mass: List[String], num: String, denom: String): List[String] = {
-    for (m <- mass)
-      yield m + "-" + num + "/" + m + "-" + denom
+  def generateRUs(unit: List[String], num: String, denom: String): List[String] = {
+    for (u <- unit)
+      yield u + "-" + num + "/" + u + "-" + denom
   }
 
   /**
@@ -71,15 +71,15 @@ trait Unit {
 
   /**
    * Returns a list of production rate units.
-   * @param mass the list of mass units.
+   * @param num the list of units at the numerator.
    * @param product the name of product.
-   * @param day the list of day units.
+   * @param denom the list of units at the denominator.
    */
-  def generatePRUs(mass: List[String], product: String, day: List[String]): List[String] = {
+  def generatePRUs(num: List[String], product: String, denom: List[String]): List[String] = {
     for {
-      m <- mass
-      d <- day
-    } yield m + "-" + product + "/" + d
+      n <- num
+      d <- denom
+    } yield n + "-" + product + "/" + d
   }
 
 }
