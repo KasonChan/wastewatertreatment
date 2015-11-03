@@ -238,48 +238,28 @@ case class Kd(value: Double,
               unit: String = perDayUnits.headOption.getOrElse("d^-1")) extends ValueUnit
 
 /**
- * Default heterotrophs object
- */
-object DHO {
-  val u: U = U(6)
-  val kS: Ks = Ks(20)
-  val y: Y = Y(0.4)
-  val kD: Kd = Kd(0.12)
-}
-
-/**
  * Heterotrophs
- * @param U Default value and unit are 6.00d^-1^.
- * @param Ks Default value and unit are 20.0g/m^3^.
- * @param Y Default value and unit are 0.40.
- * @param Kd Default value and unit are 0.12d^-1^.
+ * @param u Default value and unit are 6.00d^-1^.
+ * @param kS Default value and unit are 20.0g/m^3^.
+ * @param y Default value and unit are 0.40.
+ * @param kD Default value and unit are 0.12d^-1^.
  */
-case class Heterotrophs(U: U = DHO.u,
-                        Ks: Ks = DHO.kS,
-                        Y: Y = DHO.y,
-                        Kd: Kd = DHO.kD)
-
-/**
- * Default nitrifiers object
- */
-object DNO {
-  val u: U = U(0.75)
-  val kS: Ks = Ks(0.74)
-  val y: Y = Y(0.12)
-  val kD: Kd = Kd(0.08)
-}
+case class Heterotrophs(u: U = U(hU),
+                        kS: Ks = Ks(hKs),
+                        y: Y = Y(hY),
+                        kD: Kd = Kd(hKd))
 
 /**
  * Nitrifiers
- * @param U Default value and unit are 0.75d^-1^.
- * @param Ks Default value and unit are 0.74g/m^3^.
- * @param Y Default value and unit are 0.12.
- * @param Kd Default value and unit are 0.08d^-1^.
+ * @param u Default value and unit are 0.75d^-1^.
+ * @param kS Default value and unit are 0.74g/m^3^.
+ * @param y Default value and unit are 0.12.
+ * @param kD Default value and unit are 0.08d^-1^.
  */
-case class Nitrifiers(U: U = DNO.u,
-                      Ks: Ks = DNO.kS,
-                      Y: Y = DNO.y,
-                      Kd: Kd = DNO.kD)
+case class Nitrifiers(u: U = U(nU),
+                      kS: Ks = Ks(nKs),
+                      y: Y = Y(nY),
+                      kD: Kd = Kd(nKd))
 
 /**
  * Forall,,anoxic,,

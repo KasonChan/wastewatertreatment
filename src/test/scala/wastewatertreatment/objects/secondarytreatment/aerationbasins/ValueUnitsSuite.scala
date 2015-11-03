@@ -411,25 +411,55 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
   }
 
   "Default Heterotrophs()" should "pass" in {
-    Heterotrophs().U shouldBe U(6.00, "d^-1")
-    Heterotrophs().Ks shouldBe Ks(20.00, "g/m^3")
-    Heterotrophs().Y shouldBe Y(0.40, "")
-    Heterotrophs().Kd shouldBe Kd(0.12, "d^-1")
-    ValueUnit(Heterotrophs().U) shouldBe "6.00d^-1"
-    ValueUnit(Heterotrophs().Ks) shouldBe "20.00g/m^3"
-    ValueUnit(Heterotrophs().Y) shouldBe "0.40"
-    ValueUnit(Heterotrophs().Kd) shouldBe "0.12d^-1"
+    val h = Heterotrophs()
+
+    h.u shouldBe U(6.00, "d^-1")
+    h.kS shouldBe Ks(20.00, "g/m^3")
+    h.y shouldBe Y(0.40, "")
+    h.kD shouldBe Kd(0.12, "d^-1")
+    ValueUnit(h.u) shouldBe "6.00d^-1"
+    ValueUnit(h.kS) shouldBe "20.00g/m^3"
+    ValueUnit(h.y) shouldBe "0.40"
+    ValueUnit(h.kD) shouldBe "0.12d^-1"
+  }
+
+  "Heterotrophs(U(1, \"a\"), Ks(2, \"b\"), kD = Kd(3, \"c\"))" should "pass" in {
+    val h = Heterotrophs(U(1, "a"), Ks(2, "b"), kD = Kd(3, "c"))
+
+    h.u shouldBe U(1.00, "a")
+    h.kS shouldBe Ks(2.00, "b")
+    h.y shouldBe Y(0.40, "")
+    h.kD shouldBe Kd(3.00, "c")
+    ValueUnit(h.u) shouldBe "1.00a"
+    ValueUnit(h.kS) shouldBe "2.00b"
+    ValueUnit(h.y) shouldBe "0.40"
+    ValueUnit(h.kD) shouldBe "3.00c"
   }
 
   "Default Nitrifiers()" should "pass" in {
-    Nitrifiers().U shouldBe U(0.75, "d^-1")
-    Nitrifiers().Ks shouldBe Ks(0.74, "g/m^3")
-    Nitrifiers().Y shouldBe Y(0.12, "")
-    Nitrifiers().Kd shouldBe Kd(0.08, "d^-1")
-    ValueUnit(Nitrifiers().U) shouldBe "0.75d^-1"
-    ValueUnit(Nitrifiers().Ks) shouldBe "0.74g/m^3"
-    ValueUnit(Nitrifiers().Y) shouldBe "0.12"
-    ValueUnit(Nitrifiers().Kd) shouldBe "0.08d^-1"
+    val n = Nitrifiers()
+
+    n.u shouldBe U(0.75, "d^-1")
+    n.kS shouldBe Ks(0.74, "g/m^3")
+    n.y shouldBe Y(0.12, "")
+    n.kD shouldBe Kd(0.08, "d^-1")
+    ValueUnit(n.u) shouldBe "0.75d^-1"
+    ValueUnit(n.kS) shouldBe "0.74g/m^3"
+    ValueUnit(n.y) shouldBe "0.12"
+    ValueUnit(n.kD) shouldBe "0.08d^-1"
+  }
+
+  "Nitrifiers(kS = Ks(2, \"b\"), y = Y(1, \"a\"), kD = Kd(3, \"c\"))" should "pass" in {
+    val h = Nitrifiers(kS = Ks(2, "b"), y = Y(1, "a"), kD = Kd(3, "c"))
+
+    h.u shouldBe U(0.75, "d^-1")
+    h.kS shouldBe Ks(2.00, "b")
+    h.y shouldBe Y(1.00, "a")
+    h.kD shouldBe Kd(3.00, "c")
+    ValueUnit(h.u) shouldBe "0.75d^-1"
+    ValueUnit(h.kS) shouldBe "2.00b"
+    ValueUnit(h.y) shouldBe "1.00a"
+    ValueUnit(h.kD) shouldBe "3.00c"
   }
 
   "ValueUnit(ForallAnoxic(904000))" should "904000.00m^3" in {
