@@ -100,6 +100,7 @@ case class BCODsRemoval(value: Double = bCODsRemoval,
 
 /**
  * Forall,,anoxic,,/Forall,,total,,
+ * @param unit Default is '''No unit'''.
  */
 case class ForallAnoxicForallTotalRatio(value: Double = forallAnoxicForallTotalRatio,
                                         unit: String = forallAnoxicForallTotalUnits.headOption.getOrElse("")) extends ValueUnit
@@ -131,6 +132,7 @@ case class SeBOD(value: Double = seBOD,
 /**
  * nbvss/VSS
  * @param value Default value is '''0.20'''.
+ * @param unit Default is '''No unit'''.
  */
 case class NbvssVSSRatio(value: Double = nbvssVSSRatio,
                          unit: String = nbVSSVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
@@ -161,6 +163,7 @@ case class Fnd(value: Double = fnd,
 /**
  * Factor of safety
  * @param value Default value is '''2.00'''.
+ * @param unit Default is '''No unit'''.
  */
 case class FactorOfSafety(value: Double = factorOfSafety,
                           unit: String = factorOfSafetyUnits.headOption.getOrElse("")) extends ValueUnit
@@ -222,6 +225,7 @@ case class Ks(value: Double,
 
 /**
  * Y
+ * @param unit Default is '''No unit'''.
  */
 case class Y(value: Double,
              unit: String = yUnits.headOption.getOrElse("")) extends ValueUnit

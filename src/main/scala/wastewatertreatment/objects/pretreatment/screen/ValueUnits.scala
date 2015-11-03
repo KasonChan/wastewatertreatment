@@ -62,6 +62,7 @@ case class BOD5e(value: Double,
 /**
  * BOD,,5,,/cBOD,,5,,
  * @param value Default value is '''1.10'''.
+ * @param unit Default is '''No unit'''.
  */
 case class BOD5CBOD5Ratio(value: Double = bod5cBOD5Ratio,
                           unit: String = bod5cBOD5Units.headOption.getOrElse("")) extends ValueUnit
@@ -69,6 +70,7 @@ case class BOD5CBOD5Ratio(value: Double = bod5cBOD5Ratio,
 /**
  * COD/BOD
  * @param value Default value is '''1.60'''.
+ * @param unit Default is '''No unit'''.
  */
 case class CODBODRatio(value: Double = codBODRatio,
                        unit: String = codBODUnits.headOption.getOrElse("")) extends ValueUnit
@@ -76,6 +78,7 @@ case class CODBODRatio(value: Double = codBODRatio,
 /**
  * COD/VSS
  * @param value Default value is '''1.42'''.
+ * @param unit Default is '''No unit'''.
  */
 case class CODVSSRatio(value: Double = codVSSRatio,
                        unit: String = codVSSUnits.headOption.getOrElse("")) extends ValueUnit
@@ -83,6 +86,7 @@ case class CODVSSRatio(value: Double = codVSSRatio,
 /**
  * VSS/TSS
  * @param value Default value is '''0.80'''.
+ * @param unit Default is '''No unit'''.
  */
 case class VSSTSSRatio(value: Double = vssTSSRatio,
                        unit: String = vssTSSUnits.headOption.getOrElse("")) extends ValueUnit

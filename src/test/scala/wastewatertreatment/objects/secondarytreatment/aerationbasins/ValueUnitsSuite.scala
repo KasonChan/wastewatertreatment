@@ -410,7 +410,7 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Kd(6, "xyz/abc")) shouldBe "6.00xyz/abc"
   }
 
-  "Heterotrophs()" should "pass" in {
+  "Default Heterotrophs()" should "pass" in {
     Heterotrophs().U shouldBe U(6.00, "d^-1")
     Heterotrophs().Ks shouldBe Ks(20.00, "g/m^3")
     Heterotrophs().Y shouldBe Y(0.40, "")
@@ -421,7 +421,7 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Heterotrophs().Kd) shouldBe "0.12d^-1"
   }
 
-  "Nitrifiers()" should "pass" in {
+  "Default Nitrifiers()" should "pass" in {
     Nitrifiers().U shouldBe U(0.75, "d^-1")
     Nitrifiers().Ks shouldBe Ks(0.74, "g/m^3")
     Nitrifiers().Y shouldBe Y(0.12, "")
