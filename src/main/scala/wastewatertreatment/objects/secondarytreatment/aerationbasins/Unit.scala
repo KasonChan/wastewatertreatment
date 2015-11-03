@@ -13,6 +13,10 @@ object Unit extends valueunit.Unit {
 
   val thetaUnits = dayUnits
 
+  val bodUnits = concentrationUnits
+
+  val qUnits = flowUnits
+
   val bodLoadingUnits = generatePRUs(massUnits, "BOD", dayUnits)
 
   val bodRemovalUnits = percentageUnits
@@ -25,7 +29,7 @@ object Unit extends valueunit.Unit {
 
   val phosphorousRemovalUnits = percentageUnits
 
-  val bCOD5RemovalUnits = percentageUnits
+  val bCODsRemovalUnits = percentageUnits
 
   val forallAnoxicForallTotalUnits = noUnits
 

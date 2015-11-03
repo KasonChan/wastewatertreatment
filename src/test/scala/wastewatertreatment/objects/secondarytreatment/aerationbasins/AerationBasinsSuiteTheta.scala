@@ -32,10 +32,6 @@ class AerationBasinsSuiteTheta extends FlatSpec with Matchers {
     }
   }
 
-  "calTheta()" should "= 0.30" in {
-    calTheta() shouldBe 0.30
-  }
-
   "calTheta(423819, 1393027)" should "= 0.30" in {
     calTheta(423819, 1393027) shouldBe 0.30
   }

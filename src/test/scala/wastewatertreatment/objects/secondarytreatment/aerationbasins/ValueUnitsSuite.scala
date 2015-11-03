@@ -8,36 +8,20 @@ import wastewatertreatment.valueunit.ValueUnit
  */
 class ValueUnitsSuite extends FlatSpec with Matchers {
 
-  "ValueUnit(ForallT(423819, \"xyz/abc\")" should "423819.00xyz/abc" in {
-    ValueUnit(ForallT(423819, "xyz/abc")) shouldBe "423819.00xyz/abc"
-  }
-
   "ValueUnit(ForallT(423819)" should "423819.00m^3" in {
     ValueUnit(ForallT(423819)) shouldBe "423819.00m^3"
   }
 
-  "ValueUnit(ForallT(unit = \"xyz/abc\")" should "423819.00xyz/abc" in {
-    ValueUnit(ForallT(unit = "xyz/abc")) shouldBe "423819.00xyz/abc"
-  }
-
-  "ValueUnit(ForallT())" should "423819.00m^3" in {
-    ValueUnit(ForallT()) shouldBe "423819.00m^3"
-  }
-
-  "ValueUnit(QPeak(1393027, \"xyz/abc\")" should "1393027.00xyz/abc" in {
-    ValueUnit(QPeak(1393027, "xyz/abc")) shouldBe "1393027.00xyz/abc"
+  "ValueUnit(ForallT(423819, \"xyz/abc\")" should "423819.00xyz/abc" in {
+    ValueUnit(ForallT(423819, "xyz/abc")) shouldBe "423819.00xyz/abc"
   }
 
   "ValueUnit(QPeak(1393027)" should "1393027.00m^3/d" in {
     ValueUnit(QPeak(1393027)) shouldBe "1393027.00m^3/d"
   }
 
-  "ValueUnit(QPeak(unit = \"xyz/abc\")" should "1393027.00xyz/abc" in {
-    ValueUnit(QPeak(unit = "xyz/abc")) shouldBe "1393027.00xyz/abc"
-  }
-
-  "ValueUnit(QPeak())" should "1393027.00m^3/d" in {
-    ValueUnit(QPeak()) shouldBe "1393027.00m^3/d"
+  "ValueUnit(QPeak(1393027, \"xyz/abc\")" should "1393027.00xyz/abc" in {
+    ValueUnit(QPeak(1393027, "xyz/abc")) shouldBe "1393027.00xyz/abc"
   }
 
   "ValueUnit(Theta(0.30))" should "0.30d" in {
@@ -46,6 +30,22 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(Theta(0.30, \"xyz/abc\"))" should "0.30xyz/abc" in {
     ValueUnit(Theta(0.30, "xyz/abc")) shouldBe "0.30xyz/abc"
+  }
+
+  "ValueUnit(BOD(103))" should "103.00g/m^3" in {
+    ValueUnit(BOD(103)) shouldBe "103.00g/m^3"
+  }
+
+  "ValueUnit(BOD(103, \"xyz/abc\"))" should "103.00xyz/abc" in {
+    ValueUnit(BOD(103, "xyz/abc")) shouldBe "103.00xyz/abc"
+  }
+
+  "ValueUnit(Q(242981))" should "242981.00m^3/d" in {
+    ValueUnit(Q(242981)) shouldBe "242981.00m^3/d"
+  }
+
+  "ValueUnit(Q(242981, \"xyz/abc\"))" should "242981.00xyz/abc" in {
+    ValueUnit(Q(242981, "xyz/abc")) shouldBe "242981.00xyz/abc"
   }
 
   "ValueUnit(BODLoading(25027.04))" should "25027.04kg-BOD/d" in {
@@ -136,20 +136,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(PhosphorousRemoval(98, "xyz/abc")) shouldBe "98.00xyz/abc"
   }
 
-  "ValueUnit(BCOD5Removal())" should "100.00%" in {
-    ValueUnit(BCOD5Removal()) shouldBe "100.00%"
+  "ValueUnit(BCODsRemoval())" should "100.00%" in {
+    ValueUnit(BCODsRemoval()) shouldBe "100.00%"
   }
 
-  "ValueUnit(BCOD5Removal(100))" should "100.00%" in {
-    ValueUnit(BCOD5Removal(100)) shouldBe "100.00%"
+  "ValueUnit(BCODsRemoval(100))" should "100.00%" in {
+    ValueUnit(BCODsRemoval(100)) shouldBe "100.00%"
   }
 
-  "ValueUnit(BCOD5Removal(unit = \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(BCOD5Removal(unit = "xyz/abc")) shouldBe "100.00xyz/abc"
+  "ValueUnit(BCODsRemoval(unit = \"xyz/abc\"))" should "100.00xyz/abc" in {
+    ValueUnit(BCODsRemoval(unit = "xyz/abc")) shouldBe "100.00xyz/abc"
   }
 
-  "ValueUnit(BCOD5Removal(100, \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(BCOD5Removal(100, "xyz/abc")) shouldBe "100.00xyz/abc"
+  "ValueUnit(BCODsRemoval(100, \"xyz/abc\"))" should "100.00xyz/abc" in {
+    ValueUnit(BCODsRemoval(100, "xyz/abc")) shouldBe "100.00xyz/abc"
   }
 
   "ValueUnit(ForallAnoxicForallTotalRatio())" should "0.33" in {
