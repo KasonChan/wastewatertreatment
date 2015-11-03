@@ -10,7 +10,7 @@ import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Forall,,T,,
- * @param unit Default unit is '''g/m^3^'''.
+ * @param unit Default unit is '''m^3^'''.
  */
 case class ForallT(value: Double,
                    unit: String = forallTUnits.headOption.getOrElse("m^3")) extends ValueUnit
@@ -204,3 +204,82 @@ case class NOxe(value: Double = noXE,
  */
 case class RbCOD(value: Double = rbCOD,
                  unit: String = rbCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * U
+ * @param unit Default unit is '''d^-1^'''.
+ */
+case class U(value: Double,
+             unit: String = perDayUnits.headOption.getOrElse("d^-1")) extends ValueUnit
+
+/**
+ * Ks
+ * @param value
+ * @param unit Default unit is '''d^-1^'''.
+ */
+case class Ks(value: Double,
+              unit: String = kSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * Y
+ */
+case class Y(value: Double,
+             unit: String = yUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * Kd
+ * @param unit Default unit is '''d^-1^'''.
+ */
+case class Kd(value: Double,
+              unit: String = perDayUnits.headOption.getOrElse("d^-1")) extends ValueUnit
+
+/**
+ * Default heterotrophs object
+ */
+object DHO {
+  val u: U = U(6)
+  val kS: Ks = Ks(20)
+  val y: Y = Y(0.4)
+  val kD: Kd = Kd(0.12)
+}
+
+/**
+ * Heterotrophs
+ * @param U Default value and unit are 6.00d^-1^.
+ * @param Ks Default value and unit are 20.0g/m^3^.
+ * @param Y Default value and unit are 0.40.
+ * @param Kd Default value and unit are 0.12d^-1^.
+ */
+case class Heterotrophs(U: U = DHO.u,
+                        Ks: Ks = DHO.kS,
+                        Y: Y = DHO.y,
+                        Kd: Kd = DHO.kD)
+
+/**
+ * Default nitrifiers object
+ */
+object DNO {
+  val u: U = U(0.75)
+  val kS: Ks = Ks(0.74)
+  val y: Y = Y(0.12)
+  val kD: Kd = Kd(0.08)
+}
+
+/**
+ * Nitrifiers
+ * @param U Default value and unit are 0.75d^-1^.
+ * @param Ks Default value and unit are 0.74g/m^3^.
+ * @param Y Default value and unit are 0.12.
+ * @param Kd Default value and unit are 0.08d^-1^.
+ */
+case class Nitrifiers(U: U = DNO.u,
+                      Ks: Ks = DNO.kS,
+                      Y: Y = DNO.y,
+                      Kd: Kd = DNO.kD)
+
+/**
+ * Forall,,anoxic,,
+ * @param unit Default unit is '''m^3^'''.
+ */
+case class ForallAnoxic(value: Double,
+                        unit: String = forallAnoxicUnits.headOption.getOrElse("m^3")) extends ValueUnit

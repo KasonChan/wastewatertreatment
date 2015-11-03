@@ -21,6 +21,11 @@ trait Unit {
   val dayUnits = List("d")
 
   /**
+   * The units of per day: '''d^-1^'''.
+   */
+  val perDayUnits = List("d^-1")
+
+  /**
    * The units of percentage: '''%'''.
    */
   val percentageUnits = List("%")

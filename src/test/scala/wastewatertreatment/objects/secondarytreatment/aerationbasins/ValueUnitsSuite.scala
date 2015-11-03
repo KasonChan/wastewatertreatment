@@ -376,4 +376,68 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(RbCOD(0.3, "xyz/abc")) shouldBe "0.30xyz/abc"
   }
 
+
+
+  "ValueUnit(U(6))" should "6.00d^-1" in {
+    ValueUnit(U(6)) shouldBe "6.00d^-1"
+  }
+
+  "ValueUnit(U(6, \"xyz/abc\"))" should "6.00xyz/abc" in {
+    ValueUnit(U(6, "xyz/abc")) shouldBe "6.00xyz/abc"
+  }
+
+  "ValueUnit(Ks(20))" should "20.00g/m^3" in {
+    ValueUnit(Ks(20)) shouldBe "20.00g/m^3"
+  }
+
+  "ValueUnit(Ks(20, \"xyz/abc\"))" should "20.00xyz/abc" in {
+    ValueUnit(Ks(20, "xyz/abc")) shouldBe "20.00xyz/abc"
+  }
+
+  "ValueUnit(Y(0.12))" should "0.12" in {
+    ValueUnit(Y(0.12)) shouldBe "0.12"
+  }
+
+  "ValueUnit(Y(0.12, \"xyz/abc\"))" should "0.12xyz/abc" in {
+    ValueUnit(Y(0.12, "xyz/abc")) shouldBe "0.12xyz/abc"
+  }
+
+  "ValueUnit(Kd(6))" should "6.00d^-1" in {
+    ValueUnit(Kd(6)) shouldBe "6.00d^-1"
+  }
+
+  "ValueUnit(Kd(6, \"xyz/abc\"))" should "6.00xyz/abc" in {
+    ValueUnit(Kd(6, "xyz/abc")) shouldBe "6.00xyz/abc"
+  }
+
+  "Heterotrophs()" should "pass" in {
+    Heterotrophs().U shouldBe U(6.00, "d^-1")
+    Heterotrophs().Ks shouldBe Ks(20.00, "g/m^3")
+    Heterotrophs().Y shouldBe Y(0.40, "")
+    Heterotrophs().Kd shouldBe Kd(0.12, "d^-1")
+    ValueUnit(Heterotrophs().U) shouldBe "6.00d^-1"
+    ValueUnit(Heterotrophs().Ks) shouldBe "20.00g/m^3"
+    ValueUnit(Heterotrophs().Y) shouldBe "0.40"
+    ValueUnit(Heterotrophs().Kd) shouldBe "0.12d^-1"
+  }
+
+  "Nitrifiers()" should "pass" in {
+    Nitrifiers().U shouldBe U(0.75, "d^-1")
+    Nitrifiers().Ks shouldBe Ks(0.74, "g/m^3")
+    Nitrifiers().Y shouldBe Y(0.12, "")
+    Nitrifiers().Kd shouldBe Kd(0.08, "d^-1")
+    ValueUnit(Nitrifiers().U) shouldBe "0.75d^-1"
+    ValueUnit(Nitrifiers().Ks) shouldBe "0.74g/m^3"
+    ValueUnit(Nitrifiers().Y) shouldBe "0.12"
+    ValueUnit(Nitrifiers().Kd) shouldBe "0.08d^-1"
+  }
+
+  "ValueUnit(ForallAnoxic(904000))" should "904000.00m^3" in {
+    ValueUnit(ForallAnoxic(904000)) shouldBe "904000.00m^3"
+  }
+
+  "ValueUnit(ForallAnoxic(904000, \"xyz/abc\"))" should "904000.00xyz/abc" in {
+    ValueUnit(ForallAnoxic(904000, "xyz/abc")) shouldBe "904000.00xyz/abc"
+  }
+
 }

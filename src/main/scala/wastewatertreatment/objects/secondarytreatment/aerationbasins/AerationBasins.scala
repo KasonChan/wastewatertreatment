@@ -135,4 +135,54 @@ object AerationBasins {
    */
   val rbCOD = 0.30
 
+  /**
+   * Heterotrophs u = 6.00d^-1^
+   */
+  val hU = 6.00
+
+  /**
+   * Heterotrophs Ks = 20.00g/m^3^
+   */
+  val hKs = 20.00
+
+  /**
+   * Heterotrophs Y = 0.40g-VSS/g-bCOD
+   */
+  val hY = 0.40
+
+  /**
+   * Heterotrophs Kd = 0.12d^-1^
+   */
+  val hKd = 0.12
+
+  /**
+   * Default heterotrophs
+   */
+  val heterotrophs = Heterotrophs()
+
+  /**
+   * Nitrifiers u = 0.75d^-1^
+   */
+  val nU = 0.75
+
+  /**
+   * Nitrifiers Ks = 0.74g/m^3^
+   */
+  val nKs = 0.74
+
+  /**
+   * Nitrifiers Y = 0.12g-VSS/g-bCOD
+   */
+  val nY = 0.12
+
+  /**
+   * Nitrifiers Kd = 0.08d^-1^
+   */
+  val nKd = 0.08
+
+  /**
+   * Default Nitrifiers
+   */
+  val nitrifiers = Nitrifiers()
+
 }

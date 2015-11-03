@@ -59,4 +59,14 @@ object Unit extends valueunit.Unit {
 
   val rbCODUnits = concentrationUnits
 
+  val uUnits = perDayUnits
+
+  val kSUnits = concentrationUnits
+
+  val yUnits = noUnits
+
+  val kDUnits = perDayUnits
+
+  val forallAnoxicUnits = volumeUnits
+
 }
