@@ -2,6 +2,9 @@ language: scala
 
 script:
   - sbt clean coverage test
+  - sbt coverageReport
+  - sbt coverageAggregate
+  - sbt codacyCoverage
 
 after_success:
   - pip install --user codecov && codecov
