@@ -85,4 +85,6 @@ object Unit extends valueunit.Unit {
 
   val fmRatioUnits = noUnits
 
+  val sdnrUnits = noUnits
+
 }

@@ -323,3 +323,10 @@ case class Xb(value: Double,
  */
 case class FMRatio(value: Double,
                    unit: String = fmRatioUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * SDNR
+ * @param unit Default unit is '''No unit'''.
+ */
+case class SDNR(value: Double,
+                unit: String = sdnrUnits.headOption.getOrElse("")) extends ValueUnit

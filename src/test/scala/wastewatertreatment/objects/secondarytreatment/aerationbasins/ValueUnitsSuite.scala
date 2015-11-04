@@ -534,4 +534,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(FMRatio(2.15, "xyz/abc")) shouldBe "2.15xyz/abc"
   }
 
+  "ValueUnit(SDNR(0.33))" should "0.33" in {
+    ValueUnit(SDNR(0.33)) shouldBe "0.33"
+  }
+
+  "ValueUnit(SDNR(0.33, \"xyz/abc\"))" should "0.33xyz/abc" in {
+    ValueUnit(SDNR(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
+  }
+
 }
