@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBas
 /**
  * Created by kasonchan on 11/3/15.
  */
-class AerationBasinsXAppPiecesAndParts extends FlatSpec with Matchers {
+class XAppPiecesAndPartsSpec extends FlatSpec with Matchers {
 
   "calXAppPiecesAndParts(-1, -1, -1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

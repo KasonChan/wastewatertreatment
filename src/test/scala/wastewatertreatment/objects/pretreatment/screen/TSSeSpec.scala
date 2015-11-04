@@ -6,7 +6,7 @@ import wastewatertreatment.objects.pretreatment.screen.Screen.calTSSe
 /**
  * Created by kasonchan on 10/25/15.
  */
-class ScreenSuiteTSSe extends FlatSpec with Matchers {
+class TSSeSpec extends FlatSpec with Matchers {
 
   "calTSSe(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

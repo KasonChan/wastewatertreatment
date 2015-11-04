@@ -6,7 +6,7 @@ import wastewatertreatment.objects.pretreatment.screen.Screen.calbCODs
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenSuitebCODs extends FlatSpec with Matchers {
+class bCODsSpec extends FlatSpec with Matchers {
 
   "calbCODs(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

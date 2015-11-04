@@ -6,7 +6,7 @@ import wastewatertreatment.objects.pretreatment.screen.Screen.calbCODpe
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenSuitebCODpe extends FlatSpec with Matchers {
+class bCODpeSpec extends FlatSpec with Matchers {
 
   "calbCODpe(-1, -1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

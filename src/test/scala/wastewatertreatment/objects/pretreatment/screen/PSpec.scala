@@ -6,7 +6,7 @@ import wastewatertreatment.objects.pretreatment.screen.Screen.calP
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenSuiteP extends FlatSpec with Matchers {
+class PSpec extends FlatSpec with Matchers {
 
   "calP(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

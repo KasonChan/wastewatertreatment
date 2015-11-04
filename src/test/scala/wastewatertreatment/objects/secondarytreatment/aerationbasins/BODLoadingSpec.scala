@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBas
 /**
  * Created by ka-son on 10/31/15.
  */
-class AerationBasinsSuiteBODLoading extends FlatSpec with Matchers {
+class BODLoadingSpec extends FlatSpec with Matchers {
 
   "calBODLoading(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

@@ -6,7 +6,7 @@ import wastewatertreatment.objects.pretreatment.screen.Screen.calBOD5e
 /**
  * Created by kasonchan on 10/26/15.
  */
-class ScreenSuiteBOD5e extends FlatSpec with Matchers {
+class BOD5eSpec extends FlatSpec with Matchers {
 
   "calBOD5e(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBas
 /**
  * Created by kasonchan on 11/3/15.
  */
-class AerationBasinsSuitePXBio extends FlatSpec with Matchers {
+class PXBioSpec extends FlatSpec with Matchers {
 
   "calPXBio(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

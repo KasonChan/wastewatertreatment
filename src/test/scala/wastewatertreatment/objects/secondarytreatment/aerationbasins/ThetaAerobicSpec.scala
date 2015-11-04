@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBas
 /**
  * Created by kasonchan on 11/3/15.
  */
-class AerationBasinsSuiteThetaAerobic extends FlatSpec with Matchers {
+class ThetaAerobicSpec extends FlatSpec with Matchers {
 
   "calThetaAerobic(-1, -1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
