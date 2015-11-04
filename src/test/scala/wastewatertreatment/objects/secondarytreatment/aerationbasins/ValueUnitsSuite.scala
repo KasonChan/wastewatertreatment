@@ -518,4 +518,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(PXBio(27900739.07, "xyz/abc")) shouldBe "27900739.07xyz/abc"
   }
 
+  "ValueUnit(Xb(58.58))" should "58.58g/m^3" in {
+    ValueUnit(Xb(58.58)) shouldBe "58.58g/m^3"
+  }
+
+  "ValueUnit(Xb(58.58, \"xyz/abc\"))" should "58.58xyz/abc" in {
+    ValueUnit(Xb(58.58, "xyz/abc")) shouldBe "58.58xyz/abc"
+  }
+
 }

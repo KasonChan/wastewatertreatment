@@ -309,3 +309,10 @@ case class XAppPiecesAndParts(value: Double,
  */
 case class PXBio(value: Double,
                  unit: String = pXBioUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * X,,b,,
+ * @param unit Default unit is '''g/m^3^'''.
+ */
+case class Xb(value: Double,
+              unit: String = xBUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

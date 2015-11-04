@@ -41,6 +41,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXBio = calPXBio(xActiveMass, xAppPiecesAndParts)
     pXBio shouldBe 2.790073907E7
+
+    val xB = calXb(q2, forallT2, thetaC, So = s)
+    xB shouldBe 58.58
   }
 
 }

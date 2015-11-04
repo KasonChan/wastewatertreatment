@@ -271,4 +271,25 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns X,,b,,.
+   * {{{
+   *   Xb = (Q / ForallT) * ((ThetaC * Y * (So - S)) / (1 + (Kd * ThetaC)))
+   * }}}
+   * @param Y Heterotrophs Y. Default value and unit are 0.40.
+   * @param S Se(BOD). Default value and unit are 1.00g/m^3^.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXb(Q: Double,
+            ForallT: Double,
+            ThetaC: Double,
+            Y: Double = hY,
+            So: Double,
+            S: Double = seBOD,
+            Kd: Double = hKd): Double = {
+    require(Q >= 0 && ForallT >= 0 && ThetaC >= 0 && Y >= 0 && So >= 0 && S >= 0 && Kd >= 0)
+    val r = (Q / ForallT) * ((ThetaC * Y * (So - S)) / (1 + (Kd * ThetaC)))
+    to2Decimals(r)
+  }
+
 }
