@@ -168,20 +168,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(ForallAnoxicForallTotalRatio(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
   }
 
-  "ValueUnit(Snc())" should "0.50g/m^3" in {
-    ValueUnit(Snc()) shouldBe "0.50g/m^3"
+  "ValueUnit(Sne())" should "0.50g/m^3" in {
+    ValueUnit(Sne()) shouldBe "0.50g/m^3"
   }
 
-  "ValueUnit(Snc(0.5))" should "0.50g/m^3" in {
-    ValueUnit(Snc(0.5)) shouldBe "0.50g/m^3"
+  "ValueUnit(Sne(0.5))" should "0.50g/m^3" in {
+    ValueUnit(Sne(0.5)) shouldBe "0.50g/m^3"
   }
 
-  "ValueUnit(Snc(unit = \"xyz/abc\"))" should "0.50xyz/abc" in {
-    ValueUnit(Snc(unit = "xyz/abc")) shouldBe "0.50xyz/abc"
+  "ValueUnit(Sne(unit = \"xyz/abc\"))" should "0.50xyz/abc" in {
+    ValueUnit(Sne(unit = "xyz/abc")) shouldBe "0.50xyz/abc"
   }
 
-  "ValueUnit(Snc(0.5, \"xyz/abc\"))" should "0.50xyz/abc" in {
-    ValueUnit(Snc(0.5, "xyz/abc")) shouldBe "0.50xyz/abc"
+  "ValueUnit(Sne(0.5, \"xyz/abc\"))" should "0.50xyz/abc" in {
+    ValueUnit(Sne(0.5, "xyz/abc")) shouldBe "0.50xyz/abc"
   }
 
   "ValueUnit(Xvss())" should "3000.00g/m^3" in {
@@ -468,6 +468,54 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(ForallAnoxic(904000, \"xyz/abc\"))" should "904000.00xyz/abc" in {
     ValueUnit(ForallAnoxic(904000, "xyz/abc")) shouldBe "904000.00xyz/abc"
+  }
+
+  "ValueUnit(ThetaAerobic(1.92))" should "1.92d" in {
+    ValueUnit(ThetaAerobic(1.92)) shouldBe "1.92d"
+  }
+
+  "ValueUnit(ThetaAerobic(1.92, \"xyz/abc\"))" should "1.92xyz/abc" in {
+    ValueUnit(ThetaAerobic(1.92, "xyz/abc")) shouldBe "1.92xyz/abc"
+  }
+
+  "ValueUnit(ThetaC(6.18))" should "6.18d" in {
+    ValueUnit(ThetaC(6.18)) shouldBe "6.18d"
+  }
+
+  "ValueUnit(ThetaC(6.18, \"xyz/abc\"))" should "6.18xyz/abc" in {
+    ValueUnit(ThetaC(6.18, "xyz/abc")) shouldBe "6.18xyz/abc"
+  }
+
+  "ValueUnit(S(119))" should "119.00g-BOD/m^3" in {
+    ValueUnit(S(119)) shouldBe "119.00g-BOD/m^3"
+  }
+
+  "ValueUnit(S(119, \"xyz/abc\"))" should "119.00xyz/abc" in {
+    ValueUnit(S(119, "xyz/abc")) shouldBe "119.00xyz/abc"
+  }
+
+  "ValueUnit(XActiveBiomass(2597447221))" should "2597447221.00g/d" in {
+    ValueUnit(XActiveBiomass(2597447221.00)) shouldBe "2597447221.00g/d"
+  }
+
+  "ValueUnit(XActiveBiomass(2597447221, \"xyz/abc\"))" should "2597447221.00xyz/abc" in {
+    ValueUnit(XActiveBiomass(2597447221.00, "xyz/abc")) shouldBe "2597447221.00xyz/abc"
+  }
+
+  "ValueUnit(XAppPiecesAndParts(1929343))" should "1929343.00g/d" in {
+    ValueUnit(XAppPiecesAndParts(1929343.00)) shouldBe "1929343.00g/d"
+  }
+
+  "ValueUnit(XAppPiecesAndParts(1929343, \"xyz/abc\"))" should "1929343.00xyz/abc" in {
+    ValueUnit(XAppPiecesAndParts(1929343.00, "xyz/abc")) shouldBe "1929343.00xyz/abc"
+  }
+
+  "ValueUnit(PXBio(27900739.07))" should "27900739.07g/d" in {
+    ValueUnit(PXBio(27900739.07)) shouldBe "27900739.07g/d"
+  }
+
+  "ValueUnit(PXBio(27900739.07, \"xyz/abc\"))" should "27900739.07xyz/abc" in {
+    ValueUnit(PXBio(27900739.07, "xyz/abc")) shouldBe "27900739.07xyz/abc"
   }
 
 }

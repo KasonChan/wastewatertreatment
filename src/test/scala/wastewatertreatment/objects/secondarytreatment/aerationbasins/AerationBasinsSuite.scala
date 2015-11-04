@@ -20,6 +20,27 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val bodLoading = calBODLoading(bod, q)
     bodLoading shouldBe 25027.04
+
+    // Inputs
+    val forallT2 = 2740000
+    val forallAnoxic = 904000
+    val q2 = 958414
+    val s = 119
+
+    val thetaAerobic = calThetaAerobic(forallT2, forallAnoxic, q2)
+    thetaAerobic shouldBe 1.92
+
+    val thetaC = calThetaC()
+    thetaC shouldBe 6.18
+
+    val xActiveMass = calXActiveBiomass(q2, S = s, ThetaC = thetaC)
+    xActiveMass shouldBe 2.597447221E7
+
+    val xAppPiecesAndParts = calXAppPiecesAndParts(thetaC, Xa = xActiveMass)
+    xAppPiecesAndParts shouldBe 1926266.86
+
+    val pXBio = calPXBio(xActiveMass, xAppPiecesAndParts)
+    pXBio shouldBe 2.790073907E7
   }
 
 }

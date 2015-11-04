@@ -28,7 +28,7 @@ class UnitSuite extends FlatSpec with Matchers with Unit {
   }
 
   "generatePRUs(noUnits, \"\", noUnits)" should "= List(\"-/\")" in {
-    generatePRUs(noUnits, "", noUnits) shouldBe List("-/")
+    generatePRUs(noUnits, "", noUnits) shouldBe List("/")
   }
 
 }

@@ -12,8 +12,8 @@ object AerationBasins {
    * {{{
    *   Theta = Forall / Q
    * }}}
-   * @param ForallT forall time.
-   * @param Q the flow.
+   * @param ForallT forall T.
+   * @param Q the value of flow.
    */
   def calTheta(ForallT: Double, Q: Double): Double = {
     require(ForallT >= 0 && Q > 0)
@@ -27,7 +27,7 @@ object AerationBasins {
    *   BOD loading = BOD / 1000 * Q
    * }}}
    * @param BOD the value of BOD.
-   * @param Q the flow.
+   * @param Q the value of flow.
    */
   def calBODLoading(BOD: Double, Q: Double): Double = {
     require(BOD >= 0 && Q >= 0)
@@ -71,9 +71,9 @@ object AerationBasins {
   val forallAnoxicForallTotalRatio = 0.33
 
   /**
-   * Snc = 0.50g/m^3^
+   * Sne = 0.50g/m^3^
    */
-  val snc = 0.50
+  val sne = 0.50
 
   /**
    * Xvss = 3000.00g/m^3^
@@ -146,7 +146,7 @@ object AerationBasins {
   val hKs = 20.00
 
   /**
-   * Heterotrophs Y = 0.40g-VSS/g-bCOD
+   * Heterotrophs Y = 0.40
    */
   val hY = 0.40
 
@@ -171,7 +171,7 @@ object AerationBasins {
   val nKs = 0.74
 
   /**
-   * Nitrifiers Y = 0.12g-VSS/g-bCOD
+   * Nitrifiers Y = 0.12
    */
   val nY = 0.12
 
@@ -184,5 +184,91 @@ object AerationBasins {
    * Default Nitrifiers
    */
   val nitrifiers = Nitrifiers()
+
+  /**
+   * Returns theta,,aerobic,,.
+   * {{{
+   *   Theta aerobic = Forall T - Forall Anoxic / Q
+   * }}}
+   * @param ForallT forall T.
+   * @param Q the value of flow.
+   */
+  def calThetaAerobic(ForallT: Double, ForallAnoxic: Double, Q: Double): Double = {
+    require(ForallT >= 0 && ForallAnoxic >= 0 && Q > 0)
+    val r = (BigDecimal(ForallT - ForallAnoxic) / BigDecimal(Q)).toDouble
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns theta,,c,,.
+   * {{{
+   *   Theta c = 1 / (((u * Sne) / (Ks + Sne) * ((Do) / (Ko + Do)) - Kd)
+   * }}}
+   * @param U Nitrifiers u. Default value and unit are 0.75d^-1^.
+   * @param Sne Default value and unit are 0.50g/m^3^.
+   * @param Ks Nitrifiers Ks. Default value and unit are 0.74g/m^3^.
+   * @param Do Default value and unit are 2.00g/m^3^.
+   * @param Ko Default value and unit are 0.50g/m^3^.
+   * @param Kd Nitrifiers Kd. Default value and unit are 0.08d^-1^.
+   */
+  def calThetaC(U: Double = nU,
+                Sne: Double = sne,
+                Ks: Double = nKs,
+                Do: Double = dO,
+                Ko: Double = kO,
+                Kd: Double = nKd): Double = {
+    require(U >= 0 && Sne >= 0 && Ks >= 0 && Do >= 0 && Ko >= 0 && Kd >= 0)
+    val r = (BigDecimal(1) / BigDecimal((((U * Sne) / (Ks + Sne)) * (Do / (Ko + Do))) - Kd)).toDouble
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns X,,active biomass,,.
+   * {{{
+   *   X active biomass = Q * Y * (S - SeBOD) / (q + Kd * ThetaC)
+   * }}}
+   * @param Y Heterotrophs Y. Default value and unit are 0.40.
+   * @param SeBOD Default value and unit are 1.00g/m^3^.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXActiveBiomass(Q: Double,
+                        Y: Double = hY,
+                        S: Double,
+                        SeBOD: Double = seBOD,
+                        Kd: Double = hKd,
+                        ThetaC: Double): Double = {
+    require(Q >= 0 && Y >= 0 && S >= 0 && SeBOD >= 0 && Kd >= 0 && ThetaC >= 0)
+    val r = (BigDecimal(Q * Y * (S - SeBOD)) / BigDecimal(1 + (Kd * ThetaC))).toDouble
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns X,,app pieces and parts,,.
+   * {{{
+   *   X app pieces and parts = ThetaC * fmd * Kd * Xa
+   * }}}
+   * @param fnd Default value and unit are 0.10.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXAppPiecesAndParts(ThetaC: Double,
+                            fnd: Double = fnd,
+                            Kd: Double = hKd,
+                            Xa: Double): Double = {
+    require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
+    val r = ThetaC * fnd * Kd * Xa
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns P,,Xbio,,.
+   * {{{
+   *   P X Bio = Xa + Xapp
+   * }}}
+   */
+  def calPXBio(XActiveBiomass: Double, XAppPiecesAndParts: Double): Double = {
+    require(XActiveBiomass >= 0 && XAppPiecesAndParts >= 0)
+    val r = XActiveBiomass + XAppPiecesAndParts
+    to2Decimals(r)
+  }
 
 }

@@ -81,10 +81,16 @@ trait Unit {
    * @param denom the list of units at the denominator.
    */
   def generatePRUs(num: List[String], product: String, denom: List[String]): List[String] = {
-    for {
-      n <- num
-      d <- denom
-    } yield n + "-" + product + "/" + d
+    product match {
+      case "" => for {
+        n <- num
+        d <- denom
+      } yield n + "/" + d
+      case _ => for {
+        n <- num
+        d <- denom
+      } yield n + "-" + product + "/" + d
+    }
   }
 
 }

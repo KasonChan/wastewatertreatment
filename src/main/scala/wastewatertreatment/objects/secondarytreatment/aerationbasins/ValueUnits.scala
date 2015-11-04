@@ -106,12 +106,12 @@ case class ForallAnoxicForallTotalRatio(value: Double = forallAnoxicForallTotalR
                                         unit: String = forallAnoxicForallTotalUnits.headOption.getOrElse("")) extends ValueUnit
 
 /**
- * Snc
+ * Sne
  * @param value Default value is '''0.50'''.
  * @param unit Default unit is '''g/m^3^'''.
  */
-case class Snc(value: Double = snc,
-               unit: String = sncUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+case class Sne(value: Double = sne,
+               unit: String = sneUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
  * Xvss
@@ -267,3 +267,45 @@ case class Nitrifiers(u: U = U(nU),
  */
 case class ForallAnoxic(value: Double,
                         unit: String = forallAnoxicUnits.headOption.getOrElse("m^3")) extends ValueUnit
+
+/**
+ * Theta,,aerobic,,
+ * @param unit Default unit is '''d'''.
+ */
+case class ThetaAerobic(value: Double,
+                        unit: String = thetaAerobicUnits.headOption.getOrElse("d")) extends ValueUnit
+
+/**
+ * Theta,,c,,
+ * @param unit Default unit is '''d'''.
+ */
+case class ThetaC(value: Double,
+                  unit: String = thetaCUnits.headOption.getOrElse("d")) extends ValueUnit
+
+/**
+ * S
+ * @param unit Default unit is '''g-BOD/m^3^'''.
+ */
+case class S(value: Double,
+             unit: String = sUnits.headOption.getOrElse("g-BOD/m^3")) extends ValueUnit
+
+/**
+ * X,,active biomass,,
+ * @param unit Default unit is '''g/d'''.
+ */
+case class XActiveBiomass(value: Double,
+                          unit: String = xActiveBiomassUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * X,,app pieces and parts,,
+ * @param unit Default unit is '''g/d'''.
+ */
+case class XAppPiecesAndParts(value: Double,
+                              unit: String = xAppPiecesAndPartsUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * P,,XBio,,
+ * @param unit Default unit is '''g/d'''.
+ */
+case class PXBio(value: Double,
+                 unit: String = pXBioUnits.headOption.getOrElse("g/d")) extends ValueUnit

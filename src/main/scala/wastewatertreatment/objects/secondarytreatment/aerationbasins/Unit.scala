@@ -33,7 +33,7 @@ object Unit extends valueunit.Unit {
 
   val forallAnoxicForallTotalUnits = noUnits
 
-  val sncUnits = concentrationUnits
+  val sneUnits = concentrationUnits
 
   val xVSSUnits = concentrationUnits
 
@@ -68,5 +68,17 @@ object Unit extends valueunit.Unit {
   val kDUnits = perDayUnits
 
   val forallAnoxicUnits = volumeUnits
+
+  val thetaAerobicUnits = dayUnits
+
+  val thetaCUnits = dayUnits
+
+  val sUnits = generatePRUs(massUnits, "BOD", volumeUnits)
+
+  val xActiveBiomassUnits = generatePRUs(massUnits, "", dayUnits)
+
+  val xAppPiecesAndPartsUnits = generatePRUs(massUnits, "", dayUnits)
+
+  val pXBioUnits = generatePRUs(massUnits, "", dayUnits)
 
 }
