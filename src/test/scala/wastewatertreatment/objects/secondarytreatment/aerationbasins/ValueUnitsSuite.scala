@@ -526,4 +526,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Xb(58.58, "xyz/abc")) shouldBe "58.58xyz/abc"
   }
 
+  "ValueUnit(FMRatio(2.15))" should "2.15" in {
+    ValueUnit(FMRatio(2.15)) shouldBe "2.15"
+  }
+
+  "ValueUnit(FMRatio(2.15, \"xyz/abc\"))" should "2.15xyz/abc" in {
+    ValueUnit(FMRatio(2.15, "xyz/abc")) shouldBe "2.15xyz/abc"
+  }
+
 }

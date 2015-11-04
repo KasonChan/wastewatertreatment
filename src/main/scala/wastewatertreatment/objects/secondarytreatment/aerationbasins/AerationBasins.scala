@@ -292,4 +292,19 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns FMRatio.
+   * {{{
+   *   F/M = (Q * S) / (Forall anoxic * Xb)
+   * }}}
+   */
+  def calFMRatio(Q: Double,
+                 S: Double,
+                 ForallAnoxic: Double,
+                 Xb: Double): Double = {
+    require(Q >= 0 && S >= 0 && ForallAnoxic >= 0 && Xb >= 0)
+    val r = (Q * S) / (ForallAnoxic * Xb)
+    to2Decimals(r)
+  }
+
 }

@@ -44,6 +44,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val xB = calXb(q2, forallT2, thetaC, So = s)
     xB shouldBe 58.58
+
+    val fmRatio = calFMRatio(q2, s, forallAnoxic, xB)
+    fmRatio shouldBe 2.15
   }
 
 }

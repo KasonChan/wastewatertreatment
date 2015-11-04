@@ -316,3 +316,10 @@ case class PXBio(value: Double,
  */
 case class Xb(value: Double,
               unit: String = xBUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * F/M
+ * @param unit Default unit is '''No unit'''.
+ */
+case class FMRatio(value: Double,
+                   unit: String = fmRatioUnits.headOption.getOrElse("")) extends ValueUnit

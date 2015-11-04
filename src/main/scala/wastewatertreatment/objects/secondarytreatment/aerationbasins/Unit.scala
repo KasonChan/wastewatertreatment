@@ -83,4 +83,6 @@ object Unit extends valueunit.Unit {
 
   val xBUnits = concentrationUnits
 
+  val fmRatioUnits = noUnits
+
 }
