@@ -465,6 +465,23 @@ object AerationBasins {
   }
 
   /**
+   * Returns heterotrophs parts Xa.
+   * {{{
+   *   X app pieces and parts = ThetaC * FND * Kd * Xa
+   * }}}
+   * @param FND Default value and unit are 0.10.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXaHeterotrophsParts(ThetaC: Double,
+                             FND: Double = fnd,
+                             Kd: Double = hKd,
+                             Xa: Double): Double = {
+    require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
+    val r = ThetaC * FND * Kd * Xa
+    to2Decimals(r)
+  }
+
+  /**
    * Returns nitrifiers Xa.
    * {{{
    *   Xa Nitrifiers = (Q * Y * NO3N) / (1 + Kd * ThetaC)

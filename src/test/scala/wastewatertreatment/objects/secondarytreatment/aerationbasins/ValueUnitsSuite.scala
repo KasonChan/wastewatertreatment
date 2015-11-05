@@ -670,6 +670,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(XaHeterotrophs(28016748.06, "xyz/abc")) shouldBe "28016748.06xyz/abc"
   }
 
+  "ValueUnit(XaHeterotrophsParts(25983423.00))" should "25983423.00g/d" in {
+    ValueUnit(XaHeterotrophsParts(25983423.00)) shouldBe "25983423.00g/d"
+  }
+
+  "ValueUnit(XaHeterotrophsParts(25983423.00, \"xyz/abc\"))" should "25983423.00xyz/abc" in {
+    ValueUnit(XaHeterotrophsParts(25983423.00, "xyz/abc")) shouldBe "25983423.00xyz/abc"
+  }
+
   "ValueUnit(XaNitrifiers(3156062.00))" should "3156062.00g/d" in {
     ValueUnit(XaNitrifiers(3156062.00)) shouldBe "3156062.00g/d"
   }
