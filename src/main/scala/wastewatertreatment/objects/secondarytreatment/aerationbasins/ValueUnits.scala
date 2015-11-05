@@ -330,3 +330,10 @@ case class FMRatio(value: Double,
  */
 case class SDNR(value: Double,
                 unit: String = sdnrUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * NOr
+ * @param unit Default unit is '''g/d'''.
+ */
+case class NOr(value: Double,
+               unit: String = noRUnits.headOption.getOrElse("g/d")) extends ValueUnit

@@ -542,4 +542,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(SDNR(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
   }
 
+  "ValueUnit(NOr(931753.00))" should "931753.00g/d" in {
+    ValueUnit(NOr(931753.00)) shouldBe "931753.00g/d"
+  }
+
+  "ValueUnit(NOr(931753.00, \"xyz/abc\"))" should "931753.00xyz/abc" in {
+    ValueUnit(NOr(931753.00, "xyz/abc")) shouldBe "931753.00xyz/abc"
+  }
+
 }

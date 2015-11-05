@@ -307,4 +307,19 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns NO,,removed,,.
+   * {{{
+   *   NOr = ((Q * IR) + (Q * R)) / NOxe
+   * }}}
+   */
+  def calNOr(Q: Double,
+             IR: Double,
+             R: Double,
+             NOxe: Double = noXE): Double = {
+    require(Q >= 0 && IR >= 0 && R >= 0 && NOxe > 0)
+    val r = ((Q * IR) + (Q * R)) / NOxe
+    to2Decimals(r)
+  }
+
 }
