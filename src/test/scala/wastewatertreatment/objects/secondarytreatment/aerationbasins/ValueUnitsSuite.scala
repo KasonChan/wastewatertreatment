@@ -662,4 +662,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(NO3Removed(17500000.00, "xyz/abc")) shouldBe "17500000.00xyz/abc"
   }
 
+  "ValueUnit(XaHeterotrophs(28016748.06))" should "28016748.06g/d" in {
+    ValueUnit(XaHeterotrophs(28016748.06)) shouldBe "28016748.06g/d"
+  }
+
+  "ValueUnit(XaHeterotrophs(28016748.06, \"xyz/abc\"))" should "28016748.06xyz/abc" in {
+    ValueUnit(XaHeterotrophs(28016748.06, "xyz/abc")) shouldBe "28016748.06xyz/abc"
+  }
+
 }

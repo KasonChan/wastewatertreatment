@@ -445,4 +445,23 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns Xa (Heterotrophs).
+   * {{{
+   *   Xa Heterotrophs = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+   * }}}
+   * @param Y Heterotrophs Y. Default value and unit are 0.40.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXaHeterotrophs(Q: Double,
+                        Y: Double = hY,
+                        BOD5o: Double,
+                        BOD5e: Double,
+                        Kd: Double = hKd,
+                        ThetaC: Double): Double = {
+    require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
+    val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+    to2Decimals(r)
+  }
+
 }

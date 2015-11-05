@@ -411,3 +411,10 @@ case class NOr(value: Double,
  */
 case class NO3Removed(value: Double,
                       unit: String = no3RemovedUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * Xa Heterotrophs
+ * @param unit Default unit is '''g/d'''.
+ */
+case class XaHeterotrophs(value: Double,
+                          unit: String = xAHeterotrophsUnits.headOption.getOrElse("g/d")) extends ValueUnit
