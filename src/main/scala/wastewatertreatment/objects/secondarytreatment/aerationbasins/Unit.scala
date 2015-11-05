@@ -51,7 +51,7 @@ object Unit extends valueunit.Unit {
 
   val xRUnits = concentrationUnits
 
-  val xNUnits = concentrationUnits
+  val xWUnits = concentrationUnits
 
   val xEUnits = concentrationUnits
 
@@ -86,6 +86,8 @@ object Unit extends valueunit.Unit {
   val fmRatioUnits = noUnits
 
   val sdnrUnits = noUnits
+
+  val qWUnits = flowUnits
 
   val noRUnits = generatePRUs(massUnits, "", dayUnits)
 

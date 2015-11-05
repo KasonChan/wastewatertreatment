@@ -116,9 +116,9 @@ object AerationBasins {
   val xR = 8000.00
 
   /**
-   * Xn = 8000.00g/m^3^
+   * Xw = 8000.00g/m^3^
    */
-  val xN = 8000.00
+  val xW = 8000.00
 
   /**
    * Xe = 10.00g/m^3^
@@ -308,10 +308,31 @@ object AerationBasins {
   }
 
   /**
+   * Returns Qw.
+   * {{{
+   *   Qw = (((Theta * Xvss) / ThetaC) - (Q * Xe)) / (Xw - Xe)
+   * }}}
+   * @param Xvss Xvss. Default value and unit are 3000.00g/m^3^.
+   * @param Xe Xe. Default value and unit are 10.00g/m^3^.
+   * @param Xw Xw. Default value and unit are 8000.00g/m^3^.
+   */
+  def calQw(Theta: Double,
+            Xvss: Double = xVSS,
+            ThetaC: Double,
+            Q: Double,
+            Xe: Double = xE,
+            Xw: Double = xW): Double = {
+    require(Theta >= 0 && Xvss >= 0 && ThetaC >= 0 && Q >= 0 && Xe >= 0 && Xw >= 0)
+    val r = (((Theta * Xvss) / ThetaC) - (Q * Xe)) / (Xw - Xe)
+    to2Decimals(r)
+  }
+
+  /**
    * Returns NO,,removed,,.
    * {{{
    *   NOr = ((Q * IR) + (Q * R)) / NOxe
    * }}}
+   * @param NOxe NOxe. Default value and unit are 6.00g/m^3^.
    */
   def calNOr(Q: Double,
              IR: Double,

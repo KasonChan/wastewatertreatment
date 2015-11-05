@@ -312,20 +312,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Xr(8000, "xyz/abc")) shouldBe "8000.00xyz/abc"
   }
 
-  "ValueUnit(Xn())" should "8000.00g/m^3" in {
-    ValueUnit(Xn()) shouldBe "8000.00g/m^3"
+  "ValueUnit(Xw())" should "8000.00g/m^3" in {
+    ValueUnit(Xw()) shouldBe "8000.00g/m^3"
   }
 
-  "ValueUnit(Xn(8000))" should "8000.00g/m^3" in {
-    ValueUnit(Xn(8000)) shouldBe "8000.00g/m^3"
+  "ValueUnit(Xw(8000))" should "8000.00g/m^3" in {
+    ValueUnit(Xw(8000)) shouldBe "8000.00g/m^3"
   }
 
-  "ValueUnit(Xn(unit = \"xyz/abc\"))" should "8000.00xyz/abc" in {
-    ValueUnit(Xn(unit = "xyz/abc")) shouldBe "8000.00xyz/abc"
+  "ValueUnit(Xw(unit = \"xyz/abc\"))" should "8000.00xyz/abc" in {
+    ValueUnit(Xw(unit = "xyz/abc")) shouldBe "8000.00xyz/abc"
   }
 
-  "ValueUnit(Xn(8000, \"xyz/abc\"))" should "8000.00xyz/abc" in {
-    ValueUnit(Xn(8000, "xyz/abc")) shouldBe "8000.00xyz/abc"
+  "ValueUnit(Xw(8000, \"xyz/abc\"))" should "8000.00xyz/abc" in {
+    ValueUnit(Xw(8000, "xyz/abc")) shouldBe "8000.00xyz/abc"
   }
 
   "ValueUnit(Xe())" should "10.00g/m^3" in {
@@ -540,6 +540,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(SDNR(0.33, \"xyz/abc\"))" should "0.33xyz/abc" in {
     ValueUnit(SDNR(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
+  }
+
+  "ValueUnit(Qw(165103.26))" should "165103.26m^3/d" in {
+    ValueUnit(Qw(165103.26)) shouldBe "165103.26m^3/d"
+  }
+
+  "ValueUnit(Qw(165103.26, \"xyz/abc\"))" should "165103.26xyz/abc" in {
+    ValueUnit(Qw(165103.26, "xyz/abc")) shouldBe "165103.26xyz/abc"
   }
 
   "ValueUnit(NOr(931753.00))" should "931753.00g/d" in {

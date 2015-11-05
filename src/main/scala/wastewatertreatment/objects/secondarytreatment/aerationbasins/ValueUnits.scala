@@ -177,12 +177,12 @@ case class Xr(value: Double = xR,
               unit: String = xEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
- * Xn
+ * Xw
  * @param value Default value is '''8000.00'''.
  * @param unit Default unit is '''g/m^3^'''.
  */
-case class Xn(value: Double = xN,
-              unit: String = xNUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+case class Xw(value: Double = xW,
+              unit: String = xWUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
  * Xe
@@ -330,6 +330,13 @@ case class FMRatio(value: Double,
  */
 case class SDNR(value: Double,
                 unit: String = sdnrUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * Qw
+ * @param unit Default unit is '''m^3^/d'''.
+ */
+case class Qw(value: Double,
+              unit: String = qWUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * NOr
