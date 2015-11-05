@@ -107,4 +107,6 @@ object Unit extends valueunit.Unit {
 
   val noRUnits = generatePRUs(massUnits, "", dayUnits)
 
+  val no3RemovedUnits = generatePRUs(massUnits, "", dayUnits)
+
 }

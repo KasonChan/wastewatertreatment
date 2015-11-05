@@ -51,6 +51,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     // Inputs
     val q3 = 1193464.87
     val q4 = 912991.90
+    val sdnr = 0.33
     val xAHeterotrophs = 28016748.06
     val xAPartsHeterotrophs = 2076141.49
 
@@ -71,6 +72,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val noR = calNOr(q2, iR, r, noXE)
     noR shouldBe 944037.79
+
+    val no3Removed = calNO3Removed(forallAnoxic, xB, sdnr)
+    no3Removed shouldBe 1.74755856E7
   }
 
 }

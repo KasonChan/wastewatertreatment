@@ -431,4 +431,18 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns NO,,3removed,,.
+   * {{{
+   *   NO3removed = ForallAnoxic * Xb * SDNR
+   * }}}
+   */
+  def calNO3Removed(ForallAnoxic: Double,
+                    Xb: Double,
+                    SDNR: Double): Double = {
+    require(ForallAnoxic >= 0 && Xb >= 0 && SDNR >= 0)
+    val r = ForallAnoxic * Xb * SDNR
+    to2Decimals(r)
+  }
+
 }

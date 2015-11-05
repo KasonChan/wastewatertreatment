@@ -654,4 +654,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(NOr(931753.00, "xyz/abc")) shouldBe "931753.00xyz/abc"
   }
 
+  "ValueUnit(NO3Removed(17500000.00))" should "17500000.00g/d" in {
+    ValueUnit(NO3Removed(17500000.00)) shouldBe "17500000.00g/d"
+  }
+
+  "ValueUnit(NO3Removed(17500000.00, \"xyz/abc\"))" should "17500000.00xyz/abc" in {
+    ValueUnit(NO3Removed(17500000.00, "xyz/abc")) shouldBe "17500000.00xyz/abc"
+  }
+
 }

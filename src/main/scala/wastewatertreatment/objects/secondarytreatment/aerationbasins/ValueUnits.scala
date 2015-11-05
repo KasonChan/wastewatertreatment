@@ -404,3 +404,10 @@ case class IR(value: Double,
  */
 case class NOr(value: Double,
                unit: String = noRUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * NO,,3,, removed
+ * @param unit Default unit is '''g/d'''.
+ */
+case class NO3Removed(value: Double,
+                      unit: String = no3RemovedUnits.headOption.getOrElse("g/d")) extends ValueUnit
