@@ -446,7 +446,24 @@ object AerationBasins {
   }
 
   /**
-   * Returns Xa (Heterotrophs).
+   * Returns Xa.
+   * {{{
+   *   Xa = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+   * }}}
+   */
+  def calXa(Q: Double,
+            Y: Double,
+            BOD5o: Double,
+            BOD5e: Double,
+            Kd: Double,
+            ThetaC: Double): Double = {
+    require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
+    val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns heterotrophs Xa.
    * {{{
    *   Xa Heterotrophs = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
    * }}}
@@ -458,10 +475,6 @@ object AerationBasins {
                         BOD5o: Double,
                         BOD5e: Double,
                         Kd: Double = hKd,
-                        ThetaC: Double): Double = {
-    require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
-    val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
-    to2Decimals(r)
-  }
+                        ThetaC: Double): Double = calXa(Q, Y, BOD5o, BOD5e, Kd, ThetaC)
 
 }
