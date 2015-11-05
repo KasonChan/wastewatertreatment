@@ -6,25 +6,24 @@ import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBas
 /**
  * Created by kasonchan on 11/4/15.
  */
-class QwSpec extends FlatSpec with Matchers {
+class QrSpec extends FlatSpec with Matchers {
 
-  "calQw(-1, -1, -1, -1, -1)" should "fail" in {
+  "calQr(-1, -1, -1, -1, -1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
-      calQw(-1, -1, -1, -1, -1)
+      calQr(-1, -1, -1, -1, -1, -1)
     }
   }
 
-  "calQw(0, 0, 0, 0, 0)" should "fail" in {
+  "calQr(0, 0, 0, 0, 0, 0)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
-      calQw(0, 0, 0, 0, 0)
+      calQr(0, 0, 0, 0, 0, 0)
     }
   }
 
-  "calQw(forallT, ThetaC = thetaC, Q = q)" should "= 164976.53" in {
-    val forallT = 2740000.00
-    val thetaC = 6.18
+  "calQr(q, qW)" should "= 449856.98 " in {
     val q = 1193464.87
-    calQw(forallT, ThetaC = thetaC, Q = q) shouldBe 164976.53
+    val qW = 165103.26
+    calQr(q, qW) shouldBe 449856.98
   }
 
 }

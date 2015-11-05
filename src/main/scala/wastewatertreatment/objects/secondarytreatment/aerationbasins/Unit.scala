@@ -89,6 +89,8 @@ object Unit extends valueunit.Unit {
 
   val qWUnits = flowUnits
 
+  val qRUnits = flowUnits
+
   val noRUnits = generatePRUs(massUnits, "", dayUnits)
 
 }

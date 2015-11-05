@@ -328,6 +328,27 @@ object AerationBasins {
   }
 
   /**
+   * Returns Qr.
+   * {{{
+   *   Qr = ((Q - Qw) * Xe + (Qw * Xw) - (Q * Xvss)) / (Xvss - Xr)
+   * }}}
+   * @param Xe Xe. Default value and unit are 10.00g/m^3^.
+   * @param Xw Xw. Default value and unit are 8000.00g/m^3^.
+   * @param Xvss Xvss. Default value and unit are 3000.00g/m^3^.
+   * @param Xr Xr. Default value and unit are 3000.00g/m^3^.
+   */
+  def calQr(Q: Double,
+            Qw: Double,
+            Xe: Double = xE,
+            Xw: Double = xW,
+            Xvss: Double = xVSS,
+            Xr: Double = xR): Double = {
+    require(Q >= 0 && Qw >= 0 && Xe >= 0 && Xw >= 0 && Xvss >= 0 && Xr >= 0)
+    val r = (((Q - Qw) * Xe) + (Qw * Xw) - (Q * Xvss)) / (Xvss - Xr)
+    to2Decimals(r)
+  }
+
+  /**
    * Returns NO,,removed,,.
    * {{{
    *   NOr = ((Q * IR) + (Q * R)) / NOxe
