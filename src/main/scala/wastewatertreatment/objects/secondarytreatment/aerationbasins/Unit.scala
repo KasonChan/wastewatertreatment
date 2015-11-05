@@ -33,6 +33,12 @@ object Unit extends valueunit.Unit {
 
   val forallAnoxicForallTotalUnits = noUnits
 
+  val codBODUnits = noUnits
+
+  val codVSSUnits = noUnits
+
+  val vssTSSUnits = noUnits
+
   val sneUnits = concentrationUnits
 
   val xVSSUnits = concentrationUnits

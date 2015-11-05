@@ -71,6 +71,21 @@ object AerationBasins {
   val forallAnoxicForallTotalRatio = 0.33
 
   /**
+   * COD/BOD = 1.60
+   */
+  val codBODRatio = 1.60
+
+  /**
+   * COD/VSS = 1.42
+   */
+  val codVSSRatio = 1.42
+
+  /**
+   * VSS/TSS = 0.80
+   */
+  val vssTSSRatio = 0.80
+
+  /**
    * Sne = 0.50g/m^3^
    */
   val sne = 0.50

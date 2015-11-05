@@ -106,6 +106,30 @@ case class ForallAnoxicForallTotalRatio(value: Double = forallAnoxicForallTotalR
                                         unit: String = forallAnoxicForallTotalUnits.headOption.getOrElse("")) extends ValueUnit
 
 /**
+ * COD/BOD
+ * @param value Default value is '''1.60'''.
+ * @param unit Default is '''No unit'''.
+ */
+case class CODBODRatio(value: Double = codBODRatio,
+                       unit: String = codBODUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * COD/VSS
+ * @param value Default value is '''1.42'''.
+ * @param unit Default is '''No unit'''.
+ */
+case class CODVSSRatio(value: Double = codVSSRatio,
+                       unit: String = codVSSUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * VSS/TSS
+ * @param value Default value is '''0.80'''.
+ * @param unit Default is '''No unit'''.
+ */
+case class VSSTSSRatio(value: Double = vssTSSRatio,
+                       unit: String = vssTSSUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
  * Sne
  * @param value Default value is '''0.50'''.
  * @param unit Default unit is '''g/m^3^'''.
