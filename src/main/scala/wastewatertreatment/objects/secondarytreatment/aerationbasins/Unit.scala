@@ -49,6 +49,8 @@ object Unit extends valueunit.Unit {
 
   val factorOfSafetyUnits = noUnits
 
+  val tknUnits = noUnits
+
   val xRUnits = concentrationUnits
 
   val xWUnits = concentrationUnits
@@ -86,6 +88,8 @@ object Unit extends valueunit.Unit {
   val fmRatioUnits = noUnits
 
   val sdnrUnits = noUnits
+
+  val no3nUnits = concentrationUnits
 
   val qWUnits = flowUnits
 

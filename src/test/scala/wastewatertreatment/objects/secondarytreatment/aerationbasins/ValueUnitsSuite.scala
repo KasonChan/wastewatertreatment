@@ -296,6 +296,22 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(FactorOfSafety(2, "xyz/abc")) shouldBe "2.00xyz/abc"
   }
 
+  "ValueUnit(TKN())" should "45.00" in {
+    ValueUnit(TKN()) shouldBe "45.00"
+  }
+
+  "ValueUnit(TKN(45))" should "45.00" in {
+    ValueUnit(TKN(45)) shouldBe "45.00"
+  }
+
+  "ValueUnit(TKN(unit = \"xyz/abc\"))" should "45.00xyz/abc" in {
+    ValueUnit(TKN(unit = "xyz/abc")) shouldBe "45.00xyz/abc"
+  }
+
+  "ValueUnit(TKN(45, \"xyz/abc\"))" should "45.00xyz/abc" in {
+    ValueUnit(TKN(45, "xyz/abc")) shouldBe "45.00xyz/abc"
+  }
+
   "ValueUnit(Xr())" should "8000.00g/m^3" in {
     ValueUnit(Xr()) shouldBe "8000.00g/m^3"
   }
@@ -540,6 +556,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(SDNR(0.33, \"xyz/abc\"))" should "0.33xyz/abc" in {
     ValueUnit(SDNR(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
+  }
+
+  "ValueUnit(NO3N(41.47))" should "41.47g/m^3" in {
+    ValueUnit(NO3N(41.47)) shouldBe "41.47g/m^3"
+  }
+
+  "ValueUnit(NO3N(41.47, \"xyz/abc\"))" should "41.47xyz/abc" in {
+    ValueUnit(NO3N(41.47, "xyz/abc")) shouldBe "41.47xyz/abc"
   }
 
   "ValueUnit(Qw(165103.26))" should "165103.26m^3/d" in {

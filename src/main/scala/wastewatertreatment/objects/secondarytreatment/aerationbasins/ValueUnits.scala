@@ -169,6 +169,14 @@ case class FactorOfSafety(value: Double = factorOfSafety,
                           unit: String = factorOfSafetyUnits.headOption.getOrElse("")) extends ValueUnit
 
 /**
+ * TKN
+ * @param value Default value is '''45.00'''.
+ * @param unit Default is '''No unit'''.
+ */
+case class TKN(value: Double = tkn,
+               unit: String = tknUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
  * Xr
  * @param value Default value is '''8000.00'''.
  * @param unit Default unit is '''g/m^3^'''.
@@ -330,6 +338,13 @@ case class FMRatio(value: Double,
  */
 case class SDNR(value: Double,
                 unit: String = sdnrUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * NO3-N
+ * @param unit Default unit is '''g/m^3^'''.
+ */
+case class NO3N(value: Double,
+                unit: String = no3nUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
  * Qw

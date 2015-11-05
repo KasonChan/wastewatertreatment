@@ -51,7 +51,11 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     // Inputs
     val q3 = 1193464.87
     val q4 = 912991.90
-    val no3n = 41.47
+    val xAHeterotrophs = 28016748.06
+    val xAPartsHeterotrophs = 2076141.49
+
+    val no3n = calNO3N(XaHeterotrophs = xAHeterotrophs, XaPartsHeterotrophs = xAPartsHeterotrophs, Q = q3)
+    no3n shouldBe 41.47
 
     val qW = calQw(forallT2, ThetaC = thetaC, Q = q3)
     qW shouldBe 164976.53
@@ -65,7 +69,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val iR = calIR(no3n, R = r)
     iR shouldBe 5.42
 
-    val noR = calNOr(q2, 5.42, 0.49, noXE)
+    val noR = calNOr(q2, iR, r, noXE)
     noR shouldBe 944037.79
   }
 

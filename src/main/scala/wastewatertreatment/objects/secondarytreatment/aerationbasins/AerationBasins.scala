@@ -111,6 +111,11 @@ object AerationBasins {
   val factorOfSafety = 2.00
 
   /**
+   * TKN = 45.00
+   */
+  val tkn = 45.00
+
+  /**
    * Xr = 8000.00g/m^3^
    */
   val xR = 8000.00
@@ -304,6 +309,25 @@ object AerationBasins {
                  Xb: Double): Double = {
     require(Q >= 0 && S >= 0 && ForallAnoxic >= 0 && Xb >= 0)
     val r = (Q * S) / (ForallAnoxic * Xb)
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns NO3-N.
+   * {{{
+   *   NO3-N = TKN - Sne - 0.12 * (XaHeterotrophs + XaPartsHeterotrophs) / Q
+   * }}}
+   * @param TKN TKN. Default value and unit are 45.
+   * @param Sne Sne. Default value and unit are 0.50g/m^3^.
+
+   */
+  def calNO3N(TKN: Double = tkn,
+              Sne: Double = sne,
+              XaHeterotrophs: Double,
+              XaPartsHeterotrophs: Double,
+              Q: Double): Double = {
+    require(TKN >= 0 && Sne >= 0 && XaHeterotrophs >= 0 && XaPartsHeterotrophs >= 0 && Q > 0)
+    val r = TKN - Sne - 0.12 * (XaHeterotrophs + XaPartsHeterotrophs) / Q
     to2Decimals(r)
   }
 
