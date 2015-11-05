@@ -477,4 +477,19 @@ object AerationBasins {
                         Kd: Double = hKd,
                         ThetaC: Double): Double = calXa(Q, Y, BOD5o, BOD5e, Kd, ThetaC)
 
+  /**
+   * Returns heterotrophs Xa.
+   * {{{
+   *   Xa Heterotrophs = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+   * }}}
+   * @param Y Heterotrophs Y. Default value and unit are 0.40.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXaNitrifiers(Q: Double,
+                      Y: Double = nY,
+                      BOD5o: Double,
+                      BOD5e: Double,
+                      Kd: Double = nKd,
+                      ThetaC: Double): Double = calXa(Q, Y, BOD5o, BOD5e, Kd, ThetaC)
+
 }
