@@ -362,6 +362,21 @@ object AerationBasins {
   }
 
   /**
+   * Returns IR.
+   * {{{
+   *   IR = (NO3N / NOxe) - 1 - R
+   * }}}
+   * @param NOxe NOxe. Default value and unit are 6.00g/m^3^.
+   */
+  def calIR(NO3N: Double,
+            NOxe: Double = noXE,
+            R: Double): Double = {
+    require(NO3N >= 0 && NOxe >= 0 && R >= 0)
+    val r = (NO3N / NOxe) - 1 - R
+    to2Decimals(r)
+  }
+
+  /**
    * Returns NO,,removed,,.
    * {{{
    *   NOr = ((Q * IR) + (Q * R)) / NOxe
