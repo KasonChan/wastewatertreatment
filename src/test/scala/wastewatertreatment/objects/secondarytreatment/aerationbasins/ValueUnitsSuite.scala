@@ -678,4 +678,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(XaNitrifiers(3156062.00, "xyz/abc")) shouldBe "3156062.00xyz/abc"
   }
 
+  "ValueUnit(XaNitrifiersParts(155917.00))" should "155917.00g/d" in {
+    ValueUnit(XaNitrifiersParts(155917.00)) shouldBe "155917.00g/d"
+  }
+
+  "ValueUnit(XaNitrifiersParts(155917.00, \"xyz/abc\"))" should "155917.00xyz/abc" in {
+    ValueUnit(XaNitrifiersParts(155917.00, "xyz/abc")) shouldBe "155917.00xyz/abc"
+  }
+
 }

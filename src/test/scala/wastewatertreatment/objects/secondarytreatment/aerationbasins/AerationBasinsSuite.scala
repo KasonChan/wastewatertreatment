@@ -84,6 +84,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val xANitrifiers = calXaNitrifiers(q2, NO3N = no3n, ThetaC = thetaC)
     xANitrifiers shouldBe 3192319.01
+
+    val xANitrifiersParts = calXaNitrifiersParts(thetaC, Xa = xANitrifiers)
+    xANitrifiersParts shouldBe 157828.25
   }
 
 }

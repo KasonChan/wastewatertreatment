@@ -425,3 +425,10 @@ case class XaHeterotrophs(value: Double,
  */
 case class XaNitrifiers(value: Double,
                         unit: String = xANitrifiersUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * Xa Nitrifiers Parts
+ * @param unit Default unit is '''g/d'''.
+ */
+case class XaNitrifiersParts(value: Double,
+                             unit: String = xANitrifiersPartsUnits.headOption.getOrElse("g/d")) extends ValueUnit

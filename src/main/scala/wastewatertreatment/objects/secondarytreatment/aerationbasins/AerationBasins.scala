@@ -265,7 +265,7 @@ object AerationBasins {
   /**
    * Returns X,,app pieces and parts,,.
    * {{{
-   *   X app pieces and parts = ThetaC * fmd * Kd * Xa
+   *   X app pieces and parts = ThetaC * FND * Kd * Xa
    * }}}
    * @param fnd Default value and unit are 0.10.
    * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
@@ -470,7 +470,7 @@ object AerationBasins {
    *   Xa Nitrifiers = (Q * Y * NO3N) / (1 + Kd * ThetaC)
    * }}}
    * @param Y Nitrifiers Y. Default value and unit are 0.12.
-   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   * @param Kd Nitrifiers Kd. Default value and unit are 0.08d^-1^.
    */
   def calXaNitrifiers(Q: Double,
                       Y: Double = nY,
@@ -479,6 +479,23 @@ object AerationBasins {
                       ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && NO3N >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (Q * Y * NO3N) / (1 + Kd * ThetaC)
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns nitrifiers parts Xa.
+   * {{{
+   *   X app pieces and parts = ThetaC * FND * Kd * Xa
+   * }}}
+   * @param FND Default value and unit are 0.10.
+   * @param Kd Nitrifiers Kd. Default value and unit are 0.08d^-1^.
+   */
+  def calXaNitrifiersParts(ThetaC: Double,
+                           FND: Double = fnd,
+                           Kd: Double = nKd,
+                           Xa: Double): Double = {
+    require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
+    val r = ThetaC * FND * Kd * Xa
     to2Decimals(r)
   }
 
