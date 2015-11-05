@@ -349,6 +349,19 @@ object AerationBasins {
   }
 
   /**
+   * Returns R.
+   * {{{
+   *   R = Q / Qr
+   * }}}
+   */
+  def calR(Qr: Double,
+           Q: Double): Double = {
+    require(Qr >= 0 && Q > 0)
+    val r = Qr / Q
+    to2Decimals(r)
+  }
+
+  /**
    * Returns NO,,removed,,.
    * {{{
    *   NOr = ((Q * IR) + (Q * R)) / NOxe

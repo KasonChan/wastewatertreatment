@@ -558,6 +558,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Qr(449856.99, "xyz/abc")) shouldBe "449856.99xyz/abc"
   }
 
+  "ValueUnit(R(0.49))" should "0.49" in {
+    ValueUnit(R(0.49)) shouldBe "0.49"
+  }
+
+  "ValueUnit(R(0.49, \"xyz/abc\"))" should "0.49xyz/abc" in {
+    ValueUnit(R(0.49, "xyz/abc")) shouldBe "0.49xyz/abc"
+  }
+
   "ValueUnit(NOr(931753.00))" should "931753.00g/d" in {
     ValueUnit(NOr(931753.00)) shouldBe "931753.00g/d"
   }

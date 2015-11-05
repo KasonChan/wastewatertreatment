@@ -346,6 +346,13 @@ case class Qr(value: Double,
               unit: String = qRUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
+ * R
+ * @param unit Default unit is '''No unit'''.
+ */
+case class R(value: Double,
+             unit: String = rUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
  * NOr
  * @param unit Default unit is '''g/d'''.
  */
