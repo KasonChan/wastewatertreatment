@@ -20,7 +20,7 @@ class NOrSpec extends FlatSpec with Matchers {
     }
   }
 
-  "calNOr(q, iR, r)" should "= 931753" in {
+  "calNOr(q, iR, r)" should "= 944037.79" in {
     val q = 958414.00
     val iR = 5.42
     val r = 0.49
