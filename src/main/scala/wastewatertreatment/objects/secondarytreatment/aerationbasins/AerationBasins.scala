@@ -516,4 +516,18 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns Forall,,anoxic,,.
+   * {{{
+   *   Forall anoxic = Volumne of basins * ForallAnoxicForallTotalRatio
+   * }}}
+   * @param ForallAnoxicForallTotalRatio Forall,,anoxic,,/Forall,,total,,. Default value and unit are 0.33.
+   */
+  def calForallAnoxic(VolumeOfBasins: Double,
+                      ForallAnoxicForallTotalRatio: Double = forallAnoxicForallTotalRatio): Double = {
+    require(VolumeOfBasins >= 0 && ForallAnoxicForallTotalRatio >= 0)
+    val r = VolumeOfBasins * ForallAnoxicForallTotalRatio
+    to2Decimals(r)
+  }
+
 }

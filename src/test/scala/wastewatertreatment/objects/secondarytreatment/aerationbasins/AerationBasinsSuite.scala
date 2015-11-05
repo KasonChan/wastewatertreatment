@@ -90,4 +90,12 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     xANitrifiersParts shouldBe 157828.25
   }
 
+  "Calculation 2" should "pass" in {
+    // Inputs
+    val volumeOfBasins = 2740000.00
+
+    val forallAnoxic = calForallAnoxic(volumeOfBasins)
+    forallAnoxic shouldBe 904200.00
+  }
+
 }
