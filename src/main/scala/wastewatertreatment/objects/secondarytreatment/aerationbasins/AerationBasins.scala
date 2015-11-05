@@ -446,7 +446,7 @@ object AerationBasins {
   }
 
   /**
-   * Returns Xa (Heterotrophs).
+   * Returns heterotrophs Xa.
    * {{{
    *   Xa Heterotrophs = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
    * }}}
@@ -461,6 +461,24 @@ object AerationBasins {
                         ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns nitrifiers Xa.
+   * {{{
+   *   Xa Nitrifiers = (Q * Y * NO3N) / (1 + Kd * ThetaC)
+   * }}}
+   * @param Y Nitrifiers Y. Default value and unit are 0.12.
+   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   */
+  def calXaNitrifiers(Q: Double,
+                      Y: Double = nY,
+                      NO3N: Double,
+                      Kd: Double = nKd,
+                      ThetaC: Double): Double = {
+    require(Q >= 0 && Y >= 0 && NO3N >= 0 && Kd >= 0 && ThetaC >= 0)
+    val r = (Q * Y * NO3N) / (1 + Kd * ThetaC)
     to2Decimals(r)
   }
 

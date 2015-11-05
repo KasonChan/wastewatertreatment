@@ -81,6 +81,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val no3Removed = calNO3Removed(forallAnoxic, xB, sdnr)
     no3Removed shouldBe 1.74755856E7
+
+    val xANitrifiers = calXaNitrifiers(q2, NO3N = no3n, ThetaC = thetaC)
+    xANitrifiers shouldBe 3192319.01
   }
 
 }
