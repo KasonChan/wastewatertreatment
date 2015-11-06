@@ -452,3 +452,10 @@ case class XaNitrifiersParts(value: Double,
  */
 case class PxBioNitrifiers(value: Double,
                            unit: String = pXBioNitrifiersUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * P,,Xvss,,
+ * @param unit Default unit is '''g/d'''.
+ */
+case class PXvss(value: Double,
+                 unit: String = pXvssUnits.headOption.getOrElse("g/d")) extends ValueUnit

@@ -525,4 +525,33 @@ object AerationBasins {
     to2Decimals(r)
   }
 
+  /**
+   * Returns P,,Xvsso,,.
+   * {{{
+   *   PXvsso = Q * VSS * NbvssVSSRatio
+   * }}}
+   * @param NbvssVSSRatio nbvss/VSS. Default value and unit are 0.20.
+   */
+  def calPXvsso(Q: Double,
+                VSS: Double,
+                NbvssVSSRatio: Double = nbvssVSSRatio): Double = {
+    require(Q >= 0 && VSS >= 0 && NbvssVSSRatio >= 0)
+    val r = Q * VSS * NbvssVSSRatio
+    to2Decimals(r)
+  }
+
+  /**
+   * Returns P,,Xvss,,.
+   * {{{
+   *   PXvss = PxBioHeterotrophs + PxBioNitrifiers + PXvsso
+   * }}}
+   */
+  def calPXvss(PxBioHeterotrophs: Double,
+               PxBioNitrifiers: Double,
+               PXvsso: Double): Double = {
+    require(PxBioHeterotrophs >= 0 && PxBioNitrifiers >= 0 && PXvsso >= 0)
+    val r = PxBioHeterotrophs + PxBioNitrifiers + PXvsso
+    to2Decimals(r)
+  }
+
 }

@@ -121,4 +121,6 @@ object Unit extends valueunit.Unit {
 
   val pXBioNitrifiersUnits = generatePRUs(massUnits, "", dayUnits)
 
+  val pXvssUnits = generatePRUs(massUnits, "", dayUnits)
+
 }

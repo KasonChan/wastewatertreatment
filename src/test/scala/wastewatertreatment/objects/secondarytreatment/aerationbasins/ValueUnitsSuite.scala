@@ -702,4 +702,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(PxBioNitrifiers(11933898.15, "xyz/abc")) shouldBe "11933898.15xyz/abc"
   }
 
+  "ValueUnit(PXvss(8147313.96))" should "8147313.96g/d" in {
+    ValueUnit(PXvss(8147313.96)) shouldBe "8147313.96g/d"
+  }
+
+  "ValueUnit(PXvss(8147313.96, \"xyz/abc\"))" should "8147313.96xyz/abc" in {
+    ValueUnit(PXvss(8147313.96, "xyz/abc")) shouldBe "8147313.96xyz/abc"
+  }
+
 }

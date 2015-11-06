@@ -55,6 +55,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val bod5o = 103.16
     val bod5e = 0.99
+    val vsso = 34.13
 
     val xAHeterotrophs = calXaHeterotrophs(q3, BOD5o = bod5o, BOD5e = bod5e, ThetaC = thetaC)
     xAHeterotrophs shouldBe 2.80055824E7
@@ -91,6 +92,12 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
     pXBioNitrifiers shouldBe 3350147.26
+
+    val pXvsso = calPXvsso(q3, vsso)
+    pXvsso shouldBe 8146591.2
+
+    val pXvss = calPXvss(pXBio, pXBioNitrifiers, pXvsso)
+    pXvss shouldBe 39397477.53
   }
 
   "Calculation 2" should "pass" in {
@@ -179,6 +186,12 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
     pXBioNitrifiers shouldBe 4171770.3
+
+    val pXvsso = calPXvsso(q, vsso)
+    pXvsso shouldBe 8146591.2
+
+    val pXvss = calPXvss(pXBioHeterotrophs, pXBioNitrifiers, pXvsso)
+    pXvss shouldBe 42400837.89
   }
 
 }
