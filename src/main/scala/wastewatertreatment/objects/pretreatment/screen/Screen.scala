@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.screen
 
-import wastewatertreatment.math.Math.to2Decimals
+import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by ka-son on 10/24/15.
@@ -68,7 +68,7 @@ object Screen {
   def calTSSe(TSSo: Double, TSSRemoval: Double = tssRemoval): Double = {
     require(TSSo >= 0 && TSSRemoval >= 0)
     val r = TSSo * (100 - TSSRemoval) / 100
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -82,7 +82,7 @@ object Screen {
   def calBOD5e(BOD5o: Double, BOD5Removal: Double = bod5Removal): Double = {
     require(BOD5o >= 0 && BOD5Removal >= 0)
     val r = BOD5o * (100 - BOD5Removal) / 100
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
 
@@ -97,7 +97,7 @@ object Screen {
   def calVSSe(TSSe: Double, VSS_TSS: Double = vssTSSRatio): Double = {
     require(TSSe >= 0 && VSS_TSS >= 0)
     val r = TSSe * VSS_TSS
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -111,7 +111,7 @@ object Screen {
   def calcBOD5e(BOD5e: Double, BOD5_cBOD5: Double = bod5cBOD5Ratio): Double = {
     require(BOD5e >= 0 && BOD5_cBOD5 >= 0 && bod5cBOD5Ratio >= 0)
     val r = BOD5e / BOD5_cBOD5
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -125,7 +125,7 @@ object Screen {
   def calbCODe(BOD5e: Double, COD_BOD: Double = codBODRatio): Double = {
     require(BOD5e >= 0 && COD_BOD >= 0)
     val r = BOD5e * COD_BOD
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -140,7 +140,7 @@ object Screen {
   def calbCODpe(VSSe: Double, COD_VSS: Double = codVSSRatio, VSS_TSS: Double = vssTSSRatio): Double = {
     require(VSSe >= 0 && COD_VSS >= 0 && VSS_TSS >= 0)
     val r = VSSe * COD_VSS * VSS_TSS
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -154,7 +154,7 @@ object Screen {
   def calbCODs(bCODe: Double, bCODpe: Double): Double = {
     require(bCODe >= 0 && bCODpe >= 0)
     val r = bCODe - bCODpe
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -168,7 +168,7 @@ object Screen {
   def calP(Q: Double, VSSe: Double): Double = {
     require(Q >= 0 && VSSe >= 0)
     val r = Q * VSSe
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
 }

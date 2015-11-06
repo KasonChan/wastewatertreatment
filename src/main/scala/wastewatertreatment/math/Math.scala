@@ -6,11 +6,11 @@ package wastewatertreatment.math
 object Math {
 
   /**
-   * Returns the decimal number in two decimal places.
+   * Returns the decimal number in X decimal places.
    * @param d the decimal number.
    */
-  def to2Decimals(d: Double): Double = {
-    BigDecimal(d).setScale(2, BigDecimal.RoundingMode.HALF_UP).toDouble
+  def toXDecimals(d: Double, x: Int = 2): Double = {
+    BigDecimal(d).setScale(x, BigDecimal.RoundingMode.HALF_UP).toDouble
   }
 
 }

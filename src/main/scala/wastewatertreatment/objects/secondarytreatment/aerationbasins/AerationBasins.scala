@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.math.Math.to2Decimals
+import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by ka-son on 10/31/15.
@@ -18,7 +18,7 @@ object AerationBasins {
   def calTheta(ForallT: Double, Q: Double): Double = {
     require(ForallT >= 0 && Q > 0)
     val r = (BigDecimal(ForallT) / BigDecimal(Q)).toDouble
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -32,7 +32,7 @@ object AerationBasins {
   def calBODLoading(BOD: Double, Q: Double): Double = {
     require(BOD >= 0 && Q >= 0)
     val r = (BigDecimal(BOD) / BigDecimal(1000) * BigDecimal(Q)).toDouble
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -211,7 +211,7 @@ object AerationBasins {
   def calThetaAerobic(ForallT: Double, ForallAnoxic: Double, Q: Double): Double = {
     require(ForallT >= 0 && ForallAnoxic >= 0 && Q > 0)
     val r = (BigDecimal(ForallT - ForallAnoxic) / BigDecimal(Q)).toDouble
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -234,7 +234,7 @@ object AerationBasins {
                 Kd: Double = nKd): Double = {
     require(U >= 0 && Sne >= 0 && Ks >= 0 && Do >= 0 && Ko >= 0 && Kd >= 0)
     val r = (BigDecimal(1) / BigDecimal((((U * Sne) / (Ks + Sne)) * (Do / (Ko + Do))) - Kd)).toDouble
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -254,7 +254,7 @@ object AerationBasins {
                         ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && S >= 0 && SeBOD >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (BigDecimal(Q * Y * (S - SeBOD)) / BigDecimal(1 + (Kd * ThetaC))).toDouble
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -271,7 +271,7 @@ object AerationBasins {
                             Xa: Double): Double = {
     require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
     val r = ThetaC * fnd * Kd * Xa
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -283,7 +283,7 @@ object AerationBasins {
   def calPXBio(XActiveBiomass: Double, XAppPiecesAndParts: Double): Double = {
     require(XActiveBiomass >= 0 && XAppPiecesAndParts >= 0)
     val r = XActiveBiomass + XAppPiecesAndParts
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -304,7 +304,7 @@ object AerationBasins {
             Kd: Double = hKd): Double = {
     require(Q >= 0 && ForallT >= 0 && ThetaC >= 0 && Y >= 0 && So >= 0 && S >= 0 && Kd >= 0)
     val r = (Q / ForallT) * ((ThetaC * Y * (So - S)) / (1 + (Kd * ThetaC)))
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -319,7 +319,7 @@ object AerationBasins {
                  Xb: Double): Double = {
     require(Q >= 0 && S >= 0 && ForallAnoxic >= 0 && Xb >= 0)
     val r = (Q * S) / (ForallAnoxic * Xb)
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -338,7 +338,7 @@ object AerationBasins {
               Q: Double): Double = {
     require(TKN >= 0 && Sne >= 0 && XaHeterotrophs >= 0 && XaPartsHeterotrophs >= 0 && Q > 0)
     val r = TKN - Sne - 0.12 * (XaHeterotrophs + XaPartsHeterotrophs) / Q
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -358,7 +358,7 @@ object AerationBasins {
             Xw: Double = xW): Double = {
     require(Theta >= 0 && Xvss >= 0 && ThetaC >= 0 && Q >= 0 && Xe >= 0 && Xw >= 0)
     val r = (((Theta * Xvss) / ThetaC) - (Q * Xe)) / (Xw - Xe)
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -379,7 +379,7 @@ object AerationBasins {
             Xr: Double = xR): Double = {
     require(Q >= 0 && Qw >= 0 && Xe >= 0 && Xw >= 0 && Xvss >= 0 && Xr >= 0)
     val r = (((Q - Qw) * Xe) + (Qw * Xw) - (Q * Xvss)) / (Xvss - Xr)
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -392,7 +392,7 @@ object AerationBasins {
            Q: Double): Double = {
     require(Qr >= 0 && Q > 0)
     val r = Qr / Q
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -407,7 +407,7 @@ object AerationBasins {
             R: Double): Double = {
     require(NO3N >= 0 && NOxe >= 0 && R >= 0)
     val r = (NO3N / NOxe) - 1 - R
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -423,7 +423,7 @@ object AerationBasins {
              NOxe: Double = noXE): Double = {
     require(Q >= 0 && IR >= 0 && R >= 0 && NOxe > 0)
     val r = ((Q * IR) + (Q * R)) / NOxe
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -437,7 +437,7 @@ object AerationBasins {
                     SDNR: Double): Double = {
     require(ForallAnoxic >= 0 && Xb >= 0 && SDNR >= 0)
     val r = ForallAnoxic * Xb * SDNR
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -456,7 +456,7 @@ object AerationBasins {
                         ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -473,7 +473,7 @@ object AerationBasins {
                              Xa: Double): Double = {
     require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
     val r = ThetaC * FND * Kd * Xa
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -491,7 +491,7 @@ object AerationBasins {
                       ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && NO3N >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (Q * Y * NO3N) / (1 + Kd * ThetaC)
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -508,7 +508,7 @@ object AerationBasins {
                            Xa: Double): Double = {
     require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
     val r = ThetaC * FND * Kd * Xa
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -522,7 +522,7 @@ object AerationBasins {
                       ForallAnoxicForallTotalRatio: Double = forallAnoxicForallTotalRatio): Double = {
     require(VolumeOfBasins >= 0 && ForallAnoxicForallTotalRatio >= 0)
     val r = VolumeOfBasins * ForallAnoxicForallTotalRatio
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -537,7 +537,7 @@ object AerationBasins {
                 NbvssVSSRatio: Double = nbvssVSSRatio): Double = {
     require(Q >= 0 && VSS >= 0 && NbvssVSSRatio >= 0)
     val r = Q * VSS * NbvssVSSRatio
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
   /**
@@ -551,7 +551,7 @@ object AerationBasins {
                PXvsso: Double): Double = {
     require(PxBioHeterotrophs >= 0 && PxBioNitrifiers >= 0 && PXvsso >= 0)
     val r = PxBioHeterotrophs + PxBioNitrifiers + PXvsso
-    to2Decimals(r)
+    toXDecimals(r)
   }
 
 }
