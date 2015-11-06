@@ -1,7 +1,7 @@
 package wastewatertreatment.math
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math.toXDecimals
+import wastewatertreatment.math.Math.{toXDecimals, tom3d}
 
 /**
  * Created by kasonchan on 10/26/15.
@@ -74,6 +74,10 @@ class MathSuite extends FlatSpec with Matchers {
 
   "toXDecimals(1.54949, 4)" should "= 1.5495" in {
     toXDecimals(1.54949, 4) shouldBe 1.5495
+  }
+
+  "tom3d(368)" should "= 1393030.88" in {
+    tom3d(368) shouldBe 1393030.88
   }
 
 }

@@ -13,4 +13,16 @@ object Math {
     BigDecimal(d).setScale(x, BigDecimal.RoundingMode.HALF_UP).toDouble
   }
 
+  /**
+   * Returns the value of flow measurement in m^3^/d.
+   * {{{
+   *   d * 3785.41
+   * }}}
+   * @param d the value of flow in MGD.
+   */
+  def tom3d(d: Double): Double = {
+    val r = d * 3785.41
+    toXDecimals(r)
+  }
+
 }
