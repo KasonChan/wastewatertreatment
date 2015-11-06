@@ -13,7 +13,7 @@ trait Unit {
   /**
    * The units of volume: '''m^3^'''.
    */
-  val volumeUnits = List("m^3")
+  val volumeUnits = List("m^3", "gallon")
 
   /**
    * The units of day: '''d'''.
