@@ -459,3 +459,10 @@ case class PxBioNitrifiers(value: Double,
  */
 case class PXvss(value: Double,
                  unit: String = pXvssUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * Daily backwash rate
+ * @param unit Default unit is '''m^3^/d'''.
+ */
+case class DailyBackwashRate(value: Double,
+                             unit: String = dailyBackwashRateUnits.headOption.getOrElse("m^3/d")) extends ValueUnit

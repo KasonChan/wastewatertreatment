@@ -710,4 +710,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(PXvss(8147313.96, "xyz/abc")) shouldBe "8147313.96xyz/abc"
   }
 
+  "ValueUnit(DailyBackwashRate(26240.76))" should "26240.76m^3/d" in {
+    ValueUnit(DailyBackwashRate(26240.76)) shouldBe "26240.76m^3/d"
+  }
+
+  "ValueUnit(DailyBackwashRate(26240.76, \"xyz/abc\"))" should "26240.76xyz/abc" in {
+    ValueUnit(DailyBackwashRate(26240.76, "xyz/abc")) shouldBe "26240.76xyz/abc"
+  }
+
 }

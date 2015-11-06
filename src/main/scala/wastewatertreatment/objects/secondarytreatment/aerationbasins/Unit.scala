@@ -123,4 +123,6 @@ object Unit extends valueunit.Unit {
 
   val pXvssUnits = generatePRUs(massUnits, "", dayUnits)
 
+  val dailyBackwashRateUnits = flowUnits
+
 }
