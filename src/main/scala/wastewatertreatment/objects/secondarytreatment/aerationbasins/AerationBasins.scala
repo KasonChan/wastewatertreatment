@@ -151,11 +151,6 @@ object AerationBasins {
   val noXE = 6.00
 
   /**
-   * rbCOD = 0.30 g/m^3^
-   */
-  val rbCOD = 0.30
-
-  /**
    * Heterotrophs u = 6.00d^-1^
    */
   val hU = 6.00

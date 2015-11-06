@@ -424,16 +424,8 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(NOxe(6, "xyz/abc")) shouldBe "6.00xyz/abc"
   }
 
-  "ValueUnit(RbCOD())" should "0.30g/m^3" in {
-    ValueUnit(RbCOD()) shouldBe "0.30g/m^3"
-  }
-
   "ValueUnit(RbCOD(0.3))" should "0.30g/m^3" in {
     ValueUnit(RbCOD(0.3)) shouldBe "0.30g/m^3"
-  }
-
-  "ValueUnit(RbCOD(unit = \"xyz/abc\"))" should "0.30xyz/abc" in {
-    ValueUnit(RbCOD(unit = "xyz/abc")) shouldBe "0.30xyz/abc"
   }
 
   "ValueUnit(RbCOD(0.3, \"xyz/abc\"))" should "0.30xyz/abc" in {

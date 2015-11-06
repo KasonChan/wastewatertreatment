@@ -93,9 +93,86 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
   "Calculation 2" should "pass" in {
     // Inputs
     val volumeOfBasins = 2740000.00
+    val sO = 103.16
+    val rbCOD = 0.30
+    val sdnr = 0.33
+
+    val q = 1193464.87
+
+    // Influent
+    val tsso = 42.67
+    val vsso = 34.13
+    val bod5o = 103.16
+    val cBOD5o = 93.79
+    val bCODo = 165.06
+    val bCOD5o = 126.29
+    val bCODpo = 38.78
+    val NH3o = 25.16
+    val tpo = 0.83
+    val po = 50920712.22
+
+    // Effluent
+    val tsse = 2.56
+    val vsse = 2.05
+    val bod5e = 0.99
+    val cBOD5e = 0.90
+    val bCODe = 2.33
+    val bCOD5e = 0.00
+    val bCODpe = 2.33
+    val NH3e = 0.50
+    val tpe = 0.24
+    val pe = 3055242.73
 
     val forallAnoxic = calForallAnoxic(volumeOfBasins)
     forallAnoxic shouldBe 904200.00
+
+    val thetaC = calThetaC()
+    thetaC shouldBe 6.18
+
+    val thetaAerobic = calThetaAerobic(volumeOfBasins, forallAnoxic, q)
+    thetaAerobic shouldBe 1.54
+
+    val xB = calXb(q, volumeOfBasins, thetaC, So = sO)
+    xB shouldBe 63.16
+
+    val fmRatio = calFMRatio(q, sO, forallAnoxic, xB)
+    fmRatio shouldBe 2.16
+
+    val xAHeterotrophs = calXaHeterotrophs(q, BOD5o = bod5o, BOD5e = bod5e, ThetaC = thetaC)
+    xAHeterotrophs shouldBe 2.80055824E7
+
+    val xAHeterotrophsParts = calXaHeterotrophsParts(thetaC, Xa = xAHeterotrophs)
+    xAHeterotrophsParts shouldBe 2076893.99
+
+    val pXBioHeterotrophs = calPXBio(xAHeterotrophs, xAHeterotrophsParts)
+    pXBioHeterotrophs shouldBe 30082476.39
+
+    val no3n = calNO3N(XaHeterotrophs = xAHeterotrophs, XaPartsHeterotrophs = xAHeterotrophsParts, Q = q)
+    no3n shouldBe 41.48
+
+    val qW = calQw(volumeOfBasins, ThetaC = thetaC, Q = q)
+    qW shouldBe 164976.53
+
+    val qR = calQr(q, qW)
+    qR shouldBe 450059.50
+
+    val r = calR(qR, q)
+    r shouldBe 0.38
+
+    val iR = calIR(no3n, R = r)
+    iR shouldBe 5.53
+
+    val noR = calNOr(q, iR, r, noXE)
+    noR shouldBe 1175562.9
+
+    val no3Removed = calNO3Removed(forallAnoxic, xB, sdnr)
+    no3Removed shouldBe 18846059.76
+
+    val xANitrifiers = calXaNitrifiers(q, NO3N = no3n, ThetaC = thetaC)
+    xANitrifiers shouldBe 3975234.70
+
+    val xANitrifiersParts = calXaNitrifiersParts(thetaC, Xa = xANitrifiers)
+    xANitrifiersParts shouldBe 196535.60
   }
 
 }

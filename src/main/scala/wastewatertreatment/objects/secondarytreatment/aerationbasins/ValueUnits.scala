@@ -234,10 +234,9 @@ case class NOxe(value: Double = noXE,
 
 /**
  * rbCOD
- * @param value Default value is '''0.30'''.
  * @param unit Default unit is '''g/m^3^'''.
  */
-case class RbCOD(value: Double = rbCOD,
+case class RbCOD(value: Double,
                  unit: String = rbCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
