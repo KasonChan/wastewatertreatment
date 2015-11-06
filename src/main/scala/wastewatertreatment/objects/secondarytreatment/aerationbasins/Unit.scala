@@ -113,8 +113,12 @@ object Unit extends valueunit.Unit {
 
   val xAHeterotrophsPartsUnits = generatePRUs(massUnits, "", dayUnits)
 
+  val pXBioHeterotrophisUnits = generatePRUs(massUnits, "", dayUnits)
+
   val xANitrifiersUnits = generatePRUs(massUnits, "", dayUnits)
 
   val xANitrifiersPartsUnits = generatePRUs(massUnits, "", dayUnits)
+
+  val pXBioNitrifiersUnits = generatePRUs(massUnits, "", dayUnits)
 
 }

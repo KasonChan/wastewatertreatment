@@ -426,6 +426,13 @@ case class XaHeterotrophsParts(value: Double,
                                unit: String = xAHeterotrophsUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
 /**
+ * P,,XBio,, Heterotrophs
+ * @param unit Default unit is '''g/d'''.
+ */
+case class PxBioHeterotrophs(value: Double,
+                             unit: String = pXBioHeterotrophisUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
  * Xa Nitrifiers
  * @param unit Default unit is '''g/d'''.
  */
@@ -438,3 +445,10 @@ case class XaNitrifiers(value: Double,
  */
 case class XaNitrifiersParts(value: Double,
                              unit: String = xANitrifiersPartsUnits.headOption.getOrElse("g/d")) extends ValueUnit
+
+/**
+ * P,,XBio,, Nitrifiers
+ * @param unit Default unit is '''g/d'''.
+ */
+case class PxBioNitrifiers(value: Double,
+                           unit: String = pXBioNitrifiersUnits.headOption.getOrElse("g/d")) extends ValueUnit

@@ -670,6 +670,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(XaHeterotrophsParts(25983423.00, "xyz/abc")) shouldBe "25983423.00xyz/abc"
   }
 
+  "ValueUnit(PxBioHeterotrophs(30092889.55))" should "30092889.55g/d" in {
+    ValueUnit(PxBioHeterotrophs(30092889.55)) shouldBe "30092889.55g/d"
+  }
+
+  "ValueUnit(PxBioHeterotrophs(30092889.55, \"xyz/abc\"))" should "30092889.55xyz/abc" in {
+    ValueUnit(PxBioHeterotrophs(30092889.55, "xyz/abc")) shouldBe "30092889.55xyz/abc"
+  }
+
   "ValueUnit(XaNitrifiers(3156062.00))" should "3156062.00g/d" in {
     ValueUnit(XaNitrifiers(3156062.00)) shouldBe "3156062.00g/d"
   }
@@ -684,6 +692,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(XaNitrifiersParts(155917.00, \"xyz/abc\"))" should "155917.00xyz/abc" in {
     ValueUnit(XaNitrifiersParts(155917.00, "xyz/abc")) shouldBe "155917.00xyz/abc"
+  }
+
+  "ValueUnit(PxBioNitrifiers(11933898.15))" should "11933898.15g/d" in {
+    ValueUnit(PxBioNitrifiers(11933898.15)) shouldBe "11933898.15g/d"
+  }
+
+  "ValueUnit(PxBioNitrifiers(11933898.15, \"xyz/abc\"))" should "11933898.15xyz/abc" in {
+    ValueUnit(PxBioNitrifiers(11933898.15, "xyz/abc")) shouldBe "11933898.15xyz/abc"
   }
 
 }
