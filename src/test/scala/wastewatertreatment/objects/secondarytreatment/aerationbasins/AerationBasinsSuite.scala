@@ -89,8 +89,8 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val xANitrifiersParts = calXaNitrifiersParts(thetaC, Xa = xANitrifiers)
     xANitrifiersParts shouldBe 157828.25
 
-    val PxBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
-    PxBioNitrifiers shouldBe 3350147.26
+    val pXBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
+    pXBioNitrifiers shouldBe 3350147.26
   }
 
   "Calculation 2" should "pass" in {
@@ -110,7 +110,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val bCODo = 165.06
     val bCOD5o = 126.29
     val bCODpo = 38.78
-    val NH3o = 25.16
+    val nh3o = 25.16
     val tpo = 0.83
     val po = 50920712.22
 
@@ -122,7 +122,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val bCODe = 2.33
     val bCOD5e = 0.00
     val bCODpe = 2.33
-    val NH3e = 0.50
+    val nh3e = 0.50
     val tpe = 0.24
     val pe = 3055242.73
 
@@ -177,8 +177,8 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val xANitrifiersParts = calXaNitrifiersParts(thetaC, Xa = xANitrifiers)
     xANitrifiersParts shouldBe 196535.60
 
-    val PxBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
-    PxBioNitrifiers shouldBe 4171770.3
+    val pXBioNitrifiers = calPXBio(xANitrifiers, xANitrifiersParts)
+    pXBioNitrifiers shouldBe 4171770.3
   }
 
 }
