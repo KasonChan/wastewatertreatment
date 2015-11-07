@@ -554,19 +554,4 @@ object AerationBasins {
     toXDecimals(r)
   }
 
-  /**
-   * Returns daily backwash rate.
-   * {{{
-   *   Daily backwash rate = BackwashRate * AreaOfSandfilters * Times
-   * }}}
-   */
-  def calDailyBackwashRate(BackwashRate: Double,
-                           AreaOfSandfilters: Double,
-                           TimesOfBackwash: Double,
-                           Times: Double): Double = {
-    require(BackwashRate >= 0 && AreaOfSandfilters >= 0 && Times >= 0)
-    val r = BackwashRate * AreaOfSandfilters * 0.00378541 * TimesOfBackwash * Times
-    toXDecimals(r)
-  }
-
 }

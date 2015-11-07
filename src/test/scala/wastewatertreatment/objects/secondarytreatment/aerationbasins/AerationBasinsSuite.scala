@@ -98,15 +98,6 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXvss = calPXvss(pXBio, pXBioNitrifiers, pXvsso)
     pXvss shouldBe 39397477.53
-
-    // Inputs
-    val backwashRate = 6
-    val areaOfSandfilters = 28925
-    val timeOfBackwash = 10
-    val times = 4
-
-    val dailyBackwashRate = calDailyBackwashRate(backwashRate, areaOfSandfilters, timeOfBackwash, times)
-    dailyBackwashRate shouldBe 26278.32
   }
 
   "Calculation 2" should "pass" in {
@@ -201,15 +192,6 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXvss = calPXvss(pXBioHeterotrophs, pXBioNitrifiers, pXvsso)
     pXvss shouldBe 42400837.89
-
-    // Inputs
-    val backwashRate = 6
-    val areaOfSandfilters = 28925
-    val timeOfBackwash = 10
-    val times = 4
-
-    val dailyBackwashRate = calDailyBackwashRate(backwashRate, areaOfSandfilters, timeOfBackwash, times)
-    dailyBackwashRate shouldBe 26278.32
   }
 
 }
