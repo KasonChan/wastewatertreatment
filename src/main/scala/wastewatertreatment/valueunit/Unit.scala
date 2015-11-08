@@ -6,14 +6,35 @@ package wastewatertreatment.valueunit
 trait Unit {
 
   /**
+   * The units of length: '''m''', '''ft'''.
+   */
+  val lengthUnits = List("m", "ft")
+
+  /**
+   * Returns a list of units to the power added.
+   * @param units the list of units.
+   * @param power the power of the new units.
+   */
+  def generatePUs(units: List[String], power: Int): List[String] = {
+    for {
+      u <- units
+    } yield u + "^" + power
+  }
+
+  /**
+   * The units of area: '''m^2^''', '''ft^2^'''.
+   */
+  val areaUnits = generatePUs(lengthUnits, 2)
+
+  /**
+   * The units of volume: '''m^2^''', '''ft^2^'''.
+   */
+  val volumeUnits = generatePUs(lengthUnits, 3)
+
+  /**
    * The units of mass: '''g''', '''kg'''.
    */
   val massUnits = List("g", "kg")
-
-  /**
-   * The units of volume: '''m^3^'''.
-   */
-  val volumeUnits = List("m^3", "gallon")
 
   /**
    * The units of day: '''d'''.
@@ -72,7 +93,7 @@ trait Unit {
    *   Volume / Day
    * }}}
    */
-  val flowUnits = generateUs(volumeUnits, dayUnits)
+  val flowUnits = List("MGD") ++ generateUs(volumeUnits, dayUnits)
 
   /**
    * Returns a list of production rate units.

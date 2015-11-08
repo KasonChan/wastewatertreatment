@@ -11,10 +11,10 @@ class ValueUnits {
 
   /**
    * Q
-   * @param unit Default is '''mg/d'''.
+   * @param unit Default is '''MGD'''.
    */
   case class Q(value: Double,
-               unit: String = qUnits.headOption.getOrElse("mg/d")) extends ValueUnit
+               unit: String = qUnits.headOption.getOrElse("MGD")) extends ValueUnit
 
   /**
    * TSS

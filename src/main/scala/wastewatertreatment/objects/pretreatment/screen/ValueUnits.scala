@@ -29,7 +29,7 @@ case class BOD5Removal(value: Double = bod5Removal,
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class Q(value: Double,
-             unit: String = qUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+             unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * TSSo

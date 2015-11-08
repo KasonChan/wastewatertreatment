@@ -20,7 +20,7 @@ case class ForallT(value: Double,
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class QPeak(value: Double,
-                 unit: String = qPeakUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+                 unit: String = qPeakUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * Theta
@@ -34,7 +34,7 @@ case class Theta(value: Double,
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class Q(value: Double,
-             unit: String = qUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+             unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * BOD
@@ -374,14 +374,14 @@ case class NO3N(value: Double,
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class Qw(value: Double,
-              unit: String = qWUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+              unit: String = qWUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * Qr
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class Qr(value: Double,
-              unit: String = qRUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+              unit: String = qRUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
  * R

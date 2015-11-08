@@ -12,4 +12,4 @@ import wastewatertreatment.valueunit.ValueUnit
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class DailyBackwashRate(value: Double,
-                             unit: String = dailyBackwashRateUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+                             unit: String = dailyBackwashRateUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
