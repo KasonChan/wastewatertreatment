@@ -1,5 +1,7 @@
 package wastewatertreatment.objects.influent
 
+import wastewatertreatment.math.Math._
+
 /**
  * Created by kasonchan on 11/6/15.
  */
@@ -34,5 +36,17 @@ object Influent {
    * Biodegradable VSS = 0.80
    */
   val bVSS = 0.80
+
+  /**
+   * Returns VSS.
+   * {{{
+   *   VSS = TSS * VSSTSSRatio
+   * }}}
+   */
+  def calVSS(TSS: Double, VSSTSSRatio: Double = vssTSSRatio): Double = {
+    require(TSS >= 0 && VSSTSSRatio >= 0)
+    val r = TSS * VSSTSSRatio
+    toXDecimals(r)
+  }
 
 }

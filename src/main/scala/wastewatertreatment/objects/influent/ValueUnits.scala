@@ -89,4 +89,11 @@ case class TN(value: Double = tn,
  * @param unit Default is '''No unit'''.
  */
 case class BVSS(value: Double = bVSS,
-                unit: String = bVSSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+                unit: String = bVSSUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * VSS
+ * @param unit Default is '''g/m^3^'''.
+ */
+case class VSS(value: Double,
+               unit: String = vssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

@@ -2,6 +2,7 @@ package wastewatertreatment.objects.influent
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math.tom3d
+import wastewatertreatment.objects.influent.Influent._
 
 /**
  * Created by kasonchan on 11/8/15.
@@ -18,6 +19,9 @@ class InfluentSuite extends FlatSpec with Matchers {
 
     val qm3d = tom3d(q)
     qm3d shouldBe 1393030.88
+
+    val vss = calVSS(tss, vssTSSRatio)
+    vss shouldBe 178.40
   }
 
 }
