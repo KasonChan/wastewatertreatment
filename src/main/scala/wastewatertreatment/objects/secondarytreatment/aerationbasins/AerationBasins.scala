@@ -554,4 +554,33 @@ object AerationBasins {
     toXDecimals(r)
   }
 
+  /**
+   * Returns aeration tank volumes.
+   * {{{
+   *   Volume = Count * Length * Width * Depth
+   * }}}
+   */
+  def calAerationTankVolumes(Count: Double,
+                             Length: Double,
+                             Width: Double,
+                             Depth: Double): Double = {
+    require(Count >= 0 && Length >= 0 && Width >= 0 && Depth >= 0)
+    val r = Count * Length * Width * Depth
+    toXDecimals(r)
+  }
+
+  /**
+   * Returns BOD loading rate.
+   * {{{
+   *   BOD loading rate = (Lorg * Forall) / Q
+   * }}}
+   */
+  def calBODLoadingRate(Lorg: Double,
+                        Forall: Double,
+                        Q: Double): Double = {
+    require(Lorg >= 0 && Forall >= 0 && Q > 0)
+    val r = (BigDecimal(Lorg) / 1000 / 166000000 * 453.59 * 28.32 * Forall / 3.785 / 28.32 * 1000).toDouble
+    toXDecimals(r)
+  }
+
 }

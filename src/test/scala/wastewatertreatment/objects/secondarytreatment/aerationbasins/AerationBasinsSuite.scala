@@ -98,6 +98,14 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXvss = calPXvss(pXBio, pXBioNitrifiers, pXvsso)
     pXvss shouldBe 39397477.53
+
+    // Inputs
+    val count = 3
+    val length = 250
+    val width = 125
+    val depth = 15
+
+    calAerationTankVolumes(count, length, width, depth) shouldBe 1406250.00
   }
 
   "Calculation 2" should "pass" in {
@@ -192,6 +200,14 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val pXvss = calPXvss(pXBioHeterotrophs, pXBioNitrifiers, pXvsso)
     pXvss shouldBe 42400837.89
+
+    // Inputs
+    val count = 4
+    val length = 250
+    val width = 54.83
+    val depth = 15
+
+    calAerationTankVolumes(count, length, width, depth) shouldBe 822450.00
   }
 
 }
