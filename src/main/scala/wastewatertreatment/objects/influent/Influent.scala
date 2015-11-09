@@ -96,4 +96,18 @@ object Influent {
     toXDecimals(r)
   }
 
+  /**
+   * Returns bCODs.
+   * {{{
+   *   bCODs = bCOD - bCODp
+   * }}}
+   * @param bCOD the initial value of bCOD.
+   * @param bCODp the initial value of bCODp.
+   */
+  def calBCODs(bCOD: Double, bCODp: Double): Double = {
+    require(bCOD >= 0 && bCODp >= 0)
+    val r = bCOD - bCODp
+    toXDecimals(r)
+  }
+
 }
