@@ -111,3 +111,10 @@ case class BOD5(value: Double,
  */
 case class BCOD(value: Double,
                 unit: String = bCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * bCODp
+ * @param unit Default is '''g/m^3^'''.
+ */
+case class BCODp(value: Double,
+                 unit: String = bCODpUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

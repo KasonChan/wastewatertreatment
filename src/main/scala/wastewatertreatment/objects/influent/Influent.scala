@@ -42,6 +42,8 @@ object Influent {
    * {{{
    *   VSS = TSS * VSSTSSRatio
    * }}}
+   * @param TSS the initial value of TSS.
+   * @param VSSTSSRatio VSS/TSS, Default value and unit are 0.80.
    */
   def calVSS(TSS: Double, VSSTSSRatio: Double = vssTSSRatio): Double = {
     require(TSS >= 0 && VSSTSSRatio >= 0)
@@ -54,6 +56,8 @@ object Influent {
    * {{{
    *   BOD5 = CBOD5 * BOD5CBOD5Ratio
    * }}}
+   * @param CBOD5 the initial value of cBOD,,5,,.
+   * @param BOD5CBOD5Ratio BOD,,5,,/cBOD,,5,, Default value and unit are 1.10.
    */
   def calBOD5(CBOD5: Double, BOD5CBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
     require(CBOD5 >= 0 && BOD5CBOD5Ratio >= 0)
@@ -66,10 +70,29 @@ object Influent {
    * {{{
    *   bCOD = BOD5 * CODBODRatio
    * }}}
+   * @param BOD5 the initial value of VSS.
+   * @param CODBODRatio COD/BOD. Default value and unit are 1.60.
    */
   def calBCOD(BOD5: Double, CODBODRatio: Double = codBODRatio): Double = {
     require(BOD5 >= 0 && CODBODRatio >= 0)
     val r = BOD5 * CODBODRatio
+    toXDecimals(r)
+  }
+
+  /**
+   * Returns bCODp.
+   * {{{
+   *   bCODp = VSS * CODVSSRatio * BVSS
+   * }}}
+   * @param VSS the initial value of VSS.
+   * @param CODVSSRatio COD/VSS. Default value and unit are 1.42.
+   * @param BVSS biodegradable VSS. Default value and unit are 0.80.
+   */
+  def calBCODp(VSS: Double,
+               CODVSSRatio: Double = codVSSRatio,
+               BVSS: Double = bVSS): Double = {
+    require(VSS >= 0 && CODVSSRatio >= 0 && BVSS >= 0)
+    val r = VSS * CODVSSRatio * BVSS
     toXDecimals(r)
   }
 

@@ -168,4 +168,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BCOD(411.84, "xyz/abc")) shouldBe "411.84xyz/abc"
   }
 
+  "ValueUnit(BCODp(202.66))" should "202.66g/m^3" in {
+    ValueUnit(BCODp(202.66)) shouldBe "202.66g/m^3"
+  }
+
+  "ValueUnit(BCODp(202.66, \"xyz/abc\"))" should "202.66xyz/abc" in {
+    ValueUnit(BCODp(202.66, "xyz/abc")) shouldBe "202.66xyz/abc"
+  }
+
 }
