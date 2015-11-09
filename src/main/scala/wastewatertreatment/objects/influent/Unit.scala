@@ -31,4 +31,6 @@ object Unit extends valueunit.Unit {
 
   val vssUnits = concentrationUnits
 
+  val bod5Units = concentrationUnits
+
 }

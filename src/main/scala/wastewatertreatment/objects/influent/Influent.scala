@@ -49,4 +49,16 @@ object Influent {
     toXDecimals(r)
   }
 
+  /**
+   * Returns BOD,,5,,.
+   * {{{
+   *   BOD5 = cBOD5 * bod5CBOD5Ratio
+   * }}}
+   */
+  def calBOD5(CBOD5: Double, BOD5CBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
+    require(CBOD5 >= 0 && BOD5CBOD5Ratio >= 0)
+    val r = CBOD5 * BOD5CBOD5Ratio
+    toXDecimals(r)
+  }
+
 }
