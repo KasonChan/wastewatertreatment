@@ -33,15 +33,6 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val thetaC = calThetaC()
     thetaC shouldBe 6.18
 
-    val xActiveMass = calXActiveBiomass(q2, S = s, ThetaC = thetaC)
-    xActiveMass shouldBe 2.597447221E7
-
-    val xAppPiecesAndParts = calXAppPiecesAndParts(thetaC, Xa = xActiveMass)
-    xAppPiecesAndParts shouldBe 1926266.86
-
-    val pXBio = calPXBio(xActiveMass, xAppPiecesAndParts)
-    pXBio shouldBe 2.790073907E7
-
     val xB = calXb(q2, forallT2, thetaC, So = s)
     xB shouldBe 58.58
 
@@ -62,6 +53,9 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
 
     val xAHeterotrophsParts = calXaHeterotrophsParts(thetaC, Xa = xAHeterotrophs)
     xAHeterotrophsParts shouldBe 2076893.99
+
+    val pXBio = calPXBio(xAHeterotrophs, xAHeterotrophsParts)
+    pXBio shouldBe 3.008247639E7
 
     val no3n = calNO3N(XaHeterotrophs = xAHeterotrophs, XaPartsHeterotrophs = xAHeterotrophsParts, Q = q3)
     no3n shouldBe 41.48
@@ -97,7 +91,7 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     pXvsso shouldBe 8146591.2
 
     val pXvss = calPXvss(pXBio, pXBioNitrifiers, pXvsso)
-    pXvss shouldBe 39397477.53
+    pXvss shouldBe 41579214.85
 
     // Inputs
     val count = 3

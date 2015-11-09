@@ -12,7 +12,7 @@ object AerationBasins {
    * {{{
    *   Theta = Forall / Q
    * }}}
-   * @param ForallT forall T.
+   * @param ForallT the value of forall,,T,,.
    * @param Q the value of flow.
    */
   def calTheta(ForallT: Double, Q: Double): Double = {
@@ -36,167 +36,175 @@ object AerationBasins {
   }
 
   /**
-   * BOD removal = 97.00%
+   * BOD removal = 97.00%.
    */
   val bodRemoval = 97.00
 
   /**
-   * TSS removal = 94.00%
+   * TSS removal = 94.00%.
    */
   val tssRemoval = 94.00
 
   /**
-   * TKN removal = 88.00%
+   * TKN removal = 88.00%.
    */
   val tknRemoval = 88.00
 
   /**
-   * NH,,3,,-N removal = 97.00%
+   * NH,,3,,-N removal = 97.00%.
    */
   val nh3nRemoval = 97.00
 
   /**
-   * Phosphorous removal = 98.00%
+   * Phosphorous removal = 98.00%.
    */
   val phosphorousRemoval = 98.00
 
   /**
-   * bCODs removal = 100.00%
+   * bCODs removal = 100.00%.
    */
   val bCODsRemoval = 100.00
 
   /**
-   * Forall,,anoxic,,/Forall,,total,, = 0.33
+   * Forall,,anoxic,,/Forall,,total,, = 0.33.
    */
   val forallAnoxicForallTotalRatio = 0.33
 
   /**
-   * COD/BOD = 1.60
+   * COD/BOD = 1.60.
    */
   val codBODRatio = 1.60
 
   /**
-   * COD/VSS = 1.42
+   * COD/VSS = 1.42.
    */
   val codVSSRatio = 1.42
 
   /**
-   * VSS/TSS = 0.80
+   * VSS/TSS = 0.80.
    */
   val vssTSSRatio = 0.80
 
   /**
-   * Sne = 0.50g/m^3^
+   * Sne = 0.50g/m^3^.
    */
   val sne = 0.50
 
   /**
-   * Xvss = 3000.00g/m^3^
+   * Xvss = 3000.00g/m^3^.
    */
   val xVSS = 3000.00
 
   /**
-   * Se(BOD) = 1.00g/m^3^
+   * Se(BOD) = 1.00g/m^3^.
    */
   val seBOD = 1.00
 
   /**
-   * nbVSS/VSS = 0.20
+   * nbVSS/VSS = 0.20.
    */
   val nbvssVSSRatio = 0.20
 
   /**
-   * Ko = 0.50g/m^3^
+   * Ko = 0.50g/m^3^.
    */
   val kO = 0.50
 
   /**
-   * Do = 2.0 g/m^3^
+   * Do = 2.0 g/m^3^.
    */
   val dO = 2.00
 
   /**
-   * fnd = 0.10
+   * fnd = 0.10.
    */
   val fnd = 0.10
 
   /**
-   * Factor of safety = 2.00
+   * Factor of safety = 2.00.
    */
   val factorOfSafety = 2.00
 
   /**
-   * TKN = 45.00
+   * TKN = 45.00.
    */
   val tkn = 45.00
 
   /**
-   * Xr = 8000.00g/m^3^
+   * Xr = 8000.00g/m^3^.
    */
   val xR = 8000.00
 
   /**
-   * Xw = 8000.00g/m^3^
+   * Xw = 8000.00g/m^3^.
    */
   val xW = 8000.00
 
   /**
-   * Xe = 10.00g/m^3^
+   * Xe = 10.00g/m^3^.
    */
   val xE = 10.00
 
   /**
-   * NOxe = 6.00g/m^3^
+   * NOxe = 6.00g/m^3^.
    */
   val noXE = 6.00
 
   /**
-   * Heterotrophs u = 6.00d^-1^
+   * Heterotrophs u = 6.00d^-1^.
    */
   val hU = 6.00
 
   /**
-   * Heterotrophs Ks = 20.00g/m^3^
+   * Heterotrophs Ks = 20.00g/m^3^.
    */
   val hKs = 20.00
 
   /**
-   * Heterotrophs Y = 0.40
+   * Heterotrophs Y = 0.40.
    */
   val hY = 0.40
 
   /**
-   * Heterotrophs Kd = 0.12d^-1^
+   * Heterotrophs Kd = 0.12d^-1^.
    */
   val hKd = 0.12
 
   /**
-   * Default heterotrophs
+   * Default heterotrophs.
+   * Default value and unit of u are 6.00d^-1^.
+   * Default value and unit of Ks are 20.00g/m^3^.
+   * Default value and unit of Y are 0.40.
+   * Default value and unit of Kd are 0.12d^-1^.
    */
   val heterotrophs = Heterotrophs()
 
   /**
-   * Nitrifiers u = 0.75d^-1^
+   * Nitrifiers u = 0.75d^-1^.
    */
   val nU = 0.75
 
   /**
-   * Nitrifiers Ks = 0.74g/m^3^
+   * Nitrifiers Ks = 0.74g/m^3^.
    */
   val nKs = 0.74
 
   /**
-   * Nitrifiers Y = 0.12
+   * Nitrifiers Y = 0.12.
    */
   val nY = 0.12
 
   /**
-   * Nitrifiers Kd = 0.08d^-1^
+   * Nitrifiers Kd = 0.08d^-1^.
    */
   val nKd = 0.08
 
   /**
-   * Default Nitrifiers
+   * Default Nitrifiers.
+   * Default value and unit of u are 0.75d^-1^.
+   * Default value and unit of Ks are 0.74g/m^3^.
+   * Default value and unit of Y are 0.12.
+   * Default value and unit of Kd are 0.08d^-1^.
    */
   val nitrifiers = Nitrifiers()
 
@@ -205,7 +213,7 @@ object AerationBasins {
    * {{{
    *   Theta aerobic = Forall T - Forall Anoxic / Q
    * }}}
-   * @param ForallT forall T.
+   * @param ForallT the value of forall,,T,,.
    * @param Q the value of flow.
    */
   def calThetaAerobic(ForallT: Double, ForallAnoxic: Double, Q: Double): Double = {
@@ -238,51 +246,17 @@ object AerationBasins {
   }
 
   /**
-   * Returns X,,active biomass,,.
-   * {{{
-   *   X active biomass = Q * Y * (S - SeBOD) / (q + Kd * ThetaC)
-   * }}}
-   * @param Y Heterotrophs Y. Default value and unit are 0.40.
-   * @param SeBOD Default value and unit are 1.00g/m^3^.
-   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
-   */
-  def calXActiveBiomass(Q: Double,
-                        Y: Double = hY,
-                        S: Double,
-                        SeBOD: Double = seBOD,
-                        Kd: Double = hKd,
-                        ThetaC: Double): Double = {
-    require(Q >= 0 && Y >= 0 && S >= 0 && SeBOD >= 0 && Kd >= 0 && ThetaC >= 0)
-    val r = (BigDecimal(Q * Y * (S - SeBOD)) / BigDecimal(1 + (Kd * ThetaC))).toDouble
-    toXDecimals(r)
-  }
-
-  /**
-   * Returns X,,app pieces and parts,,.
-   * {{{
-   *   X app pieces and parts = ThetaC * FND * Kd * Xa
-   * }}}
-   * @param fnd Default value and unit are 0.10.
-   * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
-   */
-  def calXAppPiecesAndParts(ThetaC: Double,
-                            fnd: Double = fnd,
-                            Kd: Double = hKd,
-                            Xa: Double): Double = {
-    require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
-    val r = ThetaC * fnd * Kd * Xa
-    toXDecimals(r)
-  }
-
-  /**
    * Returns P,,Xbio,,.
    * {{{
-   *   P X Bio = Xa + Xapp
+   *   P X Bio = Xa + Xapp + Xo
    * }}}
+   * @param Xa the value of Xa.
+   * @param Xapp the value of Xapp.
+   * @param Xo the initial value of X.
    */
-  def calPXBio(XActiveBiomass: Double, XAppPiecesAndParts: Double): Double = {
-    require(XActiveBiomass >= 0 && XAppPiecesAndParts >= 0)
-    val r = XActiveBiomass + XAppPiecesAndParts
+  def calPXBio(Xa: Double, Xapp: Double, Xo: Double = 0.00): Double = {
+    require(Xa >= 0 && Xapp >= 0)
+    val r = Xa + Xapp + Xo
     toXDecimals(r)
   }
 
@@ -291,6 +265,9 @@ object AerationBasins {
    * {{{
    *   Xb = (Q / ForallT) * ((ThetaC * Y * (So - S)) / (1 + (Kd * ThetaC)))
    * }}}
+   * @param Q the value of flow.
+   * @param ForallT the value of forall,,T,,.
+   * @param ThetaC the value of theta,,c,,.
    * @param Y Heterotrophs Y. Default value and unit are 0.40.
    * @param S Se(BOD). Default value and unit are 1.00g/m^3^.
    * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
@@ -312,6 +289,10 @@ object AerationBasins {
    * {{{
    *   F/M = (Q * S) / (Forall anoxic * Xb)
    * }}}
+   * @param Q the value of flow.
+   * @param S the value of S.
+   * @param ForallAnoxic the value of forall,,anoxic,,.
+   * @param Xb the value of Xb.
    */
   def calFMRatio(Q: Double,
                  S: Double,
@@ -329,7 +310,8 @@ object AerationBasins {
    * }}}
    * @param TKN TKN. Default value and unit are 45.
    * @param Sne Sne. Default value and unit are 0.50g/m^3^.
-
+   * @param XaHeterotrophs the value of Xa,,Heterotrophs,,.
+   * @param XaPartsHeterotrophs the value of Xa,,Parts + Heterotrophs,,
    */
   def calNO3N(TKN: Double = tkn,
               Sne: Double = sne,
@@ -346,7 +328,10 @@ object AerationBasins {
    * {{{
    *   Qw = (((Theta * Xvss) / ThetaC) - (Q * Xe)) / (Xw - Xe)
    * }}}
+   * @param Theta the value of theta.
    * @param Xvss Xvss. Default value and unit are 3000.00g/m^3^.
+   * @param ThetaC the value of theta,,c,,.
+   * @param Q the value of flow.
    * @param Xe Xe. Default value and unit are 10.00g/m^3^.
    * @param Xw Xw. Default value and unit are 8000.00g/m^3^.
    */
@@ -366,6 +351,8 @@ object AerationBasins {
    * {{{
    *   Qr = ((Q - Qw) * Xe + (Qw * Xw) - (Q * Xvss)) / (Xvss - Xr)
    * }}}
+   * @param Q the value of flow.
+   * @param Qw the value of Qw.
    * @param Xe Xe. Default value and unit are 10.00g/m^3^.
    * @param Xw Xw. Default value and unit are 8000.00g/m^3^.
    * @param Xvss Xvss. Default value and unit are 3000.00g/m^3^.
@@ -387,6 +374,8 @@ object AerationBasins {
    * {{{
    *   R = Q / Qr
    * }}}
+   * @param Q the value of flow.
+   * @param Qr the value of Qr.
    */
   def calR(Qr: Double,
            Q: Double): Double = {
@@ -400,7 +389,9 @@ object AerationBasins {
    * {{{
    *   IR = (NO3N / NOxe) - 1 - R
    * }}}
+   * @param NO3N the value of NO3N.
    * @param NOxe NOxe. Default value and unit are 6.00g/m^3^.
+   * @param R the value of R.
    */
   def calIR(NO3N: Double,
             NOxe: Double = noXE,
@@ -415,6 +406,9 @@ object AerationBasins {
    * {{{
    *   NOr = ((Q * IR) + (Q * R)) / NOxe
    * }}}
+   * @param Q the value of flow.
+   * @param IR the value of IR.
+   * @param R the value of R.
    * @param NOxe NOxe. Default value and unit are 6.00g/m^3^.
    */
   def calNOr(Q: Double,
@@ -429,14 +423,17 @@ object AerationBasins {
   /**
    * Returns NO,,3removed,,.
    * {{{
-   *   NO3removed = ForallAnoxic * Xb * SDNR
+   *   NO3removed = ForallAnoxic * Xb * sdnr
    * }}}
+   * @param ForallAnoxic the value of forall,,anoxic,,.
+   * @param Xb the value of Xb.
+   * @param sdnr the value of sdnr.
    */
   def calNO3Removed(ForallAnoxic: Double,
                     Xb: Double,
-                    SDNR: Double): Double = {
-    require(ForallAnoxic >= 0 && Xb >= 0 && SDNR >= 0)
-    val r = ForallAnoxic * Xb * SDNR
+                    sdnr: Double): Double = {
+    require(ForallAnoxic >= 0 && Xb >= 0 && sdnr >= 0)
+    val r = ForallAnoxic * Xb * sdnr
     toXDecimals(r)
   }
 
@@ -445,8 +442,12 @@ object AerationBasins {
    * {{{
    *   Xa Heterotrophs = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
    * }}}
+   * @param Q the value of flow.
    * @param Y Heterotrophs Y. Default value and unit are 0.40.
+   * @param BOD5o the initial value of BOD5.
+   * @param BOD5e the effluent value of BOD5.
    * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   * @param ThetaC the value of theta,,c,,.
    */
   def calXaHeterotrophs(Q: Double,
                         Y: Double = hY,
@@ -462,17 +463,19 @@ object AerationBasins {
   /**
    * Returns heterotrophs parts Xa.
    * {{{
-   *   X app pieces and parts = ThetaC * FND * Kd * Xa
+   *   X app pieces and parts = ThetaC * fnd * Kd * Xa
    * }}}
-   * @param FND Default value and unit are 0.10.
+   * @param ThetaC the value of theta,,c,,.
+   * @param fnd Default value and unit are 0.10.
    * @param Kd Heterotrophs Kd. Default value and unit are 0.12d^-1^.
+   * @param Xa the value of Xa.
    */
   def calXaHeterotrophsParts(ThetaC: Double,
-                             FND: Double = fnd,
+                             fnd: Double = fnd,
                              Kd: Double = hKd,
                              Xa: Double): Double = {
-    require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
-    val r = ThetaC * FND * Kd * Xa
+    require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
+    val r = ThetaC * fnd * Kd * Xa
     toXDecimals(r)
   }
 
@@ -481,8 +484,11 @@ object AerationBasins {
    * {{{
    *   Xa Nitrifiers = (Q * Y * NO3N) / (1 + Kd * ThetaC)
    * }}}
+   * @param Q the value of flow.
    * @param Y Nitrifiers Y. Default value and unit are 0.12.
+   * @param NO3N the value of NO,,3,,-N.
    * @param Kd Nitrifiers Kd. Default value and unit are 0.08d^-1^.
+   * @param ThetaC the value of theta,,c,,.
    */
   def calXaNitrifiers(Q: Double,
                       Y: Double = nY,
@@ -497,17 +503,19 @@ object AerationBasins {
   /**
    * Returns nitrifiers parts Xa.
    * {{{
-   *   X app pieces and parts = ThetaC * FND * Kd * Xa
+   *   X app pieces and parts = ThetaC * fnd * Kd * Xa
    * }}}
-   * @param FND Default value and unit are 0.10.
+   * @param ThetaC the value of theta,,c,,.
+   * @param fnd Default value and unit are 0.10.
    * @param Kd Nitrifiers Kd. Default value and unit are 0.08d^-1^.
+   * @param Xa the value of Xa.
    */
   def calXaNitrifiersParts(ThetaC: Double,
-                           FND: Double = fnd,
+                           fnd: Double = fnd,
                            Kd: Double = nKd,
                            Xa: Double): Double = {
-    require(ThetaC >= 0 && FND >= 0 && Kd >= 0 && Xa >= 0)
-    val r = ThetaC * FND * Kd * Xa
+    require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
+    val r = ThetaC * fnd * Kd * Xa
     toXDecimals(r)
   }
 
@@ -516,27 +524,30 @@ object AerationBasins {
    * {{{
    *   Forall anoxic = Volumne of basins * ForallAnoxicForallTotalRatio
    * }}}
-   * @param ForallAnoxicForallTotalRatio Forall,,anoxic,,/Forall,,total,,. Default value and unit are 0.33.
+   * @param volume the volume of basins
+   * @param forallAnoxicForallTotalRatio Forall,,anoxic,,/Forall,,total,,. Default value and unit are 0.33.
    */
-  def calForallAnoxic(VolumeOfBasins: Double,
-                      ForallAnoxicForallTotalRatio: Double = forallAnoxicForallTotalRatio): Double = {
-    require(VolumeOfBasins >= 0 && ForallAnoxicForallTotalRatio >= 0)
-    val r = VolumeOfBasins * ForallAnoxicForallTotalRatio
+  def calForallAnoxic(volume: Double,
+                      forallAnoxicForallTotalRatio: Double = forallAnoxicForallTotalRatio): Double = {
+    require(volume >= 0 && forallAnoxicForallTotalRatio >= 0)
+    val r = volume * forallAnoxicForallTotalRatio
     toXDecimals(r)
   }
 
   /**
    * Returns P,,Xvsso,,.
    * {{{
-   *   PXvsso = Q * VSS * NbvssVSSRatio
+   *   PXvsso = Q * VSS * nbvssVSSRatio
    * }}}
-   * @param NbvssVSSRatio nbvss/VSS. Default value and unit are 0.20.
+   * @param Q the value of flow.
+   * @param VSS the value of VSS.
+   * @param nbvssVSSRatio nbvss/VSS. Default value and unit are 0.20.
    */
   def calPXvsso(Q: Double,
                 VSS: Double,
-                NbvssVSSRatio: Double = nbvssVSSRatio): Double = {
-    require(Q >= 0 && VSS >= 0 && NbvssVSSRatio >= 0)
-    val r = Q * VSS * NbvssVSSRatio
+                nbvssVSSRatio: Double = nbvssVSSRatio): Double = {
+    require(Q >= 0 && VSS >= 0 && nbvssVSSRatio >= 0)
+    val r = Q * VSS * nbvssVSSRatio
     toXDecimals(r)
   }
 
@@ -545,6 +556,9 @@ object AerationBasins {
    * {{{
    *   PXvss = PxBioHeterotrophs + PxBioNitrifiers + PXvsso
    * }}}
+   * @param PxBioHeterotrophs the value of heterotrophs P,,XBio,,.
+   * @param PxBioNitrifiers the value of nitrifiers P,,XBio,,.
+   * @param PXvsso the value of P,,Xvss,,
    */
   def calPXvss(PxBioHeterotrophs: Double,
                PxBioNitrifiers: Double,
@@ -557,27 +571,34 @@ object AerationBasins {
   /**
    * Returns aeration tank volumes.
    * {{{
-   *   Volume = Count * Length * Width * Depth
+   *   Volume = count * length * width * depth
    * }}}
+   * @param count the number of aeration tank.
+   * @param length the value of length of aeration tank.
+   * @param width the value of width of aeration tank.
+   * @param depth the value of depth of aeration tank.
    */
-  def calAerationTankVolumes(Count: Double,
-                             Length: Double,
-                             Width: Double,
-                             Depth: Double): Double = {
-    require(Count >= 0 && Length >= 0 && Width >= 0 && Depth >= 0)
-    val r = Count * Length * Width * Depth
+  def calAerationTankVolumes(count: Double,
+                             length: Double,
+                             width: Double,
+                             depth: Double): Double = {
+    require(count >= 0 && length >= 0 && width >= 0 && depth >= 0)
+    val r = count * length * width * depth
     toXDecimals(r)
   }
 
   /**
-   * Returns BOD loading rate.
+   * Returns influent BOD concentration.
    * {{{
-   *   BOD loading rate = (Lorg * Forall) / Q
+   *   So = (Lorg * Forall) / Q
    * }}}
+   * @param Lorg the value of volumetric organic loading rate.
+   * @param Forall the value of aeration tank volume.
+   * @param Q the value of flow.
    */
-  def calBODLoadingRate(Lorg: Double,
-                        Forall: Double,
-                        Q: Double): Double = {
+  def calBOD(Lorg: Double,
+             Forall: Double,
+             Q: Double): Double = {
     require(Lorg >= 0 && Forall >= 0 && Q > 0)
     val r = (BigDecimal(Lorg) / 1000 / 166000000 * 453.59 * 28.32 * Forall / 3.785 / 28.32 * 1000).toDouble
     toXDecimals(r)

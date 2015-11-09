@@ -321,20 +321,6 @@ case class S(value: Double,
              unit: String = sUnits.headOption.getOrElse("g-BOD/m^3")) extends ValueUnit
 
 /**
- * X,,active biomass,,
- * @param unit Default unit is '''g/d'''.
- */
-case class XActiveBiomass(value: Double,
-                          unit: String = xActiveBiomassUnits.headOption.getOrElse("g/d")) extends ValueUnit
-
-/**
- * X,,app pieces and parts,,
- * @param unit Default unit is '''g/d'''.
- */
-case class XAppPiecesAndParts(value: Double,
-                              unit: String = xAppPiecesAndPartsUnits.headOption.getOrElse("g/d")) extends ValueUnit
-
-/**
  * P,,XBio,,
  * @param unit Default unit is '''g/d'''.
  */

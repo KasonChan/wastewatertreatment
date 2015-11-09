@@ -550,22 +550,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(S(119, "xyz/abc")) shouldBe "119.00xyz/abc"
   }
 
-  "ValueUnit(XActiveBiomass(2597447221))" should "2597447221.00g/d" in {
-    ValueUnit(XActiveBiomass(2597447221.00)) shouldBe "2597447221.00g/d"
-  }
-
-  "ValueUnit(XActiveBiomass(2597447221, \"xyz/abc\"))" should "2597447221.00xyz/abc" in {
-    ValueUnit(XActiveBiomass(2597447221.00, "xyz/abc")) shouldBe "2597447221.00xyz/abc"
-  }
-
-  "ValueUnit(XAppPiecesAndParts(1929343))" should "1929343.00g/d" in {
-    ValueUnit(XAppPiecesAndParts(1929343.00)) shouldBe "1929343.00g/d"
-  }
-
-  "ValueUnit(XAppPiecesAndParts(1929343, \"xyz/abc\"))" should "1929343.00xyz/abc" in {
-    ValueUnit(XAppPiecesAndParts(1929343.00, "xyz/abc")) shouldBe "1929343.00xyz/abc"
-  }
-
   "ValueUnit(PXBio(27900739.07))" should "27900739.07g/d" in {
     ValueUnit(PXBio(27900739.07)) shouldBe "27900739.07g/d"
   }

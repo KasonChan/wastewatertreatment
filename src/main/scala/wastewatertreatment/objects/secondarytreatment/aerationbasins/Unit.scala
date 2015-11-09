@@ -83,10 +83,6 @@ object Unit extends valueunit.Unit {
 
   val sUnits = generatePRUs(massUnits, "BOD", volumeUnits)
 
-  val xActiveBiomassUnits = generatePRUs(massUnits, "", dayUnits)
-
-  val xAppPiecesAndPartsUnits = generatePRUs(massUnits, "", dayUnits)
-
   val pXBioUnits = generatePRUs(massUnits, "", dayUnits)
 
   val xBUnits = concentrationUnits
