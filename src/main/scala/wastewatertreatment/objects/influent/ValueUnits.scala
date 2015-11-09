@@ -104,3 +104,10 @@ case class VSS(value: Double,
  */
 case class BOD5(value: Double,
                 unit: String = vssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * cBOD
+ * @param unit Default is '''g/m^3^'''.
+ */
+case class BCOD(value: Double,
+                unit: String = bCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

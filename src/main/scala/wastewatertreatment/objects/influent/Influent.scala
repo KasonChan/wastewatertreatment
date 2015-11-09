@@ -52,12 +52,24 @@ object Influent {
   /**
    * Returns BOD,,5,,.
    * {{{
-   *   BOD5 = cBOD5 * bod5CBOD5Ratio
+   *   BOD5 = CBOD5 * BOD5CBOD5Ratio
    * }}}
    */
   def calBOD5(CBOD5: Double, BOD5CBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
     require(CBOD5 >= 0 && BOD5CBOD5Ratio >= 0)
     val r = CBOD5 * BOD5CBOD5Ratio
+    toXDecimals(r)
+  }
+
+  /**
+   * Returns bCOD.
+   * {{{
+   *   bCOD = BOD5 * CODBODRatio
+   * }}}
+   */
+  def calBCOD(BOD5: Double, CODBODRatio: Double = codBODRatio): Double = {
+    require(BOD5 >= 0 && CODBODRatio >= 0)
+    val r = BOD5 * CODBODRatio
     toXDecimals(r)
   }
 

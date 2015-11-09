@@ -25,6 +25,9 @@ class InfluentSuite extends FlatSpec with Matchers {
 
     val bod5 = calBOD5(cBOD5)
     bod5 shouldBe 257.40
+
+    val bCOD = calBCOD(bod5)
+    bCOD shouldBe 411.84
   }
 
   "Calculation 2" should "pass" in {
@@ -43,6 +46,9 @@ class InfluentSuite extends FlatSpec with Matchers {
 
     val bod5 = calBOD5(cBOD5, 1.1)
     bod5 shouldBe 257.40
+
+    val bCOD = calBCOD(bod5, 1.6)
+    bCOD shouldBe 411.84
   }
 
 }
