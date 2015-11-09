@@ -7,6 +7,6 @@ import wastewatertreatment.valueunit
  */
 object Unit extends valueunit.Unit {
 
-  val dailyBackwashRateUnits = flowUnits
+  val dailyBackwashRateUnits = generateUs(rateUnits, areaUnits)
 
 }

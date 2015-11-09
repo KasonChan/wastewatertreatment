@@ -23,6 +23,10 @@ class UnitSuite extends FlatSpec with Matchers with Unit {
     generateUs(volumeUnits, dayUnits) shouldBe List("m^3/d", "ft^3/d")
   }
 
+  "generateUs(rateUnits, areaUnits)" should "= List(\"gpm/m^2\", \"gpm/ft^2\")" in {
+    generateUs(rateUnits, areaUnits) shouldBe List("gpm/m^2", "gpm/ft^2")
+  }
+
   "generateRUs(massUnits, \"BOD5\", \"cBOD5\")" should "= List(\"g-BOD5/g-cBOD5\", \"kg-BOD5/kg-cBOD5\")" in {
     generateRUs(massUnits, "BOD5", "cBOD5") shouldBe List("g-BOD5/g-cBOD5", "kg-BOD5/kg-cBOD5")
   }

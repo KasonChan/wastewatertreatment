@@ -114,4 +114,12 @@ trait Unit {
     }
   }
 
+  /**
+   * The units of rate.
+   * {{{
+   *   Volume / Time
+   * }}}
+   */
+  val rateUnits = List("gpm")
+
 }

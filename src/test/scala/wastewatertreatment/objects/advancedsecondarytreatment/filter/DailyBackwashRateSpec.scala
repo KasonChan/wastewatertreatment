@@ -18,12 +18,12 @@ class DailyBackwashRateSpec extends FlatSpec with Matchers {
     calDailyBackwashRate(0, 0, 0, 0) shouldBe 0.00
   }
 
-  "calDailyBackwashRate(backwashRate, areaOfSandfilters, timeOfBackwash, times)" should "= 26240.76" in {
+  "calDailyBackwashRate(backwashRate, area, time, counts)" should "= 26240.76" in {
     val backwashRate = 6
-    val areaOfSandfilters = 28925
-    val timeOfBackwash = 10
-    val times = 4
-    calDailyBackwashRate(backwashRate, areaOfSandfilters, timeOfBackwash, times) shouldBe 26278.32
+    val area = 28925
+    val time = 10
+    val counts = 4
+    calDailyBackwashRate(backwashRate, area, time, counts) shouldBe 26278.32
   }
 
 }

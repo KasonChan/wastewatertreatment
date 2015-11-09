@@ -8,8 +8,8 @@ import wastewatertreatment.valueunit.ValueUnit
  */
 class ValueUnitsSuite extends FlatSpec with Matchers {
 
-  "ValueUnit(DailyBackwashRate(26240.76))" should "26240.76m^3/d" in {
-    ValueUnit(DailyBackwashRate(26240.76)) shouldBe "26240.76m^3/d"
+  "ValueUnit(DailyBackwashRate(26240.76))" should "26240.76gpm/ft^2" in {
+    ValueUnit(DailyBackwashRate(26240.76)) shouldBe "26240.76gpm/ft^2"
   }
 
   "ValueUnit(DailyBackwashRate(26240.76, \"xyz/abc\"))" should "26240.76xyz/abc" in {
