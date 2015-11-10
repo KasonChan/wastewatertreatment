@@ -31,3 +31,11 @@ case class BODRemoval(value: Double = bodRemoval,
  */
 case class TSS(value: Double = tss,
                unit: String = tssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * Phosphorus removal
+ * @param value Default value is '''0.00'''.
+ * @param unit Default unit is '''%'''.
+ */
+case class PhosphorousRemoval(value: Double = phosphorusRemoval,
+                              unit: String = phosphorusRemovalUnits.headOption.getOrElse("%")) extends ValueUnit

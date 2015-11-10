@@ -20,4 +20,9 @@ object PrimaryClarifiers {
    */
   val tss = 40000.00
 
+  /**
+   * Phosphorus removal = 0.00%.
+   */
+  val phosphorusRemoval = 0.00
+
 }

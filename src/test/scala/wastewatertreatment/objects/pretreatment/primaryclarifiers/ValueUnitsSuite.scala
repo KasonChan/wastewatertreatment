@@ -56,4 +56,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(TSS(unit = "xyz/abc")) shouldBe "40000.00xyz/abc"
   }
 
+  "ValueUnit(PhosphorousRemoval(0))" should "0.00%" in {
+    ValueUnit(PhosphorousRemoval(0)) shouldBe "0.00%"
+  }
+
+  "ValueUnit(PhosphorousRemoval())" should "0.00%" in {
+    ValueUnit(PhosphorousRemoval()) shouldBe "0.00%"
+  }
+
+  "ValueUnit(PhosphorousRemoval(0, \"xyz/abc\"))" should "0.00xyz/abc" in {
+    ValueUnit(PhosphorousRemoval(0, "xyz/abc")) shouldBe "0.00xyz/abc"
+  }
+
+  "ValueUnit(PhosphorousRemoval(unit = \"xyz/abc\"))" should "0.00xyz/abc" in {
+    ValueUnit(PhosphorousRemoval(unit = "xyz/abc")) shouldBe "0.00xyz/abc"
+  }
+
 }

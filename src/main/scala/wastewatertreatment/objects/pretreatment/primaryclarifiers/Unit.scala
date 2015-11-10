@@ -13,4 +13,6 @@ object Unit extends valueunit.Unit {
 
   val tssUnits = concentrationUnits
 
+  val phosphorusRemovalUnits = percentageUnits
+
 }
