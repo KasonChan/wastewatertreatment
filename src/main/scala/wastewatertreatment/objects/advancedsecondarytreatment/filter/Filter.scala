@@ -31,4 +31,40 @@ object Filter {
     toXDecimals(r)
   }
 
+  /**
+   * TSS removal = 70.00%.
+   */
+  val tssRemoval = 70.00
+
+  /**
+   * BOD removal = 70.00%.
+   */
+  val bodRemoval = 70.00
+
+  /**
+   * TOC removal = 48.00%.
+   */
+  val tocRemoval = 48.00
+
+  /**
+   *
+   * Fecal coliform removal = 76.00%.
+   */
+  val fecalColiformRemoval = 76.00
+
+  /**
+   * TP removal = 33.00%.
+   */
+  val tpRemoval = 33.00
+
+  /**
+   * TKN removal = 46.00%.
+   */
+  val tknRemoval = 46.00
+
+  /**
+   * NH,,3,,-N removal = 21.00%.
+   */
+  val nh3nRemoval = 21.00
+
 }
