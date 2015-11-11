@@ -1,12 +1,12 @@
-package wastewatertreatment.objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screens
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.objects.pretreatment.screen.Screen._
+import wastewatertreatment.objects.pretreatment.screens.Screens._
 
 /**
  * Created by ka-son on 10/24/15.
  */
-class ScreenSuite extends FlatSpec with Matchers {
+class ScreensSuite extends FlatSpec with Matchers {
 
   "Calculation 1" should "pass" in {
     // Assumed

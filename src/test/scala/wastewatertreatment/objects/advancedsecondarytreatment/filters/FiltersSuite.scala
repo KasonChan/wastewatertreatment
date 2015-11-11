@@ -1,12 +1,12 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.objects.advancedsecondarytreatment.filter.Filter._
+import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
 
 /**
  * Created by ka-son on 11/7/15.
  */
-class FilterSuite extends FlatSpec with Matchers {
+class FiltersSuite extends FlatSpec with Matchers {
 
   "Calculation 1" should "pass" in {
     // Inputs

@@ -1,11 +1,11 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import wastewatertreatment.math.Math._
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Filter {
+object Filters {
 
   /**
    * Backwash rate = 6.00gpm/ft^2^.

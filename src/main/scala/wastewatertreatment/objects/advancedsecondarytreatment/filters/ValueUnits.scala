@@ -1,7 +1,7 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.objects.advancedsecondarytreatment.filter.Filter._
-import wastewatertreatment.objects.advancedsecondarytreatment.filter.Unit._
+import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
+import wastewatertreatment.objects.advancedsecondarytreatment.filters.Unit._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

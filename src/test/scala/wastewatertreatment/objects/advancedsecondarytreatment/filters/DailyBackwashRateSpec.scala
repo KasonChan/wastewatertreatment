@@ -1,7 +1,7 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.objects.advancedsecondarytreatment.filter.Filter.calDailyBackwashRate
+import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters.calDailyBackwashRate
 
 /**
  * Created by kasonchan on 11/6/15.

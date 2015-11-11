@@ -1,11 +1,11 @@
-package wastewatertreatment.objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by ka-son on 10/24/15.
  */
-object Screen {
+object Screens {
 
   /**
    * TSS removal = 27.00%.

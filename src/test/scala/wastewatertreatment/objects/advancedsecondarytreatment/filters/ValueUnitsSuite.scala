@@ -1,4 +1,4 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.valueunit.ValueUnit

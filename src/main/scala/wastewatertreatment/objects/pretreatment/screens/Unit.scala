@@ -1,4 +1,4 @@
-package wastewatertreatment.objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.valueunit
 

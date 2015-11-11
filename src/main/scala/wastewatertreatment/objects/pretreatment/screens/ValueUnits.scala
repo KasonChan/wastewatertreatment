@@ -1,7 +1,7 @@
-package wastewatertreatment.objects.pretreatment.screen
+package wastewatertreatment.objects.pretreatment.screens
 
-import wastewatertreatment.objects.pretreatment.screen.Screen.{bod5Removal, bod5cBOD5Ratio, codBODRatio, codVSSRatio, tssRemoval, vssTSSRatio}
-import wastewatertreatment.objects.pretreatment.screen.Unit._
+import wastewatertreatment.objects.pretreatment.screens.Screens.{bod5Removal, bod5cBOD5Ratio, codBODRatio, codVSSRatio, tssRemoval, vssTSSRatio}
+import wastewatertreatment.objects.pretreatment.screens.Unit._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

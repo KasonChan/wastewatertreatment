@@ -1,4 +1,4 @@
-package wastewatertreatment.objects.advancedsecondarytreatment.filter
+package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import wastewatertreatment.valueunit
 
