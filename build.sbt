@@ -27,10 +27,24 @@ val baseSettings = Seq(
 lazy val publishSettings = Seq(
   publishMavenStyle := true,
   publishArtifact := true,
+  publishTo := {
+    val nexus = "https://oss.sonatype.org/"
+    if (isSnapshot.value)
+      Some("snapshots" at nexus + "content/repositories/snapshots")
+    else
+      Some("releases" at nexus + "service/local/staging/deploy/maven2")
+  },
   publishArtifact in Test := false,
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
+  homepage := Some(url("https://github.com/KasonChan/wastewatertreatment")),
   autoAPIMappings := true,
   apiURL := Some(url("https://kasonchan.github.io/wastewatertreatment/docs")),
+  scmInfo := Some(
+    ScmInfo(
+      url("https://github.com/KasonChan/wastewatertreatment"),
+      "scm:git:git@github.com:KasonChan/wastewatertreatment.git"
+    )
+  ),
   pomExtra :=
     <developers>
       <developer>
@@ -46,6 +60,11 @@ lazy val noPublish = Seq(
 )
 
 lazy val allSettings = baseSettings ++ buildSettings ++ publishSettings
+
+lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Seq(
+  site.addMappingsToSiteDir(mappings in(ScalaUnidoc, packageDoc), "docs"),
+  git.remoteRepo := s"git@github.com:KasonChan/wastewatertreatment.git"
+)
 
 lazy val root = project.in(file("."))
   .settings(moduleName := "wastewatertreatment")
