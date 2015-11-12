@@ -22,3 +22,10 @@ case class BacterialRemovalRate(value: Double = bacterialRemovalRate,
  */
 case class FecalColiform(value: Double,
                          unit: String = fecalColiformUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit
+
+/**
+ * Enterococci
+ * @param unit Default unit is '''MPN/100mL'''.
+ */
+case class Enterococci(value: Double,
+                       unit: String = fecalColiformUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit

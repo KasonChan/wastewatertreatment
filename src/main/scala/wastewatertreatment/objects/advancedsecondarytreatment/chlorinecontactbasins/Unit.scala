@@ -11,4 +11,6 @@ object Unit extends valueunit.Unit {
 
   val fecalColiformUnits = List("MPN/100mL")
 
+  val enterococci = List("MPN/100mL")
+
 }
