@@ -28,6 +28,11 @@ object SecondaryClarifiers {
   val pVSSRatio = 0.02
 
   /**
+   * VSS/TSS = 0.80.
+   */
+  val vssTSSRatio = 0.80
+
+  /**
    * Returns Q.
    * {{{
    *   Q = Qo - Qe
@@ -52,6 +57,20 @@ object SecondaryClarifiers {
   def calTSS(P: Double, Q: Double): Double = {
     require(Q >= 0 && P > 0)
     val r = P / Q
+    toXDecimals(r)
+  }
+
+  /**
+   * Returns VSS.
+   * {{{
+   *   VSS = TSS * vssTSSRatio
+   * }}}
+   * @param TSS the effluent value of TSS.
+   * @param vssTSSRatio VSS/TSS. Default value and unit are 0.80.
+   */
+  def calVSS(TSS: Double, vssTSSRatio: Double = vssTSSRatio): Double = {
+    require(TSS >= 0 && vssTSSRatio > 0)
+    val r = TSS * vssTSSRatio
     toXDecimals(r)
   }
 

@@ -22,6 +22,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val tss = calTSS(p, q)
     tss shouldBe 0.41
+
+    val vss = calVSS(tss)
+    vss shouldBe 0.33
   }
 
   "Calculation 2" should "pass" in {
@@ -38,6 +41,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val tss = calTSS(p, q)
     tss shouldBe 1.63
+
+    val vss = calVSS(tss)
+    vss shouldBe 1.30
   }
 
 }

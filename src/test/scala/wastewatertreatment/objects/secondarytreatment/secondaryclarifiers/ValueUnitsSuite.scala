@@ -80,6 +80,30 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Q(481131.12, "xyz/abc")) shouldBe "481131.12xyz/abc"
   }
 
+  "ValueUnit(VSSTSSRatio(0.80))" should "0.80" in {
+    ValueUnit(VSSTSSRatio(0.80)) shouldBe "0.80"
+  }
+
+  "ValueUnit(VSSTSSRatio())" should "0.80" in {
+    ValueUnit(VSSTSSRatio()) shouldBe "0.80"
+  }
+
+  "ValueUnit(VSSTSSRatio(0.80, \"xyz/abc\"))" should "0.80xyz/abc" in {
+    ValueUnit(VSSTSSRatio(0.80, "xyz/abc")) shouldBe "0.80xyz/abc"
+  }
+
+  "ValueUnit(VSSTSSRatio(unit = \"xyz/abc\"))" should "0.80xyz/abc" in {
+    ValueUnit(VSSTSSRatio(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
+  }
+
+  "ValueUnit(VSS(0.33))" should "0.33g/m^3" in {
+    ValueUnit(VSS(0.33)) shouldBe "0.33g/m^3"
+  }
+
+  "ValueUnit(VSS(0.33, \"xyz/abc\"))" should "0.33xyz/abc" in {
+    ValueUnit(VSS(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
+  }
+
   "ValueUnit(P(199613.87))" should "199613.87g-TSS/d" in {
     ValueUnit(P(199613.87)) shouldBe "199613.87g-TSS/d"
   }

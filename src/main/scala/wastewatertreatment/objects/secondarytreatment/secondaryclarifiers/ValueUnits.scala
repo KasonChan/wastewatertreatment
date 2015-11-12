@@ -48,6 +48,21 @@ case class Q(value: Double,
              unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
 /**
+ * VSS/TSS
+ * @param value Default value is '''0.80'''.
+ * @param unit Default unit is '''No unit'''.
+ */
+case class VSSTSSRatio(value: Double = vssTSSRatio,
+                       unit: String = vssTSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * VSS
+ * @param unit Default unit is '''m^3^/d'''.
+ */
+case class VSS(value: Double,
+               unit: String = vssUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+
+/**
  * P
  * @param unit Default unit is '''g-TSS/d'''.
  */
