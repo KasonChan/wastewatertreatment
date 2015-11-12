@@ -41,6 +41,13 @@ case class PVSSRatio(value: Double = pVSSRatio,
                      unit: String = pVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
 
 /**
+ * Q
+ * @param unit Default unit is '''m^3^/d'''.
+ */
+case class Q(value: Double,
+             unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
+
+/**
  * P
  * @param unit Default unit is '''g-TSS/d'''.
  */

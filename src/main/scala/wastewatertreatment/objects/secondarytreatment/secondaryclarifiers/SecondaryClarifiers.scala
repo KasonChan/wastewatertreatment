@@ -28,6 +28,20 @@ object SecondaryClarifiers {
   val pVSSRatio = 0.02
 
   /**
+   * Returns Q.
+   * {{{
+   *   Q = Qo - Qe
+   * }}}
+   * @param Qo the influent value of Q.
+   * @param Qe the effluent value of Q.
+   */
+  def calQ(Qo: Double, Qe: Double): Double = {
+    require(Qo >= 0 && Qe >= 0)
+    val r = Qo - Qe
+    toXDecimals(r)
+  }
+
+  /**
    * Returns P.
    * {{{
    *   P = Po - (Po * TSS removal)

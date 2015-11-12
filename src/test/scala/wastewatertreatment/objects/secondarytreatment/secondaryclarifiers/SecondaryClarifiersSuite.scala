@@ -14,6 +14,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val po = 362934.31
 
+    val q = calQ(qo, qe)
+    q shouldBe 481131.13
+
     val p = calP(po)
     p shouldBe 199613.87
   }
@@ -23,6 +26,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
     val qe = 165103.26
 
     val po = 3055242.73
+
+    val q = calQ(qo, qe)
+    q shouldBe 1028361.61
 
     val p = calP(po)
     p shouldBe 1680383.50
