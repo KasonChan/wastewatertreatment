@@ -9,4 +9,6 @@ object Unit extends valueunit.Unit {
 
   val bacterialRemovalRateUnits = noUnits
 
+  val fecalColiformUnits = List("MPN/100mL")
+
 }

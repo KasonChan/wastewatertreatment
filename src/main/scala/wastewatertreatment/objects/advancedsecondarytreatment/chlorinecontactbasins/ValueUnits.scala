@@ -14,4 +14,11 @@ import wastewatertreatment.valueunit.ValueUnit
  * @param unit Default unit is '''No unit'''.
  */
 case class BacterialRemovalRate(value: Double = bacterialRemovalRate,
-                                 unit: String = bacterialRemovalRateUnits.headOption.getOrElse("")) extends ValueUnit
+                                unit: String = bacterialRemovalRateUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * Fecal coliform
+ * @param unit Default unit is '''MPN/100mL'''.
+ */
+case class FecalColiform(value: Double,
+                         unit: String = fecalColiformUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit

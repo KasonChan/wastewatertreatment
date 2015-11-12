@@ -24,4 +24,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BacterialRemovalRate(unit = "xyz/abc")) shouldBe "99.99xyz/abc"
   }
 
+  "ValueUnit(FecalColiform(2838.92))" should "2838.92MPN/100mL" in {
+    ValueUnit(FecalColiform(2838.92)) shouldBe "2838.92MPN/100mL"
+  }
+
+  "ValueUnit(FecalColiform(2838.92, \"xyz/abc\"))" should "2838.92xyz/abc" in {
+    ValueUnit(FecalColiform(2838.92, "xyz/abc")) shouldBe "2838.92xyz/abc"
+  }
+
 }
