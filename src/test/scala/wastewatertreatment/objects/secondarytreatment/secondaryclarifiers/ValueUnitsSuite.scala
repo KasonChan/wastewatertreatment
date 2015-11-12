@@ -72,4 +72,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(PVSSRatio(unit = "xyz/abc")) shouldBe "0.02xyz/abc"
   }
 
+  "ValueUnit(P(199613.87))" should "199613.87g-TSS/d" in {
+    ValueUnit(P(199613.87)) shouldBe "199613.87g-TSS/d"
+  }
+
+  "ValueUnit(P(199613.87, \"xyz/abc\"))" should "199613.87xyz/abc" in {
+    ValueUnit(P(199613.87, "xyz/abc")) shouldBe "199613.87xyz/abc"
+  }
+
 }

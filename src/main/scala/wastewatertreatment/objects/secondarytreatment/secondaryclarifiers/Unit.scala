@@ -15,4 +15,6 @@ object Unit extends valueunit.Unit {
 
   val pVSSRatioUnits = noUnits
 
+  val pUnits = generatePRUs(massUnits, "TSS", dayUnits)
+
 }

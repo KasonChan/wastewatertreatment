@@ -39,3 +39,10 @@ case class TSS(value: Double = tss,
  */
 case class PVSSRatio(value: Double = pVSSRatio,
                      unit: String = pVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
+
+/**
+ * P
+ * @param unit Default unit is '''g-TSS/d'''.
+ */
+case class P(value: Double,
+             unit: String = pUnits.headOption.getOrElse("g-TSS/d")) extends ValueUnit
