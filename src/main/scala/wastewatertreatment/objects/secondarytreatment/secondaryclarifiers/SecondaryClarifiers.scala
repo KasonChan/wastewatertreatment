@@ -42,6 +42,20 @@ object SecondaryClarifiers {
   }
 
   /**
+   * Returns TSS.
+   * {{{
+   *   TSS = P / Q
+   * }}}
+   * @param P the effluent value of P.
+   * @param Q the effluent value of Q.
+   */
+  def calTSS(P: Double, Q: Double): Double = {
+    require(Q >= 0 && P > 0)
+    val r = P / Q
+    toXDecimals(r)
+  }
+
+  /**
    * Returns P.
    * {{{
    *   P = Po - (Po * TSS removal)
