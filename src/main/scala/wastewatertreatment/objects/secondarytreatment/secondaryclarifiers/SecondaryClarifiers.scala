@@ -30,14 +30,14 @@ object SecondaryClarifiers {
   /**
    * Returns P.
    * {{{
-   *   P = Po - Pe
+   *   P = Po - (Po * TSS removal)
    * }}}
    * @param Po the influent value of P.
-   * @param Pe the effluent value of P.
+   * @param tssRemoval the value of TSS removal.
    */
-  def calP(Po: Double, Pe: Double): Double = {
-    require(Po >= 0 && Pe >= 0)
-    val r = Po - Pe
+  def calP(Po: Double, tssRemoval: Double = tssRemoval): Double = {
+    require(Po >= 0 && tssRemoval >= 0)
+    val r = Po - (Po * tssRemoval / 100)
     toXDecimals(r)
   }
 

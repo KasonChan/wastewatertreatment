@@ -30,10 +30,15 @@ class PSpec extends FlatSpec with Matchers {
     calP(0, 0) shouldBe 0.0
   }
 
-  "calP(po, pe)" should "= 199613.87" in {
+  "calP(po)" should "= 199613.87" in {
     val po = 362934.31
-    val pe = 163320.44
-    calP(po, pe) shouldBe 199613.87
+    calP(po) shouldBe 199613.87
+  }
+
+  "calP(po, tssRemoval)" should "= 199613.87" in {
+    val po = 362934.31
+    val tssRemoval = 45
+    calP(po, tssRemoval) shouldBe 199613.87
   }
 
 }

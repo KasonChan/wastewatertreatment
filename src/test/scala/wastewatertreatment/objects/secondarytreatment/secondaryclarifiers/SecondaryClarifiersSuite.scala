@@ -9,11 +9,23 @@ import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.Second
 class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
   "Calculation 1" should "pass" in {
-    val po = 362934.31
-    val pe = 163320.44
+    val qo = 571269.64
+    val qe = 90138.51
 
-    val p = calP(po, pe)
+    val po = 362934.31
+
+    val p = calP(po)
     p shouldBe 199613.87
+  }
+
+  "Calculation 2" should "pass" in {
+    val qo = 1193464.87
+    val qe = 165103.26
+
+    val po = 3055242.73
+
+    val p = calP(po)
+    p shouldBe 1680383.50
   }
 
 }
