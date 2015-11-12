@@ -75,6 +75,20 @@ object SecondaryClarifiers {
   }
 
   /**
+   * Returns BOD,,5,,.
+   * {{{
+   *   BOD5 = BOD5o - (BOD5o * BOD removal)
+   * }}}
+   * @param BOD5o the influent value of BOD,,5,,.
+   * @param bodRemoval the value of BOD removal. Default value and unit are 0.25.
+   */
+  def calBOD5(BOD5o: Double, bodRemoval: Double = bodRemoval): Double = {
+    require(BOD5o >= 0 && bodRemoval >= 0)
+    val r = BOD5o - (BOD5o * bodRemoval / 100)
+    toXDecimals(r)
+  }
+
+  /**
    * Returns P.
    * {{{
    *   P = Po - (Po * TSS removal)

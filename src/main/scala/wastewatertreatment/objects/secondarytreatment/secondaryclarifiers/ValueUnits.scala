@@ -60,7 +60,14 @@ case class VSSTSSRatio(value: Double = vssTSSRatio,
  * @param unit Default unit is '''m^3^/d'''.
  */
 case class VSS(value: Double,
-               unit: String = vssUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+               unit: String = vssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+/**
+ * BOD5
+ * @param unit Default unit is '''m^3^/d'''.
+ */
+case class BOD5(value: Double,
+                unit: String = bod5Units.headOption.getOrElse("g/m^3")) extends ValueUnit
 
 /**
  * P
