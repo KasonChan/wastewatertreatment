@@ -79,6 +79,20 @@ object ValueUnits {
                    unit: String = cBOD5Units.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
+   * bCODs
+   * @param unit Default unit is '''m^3^/d'''.
+   */
+  case class BCODs(value: Double,
+                   unit: String = bCODsUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+  /**
+   * bCODp
+   * @param unit Default unit is '''m^3^/d'''.
+   */
+  case class BCODp(value: Double,
+                   unit: String = bCODpUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+  /**
    * P
    * @param unit Default unit is '''g-TSS/d'''.
    */
