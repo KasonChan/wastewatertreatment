@@ -36,6 +36,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val bCODp = calBCODp(VSS = vss)
     bCODp shouldBe 0.37
+
+    val bCOD = bCODs + bCODp
+    bCOD shouldBe 0.37
   }
 
   "Calculation 2" should "pass" in {
@@ -66,6 +69,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val bCODp = calBCODp(VSS = vss)
     bCODp shouldBe 1.48
+
+    val bCOD = bCODs + bCODp
+    bCOD shouldBe 1.48
   }
 
 }

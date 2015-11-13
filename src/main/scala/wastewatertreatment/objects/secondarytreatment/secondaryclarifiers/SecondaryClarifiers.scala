@@ -114,6 +114,20 @@ object SecondaryClarifiers {
   }
 
   /**
+   * Returns bCOD.
+   * {{{
+   *   bCOD = bCODs + bCODp
+   * }}}
+   * @param bCODs the effluent value of bCODs.
+   * @param bCODp the effluent value of bCODp.
+   */
+  def calBCOD(bCODs: Double, bCODp: Double): Double = {
+    require(bCODs >= 0 && bCODp >= 0)
+    val r = bCODs + bCODp
+    toXDecimals(r)
+  }
+
+  /**
    * Returns P.
    * {{{
    *   P = Po - (Po * TSS removal)

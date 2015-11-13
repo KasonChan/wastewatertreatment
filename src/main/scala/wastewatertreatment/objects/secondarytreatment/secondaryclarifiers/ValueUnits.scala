@@ -59,38 +59,45 @@ object ValueUnits {
 
   /**
    * VSS
-   * @param unit Default unit is '''m^3^/d'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class VSS(value: Double,
                  unit: String = vssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * BOD,,5,,
-   * @param unit Default unit is '''m^3^/d'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class BOD5(value: Double,
                   unit: String = bod5Units.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * cBOD,,5,,
-   * @param unit Default unit is '''m^3^/d'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class CBOD5(value: Double,
                    unit: String = cBOD5Units.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * bCODs
-   * @param unit Default unit is '''m^3^/d'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class BCODs(value: Double,
                    unit: String = bCODsUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * bCODp
-   * @param unit Default unit is '''m^3^/d'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class BCODp(value: Double,
                    unit: String = bCODpUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
+  /**
+   * bCOD
+   * @param unit Default unit is '''g/m^3^'''.
+   */
+  case class BCOD(value: Double,
+                  unit: String = bCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * P
