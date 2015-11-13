@@ -1,11 +1,12 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.math.Math._
+import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object SecondaryClarifiers {
+object SecondaryClarifiers extends Assumptions {
 
   /**
    * TSS removal = 45.00%.
@@ -26,11 +27,6 @@ object SecondaryClarifiers {
    * P/VSS = 0.02.
    */
   val pVSSRatio = 0.02
-
-  /**
-   * VSS/TSS = 0.80.
-   */
-  val vssTSSRatio = 0.80
 
   /**
    * Returns Q.

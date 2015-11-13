@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.influent
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.assumptions
+import wastewatertreatment.objects.influent.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 11/8/15.
  */
-class ValueUnitsSuite extends FlatSpec with Matchers {
+class ValueUnitsSuite extends FlatSpec with Matchers with assumptions.ValueUnits {
 
   "ValueUnit(Q(368))" should "368.00MGD" in {
     ValueUnit(Q(368)) shouldBe "368.00MGD"

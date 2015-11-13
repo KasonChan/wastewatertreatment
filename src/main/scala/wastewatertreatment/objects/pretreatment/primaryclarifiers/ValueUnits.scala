@@ -7,35 +7,38 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by kasonchan on 11/9/15.
  */
+object ValueUnits {
 
-/**
- * TSS removal
- * @param value Default value is '''63.00'''.
- * @param unit Default unit is '''%'''.
- */
-case class TSSRemoval(value: Double = tssRemoval,
-                      unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  /**
+   * TSS removal
+   * @param value Default value is '''63.00'''.
+   * @param unit Default unit is '''%'''.
+   */
+  case class TSSRemoval(value: Double = tssRemoval,
+                        unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
-/**
- * BOD removal
- * @param value Default value is '''35.00'''.
- * @param unit Default unit is '''%'''.
- */
-case class BODRemoval(value: Double = bodRemoval,
-                      unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  /**
+   * BOD removal
+   * @param value Default value is '''35.00'''.
+   * @param unit Default unit is '''%'''.
+   */
+  case class BODRemoval(value: Double = bodRemoval,
+                        unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
-/**
- * TSS
- * @param value Default value is '''40000.00'''.
- * @param unit Default unit is '''g/m^3^'''.
- */
-case class TSS(value: Double = tss,
-               unit: String = tssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+  /**
+   * TSS
+   * @param value Default value is '''40000.00'''.
+   * @param unit Default unit is '''g/m^3^'''.
+   */
+  case class TSS(value: Double = tss,
+                 unit: String = tssUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
-/**
- * Phosphorus removal
- * @param value Default value is '''0.00'''.
- * @param unit Default unit is '''%'''.
- */
-case class PhosphorousRemoval(value: Double = phosphorusRemoval,
-                              unit: String = phosphorusRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  /**
+   * Phosphorus removal
+   * @param value Default value is '''0.00'''.
+   * @param unit Default unit is '''%'''.
+   */
+  case class PhosphorousRemoval(value: Double = phosphorusRemoval,
+                                unit: String = phosphorusRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+
+}

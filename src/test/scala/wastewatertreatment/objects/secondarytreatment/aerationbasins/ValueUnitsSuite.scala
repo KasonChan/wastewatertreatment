@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.assumptions
+import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by ka-son on 10/31/15.
  */
-class ValueUnitsSuite extends FlatSpec with Matchers {
+class ValueUnitsSuite extends FlatSpec with Matchers with assumptions.ValueUnits {
 
   "ValueUnit(ForallT(423819)" should "423819.00m^3" in {
     ValueUnit(ForallT(423819)) shouldBe "423819.00m^3"

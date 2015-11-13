@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

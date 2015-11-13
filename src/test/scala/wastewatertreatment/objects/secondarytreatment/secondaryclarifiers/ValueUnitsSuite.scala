@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

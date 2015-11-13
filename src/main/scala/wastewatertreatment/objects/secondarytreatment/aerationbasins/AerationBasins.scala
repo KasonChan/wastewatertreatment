@@ -1,11 +1,13 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
+import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.math.Math.toXDecimals
+import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerationBasins {
+object AerationBasins extends Assumptions {
 
   /**
    * Returns theta.
@@ -71,21 +73,6 @@ object AerationBasins {
   val forallAnoxicForallTotalRatio = 0.33
 
   /**
-   * COD/BOD = 1.60.
-   */
-  val codBODRatio = 1.60
-
-  /**
-   * COD/VSS = 1.42.
-   */
-  val codVSSRatio = 1.42
-
-  /**
-   * VSS/TSS = 0.80.
-   */
-  val vssTSSRatio = 0.80
-
-  /**
    * Sne = 0.50g/m^3^.
    */
   val sne = 0.50
@@ -103,7 +90,7 @@ object AerationBasins {
   /**
    * nbVSS/VSS = 0.20.
    */
-  val nbvssVSSRatio = 0.20
+  val nbvssVSSRatio = 1 - bVSS
 
   /**
    * Ko = 0.50g/m^3^.
