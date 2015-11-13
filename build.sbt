@@ -50,6 +50,7 @@ lazy val publishSettings = Seq(
       <developer>
         <id>KasonChan</id>
         <name>Kason Chan</name>
+        <url>https://github.com/KasonChan</url>
       </developer>
     </developers>
 )
