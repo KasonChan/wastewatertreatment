@@ -106,4 +106,11 @@ object ValueUnits {
   case class P(value: Double,
                unit: String = pUnits.headOption.getOrElse("g-TSS/d")) extends ValueUnit
 
+  /**
+   * TP
+   * @param unit Default unit is '''g/m^3^'''.
+   */
+  case class TP(value: Double,
+                unit: String = tpUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
+
 }

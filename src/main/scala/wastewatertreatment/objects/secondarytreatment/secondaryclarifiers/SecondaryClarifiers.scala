@@ -128,6 +128,21 @@ object SecondaryClarifiers {
   }
 
   /**
+   * Returns TP.
+   * {{{
+   *   TP = ((TP * Q) - P/VSS) / Q
+   * }}}
+   * @param TP the effluent value of TP.
+   * @param Q the effluent value of Q.
+   * @param pVSSRatio P/VSS. Default value and unit are 0.02.
+   */
+  def calTP(TP: Double, Q: Double, pVSSRatio: Double = pVSSRatio): Double = {
+    require(TP >= 0 && Q > 0 && pVSSRatio >= 0)
+    val r = ((TP * Q) - pVSSRatio) / Q
+    toXDecimals(r)
+  }
+
+  /**
    * Returns P.
    * {{{
    *   P = Po - (Po * TSS removal)

@@ -153,4 +153,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(P(199613.87, "xyz/abc")) shouldBe "199613.87xyz/abc"
   }
 
+  "ValueUnit(TP(0.64))" should "0.64g/m^3" in {
+    ValueUnit(TP(0.64)) shouldBe "0.64g/m^3"
+  }
+
+  "ValueUnit(TP(0.64, \"xyz/abc\"))" should "0.64xyz/abc" in {
+    ValueUnit(TP(0.64, "xyz/abc")) shouldBe "0.64xyz/abc"
+  }
+
 }
