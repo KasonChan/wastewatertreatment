@@ -180,6 +180,91 @@
       </a>
     </span>
       <p class="shortcomment cmt">BOD removal = 25.00%.</p>
+    </li><li name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers#calBOD5" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="calBOD5(BOD5o:Double,bodRemoval:Double):Double"></a>
+      <a id="calBOD5(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">calBOD5</span><span class="params">(<span name="BOD5o">BOD5o: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="bodRemoval">bodRemoval: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a> = <span class="symbol">bodRemoval</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers$@calBOD5(BOD5o:Double,bodRemoval:Double):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns BOD<sub>5</sub>.</p><div class="fullcomment"><div class="comment cmt"><p>Returns BOD<sub>5</sub>.</p><pre>BOD5 = BOD5o - (BOD5o * BOD removal)</pre></div><dl class="paramcmts block"><dt class="param">BOD5o</dt><dd class="cmt"><p>the influent value of BOD<sub>5</sub>.</p></dd><dt class="param">bodRemoval</dt><dd class="cmt"><p>the value of BOD removal. Default value and unit are 0.25.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers#calP" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="calP(Po:Double,tssRemoval:Double):Double"></a>
+      <a id="calP(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">calP</span><span class="params">(<span name="Po">Po: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="tssRemoval">tssRemoval: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a> = <span class="symbol">tssRemoval</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers$@calP(Po:Double,tssRemoval:Double):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns P.</p><div class="fullcomment"><div class="comment cmt"><p>Returns P.</p><pre>P = Po - (Po * TSS removal)</pre></div><dl class="paramcmts block"><dt class="param">Po</dt><dd class="cmt"><p>the influent value of P.</p></dd><dt class="param">tssRemoval</dt><dd class="cmt"><p>the value of TSS removal.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers#calQ" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="calQ(Qo:Double,Qe:Double):Double"></a>
+      <a id="calQ(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">calQ</span><span class="params">(<span name="Qo">Qo: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="Qe">Qe: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers$@calQ(Qo:Double,Qe:Double):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns Q.</p><div class="fullcomment"><div class="comment cmt"><p>Returns Q.</p><pre>Q = Qo - Qe</pre></div><dl class="paramcmts block"><dt class="param">Qo</dt><dd class="cmt"><p>the influent value of Q.</p></dd><dt class="param">Qe</dt><dd class="cmt"><p>the effluent value of Q.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers#calTSS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="calTSS(P:Double,Q:Double):Double"></a>
+      <a id="calTSS(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">calTSS</span><span class="params">(<span name="P">P: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="Q">Q: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers$@calTSS(P:Double,Q:Double):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns TSS.</p><div class="fullcomment"><div class="comment cmt"><p>Returns TSS.</p><pre>TSS = P / Q</pre></div><dl class="paramcmts block"><dt class="param">P</dt><dd class="cmt"><p>the effluent value of P.</p></dd><dt class="param">Q</dt><dd class="cmt"><p>the effluent value of Q.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers#calVSS" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="calVSS(TSS:Double,vssTSSRatio:Double):Double"></a>
+      <a id="calVSS(Double,Double):Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">calVSS</span><span class="params">(<span name="TSS">TSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>, <span name="vssTSSRatio">vssTSSRatio: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a> = <span class="symbol">vssTSSRatio</span></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers$@calVSS(TSS:Double,vssTSSRatio:Double):Double" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns VSS.</p><div class="fullcomment"><div class="comment cmt"><p>Returns VSS.</p><pre>VSS = TSS * vssTSSRatio</pre></div><dl class="paramcmts block"><dt class="param">TSS</dt><dd class="cmt"><p>the effluent value of TSS.</p></dd><dt class="param">vssTSSRatio</dt><dd class="cmt"><p>VSS/TSS. Default value and unit are 0.80.</p></dd></dl></div>
     </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
       <a id="clone():Object"></a>
       <a id="clone():AnyRef"></a>
