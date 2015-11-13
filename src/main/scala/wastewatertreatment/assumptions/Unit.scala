@@ -5,7 +5,7 @@ import wastewatertreatment.objects.influent.Unit.{concentrationUnits, noUnits}
 /**
  * Created by kasonchan on 11/13/15.
  */
-trait Unit {
+object Unit {
 
   val bod5cBOD5RatioUnits = noUnits
 

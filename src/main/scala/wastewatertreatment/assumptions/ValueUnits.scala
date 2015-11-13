@@ -1,11 +1,13 @@
 package wastewatertreatment.assumptions
 
+import wastewatertreatment.assumptions.Assumptions._
+import wastewatertreatment.assumptions.Unit._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 11/13/15.
  */
-trait ValueUnits extends Assumptions with Unit {
+trait ValueUnits {
 
   /**
    * BOD,,5,,/cBOD,,5,,.

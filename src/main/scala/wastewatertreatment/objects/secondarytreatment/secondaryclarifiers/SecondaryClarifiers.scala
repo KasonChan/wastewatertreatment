@@ -1,12 +1,12 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.assumptions.Assumptions.vssTSSRatio
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object SecondaryClarifiers extends Assumptions {
+object SecondaryClarifiers {
 
   /**
    * TSS removal = 45.00%.

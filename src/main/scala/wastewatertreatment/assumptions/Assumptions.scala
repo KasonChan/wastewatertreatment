@@ -3,7 +3,7 @@ package wastewatertreatment.assumptions
 /**
  * Created by kasonchan on 11/13/15.
  */
-trait Assumptions {
+object Assumptions {
 
   /**
    * BOD5,,c,,/cBOD,,5,, = 1.10.

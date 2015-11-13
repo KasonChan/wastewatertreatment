@@ -1,13 +1,13 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.assumptions.Assumptions.bVSS
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerationBasins extends Assumptions {
+object AerationBasins {
 
   /**
    * Returns theta.

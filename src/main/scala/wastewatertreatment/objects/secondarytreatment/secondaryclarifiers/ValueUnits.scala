@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
+import wastewatertreatment.assumptions.Assumptions.vssTSSRatio
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers._
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.Unit._
 import wastewatertreatment.valueunit.ValueUnit

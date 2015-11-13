@@ -1,12 +1,12 @@
 package wastewatertreatment.objects.influent
 
-import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.assumptions.Assumptions.{bVSS, bod5cBOD5Ratio, codBODRatio, codVSSRatio, vssTSSRatio}
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by kasonchan on 11/6/15.
  */
-object Influent extends Assumptions {
+object Influent {
 
   /**
    * Returns VSS.
