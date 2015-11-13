@@ -31,13 +31,13 @@ object Assumptions {
   val tn = 40.00
 
   /**
-   * Biodegradable VSS = 0.80.
+   * Biodegradable VSS (bVSS/VSS) = 0.80.
    */
   val bVSS = 0.80
 
   /**
-   * Non biodegradable VSS = 0.20.
+   * Non biodegradable VSS (nbVSS/VSS) = 0.20.
    */
-  val nbVSS = 1 - 0.8
+  val nbVSS = 1 - bVSS
 
 }

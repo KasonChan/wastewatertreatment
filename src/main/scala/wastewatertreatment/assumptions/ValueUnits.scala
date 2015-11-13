@@ -50,19 +50,19 @@ trait ValueUnits {
                 unit: String = tnUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
-   * Biodegradable VSS.
+   * Biodegradable VSS (bVSS/VSS).
    * @param value Default value is '''0.80'''.
    * @param unit Default is '''No unit'''.
    */
   case class BVSS(value: Double = bVSS,
-                  unit: String = bVSSUnits.headOption.getOrElse("")) extends ValueUnit
+                  unit: String = bVSSVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
-   * Non biodegradable VSS.
+   * Non biodegradable VSS (nbVSS/VSS).
    * @param value Default value is '''0.20'''.
    * @param unit Default is '''No unit'''.
    */
   case class NbVSS(value: Double = nbVSS,
-                   unit: String = bVSSUnits.headOption.getOrElse("")) extends ValueUnit
+                   unit: String = nbVSSVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
 
 }

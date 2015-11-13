@@ -45,8 +45,6 @@ object Unit extends valueunit.Unit {
 
   val seBODUnits = concentrationUnits
 
-  val nbVSSVSSRatioUnits = noUnits
-
   val kOUnits = concentrationUnits
 
   val dOUnits = concentrationUnits

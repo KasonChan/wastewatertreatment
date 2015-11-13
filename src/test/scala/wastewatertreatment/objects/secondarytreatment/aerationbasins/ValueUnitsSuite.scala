@@ -266,22 +266,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers with assumptions.ValueUnits
     ValueUnit(SeBOD(1, "xyz/abc")) shouldBe "1.00xyz/abc"
   }
 
-  "ValueUnit(NbvssVSSRatio())" should "0.20" in {
-    ValueUnit(NbvssVSSRatio()) shouldBe "0.20"
-  }
-
-  "ValueUnit(NbvssVSSRatio(0.2))" should "0.20" in {
-    ValueUnit(NbvssVSSRatio(0.2)) shouldBe "0.20"
-  }
-
-  "ValueUnit(NbvssVSSRatio(unit = \"xyz/abc\"))" should "0.20xyz/abc" in {
-    ValueUnit(NbvssVSSRatio(unit = "xyz/abc")) shouldBe "0.20xyz/abc"
-  }
-
-  "ValueUnit(NbvssVSSRatio(0.2, \"xyz/abc\"))" should "0.20xyz/abc" in {
-    ValueUnit(NbvssVSSRatio(0.2, "xyz/abc")) shouldBe "0.20xyz/abc"
-  }
-
   "ValueUnit(Ko())" should "0.50g/m^3" in {
     ValueUnit(Ko()) shouldBe "0.50g/m^3"
   }

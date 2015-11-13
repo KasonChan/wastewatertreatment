@@ -131,14 +131,6 @@ object ValueUnits {
                    unit: String = seBODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
-   * nbvss/VSS
-   * @param value Default value is '''0.20'''.
-   * @param unit Default is '''No unit'''.
-   */
-  case class NbvssVSSRatio(value: Double = nbvssVSSRatio,
-                           unit: String = nbVSSVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
-
-  /**
    * Ko
    * @param value Default value is '''0.50'''.
    * @param unit Default unit is '''g/m^3^'''.

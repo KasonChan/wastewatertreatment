@@ -17,8 +17,8 @@ object Unit {
 
   val tnUnits = concentrationUnits
 
-  val bVSSUnits = noUnits
+  val bVSSVSSRatioUnits = noUnits
 
-  val nbVSSUnits = noUnits
+  val nbVSSVSSRatioUnits = noUnits
 
 }

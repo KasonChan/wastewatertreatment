@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.assumptions.Assumptions.bVSS
+import wastewatertreatment.assumptions.Assumptions.nbVSS
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 
@@ -86,11 +86,6 @@ object AerationBasins {
    * Se(BOD) = 1.00g/m^3^.
    */
   val seBOD = 1.00
-
-  /**
-   * nbVSS/VSS = 0.20.
-   */
-  val nbvssVSSRatio = 1 - bVSS
 
   /**
    * Ko = 0.50g/m^3^.
@@ -528,11 +523,11 @@ object AerationBasins {
    * }}}
    * @param Q the value of flow.
    * @param VSS the value of VSS.
-   * @param nbvssVSSRatio nbvss/VSS. Default value and unit are 0.20.
+   * @param nbvssVSSRatio nbVSS/VSS. Default value and unit are 0.20.
    */
   def calPXvsso(Q: Double,
                 VSS: Double,
-                nbvssVSSRatio: Double = nbvssVSSRatio): Double = {
+                nbvssVSSRatio: Double = nbVSS): Double = {
     require(Q >= 0 && VSS >= 0 && nbvssVSSRatio >= 0)
     val r = Q * VSS * nbvssVSSRatio
     toXDecimals(r)
