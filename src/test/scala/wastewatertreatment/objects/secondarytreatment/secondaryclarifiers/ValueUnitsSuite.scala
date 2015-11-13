@@ -113,6 +113,14 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BOD5(0.33, "xyz/abc")) shouldBe "0.33xyz/abc"
   }
 
+  "ValueUnit(CBOD5(0.68))" should "0.68g/m^3" in {
+    ValueUnit(CBOD5(0.68)) shouldBe "0.68g/m^3"
+  }
+
+  "ValueUnit(CBOD5(0.68, \"xyz/abc\"))" should "0.68xyz/abc" in {
+    ValueUnit(CBOD5(0.68, "xyz/abc")) shouldBe "0.68xyz/abc"
+  }
+
   "ValueUnit(P(199613.87))" should "199613.87g-TSS/d" in {
     ValueUnit(P(199613.87)) shouldBe "199613.87g-TSS/d"
   }

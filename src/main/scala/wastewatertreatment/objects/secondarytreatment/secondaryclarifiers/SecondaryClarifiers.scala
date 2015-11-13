@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.assumptions.Assumptions.vssTSSRatio
+import wastewatertreatment.assumptions.Assumptions.{bod5cBOD5Ratio, vssTSSRatio}
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
@@ -81,6 +81,20 @@ object SecondaryClarifiers {
   def calBOD5(BOD5o: Double, bodRemoval: Double = bodRemoval): Double = {
     require(BOD5o >= 0 && bodRemoval >= 0)
     val r = BOD5o - (BOD5o * bodRemoval / 100)
+    toXDecimals(r)
+  }
+
+  /**
+   * Returns cBOD,,5,,.
+   * {{{
+   *   cBOD5 = BOD5 / BOD5/cBOD5
+   * }}}
+   * @param BOD5 the effluent value of BOD,,5,,.
+   * @param bod5cBOD5Ratio bod,,5,,/cBOD,,5,,. Default value and unit are 1.10.
+   */
+  def calCBOD5(BOD5: Double, bod5cBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
+    require(BOD5 >= 0 && bod5cBOD5Ratio > 0)
+    val r = BOD5 / bod5cBOD5Ratio
     toXDecimals(r)
   }
 

@@ -28,6 +28,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val bod5 = calBOD5(bod5o)
     bod5 shouldBe 0.75
+
+    val cBOD5 = calCBOD5(bod5)
+    cBOD5 shouldBe 0.68
   }
 
   "Calculation 2" should "pass" in {
@@ -50,6 +53,9 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
 
     val bod5 = calBOD5(bod5o)
     bod5 shouldBe 0.74
+
+    val cBOD5 = calCBOD5(bod5)
+    cBOD5 shouldBe 0.67
   }
 
 }

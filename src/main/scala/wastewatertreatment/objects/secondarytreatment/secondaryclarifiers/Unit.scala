@@ -25,4 +25,6 @@ object Unit extends valueunit.Unit {
 
   val pUnits = generatePRUs(massUnits, "TSS", dayUnits)
 
+  val cBOD5Units = concentrationUnits
+
 }
