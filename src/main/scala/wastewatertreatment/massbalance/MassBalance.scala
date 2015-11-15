@@ -36,12 +36,13 @@ object MassBalance {
       case Right(r) => r match {
         case (mx, sum) =>
           (mx.M, mx.X, mx.Removal) match {
-            case (Some(x), None, _) => (i.left.get - sum) / x
-            case (None, Some(x), _) => (i.left.get - sum) / x
+            case (Some(x), None, _) => (i.left.getOrElse(0.0) - sum) / x
+            case (None, Some(x), _) => (i.left.getOrElse(0.0) - sum) / x
             case _ => 0.0
           }
         case _ => 0.0
       }
+      case _ => 0.0
     }
   }
 
