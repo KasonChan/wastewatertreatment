@@ -1,5 +1,6 @@
+val name = "wastewatertreatment"
+
 lazy val buildSettings = Seq(
-  name := "wastewatertreatment",
   version := "0.1.0-SNAPSHOT",
   scalaVersion := "2.11.7"
 )
@@ -68,6 +69,27 @@ lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Se
 )
 
 lazy val root = project.in(file("."))
-  .settings(moduleName := "wastewatertreatment")
-  .settings(allSettings)
-  .settings(noPublish)
+  .settings(moduleName := name)
+  .settings(allSettings: _*)
+  .settings(noPublish: _*)
+  .settings(
+    libraryDependencies ++= testDependencies
+  )
+  .aggregate(core, objects)
+
+lazy val core = project
+  .settings(moduleName := name + "-" + "core")
+  .settings(allSettings: _*)
+  .settings(noPublish: _*)
+  .settings(
+    libraryDependencies ++= testDependencies
+  )
+
+lazy val objects = project
+  .settings(moduleName := name + "-" + "objects")
+  .settings(allSettings: _*)
+  .settings(noPublish: _*)
+  .settings(
+    libraryDependencies ++= testDependencies
+  )
+  .dependsOn(core)
