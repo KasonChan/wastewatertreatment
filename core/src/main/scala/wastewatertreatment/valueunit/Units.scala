@@ -3,7 +3,7 @@ package wastewatertreatment.valueunit
 /**
  * Created by ka-son on 10/31/15.
  */
-trait Unit {
+trait Units {
 
   /**
    * The units of length: '''m''', '''ft'''.

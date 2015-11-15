@@ -5,7 +5,7 @@ import wastewatertreatment.valueunit
 /**
  * Created by ka-son on 11/7/15.
  */
-object Unit extends wastewatertreatment.valueunit.Unit {
+object Unit extends wastewatertreatment.valueunit.Units {
 
   val dailyBackwashRateUnits = generateUs(rateUnits, areaUnits)
 

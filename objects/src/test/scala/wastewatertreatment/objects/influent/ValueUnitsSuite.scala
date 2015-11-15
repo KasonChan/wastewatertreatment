@@ -1,7 +1,6 @@
 package wastewatertreatment.objects.influent
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.assumptions
 import wastewatertreatment.objects.influent.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
@@ -48,102 +47,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers with wastewatertreatment.as
 
   "ValueUnit(TP(6, \"xyz/abc\"))" should "6.00xyz/abc" in {
     ValueUnit(TP(6, "xyz/abc")) shouldBe "6.00xyz/abc"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio(1.1))" should "1.10" in {
-    ValueUnit(BOD5CBOD5Ratio(1.1)) shouldBe "1.10"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio())" should "1.10" in {
-    ValueUnit(BOD5CBOD5Ratio()) shouldBe "1.10"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio(1.1,\"xyz/abc\"))" should "1.10xyz/abc" in {
-    ValueUnit(BOD5CBOD5Ratio(1.1, "xyz/abc")) shouldBe "1.10xyz/abc"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio(unit = \"xyz/abc\"))" should "1.10xyz/abc" in {
-    ValueUnit(BOD5CBOD5Ratio(unit = "xyz/abc")) shouldBe "1.10xyz/abc"
-  }
-
-  "ValueUnit(CODBODRatio(1.6))" should "1.60" in {
-    ValueUnit(CODBODRatio(1.6)) shouldBe "1.60"
-  }
-
-  "ValueUnit(CODBODRatio())" should "1.60" in {
-    ValueUnit(CODBODRatio()) shouldBe "1.60"
-  }
-
-  "ValueUnit(CODBODRatio(1.6, \"xyz/abc\"))" should "1.60xyz/abc" in {
-    ValueUnit(CODBODRatio(1.6, "xyz/abc")) shouldBe "1.60xyz/abc"
-  }
-
-  "ValueUnit(CODBODRatio(unit = \"xyz/abc\"))" should "1.60xyz/abc" in {
-    ValueUnit(CODBODRatio(unit = "xyz/abc")) shouldBe "1.60xyz/abc"
-  }
-
-  "ValueUnit(CODVSSRatio(1.42))" should "1.42" in {
-    ValueUnit(CODVSSRatio(1.42)) shouldBe "1.42"
-  }
-
-  "ValueUnit(CODVSSRatio())" should "1.42" in {
-    ValueUnit(CODVSSRatio()) shouldBe "1.42"
-  }
-
-  "ValueUnit(CODVSSRatio(1.42,\"xyz/abc\"))" should "1.42xyz/abc" in {
-    ValueUnit(CODVSSRatio(1.42, "xyz/abc")) shouldBe "1.42xyz/abc"
-  }
-
-  "ValueUnit(CODVSSRatio(unit = \"xyz/abc\"))" should "1.42xyz/abc" in {
-    ValueUnit(CODVSSRatio(unit = "xyz/abc")) shouldBe "1.42xyz/abc"
-  }
-
-  "ValueUnit(VSSTSSRatio(0.8))" should "0.80" in {
-    ValueUnit(VSSTSSRatio(0.8)) shouldBe "0.80"
-  }
-
-  "ValueUnit(VSSTSSRatio())" should "0.80" in {
-    ValueUnit(VSSTSSRatio()) shouldBe "0.80"
-  }
-
-  "ValueUnit(VSSTSSRatio(0.8,\"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(VSSTSSRatio(0.8, "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(VSSTSSRatio(unit = \"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(VSSTSSRatio(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(TN(40.0))" should "40.00g/m^3" in {
-    ValueUnit(TN(40.0)) shouldBe "40.00g/m^3"
-  }
-
-  "ValueUnit(TN())" should "40.00g/m^3" in {
-    ValueUnit(TN()) shouldBe "40.00g/m^3"
-  }
-
-  "ValueUnit(TN(40,\"xyz/abc\"))" should "40.00xyz/abc" in {
-    ValueUnit(TN(40, "xyz/abc")) shouldBe "40.00xyz/abc"
-  }
-
-  "ValueUnit(TN(unit = \"xyz/abc\"))" should "40.00xyz/abc" in {
-    ValueUnit(TN(unit = "xyz/abc")) shouldBe "40.00xyz/abc"
-  }
-
-  "ValueUnit(BVSS(0.8))" should "0.80" in {
-    ValueUnit(BVSS(0.8)) shouldBe "0.80"
-  }
-
-  "ValueUnit(BVSS())" should "0.80" in {
-    ValueUnit(BVSS()) shouldBe "0.80"
-  }
-
-  "ValueUnit(BVSS(0.8,\"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(BVSS(0.8, "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(BVSS(unit = \"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(BVSS(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
   }
 
   "ValueUnit(VSS(178.4))" should "178.40g/m^3" in {

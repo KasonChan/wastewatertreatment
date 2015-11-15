@@ -23,21 +23,6 @@ object Core {
   }
 
   /**
-   * Returns BOD,,5,,.
-   * {{{
-   *   BOD5 = cBOD5 * bod5cBOD5Ratio
-   * }}}
-   * @param cBOD5 the initial value of cBOD,,5,,.
-   * @param bod5cBOD5Ratio BOD,,5,,/cBOD,,5,,. Default value and unit are 1.10.
-   */
-  def calBOD5(cBOD5: Double,
-              bod5cBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
-    require(cBOD5 >= 0 && bod5cBOD5Ratio >= 0)
-    val r = cBOD5 * bod5cBOD5Ratio
-    r
-  }
-
-  /**
    * Returns cBOD,,5,,.
    * {{{
    *   cBOD5e = BOD / bod5cBOD5Ratio

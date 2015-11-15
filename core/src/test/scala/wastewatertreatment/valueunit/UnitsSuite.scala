@@ -5,7 +5,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 11/2/15.
  */
-class UnitSuite extends FlatSpec with Matchers with Unit {
+class UnitsSuite extends FlatSpec with Matchers with Units {
 
   "generatePUs(lengthUnits, 2)" should "= List(\"m^2\", \"ft^2\")" in {
     generatePUs(lengthUnits, 2) shouldBe List("m^2", "ft^2")

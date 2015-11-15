@@ -38,6 +38,6 @@ object Assumptions {
   /**
    * Non biodegradable VSS (nbVSS/VSS) = 0.20.
    */
-  val nbVSS = 1 - bVSS
+  val nbVSS = 0.20
 
 }

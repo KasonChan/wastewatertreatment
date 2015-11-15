@@ -23,13 +23,21 @@ object MassBalance {
    * @param puts the list of mass balances.
    */
   private def group(puts: List[MX]): Either[Double, (MX, Double)] = {
-    val spanned = puts span {
-      mx => mx.M.isEmpty || mx.X.isEmpty
+    val spanned = puts match {
+      case List() => None
+      case l: List[MX] =>
+        val r = l span {
+          mx => mx.M.isEmpty || mx.X.isEmpty
+        }
+        Some(r)
     }
 
     spanned match {
-      case (List(), t) => Left(multiplySum(t))
-      case (h, t) => Right(h.head, multiplySum(t))
+      case None => Left(0.0)
+      case Some(x) => x match {
+        case (List(), t) => Left(multiplySum(t))
+        case (h, t) => Right(h.head, multiplySum(t))
+      }
     }
   }
 
@@ -39,7 +47,7 @@ object MassBalance {
    * @param inputs the list of mass balances on the left hand side of equation.
    * @param outputs the list of mass balances on the right hand side of equation.
    */
-  def solve(inputs: List[MX], outputs: List[MX]): Double = {
+  def solve(inputs: List[MX], outputs: List[MX]): Option[Double] = {
     val i = group(inputs)
     val o = group(outputs)
 
@@ -47,17 +55,21 @@ object MassBalance {
     println(o)
 
     o match {
-      case Left(l) => 0.0
+      case Left(l) => None
       case Right(r) => r match {
         case (mx, sum) =>
           (mx.M, mx.X, mx.Removal) match {
-            case (Some(x), None, _) => (i.left.getOrElse(0.0) - sum) / x
-            case (None, Some(x), _) => (i.left.getOrElse(0.0) - sum) / x
-            case _ => 0.0
+            case (Some(x), None, _) =>
+              val r = (i.left.getOrElse(0.0) - sum) / x
+              Some(r)
+            case (None, Some(x), _) =>
+              val r = (i.left.getOrElse(0.0) - sum) / x
+              Some(r)
+            case _ => None
           }
-        case _ => 0.0
+        case _ => None
       }
-      case _ => 0.0
+      case _ => None
     }
   }
 

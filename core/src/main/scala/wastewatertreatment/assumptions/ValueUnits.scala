@@ -1,7 +1,7 @@
 package wastewatertreatment.assumptions
 
 import wastewatertreatment.assumptions.Assumptions._
-import wastewatertreatment.assumptions.Unit._
+import wastewatertreatment.assumptions.Units._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
