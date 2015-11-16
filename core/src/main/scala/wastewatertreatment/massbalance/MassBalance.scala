@@ -18,25 +18,31 @@ object MassBalance {
   }
 
   /**
-   * Returns the grouped sum of multiplication of the mass balances.
-   * Otherwise, returns the mass balance.
+   * Returns the tuple of mass balance with unknown and grouped sum of
+   * multiplication of the mass balances.
+   * Otherwise, returns 0.0.
    * @param puts the list of mass balances.
    */
-  private def group(puts: List[MX]): Either[Double, (MX, Double)] = {
+  private def group(puts: List[MX]): Either[Option[Double], (MX, Option[Double])] = {
     val spanned = puts match {
       case List() => None
       case l: List[MX] =>
-        val r = l span {
-          mx => mx.M.isEmpty || mx.X.isEmpty
+        val r = l partition {
+          mx => !mx.M.isDefined || !mx.X.isDefined
         }
+        println(r)
         Some(r)
     }
 
     spanned match {
-      case None => Left(0.0)
+      case None => Left(None)
       case Some(x) => x match {
-        case (List(), t) => Left(multiplySum(t))
-        case (h, t) => Right(h.head, multiplySum(t))
+        case (List(), t) => Left(Some(multiplySum(t)))
+        case (h, t) =>
+          h.size match {
+            case 1 => Right(h.head, Some(multiplySum(t)))
+            case _ => Left(None)
+          }
       }
     }
   }
@@ -54,22 +60,33 @@ object MassBalance {
     println(i)
     println(o)
 
-    o match {
-      case Left(l) => None
-      case Right(r) => r match {
+    (i, o) match {
+      case (Left(l), Left(r)) => None
+      case (Left(l), Right(r)) => r match {
         case (mx, sum) =>
           (mx.M, mx.X, mx.Removal) match {
             case (Some(x), None, _) =>
-              val r = (i.left.getOrElse(0.0) - sum) / x
-              Some(r)
+              val result = (l.getOrElse(0.0) - sum.getOrElse(0.0)) / x
+              Some(result)
             case (None, Some(x), _) =>
-              val r = (i.left.getOrElse(0.0) - sum) / x
-              Some(r)
+              val result = (l.getOrElse(0.0) - sum.getOrElse(0.0)) / x
+              Some(result)
             case _ => None
           }
-        case _ => None
       }
-      case _ => None
+      case (Right(l), Left(r)) => l match {
+        case (mx, sum) =>
+          (mx.M, mx.X, mx.Removal) match {
+            case (Some(x), None, _) =>
+              val result = (r.getOrElse(0.0) - sum.getOrElse(0.0)) / x
+              Some(result)
+            case (None, Some(x), _) =>
+              val result = (r.getOrElse(0.0) - sum.getOrElse(0.0)) / x
+              Some(result)
+            case _ => None
+          }
+      }
+      case (Right(l), Right(r)) => None
     }
   }
 
