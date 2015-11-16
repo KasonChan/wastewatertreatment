@@ -44,6 +44,7 @@ object MassBalance {
             case _ => Left(None)
           }
       }
+      case _ => Left(None)
     }
   }
 
@@ -87,6 +88,7 @@ object MassBalance {
           }
       }
       case (Right(l), Right(r)) => None
+      case _ => None
     }
   }
 

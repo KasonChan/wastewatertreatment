@@ -162,4 +162,28 @@ class MassBalanceSuite extends FlatSpec with Matchers {
     solve(inputs, outputs) shouldBe None
   }
 
+  "Solve more 9" should "pass" in {
+    val inputs = List(MX(None, None), MX(None, None))
+    val outputs = List(MX(None, None), MX(None, None))
+    solve(inputs, outputs) shouldBe None
+  }
+
+  "Solve more 10" should "pass" in {
+    val inputs = List(MX(Some(1), None), MX(Some(1), None))
+    val outputs = List(MX(Some(1), None), MX(Some(1), None))
+    solve(inputs, outputs) shouldBe None
+  }
+
+  "Solve more 11" should "pass" in {
+    val inputs = List(MX(Some(1), None), MX(Some(1), None), MX(Some(1), None))
+    val outputs = List(MX(Some(1), None), MX(Some(1), None), MX(Some(1), None))
+    solve(inputs, outputs) shouldBe None
+  }
+
+  "Solve more 12" should "pass" in {
+    val inputs = List(MX(Some(1), None), MX(Some(1), None), MX(Some(1), Some(2)))
+    val outputs = List(MX(Some(1), None), MX(Some(1), None), MX(Some(1), Some(2)))
+    solve(inputs, outputs) shouldBe None
+  }
+
 }
