@@ -5,7 +5,7 @@ import wastewatertreatment.valueunit
 /**
  * Created by kasonchan on 11/6/15.
  */
-object Unit extends wastewatertreatment.valueunit.Units {
+object Unit extends wastewatertreatment.valueunit.Unit {
 
   val qUnits = flowUnits
 

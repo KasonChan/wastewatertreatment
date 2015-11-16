@@ -5,7 +5,7 @@ import org.scalatest.{FlatSpec, Matchers}
 /**
  * Created by kasonchan on 11/2/15.
  */
-class UnitsSuite extends FlatSpec with Matchers with Units {
+class UnitsSuite extends FlatSpec with Matchers with Unit {
 
   "generatePUs(lengthUnits, 2)" should "= List(\"m^2\", \"ft^2\")" in {
     generatePUs(lengthUnits, 2) shouldBe List("m^2", "ft^2")
@@ -23,8 +23,8 @@ class UnitsSuite extends FlatSpec with Matchers with Units {
     generateUs(volumeUnits, dayUnits) shouldBe List("m^3/d", "ft^3/d")
   }
 
-  "generateUs(rateUnits, areaUnits)" should "= List(\"gpm/m^2\", \"gpm/ft^2\")" in {
-    generateUs(rateUnits, areaUnits) shouldBe List("gpm/m^2", "gpm/ft^2")
+  "generateUs(rateUnits, areaUnits)" should "= List(\"GPM/m^2\", \"GPM/ft^2\") " in {
+    generateUs(rateUnits, areaUnits) shouldBe List("GPM/m^2", "GPM/ft^2")
   }
 
   "generateRUs(massUnits, \"BOD5\", \"cBOD5\")" should "= List(\"g-BOD5/g-cBOD5\", \"kg-BOD5/kg-cBOD5\")" in {

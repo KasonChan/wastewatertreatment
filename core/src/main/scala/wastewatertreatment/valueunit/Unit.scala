@@ -3,7 +3,7 @@ package wastewatertreatment.valueunit
 /**
  * Created by ka-son on 10/31/15.
  */
-trait Units {
+trait Unit {
 
   /**
    * The units of length: '''m''', '''ft'''.
@@ -120,6 +120,16 @@ trait Units {
    *   Volume / Time
    * }}}
    */
-  val rateUnits = List("gpm")
+  val rateUnits = List("GPM")
+
+  /**
+   * The units of colony-forming
+   */
+  val colonyFormingUnits = List("MPN")
+
+  /**
+   * The units of turbidity
+   */
+  val hazeUnits = List("NTU")
 
 }
