@@ -24,6 +24,7 @@ class FiltersSuite extends FlatSpec with Matchers {
   "tocRemoval" should "= 48.00" in {
     tocRemoval shouldBe 48.00
   }
+
   "fecalColiformRemoval" should "= 76.00" in {
     fecalColiformRemoval shouldBe 76.00
   }
