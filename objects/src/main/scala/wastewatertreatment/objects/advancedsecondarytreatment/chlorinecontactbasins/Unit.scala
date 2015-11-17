@@ -9,6 +9,4 @@ object Unit extends Units {
 
   val bacterialRemovalRateUnits = noUnits
 
-  val enterococci = List("MPN/100mL")
-
 }
