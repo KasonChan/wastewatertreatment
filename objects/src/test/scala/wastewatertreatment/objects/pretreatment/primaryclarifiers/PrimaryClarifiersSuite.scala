@@ -86,4 +86,55 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     pe shouldBe p
   }
 
+  "Train 1" should "pass" in {
+    val q = 668063.99
+    val tss = 122.99
+    val vss = 98.392
+    val bod5 = 141.82
+    val cBOD5 = 128.9272727272727
+    val bCOD = 226.912
+    val bCODs = 115.13868800000002
+    val bCODp = 111.77331199999999
+    val nh3n = 25.24
+    val tp = 4.67
+    val p = 82165190.1301
+
+    val qe = q
+    qe shouldBe q
+
+    val tsse = solve(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
+    toXDecimals(tsse) shouldBe 45.51
+
+    val vsse = calVSS(tsse)
+    toXDecimals(vsse) shouldBe 36.41
+
+    val bod5e = solve(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
+    toXDecimals(bod5e) shouldBe 92.18
+
+    val cBOD5e = calcBOD5(bod5e)
+    toXDecimals(cBOD5e) shouldBe 83.8
+
+    val bCODe = calbCOD(bod5e)
+    toXDecimals(bCODe) shouldBe 147.49
+
+    val bCODpe = calbCODp(vsse)
+    toXDecimals(bCODpe) shouldBe 41.36
+
+    val bCODse = calbCODs(bCODe, bCODpe)
+    toXDecimals(bCODse) shouldBe 106.14
+
+    val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
+    toXDecimals(nh3ne) shouldBe 25.24
+
+    val tpe = solve(List(MX(Some(q), Some(tp))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
+    toXDecimals(tpe) shouldBe 4.67
+
+    val pe = calP(qe, tsse)
+    toXDecimals(pe) shouldBe 30401120.35
+  }
+
 }
