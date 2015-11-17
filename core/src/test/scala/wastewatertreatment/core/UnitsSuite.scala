@@ -1,12 +1,11 @@
 package wastewatertreatment.core
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.core.Units._
 
 /**
  * Created by kasonchan on 11/16/15.
  */
-class UnitsSuite extends FlatSpec with Matchers {
+class UnitsSuite extends FlatSpec with Matchers with Units {
 
   "qUnits" should "List(\"MGD\", \"m^3/d\", \"ft^3/d\")" in {
     qUnits shouldBe List("MGD", "m^3/d", "ft^3/d")

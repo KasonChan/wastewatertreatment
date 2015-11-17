@@ -1,11 +1,13 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.math.Math._
+import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.core.Core
+import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Filters {
+object Filters extends Assumptions with Core with MassBalance {
 
   /**
    * Backwash rate = 6.00gpm/ft^2^.
@@ -28,7 +30,7 @@ object Filters {
                            counts: Double): Double = {
     require(backwashRate >= 0 && area >= 0 && time >= 0 && counts >= 0)
     val r = backwashRate * area * 0.00378541 * time * counts
-    toXDecimals(r)
+    r
   }
 
   /**

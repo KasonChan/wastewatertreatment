@@ -3,9 +3,9 @@ package wastewatertreatment.massbalance
 /**
  * Created by kasonchan on 11/14/15.
  */
-case class MX(M: Option[Double], X: Option[Double], Removal: Option[Double] = None)
+trait MassBalance {
 
-object MassBalance {
+  case class MX(M: Option[Double], X: Option[Double], Removal: Option[Double] = None)
 
   /**
    * Returns the sum of multiplication of the mass balances.
@@ -30,7 +30,6 @@ object MassBalance {
         val r = l partition {
           mx => !mx.M.isDefined || !mx.X.isDefined
         }
-        println(r)
         Some(r)
     }
 
@@ -57,9 +56,6 @@ object MassBalance {
   def solve(inputs: List[MX], outputs: List[MX]): Option[Double] = {
     val i = group(inputs)
     val o = group(outputs)
-
-    println(i)
-    println(o)
 
     (i, o) match {
       case (Left(l), Left(r)) => None

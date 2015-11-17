@@ -1,13 +1,14 @@
 package wastewatertreatment.objects.pretreatment.screens
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.{assumptions, core}
 import wastewatertreatment.objects.pretreatment.screens.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 10/27/15.
  */
-class ValueUnitsSuite extends FlatSpec with Matchers {
+class ValueUnitsSuite extends FlatSpec with Matchers with core.ValueUnits with assumptions.ValueUnits {
 
   "ValueUnit(TSSRemoval(27))" should "27.00%" in {
     ValueUnit(TSSRemoval(27)) shouldBe "27.00%"
@@ -49,36 +50,36 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(Q(1090195, "xyz/abc")) shouldBe "1090195.00xyz/abc"
   }
 
-  "ValueUnit(TSSo(223))" should "223.00g/m^3" in {
-    ValueUnit(TSSo(223)) shouldBe "223.00g/m^3"
+  "ValueUnit(TSS(223))" should "223.00g/m^3" in {
+    ValueUnit(TSS(223)) shouldBe "223.00g/m^3"
   }
 
-  "ValueUnit(TSSo(223, \"xyz/abc\"))" should "223.00xyz/abc" in {
-    ValueUnit(TSSo(223, "xyz/abc")) shouldBe "223.00xyz/abc"
+  "ValueUnit(TSS(223, \"xyz/abc\"))" should "223.00xyz/abc" in {
+    ValueUnit(TSS(223, "xyz/abc")) shouldBe "223.00xyz/abc"
   }
 
-  "ValueUnit(TSSe(162.8))" should "162.80g/m^3" in {
-    ValueUnit(TSSe(162.8)) shouldBe "162.80g/m^3"
+  "ValueUnit(TSS(162.8))" should "162.80g/m^3" in {
+    ValueUnit(TSS(162.8)) shouldBe "162.80g/m^3"
   }
 
-  "ValueUnit(TSSe(162.8, \"xyz/abc\"))" should "162.80xyz/abc" in {
-    ValueUnit(TSSe(162.8, "xyz/abc")) shouldBe "162.80xyz/abc"
+  "ValueUnit(TSS(162.8, \"xyz/abc\"))" should "162.80xyz/abc" in {
+    ValueUnit(TSS(162.8, "xyz/abc")) shouldBe "162.80xyz/abc"
   }
 
-  "ValueUnit(BOD5o(257.5))" should "257.50g/m^3" in {
-    ValueUnit(BOD5o(257.5)) shouldBe "257.50g/m^3"
+  "ValueUnit(BOD5(257.5))" should "257.50g/m^3" in {
+    ValueUnit(BOD5(257.5)) shouldBe "257.50g/m^3"
   }
 
-  "ValueUnit(BOD5o(257.5, \"xyz/abc\"))" should "257.50xyz/abc" in {
-    ValueUnit(BOD5o(257.5, "xyz/abc")) shouldBe "257.50xyz/abc"
+  "ValueUnit(BOD5(257.5, \"xyz/abc\"))" should "257.50xyz/abc" in {
+    ValueUnit(BOD5(257.5, "xyz/abc")) shouldBe "257.50xyz/abc"
   }
 
-  "ValueUnit(BOD5e(189))" should "189.00g/m^3" in {
-    ValueUnit(BOD5e(189)) shouldBe "189.00g/m^3"
+  "ValueUnit(BOD5(189))" should "189.00g/m^3" in {
+    ValueUnit(BOD5(189)) shouldBe "189.00g/m^3"
   }
 
-  "ValueUnit(BOD5e(189,\"xyz/abc\"))" should "189.00xyz/abc" in {
-    ValueUnit(BOD5e(189, "xyz/abc")) shouldBe "189.00xyz/abc"
+  "ValueUnit(BOD5(189,\"xyz/abc\"))" should "189.00xyz/abc" in {
+    ValueUnit(BOD5(189, "xyz/abc")) shouldBe "189.00xyz/abc"
   }
 
   "ValueUnit(BOD5CBOD5Ratio(1.1))" should "1.10" in {
@@ -145,36 +146,36 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(VSSTSSRatio(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
   }
 
-  "ValueUnit(VSSe(130))" should "130.00g/m^3" in {
-    ValueUnit(VSSe(130)) shouldBe "130.00g/m^3"
+  "ValueUnit(VSS(130))" should "130.00g/m^3" in {
+    ValueUnit(VSS(130)) shouldBe "130.00g/m^3"
   }
 
-  "ValueUnit(VSSe(130,\"xyz/abc\"))" should "130.00xyz/abc" in {
-    ValueUnit(VSSe(130, "xyz/abc")) shouldBe "130.00xyz/abc"
+  "ValueUnit(VSS(130,\"xyz/abc\"))" should "130.00xyz/abc" in {
+    ValueUnit(VSS(130, "xyz/abc")) shouldBe "130.00xyz/abc"
   }
 
-  "ValueUnit(CBOD5e(171))" should "171.00g/m^3" in {
-    ValueUnit(CBOD5e(171)) shouldBe "171.00g/m^3"
+  "ValueUnit(CBOD5(171))" should "171.00g/m^3" in {
+    ValueUnit(CBOD5(171)) shouldBe "171.00g/m^3"
   }
 
-  "ValueUnit(CBOD5e(171,\"xyz/abc\"))" should "171.00xyz/abc" in {
-    ValueUnit(CBOD5e(171, "xyz/abc")) shouldBe "171.00xyz/abc"
+  "ValueUnit(CBOD5(171,\"xyz/abc\"))" should "171.00xyz/abc" in {
+    ValueUnit(CBOD5(171, "xyz/abc")) shouldBe "171.00xyz/abc"
   }
 
-  "ValueUnit(BCODe(301))" should "301.00g/m^3" in {
-    ValueUnit(BCODe(301)) shouldBe "301.00g/m^3"
+  "ValueUnit(BCOD(301))" should "301.00g/m^3" in {
+    ValueUnit(BCOD(301)) shouldBe "301.00g/m^3"
   }
 
-  "ValueUnit(BCODe(301, \"xyz/abc\"))" should "301.00xyz/abc" in {
-    ValueUnit(BCODe(301, "xyz/abc")) shouldBe "301.00xyz/abc"
+  "ValueUnit(BCOD(301, \"xyz/abc\"))" should "301.00xyz/abc" in {
+    ValueUnit(BCOD(301, "xyz/abc")) shouldBe "301.00xyz/abc"
   }
 
-  "ValueUnit(BCODpe(148.464))" should "148.46g/m^3" in {
-    ValueUnit(BCODpe(148.464)) shouldBe "148.46g/m^3"
+  "ValueUnit(BCODp(148.464))" should "148.46g/m^3" in {
+    ValueUnit(BCODp(148.464)) shouldBe "148.46g/m^3"
   }
 
-  "ValueUnit(BCODpe(148.464, \"xyz/abc\"))" should "148.46xyz/abc" in {
-    ValueUnit(BCODpe(148.464, "xyz/abc")) shouldBe "148.46xyz/abc"
+  "ValueUnit(BCODp(148.464, \"xyz/abc\"))" should "148.46xyz/abc" in {
+    ValueUnit(BCODp(148.464, "xyz/abc")) shouldBe "148.46xyz/abc"
   }
 
   "ValueUnit(BCODs(153.295))" should "153.30g/m^3" in {

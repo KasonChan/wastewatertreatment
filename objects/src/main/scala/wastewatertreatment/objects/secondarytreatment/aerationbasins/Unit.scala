@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.valueunit
+import wastewatertreatment.{assumptions, core}
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object Unit extends wastewatertreatment.valueunit.Unit {
+object Unit extends assumptions.Units with core.Units {
 
   val forallTUnits = volumeUnits
 
@@ -14,8 +14,6 @@ object Unit extends wastewatertreatment.valueunit.Unit {
   val thetaUnits = dayUnits
 
   val bodUnits = concentrationUnits
-
-  val qUnits = flowUnits
 
   val bodLoadingUnits = generatePRUs(massUnits, "BOD", dayUnits)
 

@@ -1,12 +1,11 @@
 package wastewatertreatment.assumptions
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.assumptions.Units._
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-class UnitsSuite extends FlatSpec with Matchers {
+class UnitsSuite extends FlatSpec with Matchers with Units {
 
   "bod5cBOD5RatioUnits" should "= noUnits" in {
     bod5cBOD5RatioUnits shouldBe noUnits

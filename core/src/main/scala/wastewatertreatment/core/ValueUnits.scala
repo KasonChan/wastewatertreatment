@@ -1,19 +1,19 @@
 package wastewatertreatment.core
 
-import wastewatertreatment.core.Units._
+import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 11/16/15.
  */
-object ValueUnits {
+trait ValueUnits extends Assumptions with Units {
 
   /**
    * Q.
    * @param unit Default is '''m^3^/d'''.
    */
   case class Q(value: Double,
-               unit: String = qUnits.headOption.getOrElse("m^3/d")) extends ValueUnit
+               unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
   /**
    * TSS.
@@ -104,6 +104,6 @@ object ValueUnits {
    * @param unit Default is '''MPN/100mL'''.
    */
   case class Turbidity(value: Double,
-                       unit: String = turbidityUnits.headOption.getOrElse("NTU")) extends ValueUnit
+                       unit: String = hazeUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit
 
 }

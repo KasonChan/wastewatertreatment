@@ -3,7 +3,7 @@ package wastewatertreatment.core
 /**
  * Created by kasonchan on 11/16/15.
  */
-object Units extends wastewatertreatment.valueunit.Unit {
+trait Units extends wastewatertreatment.valueunit.Unit {
 
   val qUnits = flowUnits
 

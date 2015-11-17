@@ -1,12 +1,11 @@
 package wastewatertreatment.core
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.core.Core._
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-class CoreSuite extends FlatSpec with Matchers {
+class CoreSuite extends FlatSpec with Matchers with Core {
 
   "calVSS(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {

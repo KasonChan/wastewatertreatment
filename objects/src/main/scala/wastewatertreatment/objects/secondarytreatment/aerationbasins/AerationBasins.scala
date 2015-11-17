@@ -1,13 +1,15 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.assumptions.Assumptions.nbVSS
+import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.core.Core
+import wastewatertreatment.massbalance.MassBalance
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerationBasins {
+object AerationBasins extends Assumptions with Core with MassBalance {
 
   /**
    * Returns theta.

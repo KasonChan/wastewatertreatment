@@ -1,11 +1,11 @@
 package wastewatertreatment.core
 
-import wastewatertreatment.assumptions.Assumptions._
+import wastewatertreatment.assumptions.Assumptions
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-object Core {
+trait Core extends Assumptions {
 
   /**
    * Returns VSS.

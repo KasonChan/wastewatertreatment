@@ -3,7 +3,7 @@ package wastewatertreatment.assumptions
 /**
  * Created by kasonchan on 11/13/15.
  */
-object Units extends wastewatertreatment.valueunit.Unit {
+trait Units extends wastewatertreatment.valueunit.Unit {
 
   val bod5cBOD5RatioUnits = noUnits
 

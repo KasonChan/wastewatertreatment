@@ -1,11 +1,13 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
-import wastewatertreatment.math.Math.toXDecimals
+import wastewatertreatment.assumptions.Assumptions
+import wastewatertreatment.core.Core
+import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by kasonchan on 11/10/15.
  */
-object ChlorineContactBasins {
+object ChlorineContactBasins extends Assumptions with Core with MassBalance {
 
   /**
    * Bacterial removal rate = 99.99%.
@@ -23,7 +25,7 @@ object ChlorineContactBasins {
   def calFecalColiform(fecalColiformo: Double, bacterialRemovalRate: Double = bacterialRemovalRate): Double = {
     require(fecalColiformo >= 0 && bacterialRemovalRate >= 0)
     val r = fecalColiformo - (fecalColiformo * bacterialRemovalRate / 100)
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -37,7 +39,7 @@ object ChlorineContactBasins {
   def calEnterococci(enterococcio: Double, bacterialRemovalRate: Double = bacterialRemovalRate): Double = {
     require(enterococcio >= 0 && bacterialRemovalRate >= 0)
     val r = enterococcio - (enterococcio * bacterialRemovalRate / 100)
-    toXDecimals(r)
+    r
   }
 
 }

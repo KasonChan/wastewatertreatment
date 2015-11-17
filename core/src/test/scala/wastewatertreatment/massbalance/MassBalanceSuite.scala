@@ -1,12 +1,11 @@
 package wastewatertreatment.massbalance
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.massbalance.MassBalance.solve
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-class MassBalanceSuite extends FlatSpec with Matchers {
+class MassBalanceSuite extends FlatSpec with Matchers with MassBalance {
 
   "MX(Some(1), Some(2))" should "MX(1), Some(2), None)" in {
     MX(Some(1), Some(2)) shouldBe MX(Some(1), Some(2), None)

@@ -1,12 +1,11 @@
 package wastewatertreatment.assumptions
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.assumptions.Assumptions._
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-class AssumptionsSuite extends FlatSpec with Matchers {
+class AssumptionsSuite extends FlatSpec with Matchers with Assumptions {
 
   "bod5cBOD5Ratio" should "= 1.10" in {
     bod5cBOD5Ratio shouldBe 1.10
