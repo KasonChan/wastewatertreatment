@@ -1,13 +1,12 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
-import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.core.Core
 import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by kasonchan on 11/10/15.
  */
-object ChlorineContactBasins extends Assumptions with Core with MassBalance {
+object ChlorineContactBasins extends Core with MassBalance {
 
   /**
    * Bacterial removal rate = 99.99%.

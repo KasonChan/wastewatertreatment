@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.{assumptions, core}
+import wastewatertreatment.core.Units
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Unit extends assumptions.Units with core.Units {
+object Unit extends Units {
 
   val dailyBackwashRateUnits = generateUs(rateUnits, areaUnits)
 

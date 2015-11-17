@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
-import wastewatertreatment.{assumptions, core}
+import wastewatertreatment.core.Units
 
 /**
  * Created by kasonchan on 11/10/15.
  */
-object Unit extends assumptions.Units with core.Units {
+object Unit extends Units {
 
   val bacterialRemovalRateUnits = noUnits
 

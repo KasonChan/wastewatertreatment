@@ -1,15 +1,13 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.core.Core
 import wastewatertreatment.massbalance.MassBalance
 import wastewatertreatment.math.Math.toXDecimals
-import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerationBasins extends Assumptions with Core with MassBalance {
+object AerationBasins extends Core with MassBalance {
 
   /**
    * Returns theta.
@@ -155,15 +153,6 @@ object AerationBasins extends Assumptions with Core with MassBalance {
   val hKd = 0.12
 
   /**
-   * Default heterotrophs.
-   * Default value and unit of u are 6.00d^-1^.
-   * Default value and unit of Ks are 20.00g/m^3^.
-   * Default value and unit of Y are 0.40.
-   * Default value and unit of Kd are 0.12d^-1^.
-   */
-  val heterotrophs = Heterotrophs()
-
-  /**
    * Nitrifiers u = 0.75d^-1^.
    */
   val nU = 0.75
@@ -182,15 +171,6 @@ object AerationBasins extends Assumptions with Core with MassBalance {
    * Nitrifiers Kd = 0.08d^-1^.
    */
   val nKd = 0.08
-
-  /**
-   * Default Nitrifiers.
-   * Default value and unit of u are 0.75d^-1^.
-   * Default value and unit of Ks are 0.74g/m^3^.
-   * Default value and unit of Y are 0.12.
-   * Default value and unit of Kd are 0.08d^-1^.
-   */
-  val nitrifiers = Nitrifiers()
 
   /**
    * Returns theta,,aerobic,,.

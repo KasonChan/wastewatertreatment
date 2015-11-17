@@ -1,13 +1,12 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.core.Core
 import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object SecondaryClarifiers extends Assumptions with Core with MassBalance {
+object SecondaryClarifiers extends Core with MassBalance {
 
   /**
    * TSS removal = 45.00%.

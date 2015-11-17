@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
+import wastewatertreatment.core
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Unit._
 import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{assumptions, core}
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object ValueUnits extends assumptions.ValueUnits with core.ValueUnits {
+object ValueUnits extends core.ValueUnits {
 
   /**
    * Daily backwash rate

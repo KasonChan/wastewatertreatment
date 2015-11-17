@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
+import wastewatertreatment.core
 import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBasins._
 import wastewatertreatment.objects.secondarytreatment.aerationbasins.Unit._
 import wastewatertreatment.valueunit.ValueUnit
@@ -7,7 +8,7 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by ka-son on 10/31/15.
  */
-object ValueUnits {
+object ValueUnits extends core.ValueUnits {
 
   /**
    * Forall,,T,,
@@ -29,13 +30,6 @@ object ValueUnits {
    */
   case class Theta(value: Double,
                    unit: String = thetaUnits.headOption.getOrElse("d")) extends ValueUnit
-
-  /**
-   * Q
-   * @param unit Default unit is '''m^3^/d'''.
-   */
-  case class Q(value: Double,
-               unit: String = qUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
   /**
    * BOD

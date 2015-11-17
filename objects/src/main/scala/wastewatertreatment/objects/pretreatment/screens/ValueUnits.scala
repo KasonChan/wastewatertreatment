@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.pretreatment.screens
 
+import wastewatertreatment.core
 import wastewatertreatment.objects.pretreatment.screens.Screens.{bod5Removal, tssRemoval}
 import wastewatertreatment.objects.pretreatment.screens.Unit._
 import wastewatertreatment.valueunit.ValueUnit
@@ -7,7 +8,7 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by kasonchan on 10/26/15.
  */
-object ValueUnits {
+object ValueUnits extends core.ValueUnits {
 
   /**
    * TSS removal

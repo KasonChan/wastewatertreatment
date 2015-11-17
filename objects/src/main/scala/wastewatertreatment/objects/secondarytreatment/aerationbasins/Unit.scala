@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.secondarytreatment.aerationbasins
 
-import wastewatertreatment.{assumptions, core}
+import wastewatertreatment.core.Units
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object Unit extends assumptions.Units with core.Units {
+object Unit extends Units {
 
   val forallTUnits = volumeUnits
 

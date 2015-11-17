@@ -7,6 +7,34 @@ import org.scalatest.{FlatSpec, Matchers}
  */
 class UnitsSuite extends FlatSpec with Matchers with Units {
 
+  "bod5cBOD5RatioUnits" should "= noUnits" in {
+    bod5cBOD5RatioUnits shouldBe noUnits
+  }
+
+  "codBODRatioUnits" should "= noUnits" in {
+    codBODRatioUnits shouldBe noUnits
+  }
+
+  "codVSSRatioUnits" should "= noUnits" in {
+    codVSSRatioUnits shouldBe noUnits
+  }
+
+  "vssTSSRatioUnits" should "= noUnits" in {
+    vssTSSRatioUnits shouldBe noUnits
+  }
+
+  "tnUnits" should "= concentrationUnits" in {
+    tnUnits shouldBe concentrationUnits
+  }
+
+  "bVSSVSSRatioUnits" should "= noUnits" in {
+    bVSSVSSRatioUnits shouldBe noUnits
+  }
+
+  "nbVSSVSSRatioUnits" should "= noUnits" in {
+    nbVSSVSSRatioUnits shouldBe noUnits
+  }
+
   "qUnits" should "List(\"MGD\", \"m^3/d\", \"ft^3/d\")" in {
     qUnits shouldBe List("MGD", "m^3/d", "ft^3/d")
   }

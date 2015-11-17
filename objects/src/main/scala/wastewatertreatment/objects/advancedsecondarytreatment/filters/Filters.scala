@@ -1,13 +1,12 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.assumptions.Assumptions
 import wastewatertreatment.core.Core
 import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Filters extends Assumptions with Core with MassBalance {
+object Filters extends Core with MassBalance {
 
   /**
    * Backwash rate = 6.00gpm/ft^2^.

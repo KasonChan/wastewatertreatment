@@ -1,8 +1,8 @@
 package wastewatertreatment.objects.influent
 
-import wastewatertreatment.{assumptions, core}
+import wastewatertreatment.core
 
 /**
  * Created by kasonchan on 11/6/15.
  */
-object ValueUnits extends assumptions.ValueUnits with core.ValueUnits
+object ValueUnits extends core.ValueUnits

@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
+import wastewatertreatment.core
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers._
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.Unit._
 import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{assumptions, core}
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object ValueUnits extends assumptions.ValueUnits with core.ValueUnits {
+object ValueUnits extends core.ValueUnits {
 
   /**
    * TSS removal

@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
+import wastewatertreatment.core
 import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ChlorineContactBasins._
 import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.Unit._
 import wastewatertreatment.valueunit.ValueUnit
@@ -7,7 +8,7 @@ import wastewatertreatment.valueunit.ValueUnit
 /**
  * Created by kasonchan on 11/10/15.
  */
-object ValueUnits {
+object ValueUnits extends core.ValueUnits {
 
   /**
    * Bacterial removal rate
@@ -16,19 +17,5 @@ object ValueUnits {
    */
   case class BacterialRemovalRate(value: Double = bacterialRemovalRate,
                                   unit: String = bacterialRemovalRateUnits.headOption.getOrElse("")) extends ValueUnit
-
-  /**
-   * Fecal coliform
-   * @param unit Default unit is '''MPN/100mL'''.
-   */
-  case class FecalColiform(value: Double,
-                           unit: String = fecalColiformUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit
-
-  /**
-   * Enterococci
-   * @param unit Default unit is '''MPN/100mL'''.
-   */
-  case class Enterococci(value: Double,
-                         unit: String = fecalColiformUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit
 
 }

@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
-import wastewatertreatment.{assumptions, core}
+import wastewatertreatment.core.Units
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object Unit extends assumptions.Units with core.Units {
+object Unit extends Units {
 
   val tssRemovalUnits = percentageUnits
 
