@@ -208,6 +208,8 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val depth = 15
 
     calAerationTankVolumes(count, length, width, depth) shouldBe 1406250.00
+
+    calBOD(84, 166000000, 4967750) shouldBe 301.25
   }
 
   "Train 1" should "pass" in {
@@ -310,6 +312,8 @@ class AerationBasinsSuite extends FlatSpec with Matchers {
     val depth = 15
 
     calAerationTankVolumes(count, length, width, depth) shouldBe 822450.00
+
+    calBOD(84, 166000000, 4967750) shouldBe 301.25
   }
 
 }
