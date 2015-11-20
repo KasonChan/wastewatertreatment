@@ -561,10 +561,10 @@ object AerationBasins extends Core with MassBalance {
    * @param Q the value of flow.
    */
   def calBOD(Lorg: Double,
-             Forall: Double,
-             Q: Double): Double = {
+             Q: Double,
+             Forall: Double): Double = {
     require(Lorg >= 0 && Forall >= 0 && Q > 0)
-    val r = (BigDecimal(Lorg) / 1000 / 166000000 * 453.59 * 28.32 * Forall / 3.785 / 28.32 * 1000).toDouble
+    val r = (BigDecimal(Lorg) / 1000 / Q * 453.59 * 28.32 * Forall / 3.785 / 28.32 * 1000).toDouble
     toXDecimals(r)
   }
 
