@@ -1,8 +1,8 @@
-package wastewatertreatment.objects.secondarytreatment.aerationbasins
+package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import wastewatertreatment.core
-import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBasins._
-import wastewatertreatment.objects.secondarytreatment.aerationbasins.Unit._
+import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.AerobicAnoxicBasins._
+import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Unit._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

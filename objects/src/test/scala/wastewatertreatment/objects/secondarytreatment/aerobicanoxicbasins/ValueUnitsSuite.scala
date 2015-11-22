@@ -1,7 +1,7 @@
-package wastewatertreatment.objects.secondarytreatment.aerationbasins
+package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.objects.secondarytreatment.aerationbasins.ValueUnits._
+import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
 
 /**

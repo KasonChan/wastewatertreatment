@@ -1,12 +1,12 @@
-package wastewatertreatment.objects.secondarytreatment.aerationbasins
+package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.objects.secondarytreatment.aerationbasins.AerationBasins._
+import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.AerobicAnoxicBasins._
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-class AerationBasinsSuite extends FlatSpec with Matchers {
+class AerobicAnoxicBasinsSuite extends FlatSpec with Matchers {
 
   "bodRemoval" should "= 97.00" in {
     bodRemoval shouldBe 97.00
