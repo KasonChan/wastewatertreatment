@@ -185,4 +185,70 @@ class MassBalanceSuite extends FlatSpec with Matchers with MassBalance {
     solve(inputs, outputs) shouldBe None
   }
 
+  "2 + 6 = 2 + 5 + M" should "= 1" in {
+    val inputs = List(M(Some(2)), M(Some(6)))
+    val outputs = List(M(Some(2)), M(Some(5)), M(None))
+    solveM(inputs, outputs) shouldBe Some(1)
+  }
+
+  "2 + 6 = 2 + M + 1" should "= 5" in {
+    val inputs = List(M(Some(2)), M(Some(6)))
+    val outputs = List(M(Some(2)), M(None), M(Some(1)))
+    solveM(inputs, outputs) shouldBe Some(5)
+  }
+
+  "2 + 6 = M + 5 + 1" should "= 2" in {
+    val inputs = List(M(Some(2)), M(Some(6)))
+    val outputs = List(M(None), M(Some(5)), M(Some(1)))
+    solveM(inputs, outputs) shouldBe Some(2)
+  }
+
+  "2 + M = 2 + 5 + 1" should "= 6" in {
+    val inputs = List(M(Some(2)), M(None))
+    val outputs = List(M(Some(2)), M(Some(5)), M(Some(1)))
+    solveM(inputs, outputs) shouldBe Some(6)
+  }
+
+  "M + 6 = 2 + 5 + 1" should "= 2" in {
+    val inputs = List(M(None), M(Some(6)))
+    val outputs = List(M(Some(2)), M(Some(5)), M(Some(1)))
+    solveM(inputs, outputs) shouldBe Some(2)
+  }
+
+  "M = 1 + 2" should "= 3" in {
+    val inputs = List(M(None))
+    val outputs = List(M(Some(1)), M(Some(2)))
+    solveM(inputs, outputs) shouldBe Some(3)
+  }
+
+  "3 = M + 2" should "= 1" in {
+    val inputs = List(M(Some(3)))
+    val outputs = List(M(None), M(Some(2)))
+    solveM(inputs, outputs) shouldBe Some(1)
+  }
+
+  "3 = 1 + M" should "= 1" in {
+    val inputs = List(M(Some(3)))
+    val outputs = List(M(Some(1)), M(None))
+    solveM(inputs, outputs) shouldBe Some(2)
+  }
+
+  "Solve more 13" should "pass" in {
+    val inputs = List(M(None))
+    val outputs = List(M(Some(1)))
+    solveM(inputs, outputs) shouldBe Some(1)
+  }
+
+  "Solve more 14" should "pass" in {
+    val inputs = List(M(Some(1)))
+    val outputs = List(M(None))
+    solveM(inputs, outputs) shouldBe Some(1)
+  }
+
+  "Solve more 15" should "pass" in {
+    val inputs = List(M(None))
+    val outputs = List(M(None))
+    solveM(inputs, outputs) shouldBe None
+  }
+
 }
