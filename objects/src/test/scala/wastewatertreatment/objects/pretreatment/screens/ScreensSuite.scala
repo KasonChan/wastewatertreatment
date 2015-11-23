@@ -164,8 +164,50 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(pe2) shouldBe 60255013.00
 
     // Line 3
-    val pe3 = po - pe2
+    val pe3 = solveM(List(M(Some(po))),
+      List(M(Some(pe2)), M(None))).getOrElse(0.00)
     toXDecimals(pe3) shouldBe 79872924.20
+
+    val qe3 = calQ(pe3, tss3)
+    toXDecimals(qe3) shouldBe 1996.82
+
+    val tsse3 = tss3
+    toXDecimals(tsse3) shouldBe 40000
+
+    val vsse3 = calVSS(tsse3, vssTSSRatio)
+    toXDecimals(vsse3) shouldBe 32000.00
+
+    val bod5e3 = bod5o
+    toXDecimals(bod5e3) shouldBe 234.00
+
+    val bCODpe3 = calbCODp(vsse3, codVSSRatio, vssTSSRatio)
+    toXDecimals(bCODpe3) shouldBe 36352.00
+
+
+    // Line 2
+    val qe2 = solveM(List(M(Some(qo))),
+      List(M(None), M(Some(qe3)))).getOrElse(0.00)
+    toXDecimals(qe2) shouldBe 626379.58
+
+    val tsse2 = calTSS(pe2, qe2)
+    toXDecimals(tsse2) shouldBe 96.20
+
+    val vsse2 = calVSS(tsse2, vssTSSRatio)
+    toXDecimals(vsse2) shouldBe 76.96
+
+    val bod5e2 = bod5o
+    toXDecimals(bod5e2) shouldBe 234.00
+
+    val bCODpe2 = calbCODp(vsse2, codVSSRatio, vssTSSRatio)
+    toXDecimals(bCODpe2) shouldBe 87.42
+
+//    val bCODe2 = calbCOD(bod5e2, codBODRatio)
+//    toXDecimals(bCODe2) shouldBe 259.16
+//
+//    val bCODe3 = solve(List(MX(Some(qo), Some(bCODso))),
+//    List(MX(Some(qe2), Some(bCODe2)), MX(Some(qe3), None))).getOrElse(0.00)
+
+
   }
 
 }
