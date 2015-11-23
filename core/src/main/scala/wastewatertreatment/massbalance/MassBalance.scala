@@ -31,6 +31,7 @@ trait MassBalance {
           mx => !mx.M.isDefined || !mx.X.isDefined
         }
         Some(r)
+      case _ => None
     }
 
     spanned match {
