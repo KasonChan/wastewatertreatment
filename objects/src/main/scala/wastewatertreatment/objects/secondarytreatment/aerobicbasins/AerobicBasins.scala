@@ -2,7 +2,6 @@ package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
 import wastewatertreatment.core.Core
 import wastewatertreatment.massbalance.MassBalance
-import wastewatertreatment.math.Math._
 
 /**
  * Created by ka-son on 11/22/15.
@@ -136,7 +135,7 @@ object AerobicBasins extends Core with MassBalance {
                         ThetaC: Double): Double = {
     require(Q >= 0 && Y >= 0 && BOD5o >= 0 && BOD5e >= 0 && Kd >= 0 && ThetaC >= 0)
     val r = (Q * Y * (BOD5o - BOD5e)) / (1 + Kd * ThetaC)
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -155,7 +154,7 @@ object AerobicBasins extends Core with MassBalance {
                              Xa: Double): Double = {
     require(ThetaC >= 0 && fnd >= 0 && Kd >= 0 && Xa >= 0)
     val r = ThetaC * fnd * Kd * Xa
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -170,7 +169,7 @@ object AerobicBasins extends Core with MassBalance {
   def calPXBio(Xa: Double, Xapp: Double, Xo: Double = 0.00): Double = {
     require(Xa >= 0 && Xapp >= 0)
     val r = Xa + Xapp + Xo
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -187,7 +186,7 @@ object AerobicBasins extends Core with MassBalance {
                 nbvssVSSRatio: Double = nbVSS): Double = {
     require(Q >= 0 && VSS >= 0 && nbvssVSSRatio >= 0)
     val r = Q * VSS * nbvssVSSRatio
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -202,7 +201,7 @@ object AerobicBasins extends Core with MassBalance {
                PXvsso: Double): Double = {
     require(PxBioHeterotrophs >= 0 && PXvsso >= 0)
     val r = PxBioHeterotrophs + PXvsso
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -225,7 +224,7 @@ object AerobicBasins extends Core with MassBalance {
             Xw: Double = xW): Double = {
     require(Theta >= 0 && Xvss >= 0 && ThetaC >= 0 && Q >= 0 && Xe >= 0 && Xw >= 0)
     val r = (((Theta * Xvss) / ThetaC) - (Q * Xe)) / (Xw - Xe)
-    toXDecimals(r)
+    r
   }
 
   /**
@@ -248,7 +247,7 @@ object AerobicBasins extends Core with MassBalance {
             Xr: Double = xR): Double = {
     require(Q >= 0 && Qw >= 0 && Xe >= 0 && Xw >= 0 && Xvss >= 0 && Xr >= 0)
     val r = (((Q - Qw) * Xe) + (Qw * Xw) - (Q * Xvss)) / (Xvss - Xr)
-    toXDecimals(r)
+    r
   }
 
 }

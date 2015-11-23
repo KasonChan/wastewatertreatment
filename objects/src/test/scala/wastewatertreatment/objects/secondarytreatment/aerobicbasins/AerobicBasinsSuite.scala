@@ -73,19 +73,19 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     toXDecimals(xAParts) shouldBe 1380818.25
 
     val pxBio = calPXBio(xA, xAParts)
-    toXDecimals(pxBio) shouldBe 13873935.72
+    toXDecimals(pxBio) shouldBe 13873935.71
 
     val pXVSSo = calPXvsso(q, vss)
     toXDecimals(pXVSSo) shouldBe 6581026.25
 
     val pXVSS = calPXvss(pxBio, pXVSSo)
-    toXDecimals(pXVSS) shouldBe 20454961.97
+    toXDecimals(pXVSS) shouldBe 20454961.96
 
     val qw = calQw(volumeOfBasins, ThetaC = thetaC, Q = q)
     toXDecimals(qw) shouldBe 90138.51
 
     val qr = calQr(q, qw)
-    toXDecimals(qr) shouldBe 197577.91
+    toXDecimals(qr) shouldBe 197577.90
   }
 
 }

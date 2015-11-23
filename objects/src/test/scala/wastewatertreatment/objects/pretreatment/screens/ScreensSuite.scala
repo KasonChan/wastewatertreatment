@@ -14,13 +14,13 @@ class ScreensSuite extends FlatSpec with Matchers {
     val tss = 201.55
     val vss = 161.24
     val bod5 = 232.42
-    val cBOD5 = 211.29090909090905
-    val bCOD = 371.872
-    val bCODs = 188.70336
-    val bCODp = 183.16864
-    val nh3n = 30.200000000000003
+    val cBOD5 = 211.29
+    val bCOD = 371.87
+    val bCODs = 188.70
+    val bCODp = 183.17
+    val nh3n = 30.20
     val tp = 5.59
-    val p = 250118150.47550002
+    val p = 250118150.48
 
     val qe = q
     qe shouldBe q
@@ -28,46 +28,36 @@ class ScreensSuite extends FlatSpec with Matchers {
     val tsse = solve(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 201.55
-    tsse shouldBe tss
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 161.24
-    vsse shouldBe vss
 
     val bod5e = solve(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 232.42
-    bod5e shouldBe bod5
 
     val cBOD5e = calcBOD5(bod5e)
     toXDecimals(cBOD5e) shouldBe 211.29
-    cBOD5e shouldBe cBOD5
 
     val bCODe = calbCOD(bod5e)
     toXDecimals(bCODe) shouldBe 371.87
-    bCODe shouldBe bCOD
 
     val bCODpe = calbCODp(vsse)
     toXDecimals(bCODpe) shouldBe 183.17
-    bCODpe shouldBe bCODp
 
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe 188.70
-    bCODse shouldBe bCODs
 
     val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 30.20
-    nh3ne shouldBe nh3n
 
     val tpe = solve(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 5.59
-    tpe shouldBe tp
 
     val pe = calP(qe, tsse)
     toXDecimals(pe) shouldBe 250118150.48
-    pe shouldBe p
   }
 
   "Train 1" should "pass" in {
