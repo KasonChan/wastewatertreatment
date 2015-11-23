@@ -3,6 +3,7 @@ package wastewatertreatment.massbalance
 /**
  * Created by kasonchan on 11/14/15.
  */
+
 trait MassBalance {
 
   case class MX(M: Option[Double], X: Option[Double], Removal: Option[Double] = None)
@@ -80,6 +81,74 @@ trait MassBalance {
               Some(result)
             case (None, Some(x), _) =>
               val result = (r.getOrElse(0.0) - sum.getOrElse(0.0)) / x
+              Some(result)
+            case _ => None
+          }
+      }
+      case (Right(l), Right(r)) => None
+      case _ => None
+    }
+  }
+
+  case class M(M: Option[Double])
+
+  private def sum(inputs: List[M]): Double = {
+    inputs.foldLeft(0.0) {
+      (m, n) => m + n.M.getOrElse(0.0)
+    }
+  }
+
+  private def groupM(puts: List[M]): Either[Option[Double], (M, Option[Double])] = {
+    val spanned = puts match {
+      case List() => None
+      case l: List[M] =>
+        val r = l partition {
+          mx => !mx.M.isDefined
+        }
+        Some(r)
+      case _ => None
+    }
+
+    spanned match {
+      case None => Left(None)
+      case Some(x) => x match {
+        case (List(), t) => Left(Some(sum(t)))
+        case (h, t) =>
+          h.size match {
+            case 1 => Right(h.head, Some(sum(t)))
+            case _ => Left(None)
+          }
+      }
+      case _ => Left(None)
+    }
+  }
+
+  def solveM(inputs: List[M], outputs: List[M]): Option[Double] = {
+    val i = groupM(inputs)
+    val o = groupM(outputs)
+
+    (i, o) match {
+      case (Left(l), Left(r)) => None
+      case (Left(l), Right(r)) => r match {
+        case (mx, sum) =>
+          mx.M match {
+            case Some(x) =>
+              val result = l.getOrElse(0.0) - sum.getOrElse(0.0)
+              Some(result)
+            case None =>
+              val result = l.getOrElse(0.0) - sum.getOrElse(0.0)
+              Some(result)
+            case _ => None
+          }
+      }
+      case (Right(l), Left(r)) => l match {
+        case (mx, sum) =>
+          mx.M match {
+            case Some(x) =>
+              val result = r.getOrElse(0.0) - sum.getOrElse(0.0)
+              Some(result)
+            case None =>
+              val result = r.getOrElse(0.0) - sum.getOrElse(0.0)
               Some(result)
             case _ => None
           }
