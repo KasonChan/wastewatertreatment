@@ -3,6 +3,21 @@ package wastewatertreatment.massbalance
 /**
  * Created by kasonchan on 11/14/15.
  */
+trait MassBalance2 {
+
+  case class Mass(M: Option[Double], X: Option[Double] = None, Removal: Option[Double] = None)
+
+  private def group(puts: List[Mass]): Either[Option[Double], (Mass, Option[Double])] = {
+    ???
+  }
+
+  def solveM(inputs: List[Mass], outputs: List[Mass]): Option[Double] = {
+    ???
+  }
+
+}
+
+
 trait MassBalance {
 
   case class MX(M: Option[Double], X: Option[Double], Removal: Option[Double] = None)
