@@ -42,7 +42,7 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 3.56
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5(BOD5e = bod5e)
     toXDecimals(cBOD5e) shouldBe 3.24
 
     val bCODe = calbCOD(bod5e)

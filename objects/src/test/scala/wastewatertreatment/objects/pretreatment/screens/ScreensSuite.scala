@@ -111,4 +111,61 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(pe) shouldBe 182586249.85
   }
 
+  "Train S" should "pass" in {
+    // Assumptions
+    val q = 628376.40
+    val tss = 223
+    val vss = 178.40
+    val bod5 = 234
+    val tn = 40.00
+
+    val tss3 = 40000
+    val codBODRatio = 1.6
+    val solidRemoval = 0.63
+    val codVSSRatio = 1.42
+    val vssTSSRatio = 0.80
+
+    val cBOD5 = 75
+    val bCOD = calbCOD(bod5, codBODRatio)
+    val bCODp = calbCODp(VSS = vss, codVSSRatio = codVSSRatio, bVSS = vssTSSRatio)
+    val bCODs = calbCODs(bCOD, bCODp)
+    val p = calP(q, tss)
+
+    // Line 1
+    val qo = q
+    toXDecimals(qo) shouldBe 628376.40
+
+    val tsso = tss
+    toXDecimals(tsso) shouldBe 223.00
+
+    val vsso = vss
+    toXDecimals(vsso) shouldBe 178.40
+
+    val bod5o = bod5
+    toXDecimals(bod5) shouldBe 234.00
+
+    val bCODo = bCOD
+    toXDecimals(bCODo) shouldBe 374.40
+
+    val bCODpo = bCODp
+    toXDecimals(bCODpo) shouldBe 202.66
+
+    val bCODso = bCODs
+    toXDecimals(bCODso) shouldBe 171.74
+
+    val tno = tn
+    toXDecimals(tno) shouldBe 40.00
+
+    val po = p
+    toXDecimals(po) shouldBe 140127937.20
+
+    // Line 2
+    val pe2 = calXPercentage(po, 43)
+    toXDecimals(pe2) shouldBe 60255013.00
+
+    // Line 3
+    val pe3 = po - pe2
+    toXDecimals(pe3) shouldBe 79872924.20
+  }
+
 }

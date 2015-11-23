@@ -58,7 +58,7 @@ trait Core {
   /**
    * Returns cBOD,,5,,.
    * {{{
-   *   cBOD5e = BOD / bod5cBOD5Ratio
+   *   cBOD5 = BOD / bod5cBOD5Ratio
    * }}}
    * @param BOD5e the effluent value of BOD,,5,,.
    * @param bod5cBOD5Ratio BOD,,5,,/cBOD,,5,,. Default value and unit are 1.10.
@@ -129,6 +129,51 @@ trait Core {
            TSS: Double): Double = {
     require(Q >= 0 && TSS >= 0)
     val r = Q * TSS
+    r
+  }
+
+  /**
+   * Returns percentage value.
+   * {{{
+   *   X = X * percentage
+   * }}}
+   * @param X the initial value of X.
+   * @param percentage the percentage of the effluent of X.
+   */
+  def calXPercentage(X: Double,
+                     percentage: Double): Double = {
+    require(X >= 0 && percentage >= 0)
+    val r = X * percentage / 100
+    r
+  }
+
+  /**
+   * Returns Q.
+   * {{{
+   *   Q = P / TSS
+   * }}}
+   * @param P the initial value of P.
+   * @param TSS the initial value of TSS.
+   */
+  def calQ(P: Double,
+           TSS: Double): Double = {
+    require(P >= 0 && TSS > 0)
+    val r = P / TSS
+    r
+  }
+
+  /**
+   * Returns TSS.
+   * {{{
+   *   TSS = P / Q
+   * }}}
+   * @param P the initial value of P.
+   * @param Q the initial value of Q.
+   */
+  def calTSS(P: Double,
+             Q: Double): Double = {
+    require(P >= 0 && Q > 0)
+    val r = P / Q
     r
   }
 

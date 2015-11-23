@@ -151,4 +151,56 @@ class CoreSuite extends FlatSpec with Matchers with Core {
     calP(q, tss) shouldBe 1.8258438838729998E8
   }
 
+  "calXPercentage(-1, -1)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calXPercentage(-1, -1)
+    }
+  }
+
+  "calXPercentage(0, 0)" should "= 0.0" in {
+    calXPercentage(0, 0) shouldBe 0
+  }
+
+  "calXPercentage(p, percentage)" should "= 60255012.99599999" in {
+    val q = 140127937.20
+    val percentage = 43
+    calXPercentage(q, percentage) shouldBe 60255012.99599999
+  }
+
+  "calQ(-1, -1)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calQ(-1, -1)
+    }
+  }
+
+  "calQ(0, 0)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calQ(0, 0)
+    }
+  }
+
+  "calQ(p, tss)" should "= 1996.8231050000002" in {
+    val p = 79872924.20
+    val tss = 40000
+    calQ(p, tss) shouldBe 1996.8231050000002
+  }
+
+  "calTSS(-1, -1)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calTSS(-1, -1)
+    }
+  }
+
+  "calTSS(0, 0)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calTSS(0, 0)
+    }
+  }
+
+  "calTSS(p, q)" should "= 222.99999999999997" in {
+    val p = 140127937.20
+    val q = 628376.40
+    calTSS(p, q) shouldBe 222.99999999999997
+  }
+
 }
