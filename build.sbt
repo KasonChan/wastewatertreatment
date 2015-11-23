@@ -68,19 +68,20 @@ lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Se
   git.remoteRepo := s"git@github.com:KasonChan/wastewatertreatment.git"
 )
 
-lazy val root = project.in(file("."))
+lazy val wastewatertreatment = project.in(file("."))
   .settings(moduleName := name)
   .settings(allSettings: _*)
+  .settings(docSettings: _*)
   .settings(noPublish: _*)
   .settings(
     libraryDependencies ++= testDependencies
   )
   .aggregate(core, objects)
+  .dependsOn(core, objects)
 
 lazy val core = project
   .settings(moduleName := name + "-" + "core")
   .settings(allSettings: _*)
-  .settings(noPublish: _*)
   .settings(
     libraryDependencies ++= testDependencies
   )
@@ -88,7 +89,6 @@ lazy val core = project
 lazy val objects = project
   .settings(moduleName := name + "-" + "objects")
   .settings(allSettings: _*)
-  .settings(noPublish: _*)
   .settings(
     libraryDependencies ++= testDependencies
   )
