@@ -233,6 +233,24 @@ class MassBalanceSuite extends FlatSpec with Matchers with MassBalance {
     solveM(inputs, outputs) shouldBe Some(2)
   }
 
+  "1 + 2 = M" should "= 3" in {
+    val inputs = List(M(Some(1)), M(Some(2)))
+    val outputs = List(M(None))
+    solveM(inputs, outputs) shouldBe Some(3)
+  }
+
+  "1 + M = 3" should "= 2" in {
+    val inputs = List(M(Some(1)), M(None))
+    val outputs = List(M(Some(3)))
+    solveM(inputs, outputs) shouldBe Some(2)
+  }
+
+  "M + 2 = 3" should "= 1" in {
+    val inputs = List(M(None), M(Some(2)))
+    val outputs = List(M(Some(3)))
+    solveM(inputs, outputs) shouldBe Some(1)
+  }
+
   "Solve more 13" should "pass" in {
     val inputs = List(M(None))
     val outputs = List(M(Some(1)))
