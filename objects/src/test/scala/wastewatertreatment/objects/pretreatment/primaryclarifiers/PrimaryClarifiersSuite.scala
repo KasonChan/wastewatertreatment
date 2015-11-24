@@ -175,6 +175,9 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val po = p
     toXDecimals(po) shouldBe 140127937.20
 
+    val qe = qo
+    toXDecimals(qe) shouldBe 628376.40
+
     // Line 2
     val pe2 = calXPercentage(po, 43)
     toXDecimals(pe2) shouldBe 60255013.00
@@ -193,7 +196,8 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vsse3 = calVSS(tsse3, vssTSSRatio)
     toXDecimals(vsse3) shouldBe 32000.00
 
-    val bod5e3 = bod5o
+    val bod5e3 = solve(List(MX(Some(qo), Some(bod5o))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e3) shouldBe 234.00
 
     val bCODpe3 = calbCODp(vsse3, codVSSRatio, vssTSSRatio)
@@ -210,7 +214,8 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vsse2 = calVSS(tsse2, vssTSSRatio)
     toXDecimals(vsse2) shouldBe 76.96
 
-    val bod5e2 = bod5o
+    val bod5e2 = solve(List(MX(Some(qo), Some(bod5o))),
+      List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e2) shouldBe 234.00
 
     val bCODpe2 = calbCODp(vsse2, codVSSRatio, vssTSSRatio)
