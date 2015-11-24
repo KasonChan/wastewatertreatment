@@ -127,9 +127,6 @@ trait MassBalance {
     val i = groupM(inputs)
     val o = groupM(outputs)
 
-    println(i)
-    println(o)
-
     (i, o) match {
       case (Left(l), Left(r)) => None
       case (Left(l), Right(r)) => r match {
