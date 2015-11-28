@@ -1,6 +1,7 @@
 val name = "wastewatertreatment"
 
 lazy val buildSettings = Seq(
+  organization := "com.kasonchan",
   version := "0.1.0-SNAPSHOT",
   scalaVersion := "2.11.7"
 )
@@ -16,11 +17,14 @@ val testDependencies = Seq(
 )
 
 val akkaStreamV = "1.0"
+val equationsV = "0.1.1"
 
 val baseSettings = Seq(
   libraryDependencies ++= Seq(
     "org.jfree" % "jfreechart" % "1.0.17",
-    "com.typesafe.akka" %% "akka-stream-experimental" % akkaStreamV
+    "com.typesafe.akka" %% "akka-stream-experimental" % akkaStreamV,
+    "com.github.kasonchan" %% "equations-massbalance" % equationsV,
+    "com.github.kasonchan" %% "equations-monooperation" % equationsV
   ) ++ testDependencies.map(_ % "test"),
   scalacOptions in(Compile, console) := compilerOptions
 )
@@ -37,21 +41,21 @@ lazy val publishSettings = Seq(
   },
   publishArtifact in Test := false,
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  homepage := Some(url("https://github.com/KasonChan/wastewatertreatment")),
+  homepage := Some(url("https://github.com/kasonchan/wastewatertreatment")),
   autoAPIMappings := true,
   apiURL := Some(url("https://kasonchan.github.io/wastewatertreatment/docs")),
   scmInfo := Some(
     ScmInfo(
-      url("https://github.com/KasonChan/wastewatertreatment"),
-      "scm:git:git@github.com:KasonChan/wastewatertreatment.git"
+      url("https://github.com/kasonchan/wastewatertreatment"),
+      "scm:git:git@github.com:kasonchan/wastewatertreatment.git"
     )
   ),
   pomExtra :=
     <developers>
       <developer>
-        <id>KasonChan</id>
+        <id>kasonchan</id>
         <name>Kason Chan</name>
-        <url>https://github.com/KasonChan</url>
+        <url>https://github.com/kasonchan</url>
       </developer>
     </developers>
 )
@@ -66,7 +70,7 @@ lazy val allSettings = baseSettings ++ buildSettings ++ publishSettings
 
 lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Seq(
   site.addMappingsToSiteDir(mappings in(ScalaUnidoc, packageDoc), "docs"),
-  git.remoteRepo := s"git@github.com:KasonChan/wastewatertreatment.git"
+  git.remoteRepo := s"git@github.com:kasonchan/wastewatertreatment.git"
 )
 
 lazy val wastewatertreatment = project.in(file("."))
