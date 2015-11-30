@@ -1,13 +1,12 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.massbalance.MassBalance
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerobicAnoxicBasins extends Core with MassBalance {
+object AerobicAnoxicBasins extends Core {
 
   /**
    * Returns theta.

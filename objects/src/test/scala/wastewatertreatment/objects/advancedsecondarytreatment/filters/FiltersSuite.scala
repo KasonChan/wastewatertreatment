@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
+import equations.massbalance.MassBalance.{MX, solveMX}
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
@@ -65,14 +66,14 @@ class FiltersSuite extends FlatSpec with Matchers {
 
     val qe = 406744.47
 
-    val tsse = solve(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+    val tsse = solveMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 0.15
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 0.12
 
-    val bod5e = solve(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 0.27
 
@@ -88,15 +89,15 @@ class FiltersSuite extends FlatSpec with Matchers {
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe 0.29
 
-    val nh3ne = solve(List(MX(Some(q), Some(nh3n), Some(nh3nRemoval))),
+    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n), Some(nh3nRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 2.78
 
-    val tpe = solve(List(MX(Some(q), Some(tp), Some(tpRemoval))),
+    val tpe = solveMX(List(MX(Some(q), Some(tp), Some(tpRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 0.51
 
-    val felcalColiforme = solve(List(MX(Some(q), Some(fecalColiform), Some(fecalColiformRemoval))),
+    val felcalColiforme = solveMX(List(MX(Some(q), Some(fecalColiform), Some(fecalColiformRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(felcalColiforme) shouldBe 283891920.64
   }

@@ -1,12 +1,11 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-object UVDisinfectionBasins extends Core with MassBalance {
+object UVDisinfectionBasins extends Core {
 
   /**
    * Bacterial removal rate = 99.99%.

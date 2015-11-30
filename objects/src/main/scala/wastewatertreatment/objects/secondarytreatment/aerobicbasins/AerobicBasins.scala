@@ -1,12 +1,11 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by ka-son on 11/22/15.
  */
-object AerobicBasins extends Core with MassBalance {
+object AerobicBasins extends Core {
 
   /**
    * BOD removal = 97.00%.

@@ -17,14 +17,13 @@ val testDependencies = Seq(
 )
 
 val akkaStreamV = "1.0"
-val equationsV = "0.1.1"
+val equationsV = "0.1.0"
 
 val baseSettings = Seq(
   libraryDependencies ++= Seq(
     "org.jfree" % "jfreechart" % "1.0.17",
     "com.typesafe.akka" %% "akka-stream-experimental" % akkaStreamV,
-    "com.github.kasonchan" %% "equations-massbalance" % equationsV,
-    "com.github.kasonchan" %% "equations-monooperation" % equationsV
+    "com.kasonchan" %% "equations" % equationsV
   ) ++ testDependencies.map(_ % "test"),
   scalacOptions in(Compile, console) := compilerOptions
 )
@@ -77,7 +76,6 @@ lazy val wastewatertreatment = project.in(file("."))
   .settings(moduleName := name)
   .settings(allSettings: _*)
   .settings(docSettings: _*)
-  .settings(noPublish: _*)
   .settings(
     libraryDependencies ++= testDependencies
   )

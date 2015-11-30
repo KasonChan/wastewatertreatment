@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
+import equations.massbalance.MassBalance.{MX, solveMX}
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins._
@@ -35,14 +36,14 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solve(List(MX(Some(q), Some(tss), None)),
+    val tsse = solveMX(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe tss
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe vss
 
-    val bod5e = solve(List(MX(Some(q), Some(bod5), None)),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe bod5
 
@@ -58,22 +59,22 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe bCODs
 
-    val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe nh3n
 
-    val tpe = solve(List(MX(Some(q), Some(tp))),
+    val tpe = solveMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe tp
 
     val pe = calP(qe, tsse)
     toXDecimals(pe) shouldBe p
 
-    val felcalColiforme = solve(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
+    val felcalColiforme = solveMX(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(felcalColiforme) shouldBe 1.00
 
-    val enterococcie = solve(List(MX(Some(q), Some(enterococci), Some(bacterialRemovalRate))),
+    val enterococcie = solveMX(List(MX(Some(q), Some(enterococci), Some(bacterialRemovalRate))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(enterococcie) shouldBe 0.00
 

@@ -1,5 +1,7 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
+import equations.massbalance.MassBalance.{MX, solveMX}
+import equations.monooperation.MonoOperation.solveM
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
 import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers._
@@ -41,14 +43,14 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solve(List(MX(Some(q), Some(tss), None)),
+    val tsse = solveMX(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 122.99
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 98.39
 
-    val bod5e = solve(List(MX(Some(q), Some(bod5), None)),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 141.82
 
@@ -64,11 +66,11 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe 115.14
 
-    val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 25.24
 
-    val tpe = solve(List(MX(Some(q), Some(tp))),
+    val tpe = solveMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 4.67
 
@@ -92,14 +94,14 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solve(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+    val tsse = solveMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 45.51
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 36.41
 
-    val bod5e = solve(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 92.18
 
@@ -115,11 +117,11 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe 106.14
 
-    val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 25.24
 
-    val tpe = solve(List(MX(Some(q), Some(tp))),
+    val tpe = solveMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 4.67
 
@@ -183,8 +185,8 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(pe2) shouldBe 60255013.00
 
     // Line 3
-    val pe3 = solveM(List(M(Some(po))),
-      List(M(Some(pe2)), M(None))).getOrElse(0.00)
+    val pe3 = solveM(List(Some(po)),
+      List(Some(pe2), None), 'add).getOrElse(0.00)
     toXDecimals(pe3) shouldBe 79872924.20
 
     val qe3 = calQ(pe3, tss3)
@@ -196,7 +198,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vsse3 = calVSS(tsse3, vssTSSRatio)
     toXDecimals(vsse3) shouldBe 32000.00
 
-    val bod5e3 = solve(List(MX(Some(qo), Some(bod5o))),
+    val bod5e3 = solveMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e3) shouldBe 234.00
 
@@ -204,8 +206,8 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(bCODpe3) shouldBe 36352.00
 
     // Line 2
-    val qe2 = solveM(List(M(Some(qo))),
-      List(M(None), M(Some(qe3)))).getOrElse(0.00)
+    val qe2 = solveM(List(Some(qo)),
+      List(None, Some(qe3)), 'add).getOrElse(0.00)
     toXDecimals(qe2) shouldBe 626379.58
 
     val tsse2 = calTSS(pe2, qe2)
@@ -214,7 +216,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vsse2 = calVSS(tsse2, vssTSSRatio)
     toXDecimals(vsse2) shouldBe 76.96
 
-    val bod5e2 = solve(List(MX(Some(qo), Some(bod5o))),
+    val bod5e2 = solveMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e2) shouldBe 234.00
 

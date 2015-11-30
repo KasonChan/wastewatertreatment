@@ -1,12 +1,11 @@
 package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.massbalance.MassBalance
 
 /**
  * Created by ka-son on 10/24/15.
  */
-object Screens extends Core with MassBalance {
+object Screens extends Core {
 
   /**
    * TSS removal = 27.00%.

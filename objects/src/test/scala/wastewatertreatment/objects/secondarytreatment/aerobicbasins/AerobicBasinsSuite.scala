@@ -1,5 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
+import equations.massbalance.MassBalance.{MX, solveMX}
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.AerobicBasins._
@@ -31,14 +32,14 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solve(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+    val tsse = solveMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 3.60
 
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 2.88
 
-    val bod5e = solve(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 3.56
 
@@ -54,11 +55,11 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     val bCODse = calbCODs(bCODe, bCODpe)
     toXDecimals(bCODse) shouldBe 2.42
 
-    val nh3ne = solve(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 25.24
 
-    val tpe = solve(List(MX(Some(q), Some(tp))),
+    val tpe = solveMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 4.65
 
