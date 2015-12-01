@@ -14,35 +14,35 @@ object ValueUnits extends core.ValueUnits {
    * Forall,,T,,
    * @param unit Default unit is '''m^3^'''.
    */
-  case class ForallT(value: Double,
+  case class ForallT(value: Option[Double] = None,
                      unit: String = forallTUnits.headOption.getOrElse("m^3")) extends ValueUnit
 
   /**
    * Qpeak
    * @param unit Default unit is '''m^3^/d'''.
    */
-  case class QPeak(value: Double,
+  case class QPeak(value: Option[Double] = None,
                    unit: String = qPeakUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
   /**
    * Theta
    * @param unit Default unit is '''d'''.
    */
-  case class Theta(value: Double,
+  case class Theta(value: Option[Double] = None,
                    unit: String = thetaUnits.headOption.getOrElse("d")) extends ValueUnit
 
   /**
    * BOD
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class BOD(value: Double,
+  case class BOD(value: Option[Double] = None,
                  unit: String = bodUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * BOD loading
    * @param unit Default unit is '''kg-BOD/d'''.
    */
-  case class BODLoading(value: Double,
+  case class BODLoading(value: Option[Double] = None,
                         unit: String = bodLoadingUnits(1)) extends ValueUnit
 
   /**
@@ -50,7 +50,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''97.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BODRemoval(value: Double = bodRemoval,
+  case class BODRemoval(value: Option[Double] = Some(bodRemoval),
                         unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -58,7 +58,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''94.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class TSSRemoval(value: Double = tssRemoval,
+  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -66,7 +66,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''88.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class TKNRemoval(value: Double = tknRemoval,
+  case class TKNRemoval(value: Option[Double] = Some(tknRemoval),
                         unit: String = tknRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -74,7 +74,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''97.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class NH3NRemoval(value: Double = nh3nRemoval,
+  case class NH3NRemoval(value: Option[Double] = Some(nh3nRemoval),
                          unit: String = nh3nRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -82,7 +82,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''98.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class PhosphorousRemoval(value: Double = phosphorousRemoval,
+  case class PhosphorousRemoval(value: Option[Double] = Some(phosphorousRemoval),
                                 unit: String = phosphorousRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -90,14 +90,14 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''100.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BCODsRemoval(value: Double = bCODsRemoval,
+  case class BCODsRemoval(value: Option[Double] = Some(bCODsRemoval),
                           unit: String = bCODsRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
    * Forall,,anoxic,,/Forall,,total,,
    * @param unit Default is '''No unit'''.
    */
-  case class ForallAnoxicForallTotalRatio(value: Double = forallAnoxicForallTotalRatio,
+  case class ForallAnoxicForallTotalRatio(value: Option[Double] = Some(forallAnoxicForallTotalRatio),
                                           unit: String = forallAnoxicForallTotalUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
@@ -105,7 +105,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''0.50'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Sne(value: Double = sne,
+  case class Sne(value: Option[Double] = Some(sne),
                  unit: String = sneUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -113,7 +113,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''3000.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Xvss(value: Double = xVSS,
+  case class Xvss(value: Option[Double] = Some(xVSS),
                   unit: String = xVSSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -121,7 +121,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''1.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class SeBOD(value: Double = seBOD,
+  case class SeBOD(value: Option[Double] = Some(seBOD),
                    unit: String = seBODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -129,7 +129,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''0.50'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Ko(value: Double = kO,
+  case class Ko(value: Option[Double] = Some(kO),
                 unit: String = kOUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -137,14 +137,14 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''2.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Do(value: Double = dO,
+  case class Do(value: Option[Double] = Some(dO),
                 unit: String = dOUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * fnd
    * @param value Default value is '''0.10'''.
    */
-  case class Fnd(value: Double = fnd,
+  case class Fnd(value: Option[Double] = Some(fnd),
                  unit: String = fndUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
@@ -152,7 +152,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''2.00'''.
    * @param unit Default is '''No unit'''.
    */
-  case class FactorOfSafety(value: Double = factorOfSafety,
+  case class FactorOfSafety(value: Option[Double] = Some(factorOfSafety),
                             unit: String = factorOfSafetyUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
@@ -160,7 +160,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''45.00'''.
    * @param unit Default is '''No unit'''.
    */
-  case class TKN(value: Double = tkn,
+  case class TKN(value: Option[Double] = Some(tkn),
                  unit: String = tknUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
@@ -168,7 +168,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''8000.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Xr(value: Double = xR,
+  case class Xr(value: Option[Double] = Some(xR),
                 unit: String = xEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -176,7 +176,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''8000.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Xw(value: Double = xW,
+  case class Xw(value: Option[Double] = Some(xW),
                 unit: String = xWUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -184,7 +184,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''10.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Xe(value: Double = xE,
+  case class Xe(value: Option[Double] = Some(xE),
                 unit: String = xEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
@@ -192,21 +192,21 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''6.00'''.
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class NOxe(value: Double = noXE,
+  case class NOxe(value: Option[Double] = Some(noXE),
                   unit: String = noXEUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * rbCOD
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class RbCOD(value: Double,
+  case class RbCOD(value: Option[Double] = None,
                    unit: String = rbCODUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * U
    * @param unit Default unit is '''d^-1^'''.
    */
-  case class U(value: Double,
+  case class U(value: Option[Double] = None,
                unit: String = perDayUnits.headOption.getOrElse("d^-1")) extends ValueUnit
 
   /**
@@ -214,21 +214,21 @@ object ValueUnits extends core.ValueUnits {
    * @param value
    * @param unit Default unit is '''d^-1^'''.
    */
-  case class Ks(value: Double,
+  case class Ks(value: Option[Double] = None,
                 unit: String = kSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * Y
    * @param unit Default is '''No unit'''.
    */
-  case class Y(value: Double,
+  case class Y(value: Option[Double] = None,
                unit: String = yUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
    * Kd
    * @param unit Default unit is '''d^-1^'''.
    */
-  case class Kd(value: Double,
+  case class Kd(value: Option[Double] = None,
                 unit: String = perDayUnits.headOption.getOrElse("d^-1")) extends ValueUnit
 
   /**
@@ -238,10 +238,10 @@ object ValueUnits extends core.ValueUnits {
    * @param y Default value and unit are 0.40.
    * @param kD Default value and unit are 0.12d^-1^.
    */
-  case class Heterotrophs(u: U = U(hU),
-                          kS: Ks = Ks(hKs),
-                          y: Y = Y(hY),
-                          kD: Kd = Kd(hKd))
+  case class Heterotrophs(u: U = U(Some(hU)),
+                          kS: Ks = Ks(Some(hKs)),
+                          y: Y = Y(Some(hY)),
+                          kD: Kd = Kd(Some(hKd)))
 
   /**
    * Nitrifiers
@@ -250,163 +250,163 @@ object ValueUnits extends core.ValueUnits {
    * @param y Default value and unit are 0.12.
    * @param kD Default value and unit are 0.08d^-1^.
    */
-  case class Nitrifiers(u: U = U(nU),
-                        kS: Ks = Ks(nKs),
-                        y: Y = Y(nY),
-                        kD: Kd = Kd(nKd))
+  case class Nitrifiers(u: U = U(Some(nU)),
+                        kS: Ks = Ks(Some(nKs)),
+                        y: Y = Y(Some(nY)),
+                        kD: Kd = Kd(Some(nKd)))
 
   /**
    * Forall,,anoxic,,
    * @param unit Default unit is '''m^3^'''.
    */
-  case class ForallAnoxic(value: Double,
+  case class ForallAnoxic(value: Option[Double] = None,
                           unit: String = forallAnoxicUnits.headOption.getOrElse("m^3")) extends ValueUnit
 
   /**
    * Theta,,aerobic,,
    * @param unit Default unit is '''d'''.
    */
-  case class ThetaAerobic(value: Double,
+  case class ThetaAerobic(value: Option[Double] = None,
                           unit: String = thetaAerobicUnits.headOption.getOrElse("d")) extends ValueUnit
 
   /**
    * Theta,,c,,
    * @param unit Default unit is '''d'''.
    */
-  case class ThetaC(value: Double,
+  case class ThetaC(value: Option[Double] = None,
                     unit: String = thetaCUnits.headOption.getOrElse("d")) extends ValueUnit
 
   /**
    * S
    * @param unit Default unit is '''g-BOD/m^3^'''.
    */
-  case class S(value: Double,
+  case class S(value: Option[Double] = None,
                unit: String = sUnits.headOption.getOrElse("g-BOD/m^3")) extends ValueUnit
 
   /**
    * P,,XBio,,
    * @param unit Default unit is '''g/d'''.
    */
-  case class PXBio(value: Double,
+  case class PXBio(value: Option[Double] = None,
                    unit: String = pXBioUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * X,,b,,
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class Xb(value: Double,
+  case class Xb(value: Option[Double] = None,
                 unit: String = xBUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * F/M
    * @param unit Default unit is '''No unit'''.
    */
-  case class FMRatio(value: Double,
+  case class FMRatio(value: Option[Double] = None,
                      unit: String = fmRatioUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
    * SDNR
    * @param unit Default unit is '''No unit'''.
    */
-  case class SDNR(value: Double,
+  case class SDNR(value: Option[Double] = None,
                   unit: String = sdnrUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
    * NO3-N
    * @param unit Default unit is '''g/m^3^'''.
    */
-  case class NO3N(value: Double,
+  case class NO3N(value: Option[Double] = None,
                   unit: String = no3nUnits.headOption.getOrElse("g/m^3")) extends ValueUnit
 
   /**
    * Qw
    * @param unit Default unit is '''m^3^/d'''.
    */
-  case class Qw(value: Double,
+  case class Qw(value: Option[Double] = None,
                 unit: String = qWUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
   /**
    * Qr
    * @param unit Default unit is '''m^3^/d'''.
    */
-  case class Qr(value: Double,
+  case class Qr(value: Option[Double] = None,
                 unit: String = qRUnits.drop(1).headOption.getOrElse("m^3/d")) extends ValueUnit
 
   /**
    * R
    * @param unit Default unit is '''No unit'''.
    */
-  case class R(value: Double,
+  case class R(value: Option[Double] = None,
                unit: String = rUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
    * IR
    * @param unit Default unit is '''No unit'''.
    */
-  case class IR(value: Double,
+  case class IR(value: Option[Double] = None,
                 unit: String = iRUnits.headOption.getOrElse("")) extends ValueUnit
 
   /**
    * NOr
    * @param unit Default unit is '''g/d'''.
    */
-  case class NOr(value: Double,
+  case class NOr(value: Option[Double] = None,
                  unit: String = noRUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * NO,,3,, removed
    * @param unit Default unit is '''g/d'''.
    */
-  case class NO3Removed(value: Double,
+  case class NO3Removed(value: Option[Double] = None,
                         unit: String = no3RemovedUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * Xa Heterotrophs
    * @param unit Default unit is '''g/d'''.
    */
-  case class XaHeterotrophs(value: Double,
+  case class XaHeterotrophs(value: Option[Double] = None,
                             unit: String = xAHeterotrophsUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * Xa Heterotrophs Parts
    * @param unit Default unit is '''g/d'''.
    */
-  case class XaHeterotrophsParts(value: Double,
+  case class XaHeterotrophsParts(value: Option[Double] = None,
                                  unit: String = xAHeterotrophsUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * P,,XBio,, Heterotrophs
    * @param unit Default unit is '''g/d'''.
    */
-  case class PxBioHeterotrophs(value: Double,
+  case class PxBioHeterotrophs(value: Option[Double] = None,
                                unit: String = pXBioHeterotrophisUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * Xa Nitrifiers
    * @param unit Default unit is '''g/d'''.
    */
-  case class XaNitrifiers(value: Double,
+  case class XaNitrifiers(value: Option[Double] = None,
                           unit: String = xANitrifiersUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * Xa Nitrifiers Parts
    * @param unit Default unit is '''g/d'''.
    */
-  case class XaNitrifiersParts(value: Double,
+  case class XaNitrifiersParts(value: Option[Double] = None,
                                unit: String = xANitrifiersPartsUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * P,,XBio,, Nitrifiers
    * @param unit Default unit is '''g/d'''.
    */
-  case class PxBioNitrifiers(value: Double,
+  case class PxBioNitrifiers(value: Option[Double] = None,
                              unit: String = pXBioNitrifiersUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
   /**
    * P,,Xvss,,
    * @param unit Default unit is '''g/d'''.
    */
-  case class PXvss(value: Double,
+  case class PXvss(value: Option[Double] = None,
                    unit: String = pXvssUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
 }

@@ -15,7 +15,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 99.99.
    * @param unit Default unit is '''No unit'''.
    */
-  case class BacterialRemovalRate(value: Double = bacterialRemovalRate,
+  case class BacterialRemovalRate(value: Option[Double] = Some(bacterialRemovalRate),
                                   unit: String = bacterialRemovalRateUnits.headOption.getOrElse("")) extends ValueUnit
 
 }

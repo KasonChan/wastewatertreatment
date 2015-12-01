@@ -15,7 +15,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''27.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class TSSRemoval(value: Double = tssRemoval,
+  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -23,7 +23,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is '''27.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BOD5Removal(value: Double = bod5Removal,
+  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
                          unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
 }

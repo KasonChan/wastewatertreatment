@@ -14,7 +14,7 @@ object ValueUnits extends core.ValueUnits {
    * Daily backwash rate
    * @param unit Default unit is '''m^3^/d'''.
    */
-  case class DailyBackwashRate(value: Double = backwashRate,
+  case class DailyBackwashRate(value: Option[Double] = Some(backwashRate),
                                unit: String = dailyBackwashRateUnits.drop(1).headOption.getOrElse("gpm/ft^2")) extends ValueUnit
 
   /**
@@ -22,7 +22,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 70.00.
    * @param unit Default unit is '''%'''.
    */
-  case class BODRemoval(value: Double = bodRemoval,
+  case class BODRemoval(value: Option[Double] = Some(bodRemoval),
                         unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -30,7 +30,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 70.00.
    * @param unit Default unit is '''%'''.
    */
-  case class TSSRemoval(value: Double = tssRemoval,
+  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -38,7 +38,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 48.00.
    * @param unit Default unit is '''%'''.
    */
-  case class TOCRemoval(value: Double = tocRemoval,
+  case class TOCRemoval(value: Option[Double] = Some(tocRemoval),
                         unit: String = tocRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -46,7 +46,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 76.00.
    * @param unit Default unit is '''%'''.
    */
-  case class FecalColiformRemoval(value: Double = fecalColiformRemoval,
+  case class FecalColiformRemoval(value: Option[Double] = Some(fecalColiformRemoval),
                                   unit: String = fecalColiformRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -54,7 +54,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 33.00.
    * @param unit Default unit is '''%'''.
    */
-  case class TPRemoval(value: Double = tpRemoval,
+  case class TPRemoval(value: Option[Double] = Some(tpRemoval),
                        unit: String = tpRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -62,7 +62,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 46.00.
    * @param unit Default unit is '''%'''.
    */
-  case class TKNRemoval(value: Double = tknRemoval,
+  case class TKNRemoval(value: Option[Double] = Some(tknRemoval),
                         unit: String = tknRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -70,7 +70,7 @@ object ValueUnits extends core.ValueUnits {
    * @param value Default value is 21.00.
    * @param unit Default unit is '''%'''.
    */
-  case class NH3NRemoval(value: Double = nh3nRemoval,
+  case class NH3NRemoval(value: Option[Double] = Some(nh3nRemoval),
                          unit: String = nh3nRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
 }

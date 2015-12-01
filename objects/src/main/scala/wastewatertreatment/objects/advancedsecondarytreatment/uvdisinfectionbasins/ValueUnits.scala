@@ -14,7 +14,7 @@ object ValueUnits {
    * @param value Default value is 99.99.
    * @param unit Default unit is '''No unit'''.
    */
-  case class BacterialRemovalRate(value: Double = bacterialRemovalRate,
+  case class BacterialRemovalRate(value: Option[Double] = Some(bacterialRemovalRate),
                                   unit: String = bacterialRemovalRateUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
@@ -22,7 +22,7 @@ object ValueUnits {
    * @param value Default value is 0.50.
    * @param unit Default unit is '''No unit'''.
    */
-  case class NTUTSSRatio(value: Double = ntuTSSRatio,
+  case class NTUTSSRatio(value: Option[Double] = Some(ntuTSSRatio),
                          unit: String = ntuTSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
 
 
