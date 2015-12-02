@@ -25,20 +25,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(TSSRemoval(unit = "xyz/abc")) shouldBe "45.00xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(Some(25.0)))" should "25.00%" in {
-    ValueUnit(BODRemoval(Some(25.0))) shouldBe "25.00%"
+  "ValueUnit(BOD5Removal(Some(25.0)))" should "25.00%" in {
+    ValueUnit(BOD5Removal(Some(25.0))) shouldBe "25.00%"
   }
 
-  "ValueUnit(BODRemoval())" should "25.00%" in {
-    ValueUnit(BODRemoval()) shouldBe "25.00%"
+  "ValueUnit(BOD5Removal())" should "25.00%" in {
+    ValueUnit(BOD5Removal()) shouldBe "25.00%"
   }
 
-  "ValueUnit(BODRemoval(Some(25.0), \"xyz/abc\"))" should "25.00xyz/abc" in {
-    ValueUnit(BODRemoval(Some(25.0), "xyz/abc")) shouldBe "25.00xyz/abc"
+  "ValueUnit(BOD5Removal(Some(25.0), \"xyz/abc\"))" should "25.00xyz/abc" in {
+    ValueUnit(BOD5Removal(Some(25.0), "xyz/abc")) shouldBe "25.00xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(unit = \"xyz/abc\"))" should "25.00xyz/abc" in {
-    ValueUnit(BODRemoval(unit = "xyz/abc")) shouldBe "25.00xyz/abc"
+  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "25.00xyz/abc" in {
+    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "25.00xyz/abc"
   }
 
   "ValueUnit(TSS(Some(8000.0)))" should "8000.00g/m^3" in {

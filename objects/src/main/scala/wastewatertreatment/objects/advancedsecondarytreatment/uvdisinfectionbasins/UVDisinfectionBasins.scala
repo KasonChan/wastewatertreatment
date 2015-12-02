@@ -13,23 +13,15 @@ object UVDisinfectionBasins extends Core {
   val bacterialRemovalRate = 99.99
 
   /**
-   * NTU/TSS = 0.50.
+   * A case class to represent the default UV disinfection basins.
+   * tssRemoval the value of TSS removal. Default value is 0.00.
+   * bod5Removal the value of BOD,,5,, removal. Default value is 0.00.
+   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 0.00.
+   * tpRemoval the value of TP removal. Default value is 0.00.
+   * fecalColiformRemoval the value of fecal coliform removal. Default value is 99.99.
+   * enterococciRemoval the value of enterococci removal. Default value is 99.99.
    */
-  val ntuTSSRatio = 0.50
-
-  /**
-   * Returns NTU.
-   * {{{
-   *   NTU = TSS * NTU/TSS
-   * }}}
-   * @param TSS the effluent value of TSS.
-   * @param ntuTSSRatio NTU/TSS. Default value and unit are 0.50.
-   */
-  def calNTU(TSS: Double,
-             ntuTSSRatio: Double = ntuTSSRatio): Double = {
-    require(TSS >= 0 && ntuTSSRatio >= 0)
-    val r = TSS * ntuTSSRatio
-    r
-  }
+  val uvdbDefaultRemovals = Removals(fecalColiformRemoval = Some(bacterialRemovalRate),
+    enterococciRemoval = Some(bacterialRemovalRate))
 
 }

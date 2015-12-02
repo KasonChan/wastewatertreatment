@@ -71,4 +71,14 @@ class ChlorineContactBasinsSuite extends FlatSpec with Matchers {
     toXDecimals(enterococcie) shouldBe 10.00
   }
 
+  "Default removals" should "pass" in {
+    val defaultRemovals = ccbDefaultRemovals
+    defaultRemovals.tssRemoval shouldBe None
+    defaultRemovals.bod5Removal shouldBe None
+    defaultRemovals.nh3nRemoval shouldBe None
+    defaultRemovals.tpRemoval shouldBe None
+    defaultRemovals.fecalColiformRemoval shouldBe Some(99.99)
+    defaultRemovals.enterococciRemoval shouldBe Some(99.99)
+  }
+
 }

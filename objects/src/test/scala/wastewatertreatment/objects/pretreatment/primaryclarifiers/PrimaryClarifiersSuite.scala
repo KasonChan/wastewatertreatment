@@ -15,16 +15,12 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     tssRemoval shouldBe 63.00
   }
 
-  "bodRemoval" should "= 35.00" in {
-    bodRemoval shouldBe 35.00
+  "bod5Removal" should "= 35.00" in {
+    bod5Removal shouldBe 35.00
   }
 
   "tss" should "= 40000.00" in {
     tss shouldBe 40000.00
-  }
-
-  "phosphorusRemoval" should "= 0.00" in {
-    phosphorusRemoval shouldBe 0.00
   }
 
   "Train 0" should "pass" in {
@@ -101,7 +97,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 36.41
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 92.18
 
@@ -222,6 +218,16 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
 
     val bCODpe2 = calbCODp(vsse2, codVSSRatio, vssTSSRatio)
     toXDecimals(bCODpe2) shouldBe 87.42
+  }
+
+  "Default removals" should "pass" in {
+    val defaultRemovals = pcDefaultRemovals
+    defaultRemovals.tssRemoval shouldBe Some(63.00)
+    defaultRemovals.bod5Removal shouldBe Some(35.00)
+    defaultRemovals.nh3nRemoval shouldBe None
+    defaultRemovals.tpRemoval shouldBe None
+    defaultRemovals.fecalColiformRemoval shouldBe None
+    defaultRemovals.enterococciRemoval shouldBe None
   }
 
 }

@@ -7,11 +7,9 @@ import wastewatertreatment.core.Units
  */
 object Unit extends Units {
 
-  val bodRemovalUnits = percentageUnits
+  val bod5RemovalUnits = percentageUnits
 
   val tssRemovalUnits = percentageUnits
-
-  val codRemovalUnits = percentageUnits
 
   val nh3nRemovalUnits = percentageUnits
 
@@ -42,7 +40,6 @@ object Unit extends Units {
 
   val kDUnits = perDayUnits
 
-
   val thetaCUnits = dayUnits
-  
+
 }

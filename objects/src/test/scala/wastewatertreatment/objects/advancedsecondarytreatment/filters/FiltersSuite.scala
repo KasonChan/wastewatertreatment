@@ -18,28 +18,20 @@ class FiltersSuite extends FlatSpec with Matchers {
     tssRemoval shouldBe 70.00
   }
 
-  "bodRemoval" should "= 70.00" in {
-    bodRemoval shouldBe 70.00
+  "bod5Removal" should "= 70.00" in {
+    bod5Removal shouldBe 70.00
   }
 
-  "tocRemoval" should "= 48.00" in {
-    tocRemoval shouldBe 48.00
-  }
-
-  "fecalColiformRemoval" should "= 76.00" in {
-    fecalColiformRemoval shouldBe 76.00
-  }
-
-  "tpRemoval" should "= 33.00" in {
-    tpRemoval shouldBe 33.00
-  }
-
-  "tknRemoval" should "= 46.00" in {
-    tknRemoval shouldBe 46.00
+  "bacterialRemovalRate" should "= 76.00" in {
+    bacterialRemovalRate shouldBe 76.00
   }
 
   "nh3nRemoval" should "= 21.00" in {
     nh3nRemoval shouldBe 21.00
+  }
+
+  "tpRemoval" should "= 33.00" in {
+    tpRemoval shouldBe 33.00
   }
 
   "Train 1" should "pass" in {
@@ -73,7 +65,7 @@ class FiltersSuite extends FlatSpec with Matchers {
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 0.12
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 0.27
 
@@ -97,9 +89,19 @@ class FiltersSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 0.51
 
-    val felcalColiforme = solveMX(List(MX(Some(q), Some(fecalColiform), Some(fecalColiformRemoval))),
+    val felcalColiforme = solveMX(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(felcalColiforme) shouldBe 283891920.64
+  }
+
+  "Default removals" should "pass" in {
+    val defaultRemovals = fDefaultRemovals
+    defaultRemovals.tssRemoval shouldBe Some(70.00)
+    defaultRemovals.bod5Removal shouldBe Some(70.00)
+    defaultRemovals.nh3nRemoval shouldBe Some(21.00)
+    defaultRemovals.tpRemoval shouldBe Some(33.00)
+    defaultRemovals.fecalColiformRemoval shouldBe Some(76.00)
+    defaultRemovals.enterococciRemoval shouldBe Some(76.00)
   }
 
 }

@@ -57,20 +57,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(BODLoading(Some(25027.04), "xyz/abc")) shouldBe "25027.04xyz/abc"
   }
 
-  "ValueUnit(BODRemoval())" should "97.00%" in {
-    ValueUnit(BODRemoval()) shouldBe "97.00%"
+  "ValueUnit(BOD5Removal())" should "97.00%" in {
+    ValueUnit(BOD5Removal()) shouldBe "97.00%"
   }
 
-  "ValueUnit(BODRemoval(Some(97)))" should "97.00%" in {
-    ValueUnit(BODRemoval(Some(97))) shouldBe "97.00%"
+  "ValueUnit(BOD5Removal(Some(97)))" should "97.00%" in {
+    ValueUnit(BOD5Removal(Some(97))) shouldBe "97.00%"
   }
 
-  "ValueUnit(BODRemoval(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BODRemoval(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
+  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
+    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BODRemoval(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
+  "ValueUnit(BOD5Removal(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
+    ValueUnit(BOD5Removal(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
   }
 
   "ValueUnit(TSSRemoval())" should "94.00%" in {
@@ -89,22 +89,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(TSSRemoval(Some(94), "xyz/abc")) shouldBe "94.00xyz/abc"
   }
 
-  "ValueUnit(TKNRemoval())" should "88.00%" in {
-    ValueUnit(TKNRemoval()) shouldBe "88.00%"
-  }
-
-  "ValueUnit(TKNRemoval(Some(88)))" should "88.00%" in {
-    ValueUnit(TKNRemoval(Some(88))) shouldBe "88.00%"
-  }
-
-  "ValueUnit(TKNRemoval(unit = \"xyz/abc\"))" should "88.00xyz/abc" in {
-    ValueUnit(TKNRemoval(unit = "xyz/abc")) shouldBe "88.00xyz/abc"
-  }
-
-  "ValueUnit(TKNRemoval(Some(88), \"xyz/abc\"))" should "88.00xyz/abc" in {
-    ValueUnit(TKNRemoval(Some(88), "xyz/abc")) shouldBe "88.00xyz/abc"
-  }
-
   "ValueUnit(NH3NRemoval())" should "97.00%" in {
     ValueUnit(NH3NRemoval()) shouldBe "97.00%"
   }
@@ -119,38 +103,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(NH3NRemoval(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
     ValueUnit(NH3NRemoval(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(PhosphorousRemoval())" should "98.00%" in {
-    ValueUnit(PhosphorousRemoval()) shouldBe "98.00%"
-  }
-
-  "ValueUnit(PhosphorousRemoval(Some(98)))" should "98.00%" in {
-    ValueUnit(PhosphorousRemoval(Some(98))) shouldBe "98.00%"
-  }
-
-  "ValueUnit(PhosphorousRemoval(unit = \"xyz/abc\"))" should "98.00xyz/abc" in {
-    ValueUnit(PhosphorousRemoval(unit = "xyz/abc")) shouldBe "98.00xyz/abc"
-  }
-
-  "ValueUnit(PhosphorousRemoval(Some(98), \"xyz/abc\"))" should "98.00xyz/abc" in {
-    ValueUnit(PhosphorousRemoval(Some(98), "xyz/abc")) shouldBe "98.00xyz/abc"
-  }
-
-  "ValueUnit(BCODsRemoval())" should "100.00%" in {
-    ValueUnit(BCODsRemoval()) shouldBe "100.00%"
-  }
-
-  "ValueUnit(BCODsRemoval(Some(100)))" should "100.00%" in {
-    ValueUnit(BCODsRemoval(Some(100))) shouldBe "100.00%"
-  }
-
-  "ValueUnit(BCODsRemoval(unit = \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(BCODsRemoval(unit = "xyz/abc")) shouldBe "100.00xyz/abc"
-  }
-
-  "ValueUnit(BCODsRemoval(Some(100), \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(BCODsRemoval(Some(100), "xyz/abc")) shouldBe "100.00xyz/abc"
   }
 
   "ValueUnit(ForallAnoxicForallTotalRatio())" should "0.33" in {

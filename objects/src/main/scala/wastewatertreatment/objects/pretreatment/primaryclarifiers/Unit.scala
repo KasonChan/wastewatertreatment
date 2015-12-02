@@ -9,8 +9,6 @@ object Unit extends Units {
 
   val tssRemovalUnits = percentageUnits
 
-  val bodRemovalUnits = percentageUnits
-
-  val phosphorusRemovalUnits = percentageUnits
+  val bod5RemovalUnits = percentageUnits
 
 }

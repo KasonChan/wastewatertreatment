@@ -9,28 +9,16 @@ import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Aerobi
  */
 class AerobicAnoxicBasinsSuite extends FlatSpec with Matchers {
 
-  "bodRemoval" should "= 97.00" in {
-    bodRemoval shouldBe 97.00
+  "bod5Removal" should "= 97.00" in {
+    bod5Removal shouldBe 97.00
   }
 
   "tssRemoval" should "= 94.00" in {
     tssRemoval shouldBe 94.00
   }
 
-  "tknRemoval" should "= 88.00" in {
-    tknRemoval shouldBe 88.00
-  }
-
   "nh3nRemoval" should "= 97.00" in {
     nh3nRemoval shouldBe 97.00
-  }
-
-  "phosphorousRemoval" should "= 98.00" in {
-    phosphorousRemoval shouldBe 98.00
-  }
-
-  "bCODsRemoval" should "= 100.00" in {
-    bCODsRemoval shouldBe 100.00
   }
 
   "forallAnoxicForallTotalRatio" should "= 0.33" in {
@@ -319,6 +307,16 @@ class AerobicAnoxicBasinsSuite extends FlatSpec with Matchers {
 
     val bodL = calBOD(84, 166000000, 4967750)
     toXDecimals(bodL) shouldBe 301.25
+  }
+
+  "Default removals" should "pass" in {
+    val defaultRemovals = aabDefaultRemovals
+    defaultRemovals.tssRemoval shouldBe Some(94.00)
+    defaultRemovals.bod5Removal shouldBe Some(97.00)
+    defaultRemovals.nh3nRemoval shouldBe Some(97.00)
+    defaultRemovals.tpRemoval shouldBe None
+    defaultRemovals.fecalColiformRemoval shouldBe None
+    defaultRemovals.enterococciRemoval shouldBe None
   }
 
 }

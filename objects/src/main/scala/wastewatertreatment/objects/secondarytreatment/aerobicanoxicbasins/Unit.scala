@@ -17,17 +17,11 @@ object Unit extends Units {
 
   val bodLoadingUnits = generatePRUs(massUnits, "BOD", dayUnits)
 
-  val bodRemovalUnits = percentageUnits
+  val bod5RemovalUnits = percentageUnits
 
   val tssRemovalUnits = percentageUnits
 
-  val tknRemovalUnits = percentageUnits
-
   val nh3nRemovalUnits = percentageUnits
-
-  val phosphorousRemovalUnits = percentageUnits
-
-  val bCODsRemovalUnits = percentageUnits
 
   val forallAnoxicForallTotalUnits = noUnits
 

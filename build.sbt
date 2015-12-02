@@ -17,7 +17,7 @@ val testDependencies = Seq(
 )
 
 val akkaStreamV = "1.0"
-val equationsV = "0.1.0"
+val equationsV = "0.1.1"
 
 val baseSettings = Seq(
   libraryDependencies ++= Seq(

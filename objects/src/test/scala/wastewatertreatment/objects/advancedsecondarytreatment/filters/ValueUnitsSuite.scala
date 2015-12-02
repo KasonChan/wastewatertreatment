@@ -17,20 +17,20 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(DailyBackwashRate(Some(26240.76), "xyz/abc")) shouldBe "26240.76xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(Some(70.0)))" should "70.00%" in {
-    ValueUnit(BODRemoval(Some(70.0))) shouldBe "70.00%"
+  "ValueUnit(BOD5Removal(Some(70.0)))" should "70.00%" in {
+    ValueUnit(BOD5Removal(Some(70.0))) shouldBe "70.00%"
   }
 
-  "ValueUnit(BODRemoval())" should "70.00%" in {
-    ValueUnit(BODRemoval()) shouldBe "70.00%"
+  "ValueUnit(BOD5Removal())" should "70.00%" in {
+    ValueUnit(BOD5Removal()) shouldBe "70.00%"
   }
 
-  "ValueUnit(BODRemoval(Some(70.0), \"xyz/abc\"))" should "70.00xyz/abc" in {
-    ValueUnit(BODRemoval(Some(70.0), "xyz/abc")) shouldBe "70.00xyz/abc"
+  "ValueUnit(BOD5Removal(Some(70.0), \"xyz/abc\"))" should "70.00xyz/abc" in {
+    ValueUnit(BOD5Removal(Some(70.0), "xyz/abc")) shouldBe "70.00xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(unit = \"xyz/abc\"))" should "70.00xyz/abc" in {
-    ValueUnit(BODRemoval(unit = "xyz/abc")) shouldBe "70.00xyz/abc"
+  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "70.00xyz/abc" in {
+    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "70.00xyz/abc"
   }
 
   "ValueUnit(TSSRemoval(Some(70.0)))" should "70.00%" in {
@@ -47,22 +47,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(TSSRemoval(unit = \"xyz/abc\"))" should "70.00xyz/abc" in {
     ValueUnit(TSSRemoval(unit = "xyz/abc")) shouldBe "70.00xyz/abc"
-  }
-
-  "ValueUnit(TOCRemoval(Some(48.0)))" should "48.00%" in {
-    ValueUnit(TOCRemoval(Some(48.0))) shouldBe "48.00%"
-  }
-
-  "ValueUnit(TOCRemoval())" should "48.00%" in {
-    ValueUnit(TOCRemoval()) shouldBe "48.00%"
-  }
-
-  "ValueUnit(TOCRemoval(Some(48.0), \"xyz/abc\"))" should "48.00xyz/abc" in {
-    ValueUnit(TOCRemoval(Some(48.0), "xyz/abc")) shouldBe "48.00xyz/abc"
-  }
-
-  "ValueUnit(TOCRemoval(unit = \"xyz/abc\"))" should "48.00xyz/abc" in {
-    ValueUnit(TOCRemoval(unit = "xyz/abc")) shouldBe "48.00xyz/abc"
   }
 
   "ValueUnit(FecalColiformRemoval(Some(76.0)))" should "76.00%" in {
@@ -95,22 +79,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(TPRemoval(unit = \"xyz/abc\"))" should "33.00xyz/abc" in {
     ValueUnit(TPRemoval(unit = "xyz/abc")) shouldBe "33.00xyz/abc"
-  }
-
-  "ValueUnit(TKNRemoval(Some(46.0)))" should "46.00%" in {
-    ValueUnit(TKNRemoval(Some(46.0))) shouldBe "46.00%"
-  }
-
-  "ValueUnit(TKNRemoval())" should "46.00%" in {
-    ValueUnit(TKNRemoval()) shouldBe "46.00%"
-  }
-
-  "ValueUnit(TKNRemoval(Some(46.0), \"xyz/abc\"))" should "46.00xyz/abc" in {
-    ValueUnit(TKNRemoval(Some(46.0), "xyz/abc")) shouldBe "46.00xyz/abc"
-  }
-
-  "ValueUnit(TKNRemoval(unit = \"xyz/abc\"))" should "46.00xyz/abc" in {
-    ValueUnit(TKNRemoval(unit = "xyz/abc")) shouldBe "46.00xyz/abc"
   }
 
   "ValueUnit(NH3NRemoval(Some(21.0)))" should "21.00%" in {

@@ -6,6 +6,22 @@ package wastewatertreatment.core
 trait Core {
 
   /**
+   * A case class to represents all the default removals.
+   * @param tssRemoval the value of TSS removal. Default value is 0.00.
+   * @param bod5Removal the value of BOD,,5,, removal. Default value is 0.00.
+   * @param nh3nRemoval the value of NH,,3,,-N removal. Default value is 0.00.
+   * @param tpRemoval the value of TP removal. Default value is 0.00.
+   * @param fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
+   * @param enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   */
+  case class Removals(tssRemoval: Option[Double] = None,
+                      bod5Removal: Option[Double] = None,
+                      nh3nRemoval: Option[Double] = None,
+                      tpRemoval: Option[Double] = None,
+                      fecalColiformRemoval: Option[Double] = None,
+                      enterococciRemoval: Option[Double] = None)
+
+  /**
    * BOD5,,c,,/cBOD,,5,, = 1.10.
    */
   val bod5cBOD5Ratio = 1.10
@@ -39,6 +55,11 @@ trait Core {
    * Non biodegradable VSS (nbVSS/VSS) = 0.20.
    */
   val nbVSS = 0.20
+
+  /**
+   * NTU/TSS = 0.50.
+   */
+  val ntuTSSRatio = 0.50
 
   /**
    * Returns VSS.
@@ -174,6 +195,21 @@ trait Core {
              Q: Double): Double = {
     require(P >= 0 && Q > 0)
     val r = P / Q
+    r
+  }
+
+  /**
+   * Returns NTU.
+   * {{{
+   *   NTU = TSS * NTU/TSS
+   * }}}
+   * @param TSS the effluent value of TSS.
+   * @param ntuTSSRatio NTU/TSS. Default value and unit are 0.50.
+   */
+  def calNTU(TSS: Double,
+             ntuTSSRatio: Double = ntuTSSRatio): Double = {
+    require(TSS >= 0 && ntuTSSRatio >= 0)
+    val r = TSS * ntuTSSRatio
     r
   }
 

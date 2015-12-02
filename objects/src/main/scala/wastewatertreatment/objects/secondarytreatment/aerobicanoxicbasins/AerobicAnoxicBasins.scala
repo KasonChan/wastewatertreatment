@@ -37,34 +37,19 @@ object AerobicAnoxicBasins extends Core {
   }
 
   /**
-   * BOD removal = 97.00%.
-   */
-  val bodRemoval = 97.00
-
-  /**
    * TSS removal = 94.00%.
    */
   val tssRemoval = 94.00
 
   /**
-   * TKN removal = 88.00%.
+   * BOD,,5,, removal = 97.00%.
    */
-  val tknRemoval = 88.00
+  val bod5Removal = 97.00
 
   /**
    * NH,,3,,-N removal = 97.00%.
    */
   val nh3nRemoval = 97.00
-
-  /**
-   * Phosphorous removal = 98.00%.
-   */
-  val phosphorousRemoval = 98.00
-
-  /**
-   * bCODs removal = 100.00%.
-   */
-  val bCODsRemoval = 100.00
 
   /**
    * Forall,,anoxic,,/Forall,,total,, = 0.33.
@@ -566,5 +551,18 @@ object AerobicAnoxicBasins extends Core {
     val r = (BigDecimal(Lorg) / 1000 / Q * 453.59 * 28.32 * Forall / 3.785 / 28.32 * 1000).toDouble
     toXDecimals(r)
   }
+
+  /**
+   * A case class to represent the default aerobic anoxic basins.
+   * tssRemoval the value of TSS removal. Default value is 94.00.
+   * bod5Removal the value of BOD,,5,, removal. Default value is 97.00.
+   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 97.00.
+   * tpRemoval the value of TP removal. Default value is 0.00.
+   * fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
+   * enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   */
+  val aabDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
+    bod5Removal = Some(bod5Removal),
+    nh3nRemoval = Some(nh3nRemoval))
 
 }

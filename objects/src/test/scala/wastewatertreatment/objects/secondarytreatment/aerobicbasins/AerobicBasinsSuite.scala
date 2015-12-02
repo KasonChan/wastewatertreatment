@@ -39,7 +39,7 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     val vsse = calVSS(tsse)
     toXDecimals(vsse) shouldBe 2.88
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bodRemoval))),
+    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 3.56
 
@@ -87,6 +87,16 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
 
     val qr = calQr(q, qw)
     toXDecimals(qr) shouldBe 197577.90
+  }
+
+  "Default removals" should "pass" in {
+    val defaultRemovals = abDefaultRemovals
+    defaultRemovals.tssRemoval shouldBe Some(95.00)
+    defaultRemovals.bod5Removal shouldBe Some(97.00)
+    defaultRemovals.nh3nRemoval shouldBe Some(97.00)
+    defaultRemovals.tpRemoval shouldBe None
+    defaultRemovals.fecalColiformRemoval shouldBe None
+    defaultRemovals.enterococciRemoval shouldBe None
   }
 
 }

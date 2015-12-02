@@ -9,17 +9,13 @@ object Unit extends Units {
 
   val dailyBackwashRateUnits = generateUs(rateUnits, areaUnits)
 
-  val bodRemovalUnits = percentageUnits
+  val bod5RemovalUnits = percentageUnits
 
   val tssRemovalUnits = percentageUnits
 
-  val tocRemovalUnits = percentageUnits
-
-  val fecalColiformRemovalUnits = percentageUnits
+  val bacterialRemovalRateUnits = percentageUnits
 
   val tpRemovalUnits = percentageUnits
-
-  val tknRemovalUnits = percentageUnits
 
   val nh3nRemovalUnits = percentageUnits
 

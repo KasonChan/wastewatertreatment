@@ -46,12 +46,12 @@ object ValueUnits extends core.ValueUnits {
                         unit: String = bodLoadingUnits(1)) extends ValueUnit
 
   /**
-   * BOD removal
+   * BOD,,5,, removal
    * @param value Default value is '''97.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BODRemoval(value: Option[Double] = Some(bodRemoval),
-                        unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
+                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
    * TSS removal
@@ -62,36 +62,12 @@ object ValueUnits extends core.ValueUnits {
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
-   * TKN removal
-   * @param value Default value is '''88.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class TKNRemoval(value: Option[Double] = Some(tknRemoval),
-                        unit: String = tknRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
    * NH,,3,,-H removal
    * @param value Default value is '''97.00'''.
    * @param unit Default unit is '''%'''.
    */
   case class NH3NRemoval(value: Option[Double] = Some(nh3nRemoval),
                          unit: String = nh3nRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * Phosphorous removal
-   * @param value Default value is '''98.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class PhosphorousRemoval(value: Option[Double] = Some(phosphorousRemoval),
-                                unit: String = phosphorousRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * bCODs removal
-   * @param value Default value is '''100.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class BCODsRemoval(value: Option[Double] = Some(bCODsRemoval),
-                          unit: String = bCODsRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
    * Forall,,anoxic,,/Forall,,total,,
@@ -211,8 +187,7 @@ object ValueUnits extends core.ValueUnits {
 
   /**
    * Ks
-   * @param value
-   * @param unit Default unit is '''d^-1^'''.
+   * @param unit Default unit is '''g/m^3^'''.
    */
   case class Ks(value: Option[Double] = None,
                 unit: String = kSUnits.headOption.getOrElse("g/m^3")) extends ValueUnit

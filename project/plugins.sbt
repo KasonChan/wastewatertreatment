@@ -1,7 +1,8 @@
 logLevel := Level.Warn
 
 resolvers ++= Seq("Typesafe Repository" at "https://repo.typesafe.com/typesafe/releases/",
-  "jgit-repo" at "http://download.eclipse.org/jgit/maven"
+  "jgit-repo" at "http://download.eclipse.org/jgit/maven",
+  "sonatype-releases" at "https://oss.sonatype.org/content/repositories/releases/"
 )
 
 addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.3.3")
@@ -19,3 +20,5 @@ addSbtPlugin("com.eed3si9n" % "sbt-unidoc" % "0.3.3")
 addSbtPlugin("com.typesafe.sbt" % "sbt-git" % "0.8.5")
 
 addSbtPlugin("com.typesafe.sbt" % "sbt-site" % "0.8.1")
+
+addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.8.0")

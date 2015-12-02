@@ -11,12 +11,12 @@ import wastewatertreatment.valueunit.ValueUnit
 object ValueUnits extends core.ValueUnits {
 
   /**
-   * BOD removal
+   * BOD,,5,, removal
    * @param value Default value is '''97.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BODRemoval(value: Option[Double] = Some(bodRemoval),
-                        unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
+                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
    * TSS removal
@@ -25,15 +25,6 @@ object ValueUnits extends core.ValueUnits {
    */
   case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * COD removal
-   * @param value Default value is '''100.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class CODRemoval(value: Option[Double] = Some(codRemoval),
-                        unit: String = codRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
 
   /**
    * NH,,3,,-H removal

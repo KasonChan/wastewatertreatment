@@ -9,20 +9,20 @@ import wastewatertreatment.valueunit.ValueUnit
  */
 class ValueUnitsSuite extends FlatSpec with Matchers {
 
-  "ValueUnit(BODRemoval())" should "97.00%" in {
-    ValueUnit(BODRemoval()) shouldBe "97.00%"
+  "ValueUnit(BOD5Removal())" should "97.00%" in {
+    ValueUnit(BOD5Removal()) shouldBe "97.00%"
   }
 
-  "ValueUnit(BODRemoval(Some(97)))" should "97.00%" in {
-    ValueUnit(BODRemoval(Some(97))) shouldBe "97.00%"
+  "ValueUnit(BOD5Removal(Some(97)))" should "97.00%" in {
+    ValueUnit(BOD5Removal(Some(97))) shouldBe "97.00%"
   }
 
-  "ValueUnit(BODRemoval(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BODRemoval(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
+  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
+    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
   }
 
-  "ValueUnit(BODRemoval(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BODRemoval(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
+  "ValueUnit(BOD5Removal(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
+    ValueUnit(BOD5Removal(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
   }
 
   "ValueUnit(TSSRemoval())" should "95.00%" in {
@@ -39,22 +39,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(TSSRemoval(Some(95), \"xyz/abc\"))" should "95.00xyz/abc" in {
     ValueUnit(TSSRemoval(Some(95), "xyz/abc")) shouldBe "95.00xyz/abc"
-  }
-
-  "ValueUnit(CODRemoval())" should "100.00%" in {
-    ValueUnit(CODRemoval()) shouldBe "100.00%"
-  }
-
-  "ValueUnit(CODRemoval(Some(100)))" should "100.00%" in {
-    ValueUnit(CODRemoval(Some(100))) shouldBe "100.00%"
-  }
-
-  "ValueUnit(CODRemoval(unit = \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(CODRemoval(unit = "xyz/abc")) shouldBe "100.00xyz/abc"
-  }
-
-  "ValueUnit(CODRemoval(Some(100), \"xyz/abc\"))" should "100.00xyz/abc" in {
-    ValueUnit(CODRemoval(Some(100), "xyz/abc")) shouldBe "100.00xyz/abc"
   }
 
   "ValueUnit(NH3NRemoval())" should "97.00%" in {

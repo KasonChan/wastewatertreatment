@@ -19,19 +19,11 @@ object ValueUnits extends core.ValueUnits {
                         unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
-   * BOD removal
+   * BOD,,5,, removal
    * @param value Default value is '''35.00'''.
    * @param unit Default unit is '''%'''.
    */
-  case class BODRemoval(value: Option[Double] = Some(bodRemoval),
-                        unit: String = bodRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * Phosphorus removal
-   * @param value Default value is '''0.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class PhosphorousRemoval(value: Option[Double] = Some(phosphorusRemoval),
-                                unit: String = phosphorusRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
+                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
 }
