@@ -203,6 +203,21 @@ class CoreSuite extends FlatSpec with Matchers with Core {
     calTSS(p, q) shouldBe 222.99999999999997
   }
 
+  "calNTU(-1, -1)" should "fail" in {
+    intercept[java.lang.IllegalArgumentException] {
+      calNTU(-1, -1)
+    }
+  }
+
+  "calNTU(0, 0)" should "fail" in {
+    calNTU(0, 0) shouldBe 0
+  }
+
+  "calNTU(tss)" should "= " in {
+    val tss = 0.94
+    calNTU(tss) shouldBe 0.47
+  }
+
   "Default removals" should "pass" in {
     val defaultRemovals = Removals()
     defaultRemovals.tssRemoval shouldBe None
