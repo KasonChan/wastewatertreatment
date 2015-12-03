@@ -163,20 +163,20 @@ trait ValueUnits extends Core with Units {
 
   /**
    * Miscellaneous
-   * @param flow the value of flow. Default unit is '''m^3^/d'''.
-   * @param tss the value of TSS. Default unit is '''g/m^3^'''.
-   * @param vss the value of VSS. Default unit is '''g/m^3^'''.
-   * @param bod5 the value of bod5. Default unit is '''g/m^3^'''.
-   * @param cBOD5 the value of cBOD5. Default unit is '''g/m^3^'''.
-   * @param bCOD the value of bCOD. Default unit is '''g/m^3^'''.
-   * @param bCODs the value of bCODs. Default unit is '''g/m^3^'''.
-   * @param bCODp the value of bCODp. Default unit is '''g/m^3^'''.
-   * @param nh3n the value NH,,3,,-N. Default unit is '''g/m^3^'''.
-   * @param tp the value of TP. Default unit is '''g/m^3^'''.
-   * @param p the value of P. Default unit is '''g-TSS/d'''
-   * @param fecalColiform the value of fecal coliform.  Default unit is '''MPN/100mL'''.
-   * @param enterococci the value of enterococci. Default unit is '''MPN/100mL'''.
-   * @param turbidity the value of turbidity. Default unit is '''MPN/100mL'''.
+   * @param flow the value of flow. Default value and unit are 0m^3^/d.
+   * @param tss the value of TSS. Default value and unit are 0g/m^3^.
+   * @param vss the value of VSS. Default value and unit are 0g/m^3^.
+   * @param bod5 the value of bod5. Default value and unit are 0g/m^3^.
+   * @param cBOD5 the value of cBOD5. Default value and unit are 0g/m^3^.
+   * @param bCOD the value of bCOD. Default value and unit are 0g/m^3^.
+   * @param bCODs the value of bCODs. Default value and unit are 0g/m^3^.
+   * @param bCODp the value of bCODp. Default value and unit are 0g/m^3^.
+   * @param nh3n the value NH,,3,,-N. Default value and unit are 0g/m^3^.
+   * @param tp the value of TP. Default value and unit are 0g/m^3^.
+   * @param p the value of P. Default value and unit are 0g-TSS/d
+   * @param fecalColiform the value of fecal coliform.  Default value and unit are 0MPN/100mL.
+   * @param enterococci the value of enterococci. Default value and unit are 0MPN/100mL.
+   * @param turbidity the value of turbidity. Default value and unit are 0MPN/100mL.
    */
   case class Miscellaneous(flow: Q,
                            tss: TSS,

@@ -2,6 +2,7 @@ package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import wastewatertreatment.core.Core
 import wastewatertreatment.math.Math.toXDecimals
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 10/31/15.

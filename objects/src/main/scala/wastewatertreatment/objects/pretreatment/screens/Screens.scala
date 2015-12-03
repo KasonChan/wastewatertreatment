@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 10/24/15.

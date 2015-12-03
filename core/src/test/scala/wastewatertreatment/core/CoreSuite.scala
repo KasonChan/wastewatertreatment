@@ -218,14 +218,4 @@ class CoreSuite extends FlatSpec with Matchers with Core {
     calNTU(tss) shouldBe 0.47
   }
 
-  "Default removals" should "pass" in {
-    val defaultRemovals = Removals()
-    defaultRemovals.tssRemoval shouldBe None
-    defaultRemovals.bod5Removal shouldBe None
-    defaultRemovals.nh3nRemoval shouldBe None
-    defaultRemovals.tpRemoval shouldBe None
-    defaultRemovals.fecalColiformRemoval shouldBe None
-    defaultRemovals.enterococciRemoval shouldBe None
-  }
-
 }

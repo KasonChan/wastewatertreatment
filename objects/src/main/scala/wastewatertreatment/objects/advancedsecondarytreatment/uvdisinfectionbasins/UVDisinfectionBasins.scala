@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/17/15.

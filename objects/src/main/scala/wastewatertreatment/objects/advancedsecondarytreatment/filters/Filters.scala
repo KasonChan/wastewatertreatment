@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 11/7/15.

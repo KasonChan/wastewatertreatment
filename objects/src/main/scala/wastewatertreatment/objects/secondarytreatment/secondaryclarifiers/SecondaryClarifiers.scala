@@ -1,6 +1,7 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/9/15.
