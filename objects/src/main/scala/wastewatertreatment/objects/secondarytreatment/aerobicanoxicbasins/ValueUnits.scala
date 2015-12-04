@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
-import wastewatertreatment.core
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.AerobicAnoxicBasins._
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Unit._
 import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object ValueUnits extends core.ValueUnits {
+object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * Forall,,T,,
@@ -44,30 +44,6 @@ object ValueUnits extends core.ValueUnits {
    */
   case class BODLoading(value: Option[Double] = None,
                         unit: String = bodLoadingUnits(1)) extends ValueUnit
-
-  /**
-   * BOD,,5,, removal
-   * @param value Default value is '''97.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
-                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * TSS removal
-   * @param value Default value is '''94.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
-                        unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * NH,,3,,-H removal
-   * @param value Default value is '''97.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class NH3NRemoval(value: Option[Double] = Some(nh3nRemoval),
-                         unit: String = nh3nRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
 
   /**
    * Forall,,anoxic,,/Forall,,total,,
@@ -384,4 +360,16 @@ object ValueUnits extends core.ValueUnits {
   case class PXvss(value: Option[Double] = None,
                    unit: String = pXvssUnits.headOption.getOrElse("g/d")) extends ValueUnit
 
+  /**
+   * A case class to represent the default aerobic anoxic basins.
+   * tss the value of TSS removal. Default value and units are 94.00%.
+   * bod5 the value of BOD,,5,, removal. Default value and units are 97.00%.
+   * nh3n the value of NH,,3,,-N removal. Default value and units are 97.00%.
+   * tp the value of TP removal. Default value and units are 0.00%.
+   * fecalColiform the value of fecal coliform removal. Default value and units are 0.00%.
+   * enterococci the value of enterococci removal. Default value and units are 0.00%.
+   */
+  val aabDefaultRemovals = MiscellaneousRemovals(tss = TSSRemoval(Some(tssRemoval)),
+    bod5 = BOD5Removal(Some(bod5Removal)),
+    nh3n = NH3NRemoval(Some(nh3nRemoval)))
 }

@@ -141,7 +141,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
 
     val cBOD5 = 75
     val bCOD = calbCOD(bod5, codBODRatio)
-    val bCODp = calbCODp(VSS = vss, codVSSRatio = codVSSRatio, bVSS = vssTSSRatio)
+    val bCODp = calbCODp(VSS = vss, codVSSRatio = codVSSRatio, bvssVSSRatio = vssTSSRatio)
     val bCODs = calbCODs(bCOD, bCODp)
     val p = calP(q, tss)
 
@@ -222,12 +222,12 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
 
   "Default removals" should "pass" in {
     val defaultRemovals = pcDefaultRemovals
-    defaultRemovals.tssRemoval shouldBe Some(63.00)
-    defaultRemovals.bod5Removal shouldBe Some(35.00)
-    defaultRemovals.nh3nRemoval shouldBe None
-    defaultRemovals.tpRemoval shouldBe None
-    defaultRemovals.fecalColiformRemoval shouldBe None
-    defaultRemovals.enterococciRemoval shouldBe None
+    defaultRemovals.tss shouldBe Some(63.00)
+    defaultRemovals.bod5 shouldBe Some(35.00)
+    defaultRemovals.nh3n shouldBe None
+    defaultRemovals.tp shouldBe None
+    defaultRemovals.fecalColiform shouldBe None
+    defaultRemovals.enterococci shouldBe None
   }
 
 }

@@ -3,11 +3,12 @@ package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.{influent, ratios}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-class ValueUnitsSuite extends FlatSpec with Matchers {
+class ValueUnitsSuite extends FlatSpec with Matchers with influent.ValueUnits with ratios.ValueUnits {
 
   "ValueUnit(ForallT(Some(423819))" should "423819.00m^3" in {
     ValueUnit(ForallT(Some(423819))) shouldBe "423819.00m^3"
@@ -55,54 +56,6 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(BODLoading(Some(25027.04), \"xyz/abc\"))" should "25027.04xyz/abc" in {
     ValueUnit(BODLoading(Some(25027.04), "xyz/abc")) shouldBe "25027.04xyz/abc"
-  }
-
-  "ValueUnit(BOD5Removal())" should "97.00%" in {
-    ValueUnit(BOD5Removal()) shouldBe "97.00%"
-  }
-
-  "ValueUnit(BOD5Removal(Some(97)))" should "97.00%" in {
-    ValueUnit(BOD5Removal(Some(97))) shouldBe "97.00%"
-  }
-
-  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(BOD5Removal(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BOD5Removal(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(TSSRemoval())" should "94.00%" in {
-    ValueUnit(TSSRemoval()) shouldBe "94.00%"
-  }
-
-  "ValueUnit(TSSRemoval(Some(94)))" should "94.00%" in {
-    ValueUnit(TSSRemoval(Some(94))) shouldBe "94.00%"
-  }
-
-  "ValueUnit(TSSRemoval(unit = \"xyz/abc\"))" should "94.00xyz/abc" in {
-    ValueUnit(TSSRemoval(unit = "xyz/abc")) shouldBe "94.00xyz/abc"
-  }
-
-  "ValueUnit(TSSRemoval(Some(94), \"xyz/abc\"))" should "94.00xyz/abc" in {
-    ValueUnit(TSSRemoval(Some(94), "xyz/abc")) shouldBe "94.00xyz/abc"
-  }
-
-  "ValueUnit(NH3NRemoval())" should "97.00%" in {
-    ValueUnit(NH3NRemoval()) shouldBe "97.00%"
-  }
-
-  "ValueUnit(NH3NRemoval(Some(97)))" should "97.00%" in {
-    ValueUnit(NH3NRemoval(Some(97))) shouldBe "97.00%"
-  }
-
-  "ValueUnit(NH3NRemoval(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(NH3NRemoval(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(NH3NRemoval(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(NH3NRemoval(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
   }
 
   "ValueUnit(ForallAnoxicForallTotalRatio())" should "0.33" in {
@@ -629,6 +582,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
 
   "ValueUnit(PXvss(Some(8147313.96), \"xyz/abc\"))" should "8147313.96xyz/abc" in {
     ValueUnit(PXvss(Some(8147313.96), "xyz/abc")) shouldBe "8147313.96xyz/abc"
+  }
+
+  "aabDefaultRemovals" should "pass" in {
+    aabDefaultRemovals shouldBe MiscellaneousRemovals(tss = TSSRemoval(Some(94.00)),
+      bod5 = BOD5Removal(Some(97.00)),
+      nh3n = NH3NRemoval(Some(97.00)))
   }
 
 }

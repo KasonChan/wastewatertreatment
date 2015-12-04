@@ -1,21 +1,23 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
-import wastewatertreatment.core
-import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ChlorineContactBasins._
-import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.Unit._
-import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ChlorineContactBasins.bacterialRemovalRate
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/10/15.
  */
-object ValueUnits extends core.ValueUnits {
+object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
-   * Bacterial removal rate
-   * @param value Default value is 99.99.
-   * @param unit Default unit is '''No unit'''.
+   * A case class to represent the default chlorine contact basins.
+   * tss the value of TSS removal. Default value and unit are 0.00%.
+   * bod5 the value of BOD,,5,, removal. Default value and unit are 0.00%.
+   * nh3n the value of NH,,3,,-N removal. Default value and unit are 0.00%.
+   * tp the value of TP removal. Default value and unit are 0.00%.
+   * fecalColiform the value of fecal coliform removal. Default value and unit are 99.99%.
+   * enterococci the value of enterococci removal. Default value and unit are 99.99%.
    */
-  case class BacterialRemovalRate(value: Option[Double] = Some(bacterialRemovalRate),
-                                  unit: String = bacterialRemovalRateUnits.headOption.getOrElse("")) extends ValueUnit
+  val ccbDefaultMiscRemovals = MiscellaneousRemovals(fecalColiform = FecalColiformRemoval(Some(bacterialRemovalRate)),
+    enterococci = EnterococciRemoval(Some(bacterialRemovalRate)))
 
 }

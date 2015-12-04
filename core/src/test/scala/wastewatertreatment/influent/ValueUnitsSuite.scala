@@ -1,124 +1,12 @@
-package wastewatertreatment.core
+package wastewatertreatment.influent
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.valueunit.ValueUnit
 
 /**
- * Created by kasonchan on 11/16/15.
+ * Created by kasonchan on 12/3/15.
  */
 class ValueUnitsSuite extends FlatSpec with Matchers with ValueUnits {
-
-  "ValueUnit(BOD5CBOD5Ratio(Some(1.1)))" should "1.10" in {
-    ValueUnit(BOD5CBOD5Ratio(Some(1.1))) shouldBe "1.10"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio())" should "1.10" in {
-    ValueUnit(BOD5CBOD5Ratio()) shouldBe "1.10"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio(Some(1.1,\"xyz/abc\"))" should "1.10xyz/abc" in {
-    ValueUnit(BOD5CBOD5Ratio(Some(1.1), "xyz/abc")) shouldBe "1.10xyz/abc"
-  }
-
-  "ValueUnit(BOD5CBOD5Ratio(unit = \"xyz/abc\"))" should "1.10xyz/abc" in {
-    ValueUnit(BOD5CBOD5Ratio(unit = "xyz/abc")) shouldBe "1.10xyz/abc"
-  }
-
-  "ValueUnit(CODBODRatio(Some(1.6)))" should "1.60" in {
-    ValueUnit(CODBODRatio(Some(1.6))) shouldBe "1.60"
-  }
-
-  "ValueUnit(CODBODRatio())" should "1.60" in {
-    ValueUnit(CODBODRatio()) shouldBe "1.60"
-  }
-
-  "ValueUnit(CODBODRatio(Some(1.6), \"xyz/abc\"))" should "1.60xyz/abc" in {
-    ValueUnit(CODBODRatio(Some(1.6), "xyz/abc")) shouldBe "1.60xyz/abc"
-  }
-
-  "ValueUnit(CODBODRatio(unit = \"xyz/abc\"))" should "1.60xyz/abc" in {
-    ValueUnit(CODBODRatio(unit = "xyz/abc")) shouldBe "1.60xyz/abc"
-  }
-
-  "ValueUnit(CODVSSRatio(Some(1.42)))" should "1.42" in {
-    ValueUnit(CODVSSRatio(Some(1.42))) shouldBe "1.42"
-  }
-
-  "ValueUnit(CODVSSRatio())" should "1.42" in {
-    ValueUnit(CODVSSRatio()) shouldBe "1.42"
-  }
-
-  "ValueUnit(CODVSSRatio(Some(1.42),\"xyz/abc\"))" should "1.42xyz/abc" in {
-    ValueUnit(CODVSSRatio(Some(1.42), "xyz/abc")) shouldBe "1.42xyz/abc"
-  }
-
-  "ValueUnit(CODVSSRatio(unit = \"xyz/abc\"))" should "1.42xyz/abc" in {
-    ValueUnit(CODVSSRatio(unit = "xyz/abc")) shouldBe "1.42xyz/abc"
-  }
-
-  "ValueUnit(VSSTSSRatio(Some(0.8)))" should "0.80" in {
-    ValueUnit(VSSTSSRatio(Some(0.8))) shouldBe "0.80"
-  }
-
-  "ValueUnit(VSSTSSRatio())" should "0.80" in {
-    ValueUnit(VSSTSSRatio()) shouldBe "0.80"
-  }
-
-  "ValueUnit(VSSTSSRatio(Some(0.8),\"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(VSSTSSRatio(Some(0.8), "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(VSSTSSRatio(unit = \"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(VSSTSSRatio(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(TN(Some(40.0)))" should "40.00g/m^3" in {
-    ValueUnit(TN(Some(40.0))) shouldBe "40.00g/m^3"
-  }
-
-  "ValueUnit(TN())" should "40.00g/m^3" in {
-    ValueUnit(TN()) shouldBe "40.00g/m^3"
-  }
-
-  "ValueUnit(TN(Some(40.0),\"xyz/abc\"))" should "40.00xyz/abc" in {
-    ValueUnit(TN(Some(40.0), "xyz/abc")) shouldBe "40.00xyz/abc"
-  }
-
-  "ValueUnit(TN(unit = \"xyz/abc\"))" should "40.00xyz/abc" in {
-    ValueUnit(TN(unit = "xyz/abc")) shouldBe "40.00xyz/abc"
-  }
-
-  "ValueUnit(BVSS(Some(0.8)))" should "0.80" in {
-    ValueUnit(BVSS(Some(0.8))) shouldBe "0.80"
-  }
-
-  "ValueUnit(BVSS())" should "0.80" in {
-    ValueUnit(BVSS()) shouldBe "0.80"
-  }
-
-  "ValueUnit(BVSS(Some(0.8),\"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(BVSS(Some(0.8), "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(BVSS(unit = \"xyz/abc\"))" should "0.80xyz/abc" in {
-    ValueUnit(BVSS(unit = "xyz/abc")) shouldBe "0.80xyz/abc"
-  }
-
-  "ValueUnit(NbVSS(Some(0.2)))" should "0.20" in {
-    ValueUnit(NbVSS(Some(0.2))) shouldBe "0.20"
-  }
-
-  "ValueUnit(NbVSS())" should "0.20" in {
-    ValueUnit(NbVSS()) shouldBe "0.20"
-  }
-
-  "ValueUnit(NbVSS(Some(0.2),\"xyz/abc\"))" should "0.20xyz/abc" in {
-    ValueUnit(NbVSS(Some(0.2), "xyz/abc")) shouldBe "0.20xyz/abc"
-  }
-
-  "ValueUnit(NbVSS(unit = \"xyz/abc\"))" should "0.20xyz/abc" in {
-    ValueUnit(NbVSS(unit = "xyz/abc")) shouldBe "0.20xyz/abc"
-  }
 
   "ValueUnit(Q(Some(1240973.21)))" should "1240973.21m^3/d" in {
     ValueUnit(Q(Some(1240973.21))) shouldBe "1240973.21m^3/d"
@@ -232,6 +120,22 @@ class ValueUnitsSuite extends FlatSpec with Matchers with ValueUnits {
     ValueUnit(Turbidity(Some(365.00), "xyz/abc")) shouldBe "365.00xyz/abc"
   }
 
-
+  "Default influent" should "pass" in {
+    val defaultInfluent = MiscellaneousInfluent()
+    defaultInfluent.flow shouldBe Q(None, "m^3/d")
+    defaultInfluent.tss shouldBe TSS(None, "g/m^3")
+    defaultInfluent.vss shouldBe VSS(None, "g/m^3")
+    defaultInfluent.bod5 shouldBe BOD5(None, "g/m^3")
+    defaultInfluent.cBOD5 shouldBe CBOD5(None, "g/m^3")
+    defaultInfluent.bCOD shouldBe BCOD(None, "g/m^3")
+    defaultInfluent.bCODs shouldBe BCODs(None, "g/m^3")
+    defaultInfluent.bCODp shouldBe BCODp(None, "g/m^3")
+    defaultInfluent.nh3n shouldBe NH3N(None, "g/m^3")
+    defaultInfluent.tp shouldBe TP(None, "g/m^3")
+    defaultInfluent.p shouldBe P(None, "g-TSS/d")
+    defaultInfluent.fecalColiform shouldBe FecalColiform(None, "MPN/100mL")
+    defaultInfluent.enterococci shouldBe Enterococci(None, "MPN/100mL")
+    defaultInfluent.turbidity shouldBe Turbidity(None, "NTU")
+  }
 
 }

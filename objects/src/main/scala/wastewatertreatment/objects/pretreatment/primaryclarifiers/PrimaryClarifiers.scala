@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.influent.Influent
+import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object PrimaryClarifiers extends Core {
+object PrimaryClarifiers extends Core with Influent with Ratios with Removals {
 
   /**
    * TSS removal = 63.00%.
@@ -25,14 +27,14 @@ object PrimaryClarifiers extends Core {
 
   /**
    * A case class to represent the default primary clarifiers.
-   * tssRemoval the value of TSS removal. Default value is 63.00.
-   * bod5Removal the value of BOD,,5,, removal. Default value is 35.00.
-   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 0.00.
-   * tpRemoval the value of TP removal. Default value is 0.00.
-   * fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
-   * enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   * tss the value of TSS removal. Default value is 63.00.
+   * bod5 the value of BOD,,5,, removal. Default value is 35.00.
+   * nh3n the value of NH,,3,,-N removal. Default value is 0.00.
+   * tp the value of TP removal. Default value is 0.00.
+   * fecalColiform the value of fecal coliform removal. Default value is 0.00.
+   * enterococci the value of enterococci removal. Default value is 0.00.
    */
-  val pcDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
-    bod5Removal = Some(bod5Removal))
+  val pcDefaultRemovals = Removals(tss = Some(tssRemoval),
+    bod5 = Some(bod5Removal))
 
 }

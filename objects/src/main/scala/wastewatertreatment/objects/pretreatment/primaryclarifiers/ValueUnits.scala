@@ -1,29 +1,23 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
-import wastewatertreatment.core
-import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers._
-import wastewatertreatment.objects.pretreatment.primaryclarifiers.Unit._
-import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers.{bod5Removal, tssRemoval}
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object ValueUnits extends core.ValueUnits {
+object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
-   * TSS removal
-   * @param value Default value is '''63.00'''.
-   * @param unit Default unit is '''%'''.
+   * A case class to represent the default primary clarifiers.
+   * tss the value of TSS removal. Default value and unit are 63.00%.
+   * bod5 the value of BOD,,5,, removal. Default value and unit are 35.00%.
+   * nh3n the value of NH,,3,,-N removal. Default value and unit are 0.00%.
+   * tp the value of TP removal. Default value and unit are 0.00%.
+   * fecalColiform the value of fecal coliform removal. Default value and unit are 0.00%.
+   * enterococci the value of enterococci removal. Default value and unit are 0.00%.
    */
-  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
-                        unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * BOD,,5,, removal
-   * @param value Default value is '''35.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
-                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
+  val pcDefaultRemovals = MiscellaneousRemovals(tss = TSSRemoval(Some(tssRemoval)),
+    bod5 = BOD5Removal(Some(bod5Removal)))
 
 }

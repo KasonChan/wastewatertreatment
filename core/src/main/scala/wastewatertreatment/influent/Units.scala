@@ -1,25 +1,11 @@
-package wastewatertreatment.core
+package wastewatertreatment.influent
 
 import wastewatertreatment.valueunit.Unit
 
 /**
- * Created by kasonchan on 11/16/15.
+ * Created by kasonchan on 12/3/15.
  */
 trait Units extends Unit {
-
-  val bod5cBOD5RatioUnits = noUnits
-
-  val codBODRatioUnits = noUnits
-
-  val codVSSRatioUnits = noUnits
-
-  val vssTSSRatioUnits = noUnits
-
-  val tnUnits = concentrationUnits
-
-  val bVSSVSSRatioUnits = noUnits
-
-  val nbVSSVSSRatioUnits = noUnits
 
   val qUnits = flowUnits
 

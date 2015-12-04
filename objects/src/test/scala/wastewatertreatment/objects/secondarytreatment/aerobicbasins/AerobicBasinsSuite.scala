@@ -91,12 +91,12 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
 
   "Default removals" should "pass" in {
     val defaultRemovals = abDefaultRemovals
-    defaultRemovals.tssRemoval shouldBe Some(95.00)
-    defaultRemovals.bod5Removal shouldBe Some(97.00)
-    defaultRemovals.nh3nRemoval shouldBe Some(97.00)
-    defaultRemovals.tpRemoval shouldBe None
-    defaultRemovals.fecalColiformRemoval shouldBe None
-    defaultRemovals.enterococciRemoval shouldBe None
+    defaultRemovals.tss shouldBe Some(95.00)
+    defaultRemovals.bod5 shouldBe Some(97.00)
+    defaultRemovals.nh3n shouldBe Some(97.00)
+    defaultRemovals.tp shouldBe None
+    defaultRemovals.fecalColiform shouldBe None
+    defaultRemovals.enterococci shouldBe None
   }
 
 }

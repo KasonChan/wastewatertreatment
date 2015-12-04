@@ -1,22 +1,12 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.core.Units
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Unit extends Units {
+object Unit extends influent.Units with ratios.Units with removals.Units {
 
   val dailyBackwashRateUnits = generateUs(rateUnits, areaUnits)
-
-  val bod5RemovalUnits = percentageUnits
-
-  val tssRemovalUnits = percentageUnits
-
-  val bacterialRemovalRateUnits = percentageUnits
-
-  val tpRemovalUnits = percentageUnits
-
-  val nh3nRemovalUnits = percentageUnits
 
 }

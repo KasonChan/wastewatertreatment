@@ -1,49 +1,11 @@
 package wastewatertreatment.core
 
+import wastewatertreatment.ratios.Ratios
+
 /**
  * Created by kasonchan on 11/15/15.
  */
-trait Core {
-
-  /**
-   * BOD5,,c,,/cBOD,,5,, = 1.10.
-   */
-  val bod5cBOD5Ratio = 1.10
-
-  /**
-   * COD/BOD = 1.60.
-   */
-  val codBODRatio = 1.60
-
-  /**
-   * COD/VSS = 1.42.
-   */
-  val codVSSRatio = 1.42
-
-  /**
-   * VSS/TSS = 0.80.
-   */
-  val vssTSSRatio = 0.80
-
-  /**
-   * TN = 40.00g/m^3^.
-   */
-  val tn = 40.00
-
-  /**
-   * Biodegradable VSS (bVSS/VSS) = 0.80.
-   */
-  val bVSS = 0.80
-
-  /**
-   * Non biodegradable VSS (nbVSS/VSS) = 0.20.
-   */
-  val nbVSS = 0.20
-
-  /**
-   * NTU/TSS = 0.50.
-   */
-  val ntuTSSRatio = 0.50
+trait Core extends Ratios {
 
   /**
    * Returns VSS.
@@ -93,17 +55,17 @@ trait Core {
   /**
    * Returns bCODp.
    * {{{
-   *   bCODp = VSS * codVSSRatio * bVSS
+   *   bCODp = VSS * codVSSRatio * bvssVSSRatio
    * }}}
    * @param VSS the initial value of VSS.
    * @param codVSSRatio COD/VSS. Default value and unit are 1.42.
-   * @param bVSS biodegradable VSS. Default value and unit are 0.80.
+   * @param bvssVSSRatio biodegradable VSS. Default value and unit are 0.80.
    */
   def calbCODp(VSS: Double,
                codVSSRatio: Double = codVSSRatio,
-               bVSS: Double = bVSS): Double = {
-    require(VSS >= 0 && codVSSRatio >= 0 && bVSS >= 0)
-    val r = VSS * codVSSRatio * bVSS
+               bvssVSSRatio: Double = bvssVSSRatio): Double = {
+    require(VSS >= 0 && codVSSRatio >= 0 && bvssVSSRatio >= 0)
+    val r = VSS * codVSSRatio * bvssVSSRatio
     r
   }
 

@@ -1,37 +1,23 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.core
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers._
-import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.Unit._
-import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object ValueUnits extends core.ValueUnits {
+object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
-   * TSS removal
-   * @param value Default value is '''45.00'''.
-   * @param unit Default unit is '''%'''.
+   * A case class to represent the default secondary clarifiers.
+   * tss the value of TSS removal. Default value and units are 45.00%.
+   * bod5 the value of BOD,,5,, removal. Default value and units are 25.00%.
+   * nh3n the value of NH,,3,,-N removal. Default value and units are 0.00%.
+   * tp the value of TP removal. Default value and units are 0.00%.
+   * fecalColiform the value of fecal coliform removal. Default value and units are 0.00%.
+   * enterococci the value of enterococci removal. Default value and units are 0.00%.
    */
-  case class TSSRemoval(value: Option[Double] = Some(tssRemoval),
-                        unit: String = tssRemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * BOD,,5,, removal
-   * @param value Default value is '''25.00'''.
-   * @param unit Default unit is '''%'''.
-   */
-  case class BOD5Removal(value: Option[Double] = Some(bod5Removal),
-                         unit: String = bod5RemovalUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * P/VSS
-   * @param value Default value is '''0.02'''.
-   * @param unit Default unit is '''No unit'''.
-   */
-  case class PVSSRatio(value: Option[Double] = Some(pVSSRatio),
-                       unit: String = pVSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
+  val scDefaultMiscRemovals = MiscellaneousRemovals(tss = TSSRemoval(Some(tssRemoval)),
+    bod5 = BOD5Removal(Some(bod5Removal)))
 
 }

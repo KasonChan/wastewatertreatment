@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.influent.Influent
+import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 10/24/15.
  */
-object Screens extends Core {
+object Screens extends Core with Influent with Ratios with Removals {
 
   /**
    * TSS removal = 27.00%.
@@ -20,14 +22,14 @@ object Screens extends Core {
 
   /**
    * A case class to represent the default screens.
-   * tssRemoval the value of TSS removal. Default value is 27.00.
-   * bod5Removal the value of BOD,,5,, removal. Default value is 27.00.
-   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 0.00.
-   * tpRemoval the value of TP removal. Default value is 0.00.
-   * fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
-   * enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   * tss the value of TSS removal. Default value is 27.00.
+   * bod5 the value of BOD,,5,, removal. Default value is 27.00.
+   * nh3n the value of NH,,3,,-N removal. Default value is 0.00.
+   * tp the value of TP removal. Default value is 0.00.
+   * fecalColiform the value of fecal coliform removal. Default value is 0.00.
+   * enterococci the value of enterococci removal. Default value is 0.00.
    */
-  val sDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
-    bod5Removal = Some(bod5Removal))
+  val sDefaultRemovals = Removals(tss = Some(tssRemoval),
+    bod5 = Some(bod5Removal))
 
 }

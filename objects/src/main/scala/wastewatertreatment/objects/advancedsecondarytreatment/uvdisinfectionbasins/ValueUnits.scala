@@ -1,29 +1,23 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
-import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins._
-import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.Unit._
-import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins.bacterialRemovalRate
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-object ValueUnits {
+object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
-   * Bacterial removal rate
-   * @param value Default value is 99.99.
-   * @param unit Default unit is '''No unit'''.
+   * A case class to represent the default UV disinfection basins.
+   * tss the value of TSS removal. Default value and units are 0.00%.
+   * bod5 the value of BOD,,5,, removal. Default value and units are 0.00%.
+   * nh3n the value of NH,,3,,-N removal. Default value and units are 0.00%.
+   * tp the value of TP removal. Default value and units are 0.00%.
+   * fecalColiform the value of fecal coliform removal. Default value and units are 99.99%.
+   * enterococci the value of enterococci removal. Default value and units are 99.99%.
    */
-  case class BacterialRemovalRate(value: Option[Double] = Some(bacterialRemovalRate),
-                                  unit: String = bacterialRemovalRateUnits.headOption.getOrElse("%")) extends ValueUnit
-
-  /**
-   * NTU/VSS
-   * @param value Default value is 0.50.
-   * @param unit Default unit is '''No unit'''.
-   */
-  case class NTUTSSRatio(value: Option[Double] = Some(ntuTSSRatio),
-                         unit: String = ntuTSSRatioUnits.headOption.getOrElse("")) extends ValueUnit
-
+  val uvdbDefaultRemovals = MiscellaneousRemovals(fecalColiform = FecalColiformRemoval(Some(bacterialRemovalRate)),
+    enterococci = EnterococciRemoval(Some(bacterialRemovalRate)))
 
 }

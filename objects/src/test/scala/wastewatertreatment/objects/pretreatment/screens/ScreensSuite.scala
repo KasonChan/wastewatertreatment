@@ -114,12 +114,12 @@ class ScreensSuite extends FlatSpec with Matchers {
 
   "Default removals" should "pass" in {
     val defaultRemovals = sDefaultRemovals
-    defaultRemovals.tssRemoval shouldBe Some(27.00)
-    defaultRemovals.bod5Removal shouldBe Some(27.00)
-    defaultRemovals.nh3nRemoval shouldBe None
-    defaultRemovals.tpRemoval shouldBe None
-    defaultRemovals.fecalColiformRemoval shouldBe None
-    defaultRemovals.enterococciRemoval shouldBe None
+    defaultRemovals.tss shouldBe Some(27.00)
+    defaultRemovals.bod5 shouldBe Some(27.00)
+    defaultRemovals.nh3n shouldBe None
+    defaultRemovals.tp shouldBe None
+    defaultRemovals.fecalColiform shouldBe None
+    defaultRemovals.enterococci shouldBe None
   }
 
 }

@@ -96,12 +96,12 @@ class FiltersSuite extends FlatSpec with Matchers {
 
   "Default removals" should "pass" in {
     val defaultRemovals = fDefaultRemovals
-    defaultRemovals.tssRemoval shouldBe Some(70.00)
-    defaultRemovals.bod5Removal shouldBe Some(70.00)
-    defaultRemovals.nh3nRemoval shouldBe Some(21.00)
-    defaultRemovals.tpRemoval shouldBe Some(33.00)
-    defaultRemovals.fecalColiformRemoval shouldBe Some(76.00)
-    defaultRemovals.enterococciRemoval shouldBe Some(76.00)
+    defaultRemovals.tss shouldBe Some(70.00)
+    defaultRemovals.bod5 shouldBe Some(70.00)
+    defaultRemovals.nh3n shouldBe Some(21.00)
+    defaultRemovals.tp shouldBe Some(33.00)
+    defaultRemovals.fecalColiform shouldBe Some(76.00)
+    defaultRemovals.enterococci shouldBe Some(76.00)
   }
 
 }

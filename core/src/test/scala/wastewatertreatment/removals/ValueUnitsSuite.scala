@@ -9,12 +9,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers with ValueUnits {
 
   "Default removals" should "pass" in {
     val defaultRemovals = MiscellaneousRemovals()
-    defaultRemovals.tssRemoval shouldBe TSSRemoval(None, "")
-    defaultRemovals.bod5Removal shouldBe BOD5Removal(None, "")
-    defaultRemovals.nh3nRemoval shouldBe NH3NRemoval(None, "")
-    defaultRemovals.tpRemoval shouldBe TPRemoval(None, "")
-    defaultRemovals.fecalColiformRemoval shouldBe FecalColiformRemoval(None, "")
-    defaultRemovals.enterococciRemoval shouldBe EnterococciRemoval(None, "")
+    defaultRemovals.tss shouldBe TSSRemoval(None, "%")
+    defaultRemovals.bod5 shouldBe BOD5Removal(None, "%")
+    defaultRemovals.nh3n shouldBe NH3NRemoval(None, "%")
+    defaultRemovals.tp shouldBe TPRemoval(None, "%")
+    defaultRemovals.fecalColiform shouldBe FecalColiformRemoval(None, "%")
+    defaultRemovals.enterococci shouldBe EnterococciRemoval(None, "%")
   }
 
 }

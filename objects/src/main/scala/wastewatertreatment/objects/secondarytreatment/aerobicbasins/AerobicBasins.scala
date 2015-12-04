@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.influent.Influent
+import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 11/22/15.
  */
-object AerobicBasins extends Core {
+object AerobicBasins extends Core with Influent with Ratios with Removals {
 
   /**
    * TSS removal = 95.00%.
@@ -182,7 +184,7 @@ object AerobicBasins extends Core {
    */
   def calPXvsso(Q: Double,
                 VSS: Double,
-                nbvssVSSRatio: Double = nbVSS): Double = {
+                nbvssVSSRatio: Double = nbvssVSSRatio): Double = {
     require(Q >= 0 && VSS >= 0 && nbvssVSSRatio >= 0)
     val r = Q * VSS * nbvssVSSRatio
     r
@@ -251,15 +253,15 @@ object AerobicBasins extends Core {
 
   /**
    * A case class to represent the default aerobic basins.
-   * tssRemoval the value of TSS removal. Default value is 95.00.
-   * bod5Removal the value of BOD,,5,, removal. Default value is 97.00.
-   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 97.00.
-   * tpRemoval the value of TP removal. Default value is 0.00.
-   * fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
-   * enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   * tss the value of TSS removal. Default value is 95.00.
+   * bod5 the value of BOD,,5,, removal. Default value is 97.00.
+   * nh3n the value of NH,,3,,-N removal. Default value is 97.00.
+   * tp the value of TP removal. Default value is 0.00.
+   * fecalColiform the value of fecal coliform removal. Default value is 0.00.
+   * enterococci the value of enterococci removal. Default value is 0.00.
    */
-  val abDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
-    bod5Removal = Some(bod5Removal),
-    nh3nRemoval = Some(nh3nRemoval))
+  val abDefaultRemovals = Removals(tss = Some(tssRemoval),
+    bod5 = Some(bod5Removal),
+    nh3n = Some(nh3nRemoval))
 
 }

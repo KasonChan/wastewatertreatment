@@ -1,12 +1,14 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.influent.Influent
+import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Filters extends Core {
+object Filters extends Core with Influent with Ratios with Removals {
 
   /**
    * Backwash rate = 6.00gpm/ft^2^.
@@ -60,18 +62,18 @@ object Filters extends Core {
 
   /**
    * A case class to represent the default filters.
-   * tssRemoval the value of TSS removal. Default value is 70.00.
-   * bod5Removal the value of BOD,,5,, removal. Default value is 70.00.
-   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 21.00.
-   * tpRemoval the value of TP removal. Default value is 33.00.
-   * fecalColiformRemoval the value of fecal coliform removal. Default value is 76.00.
-   * enterococciRemoval the value of enterococci removal. Default value is 76.00.
+   * tss the value of TSS removal. Default value is 70.00.
+   * bod5 the value of BOD,,5,, removal. Default value is 70.00.
+   * nh3n the value of NH,,3,,-N removal. Default value is 21.00.
+   * tp the value of TP removal. Default value is 33.00.
+   * fecalColiform the value of fecal coliform removal. Default value is 76.00.
+   * enterococci the value of enterococci removal. Default value is 76.00.
    */
-  val fDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
-    bod5Removal = Some(bod5Removal),
-    nh3nRemoval = Some(nh3nRemoval),
-    tpRemoval = Some(tpRemoval),
-    fecalColiformRemoval = Some(bacterialRemovalRate),
-    enterococciRemoval = Some(bacterialRemovalRate))
+  val fDefaultRemovals = Removals(tss = Some(tssRemoval),
+    bod5 = Some(bod5Removal),
+    nh3n = Some(nh3nRemoval),
+    tp = Some(tpRemoval),
+    fecalColiform = Some(bacterialRemovalRate),
+    enterococci = Some(bacterialRemovalRate))
 
 }

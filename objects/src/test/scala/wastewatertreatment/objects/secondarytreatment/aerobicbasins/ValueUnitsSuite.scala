@@ -9,55 +9,6 @@ import wastewatertreatment.valueunit.ValueUnit
  */
 class ValueUnitsSuite extends FlatSpec with Matchers {
 
-  "ValueUnit(BOD5Removal())" should "97.00%" in {
-    ValueUnit(BOD5Removal()) shouldBe "97.00%"
-  }
-
-  "ValueUnit(BOD5Removal(Some(97)))" should "97.00%" in {
-    ValueUnit(BOD5Removal(Some(97))) shouldBe "97.00%"
-  }
-
-  "ValueUnit(BOD5Removal(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BOD5Removal(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(BOD5Removal(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(BOD5Removal(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(TSSRemoval())" should "95.00%" in {
-    ValueUnit(TSSRemoval()) shouldBe "95.00%"
-  }
-
-  "ValueUnit(TSSRemoval(Some(95)))" should "95.00%" in {
-    ValueUnit(TSSRemoval(Some(95))) shouldBe "95.00%"
-  }
-
-  "ValueUnit(TSSRemoval(unit = \"xyz/abc\"))" should "95.00xyz/abc" in {
-    ValueUnit(TSSRemoval(unit = "xyz/abc")) shouldBe "95.00xyz/abc"
-  }
-
-  "ValueUnit(TSSRemoval(Some(95), \"xyz/abc\"))" should "95.00xyz/abc" in {
-    ValueUnit(TSSRemoval(Some(95), "xyz/abc")) shouldBe "95.00xyz/abc"
-  }
-
-  "ValueUnit(NH3NRemoval())" should "97.00%" in {
-    ValueUnit(NH3NRemoval()) shouldBe "97.00%"
-  }
-
-  "ValueUnit(NH3NRemoval(Some(97)))" should "97.00%" in {
-    ValueUnit(NH3NRemoval(Some(97))) shouldBe "97.00%"
-  }
-
-  "ValueUnit(NH3NRemoval(unit = \"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(NH3NRemoval(unit = "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-  "ValueUnit(NH3NRemoval(Some(97),\"xyz/abc\"))" should "97.00xyz/abc" in {
-    ValueUnit(NH3NRemoval(Some(97), "xyz/abc")) shouldBe "97.00xyz/abc"
-  }
-
-
   "ValueUnit(Xvss())" should "3000.00g/m^3" in {
     ValueUnit(Xvss()) shouldBe "3000.00g/m^3"
   }
@@ -212,6 +163,12 @@ class ValueUnitsSuite extends FlatSpec with Matchers {
     ValueUnit(h.kS) shouldBe "2.00b"
     ValueUnit(h.y) shouldBe "0.40"
     ValueUnit(h.kD) shouldBe "3.00c"
+  }
+
+  "abDefaultRemovals" should "pass" in {
+    abDefaultRemovals shouldBe MiscellaneousRemovals(tss = TSSRemoval(Some(95.00)),
+      bod5 = BOD5Removal(Some(97.00)),
+      nh3n = NH3NRemoval(Some(97.00)))
   }
 
 }

@@ -1,18 +1,11 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
-import wastewatertreatment.core.Units
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by ka-son on 11/22/15.
  */
-object Unit extends Units {
-
-  val bod5RemovalUnits = percentageUnits
-
-  val tssRemovalUnits = percentageUnits
-
-  val nh3nRemovalUnits = percentageUnits
-
+object Unit extends influent.Units with ratios.Units with removals.Units {
 
   val xVSSUnits = concentrationUnits
 

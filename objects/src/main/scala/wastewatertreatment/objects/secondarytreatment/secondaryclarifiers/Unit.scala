@@ -1,16 +1,8 @@
 package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 
-import wastewatertreatment.core.Units
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object Unit extends Units {
-
-  val tssRemovalUnits = percentageUnits
-
-  val bod5RemovalUnits = percentageUnits
-
-  val pVSSRatioUnits = noUnits
-
-}
+object Unit extends influent.Units with ratios.Units with removals.Units

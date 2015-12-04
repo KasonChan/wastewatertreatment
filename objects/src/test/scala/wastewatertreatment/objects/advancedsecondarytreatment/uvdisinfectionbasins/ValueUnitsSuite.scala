@@ -2,43 +2,20 @@ package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbas
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.ValueUnits._
-import wastewatertreatment.valueunit.ValueUnit
 
 /**
  * Created by kasonchan on 11/17/15.
  */
 class ValueUnitsSuite extends FlatSpec with Matchers {
 
-  "ValueUnit(BacterialRemovalRate(Some(99.99)))" should "99.99" in {
-    ValueUnit(BacterialRemovalRate(Some(99.99))) shouldBe "99.99"
-  }
-
-  "ValueUnit(BacterialRemovalRate())" should "99.99" in {
-    ValueUnit(BacterialRemovalRate()) shouldBe "99.99"
-  }
-
-  "ValueUnit(BacterialRemovalRate(Some(99.99), \"xyz/abc\"))" should "99.99xyz/abc" in {
-    ValueUnit(BacterialRemovalRate(Some(99.99), "xyz/abc")) shouldBe "99.99xyz/abc"
-  }
-
-  "ValueUnit(BacterialRemovalRate(unit = \"xyz/abc\"))" should "99.99xyz/abc" in {
-    ValueUnit(BacterialRemovalRate(unit = "xyz/abc")) shouldBe "99.99xyz/abc"
-  }
-
-  "ValueUnit(NTUTSSRatio(Some(0.50)))" should "0.50" in {
-    ValueUnit(NTUTSSRatio(Some(0.50))) shouldBe "0.50"
-  }
-
-  "ValueUnit(NTUTSSRatio())" should "0.50" in {
-    ValueUnit(NTUTSSRatio()) shouldBe "0.50"
-  }
-
-  "ValueUnit(NTUTSSRatio(Some(0.50), \"xyz/abc\"))" should "0.50xyz/abc" in {
-    ValueUnit(NTUTSSRatio(Some(0.50), "xyz/abc")) shouldBe "0.50xyz/abc"
-  }
-
-  "ValueUnit(NTUTSSRatio(unit = \"xyz/abc\"))" should "0.50xyz/abc" in {
-    ValueUnit(NTUTSSRatio(unit = "xyz/abc")) shouldBe "0.50xyz/abc"
+  "Default misc removals" should "pass" in {
+    val defaultRemovals = uvdbDefaultRemovals
+    defaultRemovals.tss shouldBe TSSRemoval()
+    defaultRemovals.bod5 shouldBe BOD5Removal()
+    defaultRemovals.nh3n shouldBe NH3NRemoval()
+    defaultRemovals.tp shouldBe TPRemoval()
+    defaultRemovals.fecalColiform shouldBe FecalColiformRemoval(Some(99.99))
+    defaultRemovals.enterococci shouldBe EnterococciRemoval(Some(99.99))
   }
 
 }

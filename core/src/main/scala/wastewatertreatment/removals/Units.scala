@@ -7,16 +7,18 @@ import wastewatertreatment.valueunit.Unit
  */
 trait Units extends Unit {
 
-  val tssRemovalUnits = noUnits
+  val tssRemovalUnits = percentageUnits
 
-  val bod5RemovalUnits = noUnits
+  val bod5RemovalUnits = percentageUnits
 
-  val nh3nRemovalUnits = noUnits
+  val nh3nRemovalUnits = percentageUnits
 
-  val tpRemovalUnits = noUnits
+  val tpRemovalUnits = percentageUnits
 
-  val fecalColiformRemovalUnits = noUnits
+  val fecalColiformRemovalUnits = percentageUnits
 
-  val enterococciRemovalUnits = noUnits
+  val enterococciRemovalUnits = percentageUnits
+
+  val bacterialRemovalRateUnits = percentageUnits
 
 }

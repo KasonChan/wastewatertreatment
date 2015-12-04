@@ -1,13 +1,15 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import wastewatertreatment.core.Core
+import wastewatertreatment.influent.Influent
 import wastewatertreatment.math.Math.toXDecimals
+import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerobicAnoxicBasins extends Core {
+object AerobicAnoxicBasins extends Core with Influent with Ratios with Removals {
 
   /**
    * Returns theta.
@@ -494,7 +496,7 @@ object AerobicAnoxicBasins extends Core {
    */
   def calPXvsso(Q: Double,
                 VSS: Double,
-                nbvssVSSRatio: Double = nbVSS): Double = {
+                nbvssVSSRatio: Double = nbvssVSSRatio): Double = {
     require(Q >= 0 && VSS >= 0 && nbvssVSSRatio >= 0)
     val r = Q * VSS * nbvssVSSRatio
     toXDecimals(r)
@@ -555,15 +557,15 @@ object AerobicAnoxicBasins extends Core {
 
   /**
    * A case class to represent the default aerobic anoxic basins.
-   * tssRemoval the value of TSS removal. Default value is 94.00.
-   * bod5Removal the value of BOD,,5,, removal. Default value is 97.00.
-   * nh3nRemoval the value of NH,,3,,-N removal. Default value is 97.00.
-   * tpRemoval the value of TP removal. Default value is 0.00.
-   * fecalColiformRemoval the value of fecal coliform removal. Default value is 0.00.
-   * enterococciRemoval the value of enterococci removal. Default value is 0.00.
+   * tss the value of TSS removal. Default value is 94.00.
+   * bod5 the value of BOD,,5,, removal. Default value is 97.00.
+   * nh3n the value of NH,,3,,-N removal. Default value is 97.00.
+   * tp the value of TP removal. Default value is 0.00.
+   * fecalColiform the value of fecal coliform removal. Default value is 0.00.
+   * enterococci the value of enterococci removal. Default value is 0.00.
    */
-  val aabDefaultRemovals = Removals(tssRemoval = Some(tssRemoval),
-    bod5Removal = Some(bod5Removal),
-    nh3nRemoval = Some(nh3nRemoval))
+  val aabDefaultRemovals = Removals(tss = Some(tssRemoval),
+    bod5 = Some(bod5Removal),
+    nh3n = Some(nh3nRemoval))
 
 }

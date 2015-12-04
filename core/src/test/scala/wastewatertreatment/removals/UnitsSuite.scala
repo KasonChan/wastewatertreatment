@@ -7,28 +7,28 @@ import org.scalatest.{FlatSpec, Matchers}
  */
 class UnitsSuite extends FlatSpec with Matchers with Units {
 
-  "tssRemovalUnits" should "= noUnits" in {
-    tssRemovalUnits shouldBe noUnits
+  "tssRemovalUnits" should "= percentageUnits" in {
+    tssRemovalUnits shouldBe percentageUnits
   }
 
-  "bod5RemovalUnits" should "= noUnits" in {
-    bod5RemovalUnits shouldBe noUnits
+  "bod5RemovalUnits" should "= percentageUnits" in {
+    bod5RemovalUnits shouldBe percentageUnits
   }
 
-  "nh3nRemovalUnits" should "= noUnits" in {
-    nh3nRemovalUnits shouldBe noUnits
+  "nh3nRemovalUnits" should "= percentageUnits" in {
+    nh3nRemovalUnits shouldBe percentageUnits
   }
 
-  "tpRemovalUnits" should "= noUnits" in {
-    tpRemovalUnits shouldBe noUnits
+  "tpRemovalUnits" should "= percentageUnits" in {
+    tpRemovalUnits shouldBe percentageUnits
   }
 
-  "fecalColiformRemovalUnits" should "= noUnits" in {
-    fecalColiformRemovalUnits shouldBe noUnits
+  "fecalColiformRemovalUnits" should "= percentageUnits" in {
+    fecalColiformRemovalUnits shouldBe percentageUnits
   }
 
-  "enterococciRemovalUnits" should "= noUnits" in {
-    enterococciRemovalUnits shouldBe noUnits
+  "enterococciRemovalUnits" should "= percentageUnits" in {
+    enterococciRemovalUnits shouldBe percentageUnits
   }
 
 }

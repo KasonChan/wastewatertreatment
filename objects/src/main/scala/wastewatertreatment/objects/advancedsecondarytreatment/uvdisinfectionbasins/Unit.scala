@@ -1,14 +1,8 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
-import wastewatertreatment.core.Units
+import wastewatertreatment.{influent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-object Unit extends Units {
-
-  val bacterialRemovalRateUnits = noUnits
-
-  val ntuTSSRatioUnits = noUnits
-
-}
+object Unit extends influent.Units with ratios.Units with removals.Units

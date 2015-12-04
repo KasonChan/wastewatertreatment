@@ -84,12 +84,12 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
 
   "Default removals" should "pass" in {
     val defaultRemovals = uvdbDefaultRemovals
-    defaultRemovals.tssRemoval shouldBe None
-    defaultRemovals.bod5Removal shouldBe None
-    defaultRemovals.nh3nRemoval shouldBe None
-    defaultRemovals.tpRemoval shouldBe None
-    defaultRemovals.fecalColiformRemoval shouldBe Some(99.99)
-    defaultRemovals.enterococciRemoval shouldBe Some(99.99)
+    defaultRemovals.tss shouldBe None
+    defaultRemovals.bod5 shouldBe None
+    defaultRemovals.nh3n shouldBe None
+    defaultRemovals.tp shouldBe None
+    defaultRemovals.fecalColiform shouldBe Some(99.99)
+    defaultRemovals.enterococci shouldBe Some(99.99)
   }
 
 }
