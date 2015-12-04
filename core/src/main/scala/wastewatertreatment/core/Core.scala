@@ -1,11 +1,29 @@
 package wastewatertreatment.core
 
+import equations.massbalance.MassBalance.{MX, solveMX}
+import equations.monooperation.MonoOperation.solveM
 import wastewatertreatment.ratios.Ratios
 
 /**
  * Created by kasonchan on 11/15/15.
  */
 trait Core extends Ratios {
+
+  /**
+   * Returns the value of effluent constituent.
+   * {{{
+   *   Qo * Xo + ... = Qe * Xe + ...
+   * }}}
+   * @param inputs the list of inputs.
+   * @param outputs the list of outputs.
+   */
+  def calMX(inputs: List[MX], outputs: List[MX]): Option[Double] = {
+    inputs.headOption.getOrElse(MX(None, None, None)) match {
+      case MX(_, x: Option[Double], None) => x
+      case MX(_, _, Some(_)) => solveMX(inputs, outputs)
+      case _ => None
+    }
+  }
 
   /**
    * Returns VSS.
@@ -18,7 +36,7 @@ trait Core extends Ratios {
   def calVSS(TSS: Double,
              vssTSSRatio: Double = vssTSSRatio): Double = {
     require(TSS >= 0 && vssTSSRatio >= 0)
-    val r = TSS * vssTSSRatio
+    val r = solveM(List(None), List(Some(TSS), Some(vssTSSRatio)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -33,7 +51,7 @@ trait Core extends Ratios {
   def calcBOD5(BOD5e: Double,
                bod5cBOD5Ratio: Double = bod5cBOD5Ratio): Double = {
     require(BOD5e >= 0 && bod5cBOD5Ratio >= 0 && bod5cBOD5Ratio > 0)
-    val r = BOD5e / bod5cBOD5Ratio
+    val r = solveM(List(None, Some(bod5cBOD5Ratio)), List(Some(BOD5e)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -48,7 +66,7 @@ trait Core extends Ratios {
   def calbCOD(BOD5: Double,
               codBODRatio: Double = codBODRatio): Double = {
     require(BOD5 >= 0 && codBODRatio >= 0)
-    val r = BOD5 * codBODRatio
+    val r = solveM(List(None), List(Some(BOD5), Some(codBODRatio)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -65,7 +83,7 @@ trait Core extends Ratios {
                codVSSRatio: Double = codVSSRatio,
                bvssVSSRatio: Double = bvssVSSRatio): Double = {
     require(VSS >= 0 && codVSSRatio >= 0 && bvssVSSRatio >= 0)
-    val r = VSS * codVSSRatio * bvssVSSRatio
+    val r = solveM(List(None), List(Some(VSS), Some(codVSSRatio), Some(bvssVSSRatio)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -80,7 +98,7 @@ trait Core extends Ratios {
   def calbCODs(bCOD: Double,
                bCODp: Double): Double = {
     require(bCOD >= 0 && bCODp >= 0)
-    val r = bCOD - bCODp
+    val r = solveM(List(None, Some(bCODp)), List(Some(bCOD)), 'add).getOrElse(0.0)
     r
   }
 
@@ -95,7 +113,7 @@ trait Core extends Ratios {
   def calP(Q: Double,
            TSS: Double): Double = {
     require(Q >= 0 && TSS >= 0)
-    val r = Q * TSS
+    val r = solveM(List(None), List(Some(Q), Some(TSS)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -110,7 +128,7 @@ trait Core extends Ratios {
   def calXPercentage(X: Double,
                      percentage: Double): Double = {
     require(X >= 0 && percentage >= 0)
-    val r = X * percentage / 100
+    val r = solveM(List(None, Some(100)), List(Some(X), Some(percentage)), 'multiple).getOrElse(0.0)
     r
   }
 
@@ -155,7 +173,7 @@ trait Core extends Ratios {
   def calNTU(TSS: Double,
              ntuTSSRatio: Double = ntuTSSRatio): Double = {
     require(TSS >= 0 && ntuTSSRatio >= 0)
-    val r = TSS * ntuTSSRatio
+    val r = solveM(List(None), List(Some(TSS), Some(ntuTSSRatio)), 'multiple).getOrElse(0.0)
     r
   }
 

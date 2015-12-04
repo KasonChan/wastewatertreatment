@@ -1,11 +1,34 @@
 package wastewatertreatment.core
 
+import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by kasonchan on 11/15/15.
  */
 class CoreSuite extends FlatSpec with Matchers with Core {
+
+  "solveMX(inputs, outputs) 1" should "= 223.00" in {
+    val inputs = List(MX(Some(1393027.2), Some(223), None))
+    val outputs = List(MX(Some(1393027.2), None, None))
+    val r = calMX(inputs, outputs).getOrElse(0.0)
+    toXDecimals(r) shouldBe 223.00
+  }
+
+  "solveMX(inputs, outputs) 2" should "= 223.00" in {
+    val inputs = List(MX(Some(1393027.2), Some(223), Some(0.0)))
+    val outputs = List(MX(Some(1393027.2), None, None))
+    val r = calMX(inputs, outputs).getOrElse(0.0)
+    toXDecimals(r) shouldBe 223.00
+  }
+
+  "solveMX(inputs, outputs) 3" should "= 223.00" in {
+    val inputs = List(MX(Some(1393027.2), Some(223), Some(50.0)))
+    val outputs = List(MX(Some(1393027.2), None, None))
+    val r = calMX(inputs, outputs).getOrElse(0.0)
+    toXDecimals(r) shouldBe 111.50
+  }
 
   "calVSS(-1, -1)" should "fail" in {
     intercept[java.lang.IllegalArgumentException] {
