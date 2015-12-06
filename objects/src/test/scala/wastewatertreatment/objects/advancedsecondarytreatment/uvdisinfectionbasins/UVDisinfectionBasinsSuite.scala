@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
-import equations.massbalance.MassBalance.{MX, solveMX}
+import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins._
@@ -36,49 +36,49 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solveMX(List(MX(Some(q), Some(tss), None)),
+    val tsse = calMX(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe tss
 
-    val vsse = calVSS(tsse)
+    val vsse = calVSSTSS(TSS = Some(tsse))
     toXDecimals(vsse) shouldBe vss
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), None)),
+    val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe bod5
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
     toXDecimals(cBOD5e) shouldBe cBOD5
 
-    val bCODe = calbCOD(bod5e)
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
     toXDecimals(bCODe) shouldBe bCOD
 
-    val bCODpe = calbCODp(vsse)
+    val bCODpe = calbCODpVSS(VSS = Some(vsse))
     toXDecimals(bCODpe) shouldBe bCODp
 
-    val bCODse = calbCODs(bCODe, bCODpe)
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
     toXDecimals(bCODse) shouldBe bCODs
 
-    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe nh3n
 
-    val tpe = solveMX(List(MX(Some(q), Some(tp))),
+    val tpe = calMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe tp
 
-    val pe = calP(qe, tsse)
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
     toXDecimals(pe) shouldBe p
 
-    val felcalColiforme = solveMX(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
+    val felcalColiforme = calMX(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(felcalColiforme) shouldBe 1.00
 
-    val enterococcie = solveMX(List(MX(Some(q), Some(enterococci), Some(bacterialRemovalRate))),
+    val enterococcie = calMX(List(MX(Some(q), Some(enterococci), Some(bacterialRemovalRate))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(enterococcie) shouldBe 0.00
 
-    val ntue = calNTU(tsse)
+    val ntue = calNTUTSS(TSS = Some(tsse))
     toXDecimals(ntue) shouldBe 0.47
   }
 

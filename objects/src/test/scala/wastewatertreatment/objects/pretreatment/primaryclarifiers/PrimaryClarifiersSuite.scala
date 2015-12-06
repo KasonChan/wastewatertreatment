@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
-import equations.massbalance.MassBalance.{MX, solveMX}
+import equations.massbalance.MassBalance.MX
 import equations.monooperation.MonoOperation.solveM
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math._
@@ -39,38 +39,38 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solveMX(List(MX(Some(q), Some(tss), None)),
+    val tsse = calMX(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 122.99
 
-    val vsse = calVSS(tsse)
+    val vsse = calVSSTSS(TSS = Some(tsse))
     toXDecimals(vsse) shouldBe 98.39
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), None)),
+    val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 141.82
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
     toXDecimals(cBOD5e) shouldBe 128.93
 
-    val bCODe = calbCOD(bod5e)
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
     toXDecimals(bCODe) shouldBe 226.91
 
-    val bCODpe = calbCODp(vsse)
+    val bCODpe = calbCODpVSS(VSS = Some(vsse))
     toXDecimals(bCODpe) shouldBe 111.77
 
-    val bCODse = calbCODs(bCODe, bCODpe)
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
     toXDecimals(bCODse) shouldBe 115.14
 
-    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 25.24
 
-    val tpe = solveMX(List(MX(Some(q), Some(tp))),
+    val tpe = calMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 4.67
 
-    val pe = calP(qe, tsse)
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
     toXDecimals(pe) shouldBe 82165190.13
   }
 
@@ -90,38 +90,38 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solveMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+    val tsse = calMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 45.51
 
-    val vsse = calVSS(tsse)
+    val vsse = calVSSTSS(TSS = Some(tsse))
     toXDecimals(vsse) shouldBe 36.41
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
+    val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 92.18
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
     toXDecimals(cBOD5e) shouldBe 83.8
 
-    val bCODe = calbCOD(bod5e)
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
     toXDecimals(bCODe) shouldBe 147.49
 
-    val bCODpe = calbCODp(vsse)
+    val bCODpe = calbCODpVSS(VSS = Some(vsse))
     toXDecimals(bCODpe) shouldBe 41.36
 
-    val bCODse = calbCODs(bCODe, bCODpe)
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
     toXDecimals(bCODse) shouldBe 106.14
 
-    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 25.24
 
-    val tpe = solveMX(List(MX(Some(q), Some(tp))),
+    val tpe = calMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 4.67
 
-    val pe = calP(qe, tsse)
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
     toXDecimals(pe) shouldBe 30401120.35
   }
 
@@ -140,10 +140,10 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val vssTSSRatio = 0.80
 
     val cBOD5 = 75
-    val bCOD = calbCOD(bod5, codBODRatio)
-    val bCODp = calbCODp(VSS = vss, codVSSRatio = codVSSRatio, bvssVSSRatio = vssTSSRatio)
-    val bCODs = calbCODs(bCOD, bCODp)
-    val p = calP(q, tss)
+    val bCOD = calbCODBOD5(BOD5 = Some(bod5), codBOD = Some(codBODRatio))
+    val bCODp = calbCODpVSS(VSS = Some(vss), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
+    val bCODs = calbCODsbCODpbCOD(bCOD = Some(bCOD), bCODp = Some(bCODp))
+    val p = calPQTSS(Q = Some(q), TSS = Some(tss))
 
     // Line 1
     val qo = q
@@ -185,20 +185,20 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
       List(Some(pe2), None), 'add).getOrElse(0.00)
     toXDecimals(pe3) shouldBe 79872924.20
 
-    val qe3 = calQ(pe3, tss3)
+    val qe3 = calPQTSS(P = Some(pe3), TSS = Some(tss3))
     toXDecimals(qe3) shouldBe 1996.82
 
     val tsse3 = tss3
     toXDecimals(tsse3) shouldBe 40000
 
-    val vsse3 = calVSS(tsse3, vssTSSRatio)
+    val vsse3 = calVSSTSS(TSS = Some(tsse3), vssTSS = Some(vssTSSRatio))
     toXDecimals(vsse3) shouldBe 32000.00
 
-    val bod5e3 = solveMX(List(MX(Some(qo), Some(bod5o))),
+    val bod5e3 = calMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e3) shouldBe 234.00
 
-    val bCODpe3 = calbCODp(vsse3, codVSSRatio, vssTSSRatio)
+    val bCODpe3 = calbCODpVSS(VSS = Some(vsse3), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
     toXDecimals(bCODpe3) shouldBe 36352.00
 
     // Line 2
@@ -206,17 +206,17 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
       List(None, Some(qe3)), 'add).getOrElse(0.00)
     toXDecimals(qe2) shouldBe 626379.58
 
-    val tsse2 = calTSS(pe2, qe2)
+    val tsse2 = calPQTSS(P = Some(pe2), Q = Some(qe2))
     toXDecimals(tsse2) shouldBe 96.20
 
-    val vsse2 = calVSS(tsse2, vssTSSRatio)
+    val vsse2 = calVSSTSS(TSS = Some(tsse2), vssTSS = Some(vssTSSRatio))
     toXDecimals(vsse2) shouldBe 76.96
 
-    val bod5e2 = solveMX(List(MX(Some(qo), Some(bod5o))),
+    val bod5e2 = calMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e2) shouldBe 234.00
 
-    val bCODpe2 = calbCODp(vsse2, codVSSRatio, vssTSSRatio)
+    val bCODpe2 = calbCODpVSS(VSS = Some(vsse2), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
     toXDecimals(bCODpe2) shouldBe 87.42
   }
 

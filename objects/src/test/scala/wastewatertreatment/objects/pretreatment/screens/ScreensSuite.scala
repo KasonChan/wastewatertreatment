@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.screens
 
-import equations.massbalance.MassBalance.{MX, solveMX}
+import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.objects.pretreatment.screens.Screens._
@@ -26,38 +26,38 @@ class ScreensSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solveMX(List(MX(Some(q), Some(tss), None)),
+    val tsse = calMX(List(MX(Some(q), Some(tss), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 201.55
 
-    val vsse = calVSS(tsse)
+    val vsse = calVSSTSS(TSS = Some(tsse))
     toXDecimals(vsse) shouldBe 161.24
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), None)),
+    val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 232.42
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
     toXDecimals(cBOD5e) shouldBe 211.29
 
-    val bCODe = calbCOD(bod5e)
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
     toXDecimals(bCODe) shouldBe 371.87
 
-    val bCODpe = calbCODp(vsse)
+    val bCODpe = calbCODpVSS(VSS = Some(vsse))
     toXDecimals(bCODpe) shouldBe 183.17
 
-    val bCODse = calbCODs(bCODe, bCODpe)
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
     toXDecimals(bCODse) shouldBe 188.70
 
-    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 30.20
 
-    val tpe = solveMX(List(MX(Some(q), Some(tp))),
+    val tpe = calMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 5.59
 
-    val pe = calP(qe, tsse)
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
     toXDecimals(pe) shouldBe 250118150.48
   }
 
@@ -77,38 +77,38 @@ class ScreensSuite extends FlatSpec with Matchers {
     val qe = q
     qe shouldBe q
 
-    val tsse = solveMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
+    val tsse = calMX(List(MX(Some(q), Some(tss), Some(tssRemoval))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 147.13
 
-    val vsse = calVSS(tsse)
+    val vsse = calVSSTSS(TSS = Some(tsse))
     toXDecimals(vsse) shouldBe 117.71
 
-    val bod5e = solveMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
+    val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 169.67
 
-    val cBOD5e = calcBOD5(bod5e)
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
     toXDecimals(cBOD5e) shouldBe 154.24
 
-    val bCODe = calbCOD(bod5e)
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
     toXDecimals(bCODe) shouldBe 271.47
 
-    val bCODpe = calbCODp(vsse)
+    val bCODpe = calbCODpVSS(VSS = Some(vsse))
     toXDecimals(bCODpe) shouldBe 133.71
 
-    val bCODse = calbCODs(bCODe, bCODpe)
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
     toXDecimals(bCODse) shouldBe 137.75
 
-    val nh3ne = solveMX(List(MX(Some(q), Some(nh3n))),
+    val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(nh3ne) shouldBe 30.20
 
-    val tpe = solveMX(List(MX(Some(q), Some(tp))),
+    val tpe = calMX(List(MX(Some(q), Some(tp))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe 5.59
 
-    val pe = calP(qe, tsse)
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
     toXDecimals(pe) shouldBe 182586249.85
   }
 
