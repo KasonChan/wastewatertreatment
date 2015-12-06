@@ -1,4 +1,4 @@
-package wastewatertreatment.influent
+package wastewatertreatment.fluent
 
 import wastewatertreatment.valueunit.ValueUnit
 
@@ -106,7 +106,7 @@ trait ValueUnits extends Units {
                        unit: String = hazeUnits.headOption.getOrElse("MPN/100mL")) extends ValueUnit
 
   /**
-   * Miscellaneous influent
+   * Miscellaneous fluent
    * @param flow the value of flow. Default value and unit are 0m^3^/d.
    * @param tss the value of TSS. Default value and unit are 0g/m^3^.
    * @param vss the value of VSS. Default value and unit are 0g/m^3^.
@@ -122,19 +122,19 @@ trait ValueUnits extends Units {
    * @param enterococci the value of enterococci. Default value and unit are 0MPN/100mL.
    * @param turbidity the value of turbidity. Default value and unit are 0MPN/100mL.
    */
-  case class MiscellaneousInfluent(flow: Q = Q(),
-                                   tss: TSS = TSS(),
-                                   vss: VSS = VSS(),
-                                   bod5: BOD5 = BOD5(),
-                                   cBOD5: CBOD5 = CBOD5(),
-                                   bCOD: BCOD = BCOD(),
-                                   bCODs: BCODs = BCODs(),
-                                   bCODp: BCODp = BCODp(),
-                                   nh3n: NH3N = NH3N(),
-                                   tp: TP = TP(),
-                                   p: P = P(),
-                                   fecalColiform: FecalColiform = FecalColiform(),
-                                   enterococci: Enterococci = Enterococci(),
-                                   turbidity: Turbidity = Turbidity())
+  case class MiscellaneousFluent(flow: Q = Q(),
+                                 tss: TSS = TSS(),
+                                 vss: VSS = VSS(),
+                                 bod5: BOD5 = BOD5(),
+                                 cBOD5: CBOD5 = CBOD5(),
+                                 bCOD: BCOD = BCOD(),
+                                 bCODs: BCODs = BCODs(),
+                                 bCODp: BCODp = BCODp(),
+                                 nh3n: NH3N = NH3N(),
+                                 tp: TP = TP(),
+                                 p: P = P(),
+                                 fecalColiform: FecalColiform = FecalColiform(),
+                                 enterococci: Enterococci = Enterococci(),
+                                 turbidity: Turbidity = Turbidity())
 
 }

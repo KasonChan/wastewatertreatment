@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.influent.Influent
+import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object Filters extends Core with Influent with Ratios with Removals {
+object Filters extends Core with Fluent with Ratios with Removals {
 
   /**
    * Backwash rate = 6.00gpm/ft^2^.

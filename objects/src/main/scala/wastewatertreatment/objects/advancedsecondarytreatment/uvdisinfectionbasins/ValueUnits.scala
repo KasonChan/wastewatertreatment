@@ -1,12 +1,12 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins.bacterialRemovalRate
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * A case class to represent the default UV disinfection basins.

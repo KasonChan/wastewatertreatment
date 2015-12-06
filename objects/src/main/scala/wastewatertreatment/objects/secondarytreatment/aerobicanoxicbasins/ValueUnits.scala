@@ -3,12 +3,12 @@ package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.AerobicAnoxicBasins._
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Unit._
 import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * Forall,,T,,

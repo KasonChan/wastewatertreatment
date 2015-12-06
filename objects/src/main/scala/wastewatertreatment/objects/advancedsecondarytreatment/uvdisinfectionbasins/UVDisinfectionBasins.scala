@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.influent.Influent
+import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-object UVDisinfectionBasins extends Core with Influent with Ratios with Removals {
+object UVDisinfectionBasins extends Core with Fluent with Ratios with Removals {
 
   /**
    * Bacterial removal rate = 99.99%.

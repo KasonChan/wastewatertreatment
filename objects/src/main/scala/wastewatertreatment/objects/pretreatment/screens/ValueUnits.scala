@@ -1,12 +1,12 @@
 package wastewatertreatment.objects.pretreatment.screens
 
 import wastewatertreatment.objects.pretreatment.screens.Screens.{bod5Removal, tssRemoval}
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 10/26/15.
  */
-object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * A case class to represent the default screens.

@@ -1,11 +1,11 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 10/31/15.
  */
-object Unit extends influent.Units with ratios.Units with removals.Units {
+object Unit extends fluent.Units with ratios.Units with removals.Units {
 
   val forallTUnits = volumeUnits
 

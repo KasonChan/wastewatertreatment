@@ -1,14 +1,14 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.influent.Influent
+import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/10/15.
  */
-object ChlorineContactBasins extends Core with Influent with Ratios with Removals {
+object ChlorineContactBasins extends Core with Fluent with Ratios with Removals {
 
   /**
    * Bacterial removal rate = 99.99%.

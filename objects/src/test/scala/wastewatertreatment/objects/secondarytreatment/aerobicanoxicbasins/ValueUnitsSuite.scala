@@ -3,12 +3,12 @@ package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.ValueUnits._
 import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{influent, ratios}
+import wastewatertreatment.{fluent, ratios}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
-class ValueUnitsSuite extends FlatSpec with Matchers with influent.ValueUnits with ratios.ValueUnits {
+class ValueUnitsSuite extends FlatSpec with Matchers with fluent.ValueUnits with ratios.ValueUnits {
 
   "ValueUnit(ForallT(Some(423819))" should "423819.00m^3" in {
     ValueUnit(ForallT(Some(423819))) shouldBe "423819.00m^3"

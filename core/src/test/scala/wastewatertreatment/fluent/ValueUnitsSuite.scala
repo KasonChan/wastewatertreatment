@@ -1,4 +1,4 @@
-package wastewatertreatment.influent
+package wastewatertreatment.fluent
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.valueunit.ValueUnit
@@ -120,8 +120,8 @@ class ValueUnitsSuite extends FlatSpec with Matchers with ValueUnits {
     ValueUnit(Turbidity(Some(365.00), "xyz/abc")) shouldBe "365.00xyz/abc"
   }
 
-  "Default influent" should "pass" in {
-    val defaultInfluent = MiscellaneousInfluent()
+  "Default fluent" should "pass" in {
+    val defaultInfluent = MiscellaneousFluent()
     defaultInfluent.flow shouldBe Q(None, "m^3/d")
     defaultInfluent.tss shouldBe TSS(None, "g/m^3")
     defaultInfluent.vss shouldBe VSS(None, "g/m^3")

@@ -3,12 +3,12 @@ package wastewatertreatment.objects.advancedsecondarytreatment.filters
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Unit._
 import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 11/7/15.
  */
-object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * Daily backwash rate

@@ -1,12 +1,12 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
 import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers.{bod5Removal, tssRemoval}
-import wastewatertreatment.{influent, ratios, removals}
+import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/9/15.
  */
-object ValueUnits extends influent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 
   /**
    * A case class to represent the default primary clarifiers.

@@ -212,7 +212,7 @@ class AerobicAnoxicBasinsSuite extends FlatSpec with Matchers {
 
     val q = 1193464.87
 
-    // Influent
+    // Fluent
     val tsso = 42.67
     val vsso = 34.13
     val bod5o = 103.16

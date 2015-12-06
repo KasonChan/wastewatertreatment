@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import wastewatertreatment.core.Core
-import wastewatertreatment.influent.Influent
+import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
@@ -9,7 +9,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerobicAnoxicBasins extends Core with Influent with Ratios with Removals {
+object AerobicAnoxicBasins extends Core with Fluent with Ratios with Removals {
 
   /**
    * Returns theta.
@@ -539,7 +539,7 @@ object AerobicAnoxicBasins extends Core with Influent with Ratios with Removals 
   }
 
   /**
-   * Returns influent BOD concentration.
+   * Returns fluent BOD concentration.
    * {{{
    *   So = (Lorg * Forall) / Q
    * }}}

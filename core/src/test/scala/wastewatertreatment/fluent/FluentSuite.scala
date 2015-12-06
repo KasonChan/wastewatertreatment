@@ -1,14 +1,14 @@
-package wastewatertreatment.influent
+package wastewatertreatment.fluent
 
 import org.scalatest.{FlatSpec, Matchers}
 
 /**
  * Created by kasonchan on 12/3/15.
  */
-class InfluentSuite extends FlatSpec with Matchers with Influent {
+class FluentSuite extends FlatSpec with Matchers with Fluent {
 
-  "Default influent" should "pass" in {
-    val defaultInfluent = Influent()
+  "Default fluent" should "pass" in {
+    val defaultInfluent = Fluent()
     defaultInfluent.flow shouldBe None
     defaultInfluent.tss shouldBe None
     defaultInfluent.vss shouldBe None

@@ -1,4 +1,4 @@
-package wastewatertreatment.influent
+package wastewatertreatment.fluent
 
 import wastewatertreatment.valueunit.Unit
 

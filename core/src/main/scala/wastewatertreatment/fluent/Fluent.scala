@@ -1,9 +1,9 @@
-package wastewatertreatment.influent
+package wastewatertreatment.fluent
 
-trait Influent {
+trait Fluent {
 
   /**
-   * A case class to represents the default influent.
+   * A case class to represents the default fluent.
    * @param flow the value of flow. Default value is 0.00.
    * @param tss the value of TSS. Default value is 0.00.
    * @param vss the value of VSS. Default value is 0.00.
@@ -19,19 +19,19 @@ trait Influent {
    * @param enterococci the value of enterococci. Default value is 0.00.
    * @param turbidity the value of turbidity. Default value is 0.00.
    */
-  case class Influent(flow: Option[Double] = None,
-                      tss: Option[Double] = None,
-                      vss: Option[Double] = None,
-                      bod5: Option[Double] = None,
-                      cBOD5: Option[Double] = None,
-                      bCOD: Option[Double] = None,
-                      bCODs: Option[Double] = None,
-                      bCODp: Option[Double] = None,
-                      nh3n: Option[Double] = None,
-                      tp: Option[Double] = None,
-                      p: Option[Double] = None,
-                      fecalColiform: Option[Double] = None,
-                      enterococci: Option[Double] = None,
-                      turbidity: Option[Double] = None)
+  case class Fluent(flow: Option[Double] = None,
+                    tss: Option[Double] = None,
+                    vss: Option[Double] = None,
+                    bod5: Option[Double] = None,
+                    cBOD5: Option[Double] = None,
+                    bCOD: Option[Double] = None,
+                    bCODs: Option[Double] = None,
+                    bCODp: Option[Double] = None,
+                    nh3n: Option[Double] = None,
+                    tp: Option[Double] = None,
+                    p: Option[Double] = None,
+                    fecalColiform: Option[Double] = None,
+                    enterococci: Option[Double] = None,
+                    turbidity: Option[Double] = None)
 
 }
