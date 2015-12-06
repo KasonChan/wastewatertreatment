@@ -102,14 +102,14 @@ class CoreSuite extends FlatSpec with Matchers with Core {
   }
 
   "calcBOD5BOD5(cBOD5, 1.1)" should "= 154.23636363636362" in {
-    val BOD5 = Some(169.66)
+    val bod5 = Some(169.66)
     val bod5cBOD5Ratio = Some(1.1)
-    calcBOD5BOD5(BOD5 = BOD5, bod5cBOD5 = bod5cBOD5Ratio) shouldBe 154.23636363636362
+    calcBOD5BOD5(BOD5 = bod5, bod5cBOD5 = bod5cBOD5Ratio) shouldBe 154.23636363636362
   }
 
   "calcBOD5BOD5(cBOD5)" should "= 154.23636363636362" in {
-    val BOD5 = Some(169.66)
-    calcBOD5BOD5(BOD5 = BOD5) shouldBe 154.23636363636362
+    val bod5 = Some(169.66)
+    calcBOD5BOD5(BOD5 = bod5) shouldBe 154.23636363636362
   }
 
   "calbCOD(-1, -1)" should "fail" in {
