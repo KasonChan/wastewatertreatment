@@ -47,23 +47,23 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 0.41
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 0.33
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 0.33
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 0.75
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 0.68
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 0.68
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 1.2
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 1.2
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 0.37
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 0.37
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 0.83
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 0.83
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -74,7 +74,7 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 0.64
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 197263.76
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 197263.76
   }
 
   "Train 1" should "pass" in {
@@ -98,23 +98,23 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 0.23
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 0.18
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 0.18
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 0.56
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 0.51
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 0.51
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 0.9
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 0.9
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 0.20
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 0.20
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 0.70
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 0.70
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -125,7 +125,7 @@ class SecondaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 0.64
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 108495.07
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 108495.07
   }
 
   "Default removals" should "pass" in {

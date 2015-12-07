@@ -36,11 +36,11 @@ trait Core extends Ratios {
    */
   def calVSSTSS(VSS: Option[Double] = None,
                 TSS: Option[Double] = None,
-                vssTSS: Option[Double] = Some(vssTSSRatio)): Double = {
+                vssTSS: Option[Double] = Some(vssTSSRatio)): Option[Double] = {
     require(VSS.getOrElse(0.0) >= 0 &&
       TSS.getOrElse(0.0) >= 0 &&
       vssTSS.getOrElse(0.0) >= 0)
-    val r = solveM(List(VSS), List(TSS, vssTSS), 'multiple).getOrElse(0.0)
+    val r = solveM(List(VSS), List(TSS, vssTSS), 'multiple)
     r
   }
 
@@ -55,11 +55,11 @@ trait Core extends Ratios {
    */
   def calcBOD5BOD5(cBOD5: Option[Double] = None,
                    bod5cBOD5: Option[Double] = Some(bod5cBOD5Ratio),
-                   BOD5: Option[Double] = None): Double = {
+                   BOD5: Option[Double] = None): Option[Double] = {
     require(cBOD5.getOrElse(0.0) >= 0 &&
       bod5cBOD5.getOrElse(0.0) > 0 &&
       BOD5.getOrElse(0.0) >= 0)
-    val r = solveM(List(cBOD5, bod5cBOD5), List(BOD5), 'multiple).getOrElse(0.0)
+    val r = solveM(List(cBOD5, bod5cBOD5), List(BOD5), 'multiple)
     r
   }
 
@@ -74,11 +74,11 @@ trait Core extends Ratios {
    */
   def calbCODBOD5(bCOD: Option[Double] = None,
                   BOD5: Option[Double] = None,
-                  codBOD: Option[Double] = Some(codBODRatio)): Double = {
+                  codBOD: Option[Double] = Some(codBODRatio)): Option[Double] = {
     require(bCOD.getOrElse(0.0) >= 0 &&
       BOD5.getOrElse(0.0) >= 0 &&
       codBOD.getOrElse(0.0) >= 0)
-    val r = solveM(List(bCOD), List(BOD5, codBOD), 'multiple).getOrElse(0.0)
+    val r = solveM(List(bCOD), List(BOD5, codBOD), 'multiple)
     r
   }
 
@@ -95,12 +95,12 @@ trait Core extends Ratios {
   def calbCODpVSS(bCODp: Option[Double] = None,
                   VSS: Option[Double] = None,
                   codVSS: Option[Double] = Some(codVSSRatio),
-                  bvssVSS: Option[Double] = Some(bvssVSSRatio)): Double = {
+                  bvssVSS: Option[Double] = Some(bvssVSSRatio)): Option[Double] = {
     require(bCODp.getOrElse(0.0) >= 0 &&
       VSS.getOrElse(0.0) >= 0 &&
       codVSS.getOrElse(0.0) >= 0 &&
       bvssVSS.getOrElse(0.0) >= 0)
-    val r = solveM(List(bCODp), List(VSS, codVSS, bvssVSS), 'multiple).getOrElse(0.0)
+    val r = solveM(List(bCODp), List(VSS, codVSS, bvssVSS), 'multiple)
     r
   }
 
@@ -115,11 +115,11 @@ trait Core extends Ratios {
    */
   def calbCODsbCODpbCOD(bCODs: Option[Double] = None,
                         bCODp: Option[Double] = None,
-                        bCOD: Option[Double] = None): Double = {
+                        bCOD: Option[Double] = None): Option[Double] = {
     require(bCODs.getOrElse(0.0) >= 0 &&
       bCODp.getOrElse(0.0) >= 0 &&
       bCOD.getOrElse(0.0) >= 0)
-    val r = solveM(List(bCODs, bCODp), List(bCOD), 'add).getOrElse(0.0)
+    val r = solveM(List(bCODs, bCODp), List(bCOD), 'add)
     r
   }
 
@@ -134,11 +134,11 @@ trait Core extends Ratios {
    */
   def calPQTSS(P: Option[Double] = None,
                Q: Option[Double] = None,
-               TSS: Option[Double] = None): Double = {
+               TSS: Option[Double] = None): Option[Double] = {
     require(P.getOrElse(0.0) >= 0 &&
       Q.getOrElse(0.0) >= 0 &&
       TSS.getOrElse(0.0) >= 0)
-    val r = solveM(List(P), List(Q, TSS), 'multiple).getOrElse(0.0)
+    val r = solveM(List(P), List(Q, TSS), 'multiple)
     r
   }
 
@@ -150,10 +150,11 @@ trait Core extends Ratios {
    * @param X the initial value of X.
    * @param percentage the percentage of the effluent of X.
    */
-  def calXPercentage(X: Double,
-                     percentage: Double): Double = {
-    require(X >= 0 && percentage >= 0)
-    val r = solveM(List(None, Some(100)), List(Some(X), Some(percentage)), 'multiple).getOrElse(0.0)
+  def calXPercentage(X: Option[Double] = None,
+                     percentage: Option[Double]): Option[Double] = {
+    require(X.getOrElse(0.0) >= 0 &&
+      percentage.getOrElse(0.0) >= 0)
+    val r = solveM(List(None, Some(100)), List(X, percentage), 'multiple)
     r
   }
 
@@ -168,11 +169,11 @@ trait Core extends Ratios {
    */
   def calNTUTSS(NTU: Option[Double] = None,
                 TSS: Option[Double] = None,
-                ntuTSS: Option[Double] = Some(ntuTSSRatio)): Double = {
+                ntuTSS: Option[Double] = Some(ntuTSSRatio)): Option[Double] = {
     require(NTU.getOrElse(0.0) >= 0 &&
       TSS.getOrElse(0.0) >= 0 &&
       ntuTSS.getOrElse(0.0) >= 0)
-    val r = solveM(List(NTU), List(TSS, ntuTSS), 'multiple).getOrElse(0.0)
+    val r = solveM(List(NTU), List(TSS, ntuTSS), 'multiple)
     r
   }
 

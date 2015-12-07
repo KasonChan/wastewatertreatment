@@ -40,23 +40,23 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe tss
 
-    val vsse = calVSSTSS(TSS = Some(tsse))
+    val vsse = calVSSTSS(TSS = Some(tsse)).getOrElse(0.0)
     toXDecimals(vsse) shouldBe vss
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe bod5
 
-    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e)).getOrElse(0.0)
     toXDecimals(cBOD5e) shouldBe cBOD5
 
-    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e)).getOrElse(0.0)
     toXDecimals(bCODe) shouldBe bCOD
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
+    val bCODpe = calbCODpVSS(VSS = Some(vsse)).getOrElse(0.0)
     toXDecimals(bCODpe) shouldBe bCODp
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe)).getOrElse(0.0)
     toXDecimals(bCODse) shouldBe bCODs
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
@@ -67,7 +67,7 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tpe) shouldBe tp
 
-    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
+    val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse)).getOrElse(0.0)
     toXDecimals(pe) shouldBe p
 
     val felcalColiforme = calMX(List(MX(Some(q), Some(fecalColiform), Some(bacterialRemovalRate))),
@@ -78,7 +78,7 @@ class UVDisinfectionBasinsSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(enterococcie) shouldBe 0.00
 
-    val ntue = calNTUTSS(TSS = Some(tsse))
+    val ntue = calNTUTSS(TSS = Some(tsse)).getOrElse(0.0)
     toXDecimals(ntue) shouldBe 0.47
   }
 

@@ -31,23 +31,23 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 201.55
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 161.24
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 161.24
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 232.42
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 211.29
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 211.29
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 371.87
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 371.87
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 183.17
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 183.17
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 188.70
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 188.70
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -58,7 +58,7 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 5.59
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 250118150.48
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 250118150.48
   }
 
   "Train 1" should "pass" in {
@@ -82,23 +82,23 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 147.13
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 117.71
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 117.71
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 169.67
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 154.24
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 154.24
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 271.47
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 271.47
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 133.71
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 133.71
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 137.75
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 137.75
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -109,7 +109,7 @@ class ScreensSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 5.59
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 182586249.85
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 182586249.85
   }
 
   "Default removals" should "pass" in {

@@ -44,23 +44,23 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 122.99
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 98.39
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 98.39
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), None)),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 141.82
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 128.93
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 128.93
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 226.91
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 226.91
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 111.77
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 111.77
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 115.14
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 115.14
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -71,7 +71,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 4.67
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 82165190.13
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 82165190.13
   }
 
   "Train 1" should "pass" in {
@@ -95,23 +95,23 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 45.51
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 36.41
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 36.41
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 92.18
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 83.8
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 83.8
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 147.49
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 147.49
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 41.36
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 41.36
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 106.14
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 106.14
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -122,7 +122,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 4.67
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 30401120.35
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 30401120.35
   }
 
   "Train S" should "pass" in {
@@ -142,7 +142,7 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val cBOD5 = 75
     val bCOD = calbCODBOD5(BOD5 = Some(bod5), codBOD = Some(codBODRatio))
     val bCODp = calbCODpVSS(VSS = Some(vss), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
-    val bCODs = calbCODsbCODpbCOD(bCOD = Some(bCOD), bCODp = Some(bCODp))
+    val bCODs = calbCODsbCODpbCOD(bCOD = bCOD, bCODp = bCODp)
     val p = calPQTSS(Q = Some(q), TSS = Some(tss))
 
     // Line 1
@@ -159,65 +159,65 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     toXDecimals(bod5) shouldBe 234.00
 
     val bCODo = bCOD
-    toXDecimals(bCODo) shouldBe 374.40
+    toXDecimals(bCODo.getOrElse(0.0)) shouldBe 374.40
 
     val bCODpo = bCODp
-    toXDecimals(bCODpo) shouldBe 202.66
+    toXDecimals(bCODpo.getOrElse(0.0)) shouldBe 202.66
 
     val bCODso = bCODs
-    toXDecimals(bCODso) shouldBe 171.74
+    toXDecimals(bCODso.getOrElse(0.0)) shouldBe 171.74
 
     val tno = tn
     toXDecimals(tno) shouldBe 40.00
 
     val po = p
-    toXDecimals(po) shouldBe 140127937.20
+    toXDecimals(po.getOrElse(0.0)) shouldBe 140127937.20
 
     val qe = qo
     toXDecimals(qe) shouldBe 628376.40
 
     // Line 2
-    val pe2 = calXPercentage(po, 43)
-    toXDecimals(pe2) shouldBe 60255013.00
+    val pe2 = calXPercentage(po, Some(43.0))
+    toXDecimals(pe2.getOrElse(0.0)) shouldBe 60255013.00
 
     // Line 3
-    val pe3 = solveM(List(Some(po)),
-      List(Some(pe2), None), 'add).getOrElse(0.00)
+    val pe3 = solveM(List(po),
+      List(pe2, None), 'add).getOrElse(0.00)
     toXDecimals(pe3) shouldBe 79872924.20
 
     val qe3 = calPQTSS(P = Some(pe3), TSS = Some(tss3))
-    toXDecimals(qe3) shouldBe 1996.82
+    toXDecimals(qe3.getOrElse(0.0)) shouldBe 1996.82
 
     val tsse3 = tss3
     toXDecimals(tsse3) shouldBe 40000
 
     val vsse3 = calVSSTSS(TSS = Some(tsse3), vssTSS = Some(vssTSSRatio))
-    toXDecimals(vsse3) shouldBe 32000.00
+    toXDecimals(vsse3.getOrElse(0.0)) shouldBe 32000.00
 
     val bod5e3 = calMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e3) shouldBe 234.00
 
-    val bCODpe3 = calbCODpVSS(VSS = Some(vsse3), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
-    toXDecimals(bCODpe3) shouldBe 36352.00
+    val bCODpe3 = calbCODpVSS(VSS = vsse3, codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
+    toXDecimals(bCODpe3.getOrElse(0.0)) shouldBe 36352.00
 
     // Line 2
     val qe2 = solveM(List(Some(qo)),
-      List(None, Some(qe3)), 'add).getOrElse(0.00)
+      List(None, qe3), 'add).getOrElse(0.00)
     toXDecimals(qe2) shouldBe 626379.58
 
-    val tsse2 = calPQTSS(P = Some(pe2), Q = Some(qe2))
-    toXDecimals(tsse2) shouldBe 96.20
+    val tsse2 = calPQTSS(P = pe2, Q = Some(qe2))
+    toXDecimals(tsse2.getOrElse(0.0)) shouldBe 96.20
 
-    val vsse2 = calVSSTSS(TSS = Some(tsse2), vssTSS = Some(vssTSSRatio))
-    toXDecimals(vsse2) shouldBe 76.96
+    val vsse2 = calVSSTSS(TSS = tsse2, vssTSS = Some(vssTSSRatio))
+    toXDecimals(vsse2.getOrElse(0.0)) shouldBe 76.96
 
     val bod5e2 = calMX(List(MX(Some(qo), Some(bod5o))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e2) shouldBe 234.00
 
-    val bCODpe2 = calbCODpVSS(VSS = Some(vsse2), codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
-    toXDecimals(bCODpe2) shouldBe 87.42
+    val bCODpe2 = calbCODpVSS(VSS = vsse2, codVSS = Some(codVSSRatio), bvssVSS = Some(vssTSSRatio))
+    toXDecimals(bCODpe2.getOrElse(0.0)) shouldBe 87.42
   }
 
   "Default removals" should "pass" in {

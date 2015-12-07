@@ -62,23 +62,23 @@ class FiltersSuite extends FlatSpec with Matchers {
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(tsse) shouldBe 0.15
 
-    val vsse = calVSSTSS(TSS = Some(tsse))
+    val vsse = calVSSTSS(TSS = Some(tsse)).getOrElse(0.0)
     toXDecimals(vsse) shouldBe 0.12
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 0.27
 
-    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
+    val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e)).getOrElse(0.0)
     toXDecimals(cBOD5e) shouldBe 0.24
 
-    val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
+    val bCODe = calbCODBOD5(BOD5 = Some(bod5e)).getOrElse(0.0)
     toXDecimals(bCODe) shouldBe 0.43
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
+    val bCODpe = calbCODpVSS(VSS = Some(vsse)).getOrElse(0.0)
     toXDecimals(bCODpe) shouldBe 0.13
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
+    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe)).getOrElse(0.0)
     toXDecimals(bCODse) shouldBe 0.29
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n), Some(nh3nRemoval))),

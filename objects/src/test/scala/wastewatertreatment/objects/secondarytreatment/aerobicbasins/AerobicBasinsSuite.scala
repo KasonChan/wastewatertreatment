@@ -37,23 +37,23 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     toXDecimals(tsse) shouldBe 3.60
 
     val vsse = calVSSTSS(TSS = Some(tsse))
-    toXDecimals(vsse) shouldBe 2.88
+    toXDecimals(vsse.getOrElse(0.0)) shouldBe 2.88
 
     val bod5e = calMX(List(MX(Some(q), Some(bod5), Some(bod5Removal))),
       List(MX(Some(qe), None))).getOrElse(0.00)
     toXDecimals(bod5e) shouldBe 3.56
 
     val cBOD5e = calcBOD5BOD5(BOD5 = Some(bod5e))
-    toXDecimals(cBOD5e) shouldBe 3.24
+    toXDecimals(cBOD5e.getOrElse(0.0)) shouldBe 3.24
 
     val bCODe = calbCODBOD5(BOD5 = Some(bod5e))
-    toXDecimals(bCODe) shouldBe 5.70
+    toXDecimals(bCODe.getOrElse(0.0)) shouldBe 5.70
 
-    val bCODpe = calbCODpVSS(VSS = Some(vsse))
-    toXDecimals(bCODpe) shouldBe 3.27
+    val bCODpe = calbCODpVSS(VSS = vsse)
+    toXDecimals(bCODpe.getOrElse(0.0)) shouldBe 3.27
 
-    val bCODse = calbCODsbCODpbCOD(bCOD = Some(bCODe), bCODp = Some(bCODpe))
-    toXDecimals(bCODse) shouldBe 2.42
+    val bCODse = calbCODsbCODpbCOD(bCOD = bCODe, bCODp = bCODpe)
+    toXDecimals(bCODse.getOrElse(0.0)) shouldBe 2.42
 
     val nh3ne = calMX(List(MX(Some(q), Some(nh3n))),
       List(MX(Some(qe), None))).getOrElse(0.00)
@@ -64,7 +64,7 @@ class AerobicBasinsSuite extends FlatSpec with Matchers {
     toXDecimals(tpe) shouldBe 4.65
 
     val pe = calPQTSS(Q = Some(qe), TSS = Some(tsse))
-    toXDecimals(pe) shouldBe 2056570.7
+    toXDecimals(pe.getOrElse(0.0)) shouldBe 2056570.7
 
 
     val xA = calXaHeterotrophs(q, BOD5o = bod5, BOD5e = bod5e, ThetaC = thetaC)
