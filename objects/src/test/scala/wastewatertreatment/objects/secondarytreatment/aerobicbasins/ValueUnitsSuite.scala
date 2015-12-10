@@ -2,7 +2,7 @@ package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
 import org.scalatest.{FlatSpec, Matchers}
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.ValueUnits._
-import wastewatertreatment.valueunit.ValueUnit
+import wastewatertreatment.core.valueunit.ValueUnit
 
 /**
  * Created by ka-son on 11/22/15.

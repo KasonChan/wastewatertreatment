@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.screens
 
-import wastewatertreatment.{fluent, ratios, removals}
+import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 10/25/15.

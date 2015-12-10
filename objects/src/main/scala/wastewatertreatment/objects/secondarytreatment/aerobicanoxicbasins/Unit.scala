@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
-import wastewatertreatment.{fluent, ratios, removals}
+import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 10/31/15.

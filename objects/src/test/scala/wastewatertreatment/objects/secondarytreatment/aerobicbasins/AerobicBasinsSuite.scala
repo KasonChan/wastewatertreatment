@@ -2,7 +2,7 @@ package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
 import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math._
+import wastewatertreatment.core.math.Math._
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.AerobicBasins._
 
 

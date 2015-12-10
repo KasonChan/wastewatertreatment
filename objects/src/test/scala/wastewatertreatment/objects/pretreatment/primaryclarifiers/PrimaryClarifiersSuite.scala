@@ -3,7 +3,7 @@ package wastewatertreatment.objects.pretreatment.primaryclarifiers
 import equations.massbalance.MassBalance.MX
 import equations.monooperation.MonoOperation.solveM
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math._
+import wastewatertreatment.core.math.Math._
 import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers._
 
 /**

@@ -1,9 +1,9 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.core.valueunit.ValueUnit
+import wastewatertreatment.core.{fluent, ratios}
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.ValueUnits._
-import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{fluent, ratios}
 
 /**
  * Created by kasonchan on 11/17/15.

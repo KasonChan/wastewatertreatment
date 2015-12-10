@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.influent
 
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math._
+import wastewatertreatment.core.math.Math._
 import wastewatertreatment.objects.influent.Influent._
 
 /**

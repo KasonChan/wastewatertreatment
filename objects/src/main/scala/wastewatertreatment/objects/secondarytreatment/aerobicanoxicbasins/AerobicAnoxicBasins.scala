@@ -1,10 +1,10 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
-import wastewatertreatment.calculations.Calculations
-import wastewatertreatment.fluent.Fluent
-import wastewatertreatment.math.Math.toXDecimals
-import wastewatertreatment.ratios.Ratios
-import wastewatertreatment.removals.Removals
+import wastewatertreatment.core.calculations.Calculations
+import wastewatertreatment.core.fluent.Fluent
+import wastewatertreatment.core.math.Math.toXDecimals
+import wastewatertreatment.core.ratios.Ratios
+import wastewatertreatment.core.removals.Removals
 
 /**
  * Created by ka-son on 10/31/15.

@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
+import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ChlorineContactBasins.bacterialRemovalRate
-import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/10/15.

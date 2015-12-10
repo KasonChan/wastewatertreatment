@@ -2,7 +2,7 @@ package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactba
 
 import equations.massbalance.MassBalance.{MX, solveMX}
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math._
+import wastewatertreatment.core.math.Math._
 import wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ChlorineContactBasins._
 
 /**

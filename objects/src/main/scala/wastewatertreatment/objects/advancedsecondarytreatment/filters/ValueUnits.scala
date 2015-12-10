@@ -1,9 +1,9 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
+import wastewatertreatment.core.valueunit.ValueUnit
+import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Unit._
-import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 11/7/15.

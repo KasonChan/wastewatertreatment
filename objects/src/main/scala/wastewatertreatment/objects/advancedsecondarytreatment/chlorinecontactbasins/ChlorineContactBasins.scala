@@ -1,9 +1,9 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins
 
-import wastewatertreatment.calculations.Calculations
-import wastewatertreatment.fluent.Fluent
-import wastewatertreatment.ratios.Ratios
-import wastewatertreatment.removals.Removals
+import wastewatertreatment.core.calculations.Calculations
+import wastewatertreatment.core.fluent.Fluent
+import wastewatertreatment.core.ratios.Ratios
+import wastewatertreatment.core.removals.Removals
 
 /**
  * Created by kasonchan on 11/10/15.

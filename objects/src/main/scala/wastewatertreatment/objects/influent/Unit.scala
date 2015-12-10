@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.influent
 
-import wastewatertreatment.{fluent, ratios, removals}
+import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/6/15.

@@ -1,7 +1,7 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
+import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers.{bod5Removal, tssRemoval}
-import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/9/15.

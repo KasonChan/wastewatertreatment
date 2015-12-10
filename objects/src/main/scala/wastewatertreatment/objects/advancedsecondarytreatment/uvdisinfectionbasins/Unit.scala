@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
-import wastewatertreatment.{fluent, ratios, removals}
+import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/17/15.

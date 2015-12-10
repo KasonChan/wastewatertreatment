@@ -2,7 +2,7 @@ package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbas
 
 import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.math.Math._
+import wastewatertreatment.core.math.Math._
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins._
 
 /**

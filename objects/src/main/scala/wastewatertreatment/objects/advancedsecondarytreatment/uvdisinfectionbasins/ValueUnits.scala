@@ -1,13 +1,12 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins
 
+import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins.bacterialRemovalRate
-import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by kasonchan on 11/17/15.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
-
   /**
    * A case class to represent the default UV disinfection basins.
    * tss the value of TSS removal. Default value and units are 0.00%.

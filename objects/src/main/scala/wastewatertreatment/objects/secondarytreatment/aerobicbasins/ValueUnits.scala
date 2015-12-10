@@ -1,9 +1,9 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
+import wastewatertreatment.core.valueunit.ValueUnit
+import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.AerobicBasins._
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.Unit._
-import wastewatertreatment.valueunit.ValueUnit
-import wastewatertreatment.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 11/22/15.

@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.advancedsecondarytreatment.filters
 
-import wastewatertreatment.{fluent, ratios, removals}
+import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
  * Created by ka-son on 11/7/15.
