@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 
-import wastewatertreatment.core.Core
+import wastewatertreatment.calculations.Calculations
 import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
@@ -8,7 +8,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by ka-son on 11/22/15.
  */
-object AerobicBasins extends Core with Fluent with Ratios with Removals {
+object AerobicBasins extends Calculations with Fluent with Ratios with Removals {
 
   /**
    * TSS removal = 95.00%.

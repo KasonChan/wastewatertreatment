@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.screens
 
-import wastewatertreatment.core.Core
+import wastewatertreatment.calculations.Calculations
 import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
@@ -8,7 +8,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by ka-son on 10/24/15.
  */
-object Screens extends Core with Fluent with Ratios with Removals {
+object Screens extends Calculations with Fluent with Ratios with Removals {
 
   /**
    * TSS removal = 27.00%.

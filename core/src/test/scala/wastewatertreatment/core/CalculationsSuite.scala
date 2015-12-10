@@ -2,12 +2,13 @@ package wastewatertreatment.core
 
 import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
+import wastewatertreatment.calculations.Calculations
 import wastewatertreatment.math.Math.toXDecimals
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-class CoreSuite extends FlatSpec with Matchers with Core {
+class CalculationsSuite extends FlatSpec with Matchers with Calculations {
 
   "solveMX(inputs, outputs) 1" should "= 223.00" in {
     val inputs = List(MX(Some(1393027.2), Some(223), None))

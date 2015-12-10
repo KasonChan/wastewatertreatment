@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 
-import wastewatertreatment.core.Core
+import wastewatertreatment.calculations.Calculations
 import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.math.Math.toXDecimals
 import wastewatertreatment.ratios.Ratios
@@ -9,7 +9,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by ka-son on 10/31/15.
  */
-object AerobicAnoxicBasins extends Core with Fluent with Ratios with Removals {
+object AerobicAnoxicBasins extends Calculations with Fluent with Ratios with Removals {
 
   /**
    * Returns theta.

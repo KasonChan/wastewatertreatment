@@ -1,4 +1,4 @@
-package wastewatertreatment.core
+package wastewatertreatment.calculations
 
 import equations.massbalance.MassBalance.{MX, solveMX}
 import equations.monooperation.MonoOperation.solveM
@@ -9,7 +9,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by kasonchan on 11/15/15.
  */
-trait Core extends Fluent with Ratios with Removals {
+trait Calculations extends Fluent with Ratios with Removals {
 
   /**
    * Returns the value of effluent constituent.

@@ -1,6 +1,6 @@
 package wastewatertreatment.objects.pretreatment.primaryclarifiers
 
-import wastewatertreatment.core.Core
+import wastewatertreatment.calculations.Calculations
 import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
 import wastewatertreatment.removals.Removals
@@ -8,7 +8,7 @@ import wastewatertreatment.removals.Removals
 /**
  * Created by kasonchan on 11/9/15.
  */
-object PrimaryClarifiers extends Core with Fluent with Ratios with Removals {
+object PrimaryClarifiers extends Calculations with Fluent with Ratios with Removals {
 
   /**
    * TSS removal = 63.00%.
