@@ -208,4 +208,57 @@ class CoreSuite extends FlatSpec with Matchers with Core {
     calNTUTSS(TSS = tss).getOrElse(0.0) shouldBe 0.47
   }
 
+  "cal" should "pass" in {
+    val influent = List(Fluent(
+      flow = Some(1393027.2),
+      tss = Some(223),
+      cBOD5 = Some(234),
+      nh3n = Some(33),
+      tp = Some(6),
+      fecalColiform = Some(10000.0),
+      enterococci = Some(10.0)))
+    val effluent = List(Fluent())
+    val ratios = Ratios()
+    val removals = Removals(tss = Some(63),
+      bod5 = Some(35),
+      nh3n = Some(21),
+      tp = Some(50),
+      fecalColiform = Some(99.99),
+      enterococci = Some(99.99))
+
+    val pc = cal(influent, effluent, ratios, removals)
+    val i = pc._1.headOption.getOrElse(Fluent())
+    val e = pc._2.headOption.getOrElse(Fluent())
+
+    i shouldBe Fluent(Some(1393027.2),
+      Some(223.0),
+      Some(178.4),
+      Some(257.40000000000003),
+      Some(234.0),
+      Some(411.8400000000001),
+      Some(209.17760000000007),
+      Some(202.66240000000002),
+      Some(33.0),
+      Some(6.0),
+      Some(310645065.59999996),
+      Some(10000.0),
+      Some(10.0),
+      Some(111.5))
+
+    e shouldBe Fluent(Some(1393027.2),
+      Some(82.50999999999999),
+      Some(66.008),
+      Some(167.31000000000003),
+      Some(152.10000000000002),
+      Some(267.6960000000001),
+      Some(192.71091200000006),
+      Some(74.985088),
+      Some(26.070000000000004),
+      Some(3.0),
+      Some(114938674.27199998),
+      Some(1.0000000000005116),
+      Some(0.0010000000000005118),
+      Some(41.254999999999995))
+  }
+
 }
