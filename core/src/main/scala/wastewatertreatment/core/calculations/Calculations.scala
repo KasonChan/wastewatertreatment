@@ -7,7 +7,7 @@ import wastewatertreatment.core.ratios.Ratios
 import wastewatertreatment.core.removals.Removals
 
 /**
- * Created by kasonchan on 11/15/15.
+ * A trait contains all the calculation functions.
  */
 trait Calculations extends Fluent with Ratios with Removals {
 
@@ -179,6 +179,13 @@ trait Calculations extends Fluent with Ratios with Removals {
     r
   }
 
+  /**
+   * Returns a list of influents and effluents.
+   * @param influents the list of influents.
+   * @param effluents the list of effluents.
+   * @param ratios the default ratios.
+   * @param removals the default removals
+   */
   def cal(influents: List[Fluent],
           effluents: List[Fluent],
           ratios: Ratios,

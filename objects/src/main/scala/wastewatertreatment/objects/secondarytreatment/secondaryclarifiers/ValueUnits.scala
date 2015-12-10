@@ -4,9 +4,10 @@ import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.SecondaryClarifiers._
 
 /**
- * Created by kasonchan on 11/9/15.
+ * An object to represents secondary clarifiers values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+
   /**
    * A case class to represent the default secondary clarifiers.
    * tss the value of TSS removal. Default value and units are 45.00%.

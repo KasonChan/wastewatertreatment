@@ -1,7 +1,7 @@
 package wastewatertreatment.core.valueunit
 
 /**
- * Created by ka-son on 10/31/15.
+ * A trait contains all default units.
  */
 trait Unit {
 

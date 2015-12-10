@@ -7,7 +7,7 @@ import wastewatertreatment.core.ratios.Ratios
 import wastewatertreatment.core.removals.Removals
 
 /**
- * Created by ka-son on 10/31/15.
+ * An object to represents aerobic anoxic basins.
  */
 object AerobicAnoxicBasins extends Calculations with Fluent with Ratios with Removals {
 

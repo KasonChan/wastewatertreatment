@@ -3,6 +3,6 @@ package wastewatertreatment.objects.secondarytreatment.secondaryclarifiers
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by kasonchan on 11/9/15.
+ * An object to represents secondary clarifiers units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units

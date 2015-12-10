@@ -3,6 +3,6 @@ package wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactba
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by kasonchan on 11/10/15.
+ * An object to represents chlorine contact basins units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units

@@ -3,7 +3,7 @@ package wastewatertreatment.core.removals
 import wastewatertreatment.core.valueunit.ValueUnit
 
 /**
- * Created by kasonchan on 12/2/15.
+ * A trait contains all default removal values and units.
  */
 trait ValueUnits extends Units {
 

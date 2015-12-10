@@ -3,7 +3,7 @@ package wastewatertreatment.objects.advancedsecondarytreatment.filters
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by ka-son on 11/7/15.
+ * An object to represents filters units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units {
 

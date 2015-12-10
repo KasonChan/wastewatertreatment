@@ -3,7 +3,7 @@ package wastewatertreatment.core.ratios
 import wastewatertreatment.core.valueunit.Unit
 
 /**
- * Created by kasonchan on 12/3/15.
+ * A trait contains all default ratio units.
  */
 trait Units extends Unit {
 

@@ -1,5 +1,8 @@
 package wastewatertreatment.core.ratios
 
+/**
+ * A trait to represents all the default ratios.
+ */
 trait Ratios {
 
   /**

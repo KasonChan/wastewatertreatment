@@ -6,7 +6,7 @@ import wastewatertreatment.objects.advancedsecondarytreatment.filters.Filters._
 import wastewatertreatment.objects.advancedsecondarytreatment.filters.Unit._
 
 /**
- * Created by ka-son on 11/7/15.
+ * An object to represents filters values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 

@@ -1,5 +1,8 @@
 package wastewatertreatment.core.fluent
 
+/**
+ * A trait to represents the default fluent.
+ */
 trait Fluent {
 
   /**

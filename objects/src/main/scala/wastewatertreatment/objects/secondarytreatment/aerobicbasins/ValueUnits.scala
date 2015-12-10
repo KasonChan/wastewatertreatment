@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerobicbasins.AerobicBasin
 import wastewatertreatment.objects.secondarytreatment.aerobicbasins.Unit._
 
 /**
- * Created by ka-son on 11/22/15.
+ * An object to represents aerobic basins values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 

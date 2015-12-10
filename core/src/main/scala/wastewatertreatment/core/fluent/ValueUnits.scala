@@ -3,7 +3,7 @@ package wastewatertreatment.core.fluent
 import wastewatertreatment.core.valueunit.ValueUnit
 
 /**
- * Created by kasonchan on 12/3/15.
+ * A trait contains all default fluent values and units.
  */
 trait ValueUnits extends Units {
 

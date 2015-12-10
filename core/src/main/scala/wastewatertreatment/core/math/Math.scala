@@ -1,7 +1,8 @@
 package wastewatertreatment.core.math
 
 /**
- * Created by kasonchan on 10/26/15.
+ * An object contains basic math calculation such as unit conversions and
+ * round-up functions.
  */
 object Math {
 

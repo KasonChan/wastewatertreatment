@@ -6,7 +6,7 @@ import wastewatertreatment.core.ratios.Ratios
 import wastewatertreatment.core.removals.Removals
 
 /**
- * Created by ka-son on 10/24/15.
+ * An object to represents screens.
  */
 object Screens extends Calculations with Fluent with Ratios with Removals {
 

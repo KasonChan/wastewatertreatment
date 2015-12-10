@@ -4,9 +4,10 @@ import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.pretreatment.screens.Screens.{bod5Removal, tssRemoval}
 
 /**
- * Created by kasonchan on 10/26/15.
+ * An object to represents screens values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
+
   /**
    * A case class to represent the default screens.
    * tss the value of TSS removal. Default value and units are 27.00%.

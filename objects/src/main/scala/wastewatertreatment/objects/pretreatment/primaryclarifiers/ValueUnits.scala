@@ -4,7 +4,7 @@ import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.pretreatment.primaryclarifiers.PrimaryClarifiers.{bod5Removal, tssRemoval}
 
 /**
- * Created by kasonchan on 11/9/15.
+ * An object to represents primary clarifiers values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 

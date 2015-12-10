@@ -3,7 +3,7 @@ package wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by ka-son on 10/31/15.
+ * An object to represents aerobic anoxic basins units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units {
 

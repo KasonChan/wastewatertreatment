@@ -6,7 +6,7 @@ import wastewatertreatment.core.ratios.Ratios
 import wastewatertreatment.core.removals.Removals
 
 /**
- * Created by kasonchan on 11/10/15.
+ * An object to represents chlorine contact basins.
  */
 object ChlorineContactBasins extends Calculations with Fluent with Ratios with Removals {
 

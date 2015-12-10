@@ -3,6 +3,6 @@ package wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbas
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by kasonchan on 11/17/15.
+ * An object to represents uv disinfection basins units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units

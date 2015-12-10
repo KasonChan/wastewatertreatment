@@ -6,7 +6,7 @@ import wastewatertreatment.core.ratios.Ratios
 import wastewatertreatment.core.removals.Removals
 
 /**
- * Created by kasonchan on 11/17/15.
+ * An object to represents uv disinfection basins.
  */
 object UVDisinfectionBasins extends Calculations with Fluent with Ratios with Removals {
 

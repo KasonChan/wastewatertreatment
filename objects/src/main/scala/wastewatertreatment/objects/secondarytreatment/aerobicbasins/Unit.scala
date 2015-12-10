@@ -3,7 +3,7 @@ package wastewatertreatment.objects.secondarytreatment.aerobicbasins
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by ka-son on 11/22/15.
+ * An object to represents aerobic basins units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units {
 

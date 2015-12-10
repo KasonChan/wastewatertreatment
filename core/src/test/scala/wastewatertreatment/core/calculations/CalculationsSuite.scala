@@ -2,7 +2,6 @@ package wastewatertreatment.core.calculations
 
 import equations.massbalance.MassBalance.MX
 import org.scalatest.{FlatSpec, Matchers}
-import wastewatertreatment.core.calculations.Calculations
 import wastewatertreatment.core.math.Math.toXDecimals
 
 /**

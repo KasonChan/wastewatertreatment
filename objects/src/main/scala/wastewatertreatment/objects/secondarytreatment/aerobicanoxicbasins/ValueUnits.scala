@@ -6,7 +6,7 @@ import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Aerobi
 import wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.Unit._
 
 /**
- * Created by ka-son on 10/31/15.
+ * An object to represents aerobic anoxic basins values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
 

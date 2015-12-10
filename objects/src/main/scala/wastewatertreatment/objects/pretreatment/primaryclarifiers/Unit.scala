@@ -3,6 +3,6 @@ package wastewatertreatment.objects.pretreatment.primaryclarifiers
 import wastewatertreatment.core.{fluent, ratios, removals}
 
 /**
- * Created by kasonchan on 11/9/15.
+ * An object to represents primary clarifiers units.
  */
 object Unit extends fluent.Units with ratios.Units with removals.Units

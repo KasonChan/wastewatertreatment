@@ -4,7 +4,7 @@ import wastewatertreatment.core.{fluent, ratios, removals}
 import wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.UVDisinfectionBasins.bacterialRemovalRate
 
 /**
- * Created by kasonchan on 11/17/15.
+ * An object to represents uv disinfection basins values and units.
  */
 object ValueUnits extends fluent.ValueUnits with ratios.ValueUnits with removals.ValueUnits {
   /**
