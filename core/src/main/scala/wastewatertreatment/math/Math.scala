@@ -14,6 +14,17 @@ object Math {
   }
 
   /**
+   * Returns the option of decimal number in X decimal places.
+   * @param d the option of decimal number.
+   */
+  def toXODecimals(d: Option[Double], x: Int = 2): Option[Double] = {
+    d match {
+      case Some(s) => Some(BigDecimal(s).setScale(x, BigDecimal.RoundingMode.HALF_UP).toDouble)
+      case None => None
+    }
+  }
+
+  /**
    * Returns the value of flow measurement in m^3^/d.
    * {{{
    *   d * 3785.41

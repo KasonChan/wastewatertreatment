@@ -2,12 +2,14 @@ package wastewatertreatment.core
 
 import equations.massbalance.MassBalance.{MX, solveMX}
 import equations.monooperation.MonoOperation.solveM
+import wastewatertreatment.fluent.Fluent
 import wastewatertreatment.ratios.Ratios
+import wastewatertreatment.removals.Removals
 
 /**
  * Created by kasonchan on 11/15/15.
  */
-trait Core extends Ratios {
+trait Core extends Fluent with Ratios with Removals {
 
   /**
    * Returns the value of effluent constituent.
@@ -175,6 +177,107 @@ trait Core extends Ratios {
       ntuTSS.getOrElse(0.0) >= 0)
     val r = solveM(List(NTU), List(TSS, ntuTSS), 'multiple)
     r
+  }
+
+  def cal(influents: List[Fluent],
+          effluents: List[Fluent],
+          ratios: Ratios,
+          removals: Removals): (List[Fluent], List[Fluent]) = {
+    effluents.length match {
+      case 1 =>
+        val influent = influents(0)
+
+        val qo = influent.flow
+        val tsso = influent.tss
+        val vsso = influent.vss match {
+          case None => calVSSTSS(TSS = tsso, vssTSS = ratios.vssTSS)
+          case s@Some(x) => s
+        }
+        val bod5o = influent.bod5 match {
+          case None => calcBOD5BOD5(cBOD5 = influent.cBOD5, bod5cBOD5 = ratios.bod5cBOD5)
+          case s@Some(x) => s
+        }
+        val cBOD5o = influent.cBOD5
+        val bCODo = influent.bCOD match {
+          case None => calbCODBOD5(BOD5 = bod5o, codBOD = ratios.codBOD)
+          case s@Some(x) => s
+        }
+        val bCODpo = influent.bCODp match {
+          case None => calbCODpVSS(VSS = vsso, codVSS = ratios.codVSS, bvssVSS = ratios.bvssVSS)
+          case s@Some(x) => s
+        }
+        val bCODso = influent.bCODs match {
+          case None => calbCODsbCODpbCOD(bCODp = bCODpo, bCOD = bCODo)
+          case s@Some(x) => s
+        }
+        val nh3no = influent.nh3n
+        val tpo = influent.tp
+        val po = influent.p match {
+          case None => calPQTSS(Q = qo, TSS = tsso)
+          case s@Some(x) => s
+        }
+        val fecalColiformo = influent.fecalColiform
+        val enterococcio = influent.enterococci
+        val turbido = influent.turbidity match {
+          case None => calNTUTSS(TSS = tsso, ntuTSS = ratios.ntuTSS)
+          case s@Some(x) => s
+        }
+
+        val i = Fluent(qo,
+          tsso,
+          vsso,
+          bod5o,
+          cBOD5o,
+          bCODo,
+          bCODso,
+          bCODpo,
+          nh3no,
+          tpo,
+          po,
+          fecalColiformo,
+          enterococcio,
+          turbido)
+
+        val qe = qo
+        val tsse = calMX(List(MX(qo, tsso, removals.tss)),
+          List(MX(qe, None)))
+        val vsse = calVSSTSS(TSS = tsse, vssTSS = ratios.vssTSS)
+        val bod5e = calMX(List(MX(qo, bod5o, removals.bod5)),
+          List(MX(qe, None)))
+        val cBOD5e = calcBOD5BOD5(BOD5 = bod5e, bod5cBOD5 = ratios.bod5cBOD5)
+        val bCODe = calbCODBOD5(BOD5 = bod5e, codBOD = ratios.codBOD)
+        val bCODpe = calbCODpVSS(VSS = vsse, codVSS = ratios.codVSS, bvssVSS = ratios.bvssVSS)
+        val bCODse = calbCODsbCODpbCOD(bCODp = bCODpe, bCOD = bCODe)
+        val nh3ne = calMX(List(MX(qo, nh3no, removals.nh3n)),
+          List(MX(qe, None)))
+        val tpe = calMX(List(MX(qo, tpo, removals.tp)),
+          List(MX(qe, None)))
+        val pe = calPQTSS(Q = qe, TSS = tsse)
+        val fecalColiforme = calMX(List(MX(qo, fecalColiformo, removals.fecalColiform)),
+          List(MX(qe, None)))
+        val enterococcie = calMX(List(MX(qo, enterococcio, removals.enterococci)),
+          List(MX(qe, None)))
+        val turbide = calNTUTSS(TSS = tsse, ntuTSS = ratios.ntuTSS)
+
+        val e = Fluent(qe,
+          tsse,
+          vsse,
+          bod5e,
+          cBOD5e,
+          bCODe,
+          bCODse,
+          bCODpe,
+          nh3ne,
+          tpe,
+          pe,
+          fecalColiforme,
+          enterococcie,
+          turbide)
+
+        (List(i), List(e))
+      case _ =>
+        (List(), List())
+    }
   }
 
 }

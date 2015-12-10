@@ -230,4 +230,49 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     defaultRemovals.enterococci shouldBe None
   }
 
+  "Train N1" should "pass" in {
+    val influent = List(Fluent(
+      flow = Some(1393027.2),
+      tss = Some(223),
+      cBOD5 = Some(234),
+      nh3n = Some(33),
+      tp = Some(6),
+      fecalColiform = Some(10000.0),
+      enterococci = Some(10.0)))
+    val effluent = List(Fluent())
+    val ratios = Ratios()
+    val removals = pcDefaultRemovals
+
+    val pc = cal(influent, effluent, ratios, removals)
+    toXODecimals(pc._1(0).flow) shouldBe Some(1393027.20)
+    toXODecimals(pc._1(0).tss) shouldBe Some(223.00)
+    toXODecimals(pc._1(0).vss) shouldBe Some(178.40)
+    toXODecimals(pc._1(0).bod5) shouldBe Some(257.40)
+    toXODecimals(pc._1(0).cBOD5) shouldBe Some(234.00)
+    toXODecimals(pc._1(0).bCOD) shouldBe Some(411.84)
+    toXODecimals(pc._1(0).bCODs) shouldBe Some(209.18)
+    toXODecimals(pc._1(0).bCODp) shouldBe Some(202.66)
+    toXODecimals(pc._1(0).nh3n) shouldBe Some(33.00)
+    toXODecimals(pc._1(0).tp) shouldBe Some(6.00)
+    toXODecimals(pc._1(0).p) shouldBe Some(310645065.6)
+    toXODecimals(pc._1(0).fecalColiform) shouldBe Some(10000.0)
+    toXODecimals(pc._1(0).enterococci) shouldBe Some(10.0)
+    toXODecimals(pc._1(0).turbidity) shouldBe Some(111.50)
+
+    toXODecimals(pc._2(0).flow) shouldBe Some(1393027.20)
+    toXODecimals(pc._2(0).tss) shouldBe Some(82.51)
+    toXODecimals(pc._2(0).vss) shouldBe Some(66.01)
+    toXODecimals(pc._2(0).bod5) shouldBe Some(167.31)
+    toXODecimals(pc._2(0).cBOD5) shouldBe Some(152.1)
+    toXODecimals(pc._2(0).bCOD) shouldBe Some(267.7)
+    toXODecimals(pc._2(0).bCODs) shouldBe Some(192.71)
+    toXODecimals(pc._2(0).bCODp) shouldBe Some(74.99)
+    toXODecimals(pc._2(0).nh3n) shouldBe Some(33.00)
+    toXODecimals(pc._2(0).tp) shouldBe Some(6.00)
+    toXODecimals(pc._2(0).p) shouldBe Some(114938674.27)
+    toXODecimals(pc._2(0).fecalColiform) shouldBe Some(10000.0)
+    toXODecimals(pc._2(0).enterococci) shouldBe Some(10.0)
+    toXODecimals(pc._2(0).turbidity) shouldBe Some(41.25)
+  }
+
 }
