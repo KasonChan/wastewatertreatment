@@ -244,35 +244,38 @@ class PrimaryClarifiersSuite extends FlatSpec with Matchers {
     val removals = pcDefaultRemovals
 
     val pc = cal(influent, effluent, ratios, removals)
-    toXODecimals(pc._1(0).flow) shouldBe Some(1393027.20)
-    toXODecimals(pc._1(0).tss) shouldBe Some(223.00)
-    toXODecimals(pc._1(0).vss) shouldBe Some(178.40)
-    toXODecimals(pc._1(0).bod5) shouldBe Some(257.40)
-    toXODecimals(pc._1(0).cBOD5) shouldBe Some(234.00)
-    toXODecimals(pc._1(0).bCOD) shouldBe Some(411.84)
-    toXODecimals(pc._1(0).bCODs) shouldBe Some(209.18)
-    toXODecimals(pc._1(0).bCODp) shouldBe Some(202.66)
-    toXODecimals(pc._1(0).nh3n) shouldBe Some(33.00)
-    toXODecimals(pc._1(0).tp) shouldBe Some(6.00)
-    toXODecimals(pc._1(0).p) shouldBe Some(310645065.6)
-    toXODecimals(pc._1(0).fecalColiform) shouldBe Some(10000.0)
-    toXODecimals(pc._1(0).enterococci) shouldBe Some(10.0)
-    toXODecimals(pc._1(0).turbidity) shouldBe Some(111.50)
+    val i = pc._1.headOption.getOrElse(Fluent())
+    val e = pc._2.headOption.getOrElse(Fluent())
 
-    toXODecimals(pc._2(0).flow) shouldBe Some(1393027.20)
-    toXODecimals(pc._2(0).tss) shouldBe Some(82.51)
-    toXODecimals(pc._2(0).vss) shouldBe Some(66.01)
-    toXODecimals(pc._2(0).bod5) shouldBe Some(167.31)
-    toXODecimals(pc._2(0).cBOD5) shouldBe Some(152.1)
-    toXODecimals(pc._2(0).bCOD) shouldBe Some(267.7)
-    toXODecimals(pc._2(0).bCODs) shouldBe Some(192.71)
-    toXODecimals(pc._2(0).bCODp) shouldBe Some(74.99)
-    toXODecimals(pc._2(0).nh3n) shouldBe Some(33.00)
-    toXODecimals(pc._2(0).tp) shouldBe Some(6.00)
-    toXODecimals(pc._2(0).p) shouldBe Some(114938674.27)
-    toXODecimals(pc._2(0).fecalColiform) shouldBe Some(10000.0)
-    toXODecimals(pc._2(0).enterococci) shouldBe Some(10.0)
-    toXODecimals(pc._2(0).turbidity) shouldBe Some(41.25)
+    i shouldBe Fluent(Some(1393027.2),
+      Some(223.0),
+      Some(178.4),
+      Some(257.40000000000003),
+      Some(234.0),
+      Some(411.8400000000001),
+      Some(209.17760000000007),
+      Some(202.66240000000002),
+      Some(33.0),
+      Some(6.0),
+      Some(310645065.59999996),
+      Some(10000.0),
+      Some(10.0),
+      Some(111.5))
+
+    e shouldBe Fluent(Some(1393027.2),
+      Some(82.50999999999999),
+      Some(66.008),
+      Some(167.31000000000003),
+      Some(152.10000000000002),
+      Some(267.6960000000001),
+      Some(192.71091200000006),
+      Some(74.985088),
+      Some(33.0),
+      Some(6.0),
+      Some(114938674.27199998),
+      Some(10000.0),
+      Some(10.0),
+      Some(41.254999999999995))
   }
 
 }
