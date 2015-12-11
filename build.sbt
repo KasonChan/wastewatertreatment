@@ -1,4 +1,4 @@
-val name = "wastewatertreatment"
+val name = "yiris"
 
 lazy val buildSettings = Seq(
   organization := "com.kasonchan",
@@ -40,13 +40,13 @@ lazy val publishSettings = Seq(
   },
   publishArtifact in Test := false,
   licenses := Seq("Apache 2.0" -> url("http://www.apache.org/licenses/LICENSE-2.0")),
-  homepage := Some(url("https://github.com/kasonchan/wastewatertreatment")),
+  homepage := Some(url("https://github.com/kasonchan/yiris")),
   autoAPIMappings := true,
-  apiURL := Some(url("https://kasonchan.github.io/wastewatertreatment/docs")),
+  apiURL := Some(url("https://kasonchan.github.io/yiris/docs")),
   scmInfo := Some(
     ScmInfo(
-      url("https://github.com/kasonchan/wastewatertreatment"),
-      "scm:git:git@github.com:kasonchan/wastewatertreatment.git"
+      url("https://github.com/kasonchan/yiris"),
+      "scm:git:git@github.com:kasonchan/yiris.git"
     )
   ),
   pomExtra :=
@@ -69,10 +69,10 @@ lazy val allSettings = baseSettings ++ buildSettings ++ publishSettings
 
 lazy val docSettings = site.settings ++ ghpages.settings ++ unidocSettings ++ Seq(
   site.addMappingsToSiteDir(mappings in(ScalaUnidoc, packageDoc), "docs"),
-  git.remoteRepo := s"git@github.com:kasonchan/wastewatertreatment.git"
+  git.remoteRepo := s"git@github.com:kasonchan/yiris.git"
 )
 
-lazy val wastewatertreatment = project.in(file("."))
+lazy val yiris = project.in(file("."))
   .settings(moduleName := name)
   .settings(allSettings: _*)
   .settings(docSettings: _*)
