@@ -1,0 +1,1246 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>ValueUnits - wastewatertreatment.core.ratios.ValueUnits</title>
+          <meta name="description" content="ValueUnits - wastewatertreatment.core.ratios.ValueUnits" />
+          <meta name="keywords" content="ValueUnits wastewatertreatment.core.ratios.ValueUnits" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../index.html';
+            var hash = 'wastewatertreatment.core.ratios.ValueUnits';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="type">
+      <div id="definition">
+        <img alt="Trait" src="../../../lib/trait_big.png" />
+        <p id="owner"><a href="../../package.html" class="extype" name="wastewatertreatment">wastewatertreatment</a>.<a href="../package.html" class="extype" name="wastewatertreatment.core">core</a>.<a href="package.html" class="extype" name="wastewatertreatment.core.ratios">ratios</a></p>
+        <h1>ValueUnits</h1><h3><span class="morelinks"><div>Related Doc:
+            <a href="package.html" class="extype" name="wastewatertreatment.core.ratios">package ratios</a>
+          </div></span></h3><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ValueUnits</span><span class="result"> extends <a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a> with <a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"><div class="comment cmt"><p>A trait contains all default ratio values and units.
+</p></div><div class="toggleContainer block">
+          <span class="toggle">Linear Supertypes</span>
+          <div class="superTypes hiddenContent"><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a>, <a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a>, <a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">ratios.Ratios</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a>, <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></div>
+        </div><div class="toggleContainer block">
+            <span class="toggle">Known Subclasses</span>
+            <div class="subClasses hiddenContent"><a href="../../objects/secondarytreatment/aerobicanoxicbasins/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.secondarytreatment.aerobicanoxicbasins.ValueUnits">ValueUnits</a>, <a href="../../objects/secondarytreatment/aerobicbasins/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.secondarytreatment.aerobicbasins.ValueUnits">ValueUnits</a>, <a href="../../objects/advancedsecondarytreatment/chlorinecontactbasins/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.advancedsecondarytreatment.chlorinecontactbasins.ValueUnits">ValueUnits</a>, <a href="../../objects/pretreatment/screens/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.pretreatment.screens.ValueUnits">ValueUnits</a>, <a href="../../objects/pretreatment/primaryclarifiers/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.pretreatment.primaryclarifiers.ValueUnits">ValueUnits</a>, <a href="../../objects/advancedsecondarytreatment/uvdisinfectionbasins/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.advancedsecondarytreatment.uvdisinfectionbasins.ValueUnits">ValueUnits</a>, <a href="../../objects/advancedsecondarytreatment/filters/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.advancedsecondarytreatment.filters.ValueUnits">ValueUnits</a>, <a href="../../objects/influent/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.influent.ValueUnits">ValueUnits</a>, <a href="../../objects/secondarytreatment/secondaryclarifiers/ValueUnits$.html" class="extype" name="wastewatertreatment.objects.secondarytreatment.secondaryclarifiers.ValueUnits">ValueUnits</a></div>
+          </div></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        <div id="order">
+              <span class="filtertype">Ordering</span>
+              <ol>
+                
+                <li class="alpha in"><span>Alphabetic</span></li>
+                <li class="inherit out"><span>By inheritance</span></li>
+              </ol>
+            </div>
+        <div id="ancestors">
+                <span class="filtertype">Inherited<br />
+                </span>
+                <ol id="linearization">
+                  <li class="in" name="wastewatertreatment.core.ratios.ValueUnits"><span>ValueUnits</span></li><li class="in" name="wastewatertreatment.core.ratios.Units"><span>Units</span></li><li class="in" name="wastewatertreatment.core.valueunit.Unit"><span>Unit</span></li><li class="in" name="wastewatertreatment.core.ratios.Ratios"><span>Ratios</span></li><li class="in" name="scala.AnyRef"><span>AnyRef</span></li><li class="in" name="scala.Any"><span>Any</span></li>
+                </ol>
+              </div><div id="ancestors">
+            <span class="filtertype"></span>
+            <ol>
+              <li class="hideall out"><span>Hide All</span></li>
+              <li class="showall in"><span>Show all</span></li>
+            </ol>
+          </div>
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="wastewatertreatment.core.ratios.ValueUnits.BOD5CBOD5Ratio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BOD5CBOD5RatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="BOD5CBOD5Ratio:BOD5CBOD5Ratio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$BOD5CBOD5Ratio.html"><span class="name">BOD5CBOD5Ratio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#bod5cBOD5Ratio:Double">Some(bod5cBOD5Ratio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#bod5cBOD5RatioUnits:List[String]">bod5cBOD5RatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@BOD5CBOD5RatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">BOD<sub>5</sub>/cBOD<sub>5</sub>.</p><div class="fullcomment"><div class="comment cmt"><p>BOD<sub>5</sub>/cBOD<sub>5</sub>.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>1.10</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.BVSSVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="BVSSVSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="BVSSVSSRatio:BVSSVSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$BVSSVSSRatio.html"><span class="name">BVSSVSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#bvssVSSRatio:Double">Some(bvssVSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#bvssVSSRatioUnits:List[String]">bvssVSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@BVSSVSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Biodegradable VSS (bVSS/VSS).</p><div class="fullcomment"><div class="comment cmt"><p>Biodegradable VSS (bVSS/VSS).</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>0.80</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.CODBODRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CODBODRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="CODBODRatio:CODBODRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$CODBODRatio.html"><span class="name">CODBODRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#codBODRatio:Double">Some(codBODRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#codBODRatioUnits:List[String]">codBODRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@CODBODRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">COD/BOD.</p><div class="fullcomment"><div class="comment cmt"><p>COD/BOD.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>1.60</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.CODVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="CODVSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="CODVSSRatio:CODVSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$CODVSSRatio.html"><span class="name">CODVSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#codVSSRatio:Double">Some(codVSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#codVSSRatioUnits:List[String]">codVSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@CODVSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">COD/VSS.</p><div class="fullcomment"><div class="comment cmt"><p>COD/VSS.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>1.42</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.MiscellaneousRatios" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MiscellaneousRatiosextendsProductwithSerializable"></a>
+      <a id="MiscellaneousRatios:MiscellaneousRatios"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$MiscellaneousRatios.html"><span class="name">MiscellaneousRatios</span></a><span class="params">(<span name="bod5CBOD5">bod5CBOD5: <a href="ValueUnits$BOD5CBOD5Ratio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.BOD5CBOD5Ratio">BOD5CBOD5Ratio</a> = <span class="symbol">BOD5CBOD5Ratio()</span></span>, <span name="codBOD">codBOD: <a href="ValueUnits$CODBODRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.CODBODRatio">CODBODRatio</a> = <span class="symbol">CODBODRatio()</span></span>, <span name="codVSS">codVSS: <a href="ValueUnits$CODVSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.CODVSSRatio">CODVSSRatio</a> = <span class="symbol">CODVSSRatio()</span></span>, <span name="vssTSS">vssTSS: <a href="ValueUnits$VSSTSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.VSSTSSRatio">VSSTSSRatio</a> = <span class="symbol">VSSTSSRatio()</span></span>, <span name="bvssVSS">bvssVSS: <a href="ValueUnits$BVSSVSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.BVSSVSSRatio">BVSSVSSRatio</a> = <span class="symbol">BVSSVSSRatio()</span></span>, <span name="nbvssVSS">nbvssVSS: <a href="ValueUnits$NBVSSVSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.NBVSSVSSRatio">NBVSSVSSRatio</a> = <span class="symbol">NBVSSVSSRatio()</span></span>, <span name="ntuTSS">ntuTSS: <a href="ValueUnits$NTUTSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.NTUTSSRatio">NTUTSSRatio</a> = <span class="symbol">NTUTSSRatio()</span></span>, <span name="pVSS">pVSS: <a href="ValueUnits$PVSSRatio.html" class="extype" name="wastewatertreatment.core.ratios.ValueUnits.PVSSRatio">PVSSRatio</a> = <span class="symbol">PVSSRatio()</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@MiscellaneousRatiosextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Miscellaneous ratios</p><div class="fullcomment"><div class="comment cmt"><p>Miscellaneous ratios</p></div><dl class="paramcmts block"><dt class="param">bod5CBOD5</dt><dd class="cmt"><p>the value of BOD<sub>5</sub>/cBOD. Default value and units are 1.10.</p></dd><dt class="param">codBOD</dt><dd class="cmt"><p>the value of COD/BOD. Default value and units are 1.60.</p></dd><dt class="param">codVSS</dt><dd class="cmt"><p>the value of COD/VSS. Default value and units are 1.42.</p></dd><dt class="param">vssTSS</dt><dd class="cmt"><p>the value of VSS/TSS. Default value and units are 0.80.</p></dd><dt class="param">bvssVSS</dt><dd class="cmt"><p>the value of bVSS/VSS. Default value and units are 0.80.</p></dd><dt class="param">nbvssVSS</dt><dd class="cmt"><p>the value of nbVSS/VSS. Default value and units are 0.20.</p></dd><dt class="param">ntuTSS</dt><dd class="cmt"><p>the value of NTU/VSS. Default value and units are 0.50.</p></dd><dt class="param">pVSS</dt><dd class="cmt"><p>the value of P/VSS. Default value and units are 0.02.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.NBVSSVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NBVSSVSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="NBVSSVSSRatio:NBVSSVSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$NBVSSVSSRatio.html"><span class="name">NBVSSVSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#nbvssVSSRatio:Double">Some(nbvssVSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#nbvssVSSRatioUnits:List[String]">nbvssVSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@NBVSSVSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Non biodegradable VSS (nbVSS/VSS).</p><div class="fullcomment"><div class="comment cmt"><p>Non biodegradable VSS (nbVSS/VSS).</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>0.20</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.NTUTSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="NTUTSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="NTUTSSRatio:NTUTSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$NTUTSSRatio.html"><span class="name">NTUTSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#ntuTSSRatio:Double">Some(ntuTSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#ntuTSSRatioUnits:List[String]">ntuTSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@NTUTSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">NTU/TSS.</p><div class="fullcomment"><div class="comment cmt"><p>NTU/TSS.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>0.50</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.PVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="PVSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="PVSSRatio:PVSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$PVSSRatio.html"><span class="name">PVSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#pVSSRatio:Double">Some(pVSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#pVSSRatioUnits:List[String]">pVSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@PVSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">P/VSS.</p><div class="fullcomment"><div class="comment cmt"><p>P/VSS.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>0.02</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios.Ratios" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="RatiosextendsProductwithSerializable"></a>
+      <a id="Ratios:Ratios"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="Ratios$Ratios.html"><span class="name">Ratios</span></a><span class="params">(<span name="bod5cBOD5">bod5cBOD5: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#bod5cBOD5Ratio:Double">Some(bod5cBOD5Ratio)</a></span></span></span>, <span name="codBOD">codBOD: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#codBODRatio:Double">Some(codBODRatio)</a></span></span></span>, <span name="codVSS">codVSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#codVSSRatio:Double">Some(codVSSRatio)</a></span></span></span>, <span name="vssTSS">vssTSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#vssTSSRatio:Double">Some(vssTSSRatio)</a></span></span></span>, <span name="bvssVSS">bvssVSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#bvssVSSRatio:Double">Some(bvssVSSRatio)</a></span></span></span>, <span name="nbvssVSS">nbvssVSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#nbvssVSSRatio:Double">Some(nbvssVSSRatio)</a></span></span></span>, <span name="ntuTSS">ntuTSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#ntuTSSRatio:Double">Some(ntuTSSRatio)</a></span></span></span>, <span name="pVSS">pVSS: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#pVSSRatio:Double">Some(pVSSRatio)</a></span></span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.Ratios@RatiosextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">A case class to represents all the default ratios.</p><div class="fullcomment"><div class="comment cmt"><p>A case class to represents all the default ratios.</p></div><dl class="paramcmts block"><dt class="param">bod5cBOD5</dt><dd class="cmt"><p>the value of BOD<sub>5</sub>/cBOD<sub>5</sub>. Default value is 1.10.</p></dd><dt class="param">codBOD</dt><dd class="cmt"><p>the value of COD/BOD. Default value is 1.60.</p></dd><dt class="param">codVSS</dt><dd class="cmt"><p>the value of COD/VSS. Default value is 1.42.</p></dd><dt class="param">vssTSS</dt><dd class="cmt"><p>the value of VSS/TSS. Default value is 0.80.</p></dd><dt class="param">bvssVSS</dt><dd class="cmt"><p>the value of bVSS/VSS. Default value is 0.80.</p></dd><dt class="param">nbvssVSS</dt><dd class="cmt"><p>the value of nbVSS/VSS. Default value is 0.20.</p></dd><dt class="param">ntuTSS</dt><dd class="cmt"><p>the value of NTU/TSS. Default value is 0.50.</p></dd><dt class="param">pVSS</dt><dd class="cmt"><p>the value of P/VSS. Default value is 0.02.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.ValueUnits.VSSTSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="VSSTSSRatioextendsValueUnitwithProductwithSerializable"></a>
+      <a id="VSSTSSRatio:VSSTSSRatio"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="ValueUnits$VSSTSSRatio.html"><span class="name">VSSTSSRatio</span></a><span class="params">(<span name="value">value: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Option" class="extype" target="_top">Option</a>[<a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a>] = <span class="symbol"><span class="name"><a href="Ratios.html#vssTSSRatio:Double">Some(vssTSSRatio)</a></span></span></span>, <span name="unit">unit: <span class="extype" name="scala.Predef.String">String</span> = <span class="defval" name='<span class="name"><a href="Units.html#vssTSSRatioUnits:List[String]">vssTSSRatioUnits.headOption.getOrElse(&quot;&quot;)</a></span>'>...</span></span>)</span><span class="result"> extends <a href="../valueunit/ValueUnit.html" class="extype" name="wastewatertreatment.core.valueunit.ValueUnit">ValueUnit</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@VSSTSSRatioextendsValueUnitwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">VSS/TSS.</p><div class="fullcomment"><div class="comment cmt"><p>VSS/TSS.</p></div><dl class="paramcmts block"><dt class="param">value</dt><dd class="cmt"><p>Default value is <b>0.80</b>.</p></dd><dt class="param">unit</dt><dd class="cmt"><p>Default is <b>No unit</b>.</p></dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="scala.AnyRef#!=" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="!=(x$1:Any):Boolean"></a>
+      <a id="!=(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $bang$eq" class="name">!=</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@!=(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef###" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="##():Int"></a>
+      <a id="##():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $hash$hash" class="name">##</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@##():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#==" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="==(x$1:Any):Boolean"></a>
+      <a id="==(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span title="gt4s: $eq$eq" class="name">==</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@==(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#areaUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="areaUnits:List[String]"></a>
+      <a id="areaUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">areaUnits</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@areaUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of area: <b>m<sup>2</sup></b>, <b>ft<sup>2</sup></b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of area: <b>m<sup>2</sup></b>, <b>ft<sup>2</sup></b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.Any#asInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="asInstanceOf[T0]:T0"></a>
+      <a id="asInstanceOf[T0]:T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">asInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <span class="extype" name="scala.Any.asInstanceOf.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@asInstanceOf[T0]:T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#bod5cBOD5Ratio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bod5cBOD5Ratio:Double"></a>
+      <a id="bod5cBOD5Ratio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bod5cBOD5Ratio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@bod5cBOD5Ratio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">BOD5<sub>c</sub>/cBOD<sub>5</sub> = 1.10.</p><div class="fullcomment"><div class="comment cmt"><p>BOD5<sub>c</sub>/cBOD<sub>5</sub> = 1.10.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#bod5cBOD5RatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bod5cBOD5RatioUnits:List[String]"></a>
+      <a id="bod5cBOD5RatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bod5cBOD5RatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@bod5cBOD5RatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#bvssVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bvssVSSRatio:Double"></a>
+      <a id="bvssVSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bvssVSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@bvssVSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Biodegradable VSS (bVSS/VSS) = 0.80.</p><div class="fullcomment"><div class="comment cmt"><p>Biodegradable VSS (bVSS/VSS) = 0.80.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#bvssVSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="bvssVSSRatioUnits:List[String]"></a>
+      <a id="bvssVSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">bvssVSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@bvssVSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="scala.AnyRef#clone" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="clone():Object"></a>
+      <a id="clone():AnyRef"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">clone</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@clone():Object" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.CloneNotSupportedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#codBODRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="codBODRatio:Double"></a>
+      <a id="codBODRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">codBODRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@codBODRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">COD/BOD = 1.60.</p><div class="fullcomment"><div class="comment cmt"><p>COD/BOD = 1.60.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#codBODRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="codBODRatioUnits:List[String]"></a>
+      <a id="codBODRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">codBODRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@codBODRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#codVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="codVSSRatio:Double"></a>
+      <a id="codVSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">codVSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@codVSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">COD/VSS = 1.42.</p><div class="fullcomment"><div class="comment cmt"><p>COD/VSS = 1.42.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#codVSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="codVSSRatioUnits:List[String]"></a>
+      <a id="codVSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">codVSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@codVSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#colonyFormingUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="colonyFormingUnits:List[String]"></a>
+      <a id="colonyFormingUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">colonyFormingUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@colonyFormingUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of colony-forming
+</p><div class="fullcomment"><div class="comment cmt"><p>The units of colony-forming
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#concentrationUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="concentrationUnits:List[String]"></a>
+      <a id="concentrationUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">concentrationUnits</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@concentrationUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of concentration.</p><div class="fullcomment"><div class="comment cmt"><p>The units of concentration.</p><pre>Mass / Volume</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#dayUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="dayUnits:List[String]"></a>
+      <a id="dayUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">dayUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@dayUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of day: <b>d</b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of day: <b>d</b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.AnyRef#eq" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="eq(x$1:AnyRef):Boolean"></a>
+      <a id="eq(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">eq</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@eq(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#equals" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="equals(x$1:Any):Boolean"></a>
+      <a id="equals(Any):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">equals</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@equals(x$1:Any):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#finalize" visbl="prt" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="finalize():Unit"></a>
+      <a id="finalize():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">finalize</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@finalize():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Attributes</dt><dd>protected[<a href="../../../java$lang.html" class="extype" name="java.lang">java.lang</a>] </dd><dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="symbol">classOf[java.lang.Throwable]</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#flowUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="flowUnits:List[String]"></a>
+      <a id="flowUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">flowUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@flowUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of flow.</p><div class="fullcomment"><div class="comment cmt"><p>The units of flow.</p><pre>Volume / Day</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#generatePRUs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generatePRUs(num:List[String],product:String,denom:List[String]):List[String]"></a>
+      <a id="generatePRUs(List[String],String,List[String]):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generatePRUs</span><span class="params">(<span name="num">num: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="product">product: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="denom">denom: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@generatePRUs(num:List[String],product:String,denom:List[String]):List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a list of production rate units.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a list of production rate units.</p></div><dl class="paramcmts block"><dt class="param">num</dt><dd class="cmt"><p>the list of units at the numerator.</p></dd><dt class="param">product</dt><dd class="cmt"><p>the name of product.</p></dd><dt class="param">denom</dt><dd class="cmt"><p>the list of units at the denominator.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#generatePUs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generatePUs(units:List[String],power:Int):List[String]"></a>
+      <a id="generatePUs(List[String],Int):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generatePUs</span><span class="params">(<span name="units">units: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="power">power: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@generatePUs(units:List[String],power:Int):List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a list of units to the power added.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a list of units to the power added.</p></div><dl class="paramcmts block"><dt class="param">units</dt><dd class="cmt"><p>the list of units.</p></dd><dt class="param">power</dt><dd class="cmt"><p>the power of the new units.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#generateRUs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generateRUs(unit:List[String],num:String,denom:String):List[String]"></a>
+      <a id="generateRUs(List[String],String,String):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generateRUs</span><span class="params">(<span name="unit">unit: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="num">num: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="denom">denom: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@generateRUs(unit:List[String],num:String,denom:String):List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a list of ratio units.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a list of ratio units.</p></div><dl class="paramcmts block"><dt class="param">unit</dt><dd class="cmt"><p>the list of units.</p></dd><dt class="param">num</dt><dd class="cmt"><p>the name of ratio unit at the numerator.</p></dd><dt class="param">denom</dt><dd class="cmt"><p>the name of ratio unit at the denominator.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#generateUs" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="generateUs(num:List[String],denom:List[String]):List[String]"></a>
+      <a id="generateUs(List[String],List[String]):List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">generateUs</span><span class="params">(<span name="num">num: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>, <span name="denom">denom: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>)</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@generateUs(num:List[String],denom:List[String]):List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Returns a list of units.</p><div class="fullcomment"><div class="comment cmt"><p>Returns a list of units.</p></div><dl class="paramcmts block"><dt class="param">num</dt><dd class="cmt"><p>the list of units at the numerator.</p></dd><dt class="param">denom</dt><dd class="cmt"><p>the list of units at the denominator.</p></dd></dl><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.AnyRef#getClass" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="getClass():Class[_]"></a>
+      <a id="getClass():Class[_]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">getClass</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.Class">Class</span>[_]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@getClass():Class[_]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="scala.AnyRef#hashCode" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hashCode():Int"></a>
+      <a id="hashCode():Int"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hashCode</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@hashCode():Int" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#hazeUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="hazeUnits:List[String]"></a>
+      <a id="hazeUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">hazeUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@hazeUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of turbidity
+</p><div class="fullcomment"><div class="comment cmt"><p>The units of turbidity
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.Any#isInstanceOf" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <a id="isInstanceOf[T0]:Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">isInstanceOf</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@isInstanceOf[T0]:Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>Any</dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#lengthUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="lengthUnits:List[String]"></a>
+      <a id="lengthUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">lengthUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@lengthUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of length: <b>m</b>, <b>ft</b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of length: <b>m</b>, <b>ft</b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#massUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="massUnits:List[String]"></a>
+      <a id="massUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">massUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@massUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of mass: <b>g</b>, <b>kg</b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of mass: <b>g</b>, <b>kg</b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#nbvssVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nbvssVSSRatio:Double"></a>
+      <a id="nbvssVSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nbvssVSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@nbvssVSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Non biodegradable VSS (nbVSS/VSS) = 0.20.</p><div class="fullcomment"><div class="comment cmt"><p>Non biodegradable VSS (nbVSS/VSS) = 0.20.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#nbvssVSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="nbvssVSSRatioUnits:List[String]"></a>
+      <a id="nbvssVSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">nbvssVSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@nbvssVSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="scala.AnyRef#ne" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ne(x$1:AnyRef):Boolean"></a>
+      <a id="ne(AnyRef):Boolean"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ne</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Boolean" class="extype" target="_top">Boolean</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@ne(x$1:AnyRef):Boolean" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#noUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="noUnits:List[String]"></a>
+      <a id="noUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">noUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@noUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Empty units.</p><div class="fullcomment"><div class="comment cmt"><p>Empty units.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.AnyRef#notify" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notify():Unit"></a>
+      <a id="notify():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notify</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@notify():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#notifyAll" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="notifyAll():Unit"></a>
+      <a id="notifyAll():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">notifyAll</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@notifyAll():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#ntuTSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ntuTSSRatio:Double"></a>
+      <a id="ntuTSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ntuTSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@ntuTSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">NTU/TSS = 0.50.</p><div class="fullcomment"><div class="comment cmt"><p>NTU/TSS = 0.50.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#ntuTSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="ntuTSSRatioUnits:List[String]"></a>
+      <a id="ntuTSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">ntuTSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@ntuTSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#pVSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pVSSRatio:Double"></a>
+      <a id="pVSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pVSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@pVSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">P/VSS = 0.02.</p><div class="fullcomment"><div class="comment cmt"><p>P/VSS = 0.02.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#pVSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="pVSSRatioUnits:List[String]"></a>
+      <a id="pVSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">pVSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@pVSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#perDayUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="perDayUnits:List[String]"></a>
+      <a id="perDayUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">perDayUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@perDayUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of per day: <b>d<sup>-1</sup></b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of per day: <b>d<sup>-1</sup></b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#percentageUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="percentageUnits:List[String]"></a>
+      <a id="percentageUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">percentageUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@percentageUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of percentage: <b>%</b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of percentage: <b>%</b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#rateUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="rateUnits:List[String]"></a>
+      <a id="rateUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">rateUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@rateUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of rate.</p><div class="fullcomment"><div class="comment cmt"><p>The units of rate.</p><pre>Volume / Time</pre></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="scala.AnyRef#synchronized" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="synchronized[T0](x$1:=&gt;T0):T0"></a>
+      <a id="synchronized[T0](⇒T0):T0"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">synchronized</span><span class="tparams">[<span name="T0">T0</span>]</span><span class="params">(<span name="arg0">arg0: ⇒ <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>)</span><span class="result">: <span class="extype" name="java.lang.AnyRef.synchronized.T0">T0</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@synchronized[T0](x$1:=&gt;T0):T0" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd></dl></div>
+    </li><li name="scala.AnyRef#toString" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="toString():String"></a>
+      <a id="toString():String"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">toString</span><span class="params">()</span><span class="result">: <span class="extype" name="java.lang.String">String</span></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@toString():String" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef → Any</dd></dl></div>
+    </li><li name="wastewatertreatment.core.valueunit.Unit#volumeUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="volumeUnits:List[String]"></a>
+      <a id="volumeUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">volumeUnits</span><span class="result">: <span class="extype" name="scala.List">List</span>[<span class="extype" name="scala.Predef.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@volumeUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">The units of volume: <b>m<sup>2</sup></b>, <b>ft<sup>2</sup></b>.</p><div class="fullcomment"><div class="comment cmt"><p>The units of volume: <b>m<sup>2</sup></b>, <b>ft<sup>2</sup></b>.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Ratios#vssTSSRatio" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="vssTSSRatio:Double"></a>
+      <a id="vssTSSRatio:Double"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">vssTSSRatio</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Double" class="extype" target="_top">Double</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@vssTSSRatio:Double" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">VSS/TSS = 0.80.</p><div class="fullcomment"><div class="comment cmt"><p>VSS/TSS = 0.80.
+</p></div><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">Ratios</a></dd></dl></div>
+    </li><li name="wastewatertreatment.core.ratios.Units#vssTSSRatioUnits" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="vssTSSRatioUnits:List[String]"></a>
+      <a id="vssTSSRatioUnits:List[String]"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">val</span>
+      </span>
+      <span class="symbol">
+        <span class="name">vssTSSRatioUnits</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.collection.immutable.List" class="extype" target="_top">List</a>[<span class="extype" name="java.lang.String">String</span>]</span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@vssTSSRatioUnits:List[String]" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd><a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait():Unit"></a>
+      <a id="wait():Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">()</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@wait():Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long,x$2:Int):Unit"></a>
+      <a id="wait(Long,Int):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Long" class="extype" target="_top">Long</a></span>, <span name="arg1">arg1: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Int" class="extype" target="_top">Int</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@wait(x$1:Long,x$2:Int):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li><li name="scala.AnyRef#wait" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="wait(x$1:Long):Unit"></a>
+      <a id="wait(Long):Unit"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">def</span>
+      </span>
+      <span class="symbol">
+        <span class="name">wait</span><span class="params">(<span name="arg0">arg0: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Long" class="extype" target="_top">Long</a></span>)</span><span class="result">: <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Unit" class="extype" target="_top">Unit</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../index.html#wastewatertreatment.core.ratios.ValueUnits@wait(x$1:Long):Unit" title="Permalink" target="_top">
+        <img src="../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <div class="fullcomment"><dl class="attributes block"> <dt>Definition Classes</dt><dd>AnyRef</dd><dt>Annotations</dt><dd>
+                <span class="name">@throws</span><span class="args">(<span>
+      
+      <span class="defval" name="classOf[java.lang.InterruptedException]">...</span>
+    </span>)</span>
+              
+        </dd></dl></div>
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        <div class="parent" name="wastewatertreatment.core.ratios.Units">
+              <h3>Inherited from <a href="Units.html" class="extype" name="wastewatertreatment.core.ratios.Units">Units</a></h3>
+            </div><div class="parent" name="wastewatertreatment.core.valueunit.Unit">
+              <h3>Inherited from <a href="../valueunit/Unit.html" class="extype" name="wastewatertreatment.core.valueunit.Unit">Unit</a></h3>
+            </div><div class="parent" name="wastewatertreatment.core.ratios.Ratios">
+              <h3>Inherited from <a href="Ratios.html" class="extype" name="wastewatertreatment.core.ratios.Ratios">ratios.Ratios</a></h3>
+            </div><div class="parent" name="scala.AnyRef">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></h3>
+            </div><div class="parent" name="scala.Any">
+              <h3>Inherited from <a href="http://www.scala-lang.org/api/2.11.7/index.html#scala.Any" class="extype" target="_top">Any</a></h3>
+            </div>
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
